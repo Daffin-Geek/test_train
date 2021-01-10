@@ -1,0 +1,442 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  (null)
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 370     0  E > > RETURN                                                   1
+
+Class WP_Comment:
+Function get_instance:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 7
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+2 jumps found. (Code = 43) Position 1 = 14, Position 2 = 36
+Branch analysis from position: 14
+2 jumps found. (Code = 43) Position 1 = 28, Position 2 = 29
+Branch analysis from position: 28
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 29
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 36
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  get_instance
+number of ops:  41
+compiled vars:  !0 = $id, !1 = $wpdb, !2 = $comment_id, !3 = $_comment
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 172     0  E >   RECV                                             !0      
+ 173     1        BIND_GLOBAL                                              !1, 'wpdb'
+ 175     2        MAKE_REF                                         ~4      !0
+         3        ASSIGN                                                   !2, ~4
+ 176     4        BOOL_XOR                                         ~6      !2
+         5      > JMPZ                                                     ~6, ->7
+ 177     6    > > RETURN                                                   <false>
+ 180     7    >   INIT_FCALL_BY_NAME                                       'wp_cache_get'
+         8        SEND_VAR_EX                                              !2
+         9        SEND_VAL_EX                                              'comment'
+        10        DO_FCALL                                      0  $7      
+        11        ASSIGN                                                   !3, $7
+ 182    12        BOOL_XOR                                         ~9      !3
+        13      > JMPZ                                                     ~9, ->36
+ 183    14    >   INIT_METHOD_CALL                                         !1, 'get_row'
+        15        INIT_METHOD_CALL                                         !1, 'prepare'
+        16        ROPE_INIT                                     3  ~12     'SELECT+%2A+FROM+'
+        17        FETCH_OBJ_R                                      ~10     !1, 'comments'
+        18        ROPE_ADD                                      1  ~12     ~12, ~10
+        19        ROPE_END                                      2  ~11     ~12, '+WHERE+comment_ID+%3D+%25d+LIMIT+1'
+        20        SEND_VAL_EX                                              ~11
+        21        SEND_VAR_EX                                              !2
+        22        DO_FCALL                                      0  $14     
+        23        SEND_VAR_NO_REF_EX                                       $14
+        24        DO_FCALL                                      0  $15     
+        25        ASSIGN                                                   !3, $15
+ 185    26        BOOL_XOR                                         ~17     !3
+        27      > JMPZ                                                     ~17, ->29
+ 186    28    > > RETURN                                                   <false>
+ 189    29    >   INIT_FCALL_BY_NAME                                       'wp_cache_add'
+        30        CHECK_FUNC_ARG                                           
+        31        FETCH_OBJ_FUNC_ARG                               $18     !3, 'comment_ID'
+        32        SEND_FUNC_ARG                                            $18
+        33        SEND_VAR_EX                                              !3
+        34        SEND_VAL_EX                                              'comment'
+        35        DO_FCALL                                      0          
+ 192    36    >   NEW                                              $20     'WP_Comment'
+        37        SEND_VAR_EX                                              !3
+        38        DO_FCALL                                      0          
+        39      > RETURN                                                   $20
+ 193    40*     > RETURN                                                   null
+
+End of function get_instance
+
+Function __construct:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 77) Position 1 = 5, Position 2 = 10
+Branch analysis from position: 5
+2 jumps found. (Code = 78) Position 1 = 6, Position 2 = 10
+Branch analysis from position: 6
+1 jumps found. (Code = 42) Position 1 = 5
+Branch analysis from position: 5
+Branch analysis from position: 10
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 10
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  __construct
+number of ops:  12
+compiled vars:  !0 = $comment, !1 = $value, !2 = $key
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 204     0  E >   RECV                                             !0      
+ 205     1        INIT_FCALL                                               'get_object_vars'
+         2        SEND_VAR                                                 !0
+         3        DO_ICALL                                         $3      
+         4      > FE_RESET_R                                       $4      $3, ->10
+         5    > > FE_FETCH_R                                       ~5      $4, !1, ->10
+         6    >   ASSIGN                                                   !2, ~5
+ 206     7        ASSIGN_OBJ                                               !2
+         8        OP_DATA                                                  !1
+ 205     9      > JMP                                                      ->5
+        10    >   FE_FREE                                                  $4
+ 208    11      > RETURN                                                   null
+
+End of function __construct
+
+Function to_array:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  to_array
+number of ops:  6
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 218     0  E >   INIT_FCALL                                               'get_object_vars'
+         1        FETCH_THIS                                       ~0      
+         2        SEND_VAL                                                 ~0
+         3        DO_ICALL                                         $1      
+         4      > RETURN                                                   $1
+ 219     5*     > RETURN                                                   null
+
+End of function to_array
+
+Function get_children:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 13, Position 2 = 23
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 15, Position 2 = 18
+Branch analysis from position: 15
+1 jumps found. (Code = 42) Position 1 = 23
+Branch analysis from position: 23
+2 jumps found. (Code = 43) Position 1 = 26, Position 2 = 47
+Branch analysis from position: 26
+2 jumps found. (Code = 77) Position 1 = 29, Position 2 = 45
+Branch analysis from position: 29
+2 jumps found. (Code = 78) Position 1 = 30, Position 2 = 45
+Branch analysis from position: 30
+1 jumps found. (Code = 42) Position 1 = 29
+Branch analysis from position: 29
+Branch analysis from position: 45
+1 jumps found. (Code = 42) Position 1 = 49
+Branch analysis from position: 49
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 45
+Branch analysis from position: 47
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 18
+2 jumps found. (Code = 43) Position 1 = 26, Position 2 = 47
+Branch analysis from position: 26
+Branch analysis from position: 47
+Branch analysis from position: 23
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  get_children
+number of ops:  51
+compiled vars:  !0 = $args, !1 = $defaults, !2 = $_args, !3 = $children, !4 = $child, !5 = $child_args
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 257     0  E >   RECV_INIT                                        !0      <array>
+ 259     1        ASSIGN                                                   !1, <array>
+ 265     2        INIT_FCALL_BY_NAME                                       'wp_parse_args'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAR_EX                                              !1
+         5        DO_FCALL                                      0  $7      
+         6        ASSIGN                                                   !2, $7
+ 266     7        FETCH_OBJ_R                                      ~10     'comment_ID'
+         8        ASSIGN_DIM                                               !2, 'parent'
+         9        OP_DATA                                                  ~10
+ 268    10        FETCH_OBJ_R                                      ~11     'children'
+        11        TYPE_CHECK                                    2  ~12     ~11
+        12      > JMPZ                                                     ~12, ->23
+ 269    13    >   FETCH_OBJ_R                                      ~13     'populated_children'
+        14      > JMPZ                                                     ~13, ->18
+ 270    15    >   ASSIGN_OBJ                                               'children'
+        16        OP_DATA                                                  <array>
+        17      > JMP                                                      ->23
+ 272    18    >   INIT_FCALL_BY_NAME                                       'get_comments'
+        19        SEND_VAR_EX                                              !2
+        20        DO_FCALL                                      0  $16     
+        21        ASSIGN_OBJ                                               'children'
+        22        OP_DATA                                                  $16
+ 276    23    >   FETCH_DIM_R                                      ~17     !2, 'format'
+        24        IS_NOT_IDENTICAL                                 ~18     ~17, 'flat'
+        25      > JMPZ                                                     ~18, ->47
+ 277    26    >   ASSIGN                                                   !3, <array>
+ 278    27        FETCH_OBJ_R                                      ~20     'children'
+        28      > FE_RESET_R                                       $21     ~20, ->45
+        29    > > FE_FETCH_R                                               $21, !4, ->45
+ 279    30    >   ASSIGN                                                   !5, !2
+ 280    31        ASSIGN_DIM                                               !5, 'format'
+        32        OP_DATA                                                  'flat'
+ 282    33        UNSET_DIM                                                !5, 'parent'
+ 284    34        INIT_FCALL                                               'array_merge'
+        35        SEND_VAR                                                 !3
+        36        INIT_ARRAY                                       ~24     !4
+        37        SEND_VAL                                                 ~24
+        38        INIT_METHOD_CALL                                         !4, 'get_children'
+        39        SEND_VAR_EX                                              !5
+        40        DO_FCALL                                      0  $25     
+        41        SEND_VAR                                                 $25
+        42        DO_ICALL                                         $26     
+        43        ASSIGN                                                   !3, $26
+ 278    44      > JMP                                                      ->29
+        45    >   FE_FREE                                                  $21
+        46      > JMP                                                      ->49
+ 287    47    >   FETCH_OBJ_R                                      ~28     'children'
+        48        ASSIGN                                                   !3, ~28
+ 290    49    > > RETURN                                                   !3
+ 291    50*     > RETURN                                                   null
+
+End of function get_children
+
+Function add_child:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  add_child
+number of ops:  6
+compiled vars:  !0 = $child
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 302     0  E >   RECV                                             !0      
+ 303     1        FETCH_OBJ_R                                      ~2      !0, 'comment_ID'
+         2        FETCH_OBJ_W                                      $1      'children'
+         3        ASSIGN_DIM                                               $1, ~2
+         4        OP_DATA                                                  !0
+ 304     5      > RETURN                                                   null
+
+End of function add_child
+
+Function get_child:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 7
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  get_child
+number of ops:  9
+compiled vars:  !0 = $child_id
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 314     0  E >   RECV                                             !0      
+ 315     1        FETCH_OBJ_IS                                     ~1      'children'
+         2        ISSET_ISEMPTY_DIM_OBJ                         0  ~2      ~1, !0
+         3      > JMPZ                                                     ~2, ->7
+ 316     4    >   FETCH_OBJ_R                                      ~3      'children'
+         5        FETCH_DIM_R                                      ~4      ~3, !0
+         6      > RETURN                                                   ~4
+ 319     7    > > RETURN                                                   <false>
+ 320     8*     > RETURN                                                   null
+
+End of function get_child
+
+Function populated_children:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  populated_children
+number of ops:  5
+compiled vars:  !0 = $set
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 332     0  E >   RECV                                             !0      
+ 333     1        MAKE_REF                                         ~2      !0
+         2        ASSIGN_OBJ                                               'populated_children'
+         3        OP_DATA                                                  ~2
+ 334     4      > RETURN                                                   null
+
+End of function populated_children
+
+Function __isset:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 8, Position 2 = 12
+Branch analysis from position: 8
+2 jumps found. (Code = 43) Position 1 = 13, Position 2 = 24
+Branch analysis from position: 13
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 24
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 12
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  __isset
+number of ops:  25
+compiled vars:  !0 = $name, !1 = $post
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 346     0  E >   RECV                                             !0      
+ 347     1        INIT_FCALL                                               'in_array'
+         2        SEND_VAR                                                 !0
+         3        FETCH_OBJ_R                                      ~2      'post_fields'
+         4        SEND_VAL                                                 ~2
+         5        SEND_VAL                                                 <true>
+         6        DO_ICALL                                         $3      
+         7      > JMPZ_EX                                          ~4      $3, ->12
+         8    >   FETCH_OBJ_R                                      ~5      'comment_post_ID'
+         9        MAKE_REF                                         ~6      ~5
+        10        IS_EQUAL                                         ~7      ~6, 0
+        11        BOOL                                             ~4      ~7
+        12    > > JMPZ                                                     ~4, ->24
+ 348    13    >   INIT_FCALL_BY_NAME                                       'get_post'
+        14        CHECK_FUNC_ARG                                           
+        15        FETCH_OBJ_FUNC_ARG                               $8      'comment_post_ID'
+        16        SEND_FUNC_ARG                                            $8
+        17        DO_FCALL                                      0  $9      
+        18        ASSIGN                                                   !1, $9
+ 349    19        INIT_FCALL                                               'property_exists'
+        20        SEND_VAR                                                 !1
+        21        SEND_VAR                                                 !0
+        22        DO_ICALL                                         $11     
+        23      > RETURN                                                   $11
+ 351    24    > > RETURN                                                   null
+
+End of function __isset
+
+Function __get:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 8, Position 2 = 16
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 16
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-comment.php
+function name:  __get
+number of ops:  17
+compiled vars:  !0 = $name, !1 = $post
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 363     0  E >   RECV                                             !0      
+ 364     1        INIT_FCALL                                               'in_array'
+         2        SEND_VAR                                                 !0
+         3        FETCH_OBJ_R                                      ~2      'post_fields'
+         4        SEND_VAL                                                 ~2
+         5        SEND_VAL                                                 <true>
+         6        DO_ICALL                                         $3      
+         7      > JMPZ                                                     $3, ->16
+ 365     8    >   INIT_FCALL_BY_NAME                                       'get_post'
+         9        CHECK_FUNC_ARG                                           
+        10        FETCH_OBJ_FUNC_ARG                               $4      'comment_post_ID'
+        11        SEND_FUNC_ARG                                            $4
+        12        DO_FCALL                                      0  $5      
+        13        ASSIGN                                                   !1, $5
+ 366    14        FETCH_OBJ_R                                      ~7      !1, !0
+        15      > RETURN                                                   ~7
+ 368    16    > > RETURN                                                   null
+
+End of function __get
+
+End of class WP_Comment.
+
+branch: #  0; line:   370-  370; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:   172-  176; sop:     0; eop:     5; out0:   6; out1:   7
+branch: #  6; line:   177-  177; sop:     6; eop:     6; out0:  -2
+branch: #  7; line:   180-  182; sop:     7; eop:    13; out0:  14; out1:  36
+branch: # 14; line:   183-  185; sop:    14; eop:    27; out0:  28; out1:  29
+branch: # 28; line:   186-  186; sop:    28; eop:    28; out0:  -2
+branch: # 29; line:   189-  192; sop:    29; eop:    35; out0:  36
+branch: # 36; line:   192-  193; sop:    36; eop:    40
+path #1: 0, 6, 
+path #2: 0, 7, 14, 28, 
+path #3: 0, 7, 14, 29, 36, 
+path #4: 0, 7, 36, 
+branch: #  0; line:   204-  205; sop:     0; eop:     4; out0:   5; out1:  10
+branch: #  5; line:   205-  205; sop:     5; eop:     5; out0:   6; out1:  10
+branch: #  6; line:   205-  205; sop:     6; eop:     9; out0:   5
+branch: # 10; line:   205-  208; sop:    10; eop:    11; out0:  -2
+path #1: 0, 5, 6, 5, 10, 
+path #2: 0, 5, 10, 
+path #3: 0, 10, 
+branch: #  0; line:   218-  219; sop:     0; eop:     5
+path #1: 0, 
+branch: #  0; line:   257-  268; sop:     0; eop:    12; out0:  13; out1:  23
+branch: # 13; line:   269-  269; sop:    13; eop:    14; out0:  15; out1:  18
+branch: # 15; line:   270-  270; sop:    15; eop:    17; out0:  23
+branch: # 18; line:   272-  276; sop:    18; eop:    22; out0:  23
+branch: # 23; line:   276-  276; sop:    23; eop:    25; out0:  26; out1:  47; out2:  26; out3:  47
+branch: # 26; line:   277-  278; sop:    26; eop:    28; out0:  29; out1:  45
+branch: # 29; line:   278-  278; sop:    29; eop:    29; out0:  30; out1:  45
+branch: # 30; line:   279-  278; sop:    30; eop:    44; out0:  29
+branch: # 45; line:   278-  278; sop:    45; eop:    46; out0:  49
+branch: # 47; line:   287-  290; sop:    47; eop:    48; out0:  49
+branch: # 49; line:   290-  291; sop:    49; eop:    50
+path #1: 0, 13, 15, 23, 26, 29, 30, 29, 45, 49, 
+path #2: 0, 13, 15, 23, 26, 29, 45, 49, 
+path #3: 0, 13, 15, 23, 26, 45, 49, 
+path #4: 0, 13, 15, 23, 47, 49, 
+path #5: 0, 13, 15, 23, 26, 29, 30, 29, 45, 49, 
+path #6: 0, 13, 15, 23, 26, 29, 45, 49, 
+path #7: 0, 13, 15, 23, 26, 45, 49, 
+path #8: 0, 13, 15, 23, 47, 49, 
+path #9: 0, 13, 18, 23, 26, 29, 30, 29, 45, 49, 
+path #10: 0, 13, 18, 23, 26, 29, 45, 49, 
+path #11: 0, 13, 18, 23, 26, 45, 49, 
+path #12: 0, 13, 18, 23, 47, 49, 
+path #13: 0, 13, 18, 23, 26, 29, 30, 29, 45, 49, 
+path #14: 0, 13, 18, 23, 26, 29, 45, 49, 
+path #15: 0, 13, 18, 23, 26, 45, 49, 
+path #16: 0, 13, 18, 23, 47, 49, 
+path #17: 0, 23, 26, 29, 30, 29, 45, 49, 
+path #18: 0, 23, 26, 29, 45, 49, 
+path #19: 0, 23, 26, 45, 49, 
+path #20: 0, 23, 47, 49, 
+path #21: 0, 23, 26, 29, 30, 29, 45, 49, 
+path #22: 0, 23, 26, 29, 45, 49, 
+path #23: 0, 23, 26, 45, 49, 
+path #24: 0, 23, 47, 49, 
+branch: #  0; line:   302-  304; sop:     0; eop:     5; out0:  -2
+path #1: 0, 
+branch: #  0; line:   314-  315; sop:     0; eop:     3; out0:   4; out1:   7
+branch: #  4; line:   316-  316; sop:     4; eop:     6; out0:  -2
+branch: #  7; line:   319-  320; sop:     7; eop:     8
+path #1: 0, 4, 
+path #2: 0, 7, 
+branch: #  0; line:   332-  334; sop:     0; eop:     4; out0:  -2
+path #1: 0, 
+branch: #  0; line:   346-  347; sop:     0; eop:     7; out0:   8; out1:  12
+branch: #  8; line:   347-  347; sop:     8; eop:    11; out0:  12
+branch: # 12; line:   347-  347; sop:    12; eop:    12; out0:  13; out1:  24
+branch: # 13; line:   348-  349; sop:    13; eop:    23; out0:  -2
+branch: # 24; line:   351-  351; sop:    24; eop:    24; out0:  -2
+path #1: 0, 8, 12, 13, 
+path #2: 0, 8, 12, 24, 
+path #3: 0, 12, 13, 
+path #4: 0, 12, 24, 
+branch: #  0; line:   363-  364; sop:     0; eop:     7; out0:   8; out1:  16
+branch: #  8; line:   365-  366; sop:     8; eop:    15; out0:  -2
+branch: # 16; line:   368-  368; sop:    16; eop:    16; out0:  -2
+path #1: 0, 8, 
+path #2: 0, 16, 

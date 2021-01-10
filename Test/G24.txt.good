@@ -1,0 +1,32 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-smtp.php
+function name:  (null)
+number of ops:  20
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+   6     0  E >   INIT_FCALL_BY_NAME                                       '_deprecated_file'
+   7     1        INIT_FCALL                                               'basename'
+         2        SEND_VAL                                                 '%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2Fclass-smtp.php'
+         3        DO_ICALL                                         $0      
+         4        SEND_VAR_NO_REF_EX                                       $0
+   8     5        SEND_VAL_EX                                              '5.5.0'
+   9     6        FETCH_CONSTANT                                   ~1      'WPINC'
+         7        CONCAT                                           ~2      ~1, '%2FPHPMailer%2FSMTP.php'
+         8        SEND_VAL_EX                                              ~2
+  10     9        INIT_FCALL_BY_NAME                                       '__'
+        10        SEND_VAL_EX                                              'The+SMTP+class+has+been+moved+to+the+wp-includes%2FPHPMailer+subdirectory+and+now+uses+the+PHPMailer%5CPHPMailer+namespace.'
+        11        DO_FCALL                                      0  $3      
+        12        SEND_VAR_NO_REF_EX                                       $3
+        13        DO_FCALL                                      0          
+  13    14        INCLUDE_OR_EVAL                                          '%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2FPHPMailer%2FSMTP.php', REQUIRE
+  15    15        INIT_FCALL                                               'class_alias'
+        16        SEND_VAL                                                 'PHPMailer%5CPHPMailer%5CSMTP'
+        17        SEND_VAL                                                 'SMTP'
+        18        DO_ICALL                                                 
+  16    19      > RETURN                                                   1
+
+branch: #  0; line:     6-   16; sop:     0; eop:    19; out0:  -2
+path #1: 0, 

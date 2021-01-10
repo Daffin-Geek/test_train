@@ -1,0 +1,1045 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  (null)
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 393     0  E > > RETURN                                                   1
+
+Function get_categories:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 18, Position 2 = 21
+Branch analysis from position: 18
+2 jumps found. (Code = 43) Position 1 = 22, Position 2 = 37
+Branch analysis from position: 22
+2 jumps found. (Code = 43) Position 1 = 45, Position 2 = 47
+Branch analysis from position: 45
+1 jumps found. (Code = 42) Position 1 = 61
+Branch analysis from position: 61
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 47
+2 jumps found. (Code = 77) Position 1 = 53, Position 2 = 60
+Branch analysis from position: 53
+2 jumps found. (Code = 78) Position 1 = 54, Position 2 = 60
+Branch analysis from position: 54
+1 jumps found. (Code = 42) Position 1 = 53
+Branch analysis from position: 53
+Branch analysis from position: 60
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 60
+Branch analysis from position: 37
+Branch analysis from position: 21
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  get_categories
+number of ops:  63
+compiled vars:  !0 = $args, !1 = $defaults, !2 = $categories, !3 = $k
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  26     0  E >   RECV_INIT                                        !0      ''
+  27     1        ASSIGN                                                   !1, <array>
+  28     2        INIT_FCALL_BY_NAME                                       'wp_parse_args'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAR_EX                                              !1
+         5        DO_FCALL                                      0  $5      
+         6        ASSIGN                                                   !0, $5
+  38     7        INIT_FCALL_BY_NAME                                       'apply_filters'
+         8        SEND_VAL_EX                                              'get_categories_taxonomy'
+         9        CHECK_FUNC_ARG                                           
+        10        FETCH_DIM_FUNC_ARG                               $8      !0, 'taxonomy'
+        11        SEND_FUNC_ARG                                            $8
+        12        SEND_VAR_EX                                              !0
+        13        DO_FCALL                                      0  $9      
+        14        ASSIGN_DIM                                               !0, 'taxonomy'
+        15        OP_DATA                                                  $9
+  41    16        ISSET_ISEMPTY_DIM_OBJ                         0  ~10     !0, 'type'
+        17      > JMPZ_EX                                          ~10     ~10, ->21
+        18    >   FETCH_DIM_R                                      ~11     !0, 'type'
+        19        IS_NOT_IDENTICAL                                 ~12     ~11, 'link'
+        20        BOOL                                             ~10     ~12
+        21    > > JMPZ                                                     ~10, ->37
+  42    22    >   INIT_FCALL_BY_NAME                                       '_deprecated_argument'
+  43    23        SEND_VAL_EX                                              'get_categories'
+  44    24        SEND_VAL_EX                                              '3.0.0'
+  45    25        INIT_FCALL                                               'sprintf'
+  47    26        INIT_FCALL_BY_NAME                                       '__'
+        27        SEND_VAL_EX                                              '%251%24s+is+deprecated.+Use+%252%24s+instead.'
+        28        DO_FCALL                                      0  $13     
+        29        SEND_VAR                                                 $13
+  48    30        SEND_VAL                                                 '%3Ccode%3Etype+%3D%3E+link%3C%2Fcode%3E'
+  49    31        SEND_VAL                                                 '%3Ccode%3Etaxonomy+%3D%3E+link_category%3C%2Fcode%3E'
+        32        DO_ICALL                                         $14     
+        33        SEND_VAR_NO_REF_EX                                       $14
+        34        DO_FCALL                                      0          
+  52    35        ASSIGN_DIM                                               !0, 'taxonomy'
+        36        OP_DATA                                                  'link_category'
+  55    37    >   INIT_FCALL_BY_NAME                                       'get_terms'
+        38        SEND_VAR_EX                                              !0
+        39        DO_FCALL                                      0  $17     
+        40        ASSIGN                                                   !2, $17
+  57    41        INIT_FCALL_BY_NAME                                       'is_wp_error'
+        42        SEND_VAR_EX                                              !2
+        43        DO_FCALL                                      0  $19     
+        44      > JMPZ                                                     $19, ->47
+  58    45    >   ASSIGN                                                   !2, <array>
+        46      > JMP                                                      ->61
+  60    47    >   MAKE_REF                                         ~21     !2
+        48        ASSIGN                                                   !2, ~21
+  61    49        INIT_FCALL                                               'array_keys'
+        50        SEND_VAR                                                 !2
+        51        DO_ICALL                                         $23     
+        52      > FE_RESET_R                                       $24     $23, ->60
+        53    > > FE_FETCH_R                                               $24, !3, ->60
+  62    54    >   INIT_FCALL_BY_NAME                                       '_make_cat_compat'
+        55        CHECK_FUNC_ARG                                           
+        56        FETCH_DIM_FUNC_ARG                               $25     !2, !3
+        57        SEND_FUNC_ARG                                            $25
+        58        DO_FCALL                                      0          
+  61    59      > JMP                                                      ->53
+        60    >   FE_FREE                                                  $24
+  66    61    > > RETURN                                                   !2
+  67    62*     > RETURN                                                   null
+
+End of function get_categories
+
+Function get_category:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 14, Position 2 = 15
+Branch analysis from position: 14
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 15
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  get_category
+number of ops:  20
+compiled vars:  !0 = $category, !1 = $output, !2 = $filter
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  91     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      <const ast>
+         2        RECV_INIT                                        !2      'raw'
+  92     3        INIT_FCALL_BY_NAME                                       'get_term'
+         4        SEND_VAR_EX                                              !0
+         5        SEND_VAL_EX                                              'category'
+         6        SEND_VAR_EX                                              !1
+         7        SEND_VAR_EX                                              !2
+         8        DO_FCALL                                      0  $3      
+         9        ASSIGN                                                   !0, $3
+  94    10        INIT_FCALL_BY_NAME                                       'is_wp_error'
+        11        SEND_VAR_EX                                              !0
+        12        DO_FCALL                                      0  $5      
+        13      > JMPZ                                                     $5, ->15
+  95    14    > > RETURN                                                   !0
+  98    15    >   INIT_FCALL_BY_NAME                                       '_make_cat_compat'
+        16        SEND_VAR_EX                                              !0
+        17        DO_FCALL                                      0          
+ 100    18      > RETURN                                                   !0
+ 101    19*     > RETURN                                                   null
+
+End of function get_category
+
+Function get_category_by_path:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 77) Position 1 = 43, Position 2 = 55
+Branch analysis from position: 43
+2 jumps found. (Code = 78) Position 1 = 44, Position 2 = 55
+Branch analysis from position: 44
+2 jumps found. (Code = 43) Position 1 = 46, Position 2 = 48
+Branch analysis from position: 46
+1 jumps found. (Code = 42) Position 1 = 49
+Branch analysis from position: 49
+1 jumps found. (Code = 42) Position 1 = 43
+Branch analysis from position: 43
+Branch analysis from position: 48
+1 jumps found. (Code = 42) Position 1 = 43
+Branch analysis from position: 43
+Branch analysis from position: 55
+2 jumps found. (Code = 43) Position 1 = 65, Position 2 = 66
+Branch analysis from position: 65
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 66
+2 jumps found. (Code = 77) Position 1 = 67, Position 2 = 113
+Branch analysis from position: 67
+2 jumps found. (Code = 78) Position 1 = 68, Position 2 = 113
+Branch analysis from position: 68
+1 jumps found. (Code = 42) Position 1 = 89
+Branch analysis from position: 89
+2 jumps found. (Code = 46) Position 1 = 92, Position 2 = 96
+Branch analysis from position: 92
+2 jumps found. (Code = 44) Position 1 = 97, Position 2 = 72
+Branch analysis from position: 97
+2 jumps found. (Code = 43) Position 1 = 99, Position 2 = 112
+Branch analysis from position: 99
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 112
+1 jumps found. (Code = 42) Position 1 = 67
+Branch analysis from position: 67
+Branch analysis from position: 72
+2 jumps found. (Code = 43) Position 1 = 83, Position 2 = 85
+Branch analysis from position: 83
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 85
+2 jumps found. (Code = 46) Position 1 = 92, Position 2 = 96
+Branch analysis from position: 92
+Branch analysis from position: 96
+Branch analysis from position: 96
+Branch analysis from position: 113
+2 jumps found. (Code = 43) Position 1 = 116, Position 2 = 132
+Branch analysis from position: 116
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 132
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 113
+Branch analysis from position: 55
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  get_category_by_path
+number of ops:  133
+compiled vars:  !0 = $category_path, !1 = $full_match, !2 = $output, !3 = $category_paths, !4 = $leaf_path, !5 = $full_path, !6 = $pathdir, !7 = $categories, !8 = $category, !9 = $path, !10 = $curcategory
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 124     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      <true>
+         2        RECV_INIT                                        !2      <const ast>
+ 125     3        INIT_FCALL                                               'rawurlencode'
+         4        INIT_FCALL                                               'urldecode'
+         5        SEND_VAR                                                 !0
+         6        DO_ICALL                                         $11     
+         7        SEND_VAR                                                 $11
+         8        DO_ICALL                                         $12     
+         9        ASSIGN                                                   !0, $12
+ 126    10        INIT_FCALL                                               'str_replace'
+        11        SEND_VAL                                                 '%252F'
+        12        SEND_VAL                                                 '%2F'
+        13        SEND_VAR                                                 !0
+        14        DO_ICALL                                         $14     
+        15        ASSIGN                                                   !0, $14
+ 127    16        INIT_FCALL                                               'str_replace'
+        17        SEND_VAL                                                 '%2520'
+        18        SEND_VAL                                                 '+'
+        19        SEND_VAR                                                 !0
+        20        DO_ICALL                                         $16     
+        21        ASSIGN                                                   !0, $16
+ 128    22        INIT_FCALL                                               'trim'
+        23        SEND_VAR                                                 !0
+        24        SEND_VAL                                                 '%2F'
+        25        DO_ICALL                                         $18     
+        26        CONCAT                                           ~19     '%2F', $18
+        27        ASSIGN                                                   !3, ~19
+ 129    28        INIT_FCALL_BY_NAME                                       'sanitize_title'
+        29        INIT_FCALL                                               'basename'
+        30        SEND_VAR                                                 !3
+        31        DO_ICALL                                         $21     
+        32        SEND_VAR_NO_REF_EX                                       $21
+        33        DO_FCALL                                      0  $22     
+        34        ASSIGN                                                   !4, $22
+ 130    35        INIT_FCALL                                               'explode'
+        36        SEND_VAL                                                 '%2F'
+        37        SEND_VAR                                                 !3
+        38        DO_ICALL                                         $24     
+        39        ASSIGN                                                   !3, $24
+ 131    40        ASSIGN                                                   !5, ''
+ 133    41        MAKE_REF                                         ~27     !3
+        42      > FE_RESET_R                                       $28     ~27, ->55
+        43    > > FE_FETCH_R                                               $28, !6, ->55
+ 134    44    >   IS_EQUAL                                         ~29     !6, ''
+        45      > JMPZ                                                     ~29, ->48
+        46    >   QM_ASSIGN                                        ~30     '%2F'
+        47      > JMP                                                      ->49
+        48    >   QM_ASSIGN                                        ~30     ''
+        49    >   INIT_FCALL_BY_NAME                                       'sanitize_title'
+        50        SEND_VAR_EX                                              !6
+        51        DO_FCALL                                      0  $31     
+        52        CONCAT                                           ~32     ~30, $31
+        53        ASSIGN_OP                                     8          !5, ~32
+ 133    54      > JMP                                                      ->43
+        55    >   FE_FREE                                                  $28
+ 137    56        INIT_FCALL_BY_NAME                                       'get_terms'
+ 139    57        INIT_ARRAY                                       ~34     'category', 'taxonomy'
+ 140    58        ADD_ARRAY_ELEMENT                                ~34     'all', 'get'
+ 141    59        ADD_ARRAY_ELEMENT                                ~34     !4, 'slug'
+        60        SEND_VAL_EX                                              ~34
+        61        DO_FCALL                                      0  $35     
+        62        ASSIGN                                                   !7, $35
+ 145    63        ISSET_ISEMPTY_CV                                 ~37     !7
+        64      > JMPZ                                                     ~37, ->66
+ 146    65    > > RETURN                                                   null
+ 149    66    > > FE_RESET_R                                       $38     !7, ->113
+        67    > > FE_FETCH_R                                               $38, !8, ->113
+ 150    68    >   CONCAT                                           ~39     '%2F', !4
+        69        ASSIGN                                                   !9, ~39
+ 151    70        ASSIGN                                                   !10, !8
+ 152    71      > JMP                                                      ->89
+ 153    72    >   INIT_FCALL_BY_NAME                                       'get_term'
+        73        CHECK_FUNC_ARG                                           
+        74        FETCH_OBJ_FUNC_ARG                               $42     !10, 'parent'
+        75        SEND_FUNC_ARG                                            $42
+        76        SEND_VAL_EX                                              'category'
+        77        DO_FCALL                                      0  $43     
+        78        ASSIGN                                                   !10, $43
+ 155    79        INIT_FCALL_BY_NAME                                       'is_wp_error'
+        80        SEND_VAR_EX                                              !10
+        81        DO_FCALL                                      0  $45     
+        82      > JMPZ                                                     $45, ->85
+ 156    83    >   FE_FREE                                                  $38
+        84      > RETURN                                                   !10
+ 159    85    >   FETCH_OBJ_R                                      ~46     !10, 'slug'
+        86        CONCAT                                           ~47     '%2F', ~46
+        87        CONCAT                                           ~48     ~47, !9
+        88        ASSIGN                                                   !9, ~48
+ 152    89    >   FETCH_OBJ_R                                      ~50     !10, 'parent'
+        90        IS_SMALLER                                       ~51     ~50, 0
+        91      > JMPZ_EX                                          ~51     ~51, ->96
+        92    >   FETCH_OBJ_R                                      ~52     !10, 'parent'
+        93        FETCH_OBJ_R                                      ~53     !10, 'term_id'
+        94        IS_SMALLER                                       ~54     ~52, ~53
+        95        BOOL                                             ~51     ~54
+        96    > > JMPNZ                                                    ~51, ->72
+ 162    97    >   IS_NOT_EQUAL                                     ~55     !9, !5
+        98      > JMPZ                                                     ~55, ->112
+ 163    99    >   INIT_FCALL_BY_NAME                                       'get_term'
+       100        CHECK_FUNC_ARG                                           
+       101        FETCH_OBJ_FUNC_ARG                               $56     !8, 'term_id'
+       102        SEND_FUNC_ARG                                            $56
+       103        SEND_VAL_EX                                              'category'
+       104        SEND_VAR_EX                                              !2
+       105        DO_FCALL                                      0  $57     
+       106        ASSIGN                                                   !8, $57
+ 164   107        INIT_FCALL_BY_NAME                                       '_make_cat_compat'
+       108        SEND_VAR_EX                                              !8
+       109        DO_FCALL                                      0          
+ 166   110        FE_FREE                                                  $38
+       111      > RETURN                                                   !8
+ 149   112    > > JMP                                                      ->67
+       113    >   FE_FREE                                                  $38
+ 171   114        BOOL_XOR                                         ~60     !1
+       115      > JMPZ                                                     ~60, ->132
+ 172   116    >   INIT_FCALL_BY_NAME                                       'get_term'
+       117        CHECK_FUNC_ARG                                           
+       118        INIT_FCALL                                               'reset'
+       119        SEND_REF                                                 !7
+       120        DO_ICALL                                         $61     
+       121        SEPARATE                                         $61     $61
+       122        FETCH_OBJ_FUNC_ARG                               $62     $61, 'term_id'
+       123        SEND_FUNC_ARG                                            $62
+       124        SEND_VAL_EX                                              'category'
+       125        SEND_VAR_EX                                              !2
+       126        DO_FCALL                                      0  $63     
+       127        ASSIGN                                                   !8, $63
+ 173   128        INIT_FCALL_BY_NAME                                       '_make_cat_compat'
+       129        SEND_VAR_EX                                              !8
+       130        DO_FCALL                                      0          
+ 175   131      > RETURN                                                   !8
+ 177   132    > > RETURN                                                   null
+
+branch: #  0; line:   393-  393; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:    26-   41; sop:     0; eop:    17; out0:  18; out1:  21
+branch: # 18; line:    41-   41; sop:    18; eop:    20; out0:  21
+branch: # 21; line:    41-   41; sop:    21; eop:    21; out0:  22; out1:  37
+branch: # 22; line:    42-   55; sop:    22; eop:    36; out0:  37
+branch: # 37; line:    55-   57; sop:    37; eop:    44; out0:  45; out1:  47
+branch: # 45; line:    58-   58; sop:    45; eop:    46; out0:  61
+branch: # 47; line:    60-   61; sop:    47; eop:    52; out0:  53; out1:  60
+branch: # 53; line:    61-   61; sop:    53; eop:    53; out0:  54; out1:  60
+branch: # 54; line:    62-   61; sop:    54; eop:    59; out0:  53
+branch: # 60; line:    61-   66; sop:    60; eop:    60; out0:  61
+branch: # 61; line:    66-   67; sop:    61; eop:    62
+path #1: 0, 18, 21, 22, 37, 45, 61, 
+path #2: 0, 18, 21, 22, 37, 47, 53, 54, 53, 60, 61, 
+path #3: 0, 18, 21, 22, 37, 47, 53, 60, 61, 
+path #4: 0, 18, 21, 22, 37, 47, 60, 61, 
+path #5: 0, 18, 21, 37, 45, 61, 
+path #6: 0, 18, 21, 37, 47, 53, 54, 53, 60, 61, 
+path #7: 0, 18, 21, 37, 47, 53, 60, 61, 
+path #8: 0, 18, 21, 37, 47, 60, 61, 
+path #9: 0, 21, 22, 37, 45, 61, 
+path #10: 0, 21, 22, 37, 47, 53, 54, 53, 60, 61, 
+path #11: 0, 21, 22, 37, 47, 53, 60, 61, 
+path #12: 0, 21, 22, 37, 47, 60, 61, 
+path #13: 0, 21, 37, 45, 61, 
+path #14: 0, 21, 37, 47, 53, 54, 53, 60, 61, 
+path #15: 0, 21, 37, 47, 53, 60, 61, 
+path #16: 0, 21, 37, 47, 60, 61, 
+branch: #  0; line:    91-   94; sop:     0; eop:    13; out0:  14; out1:  15
+branch: # 14; line:    95-   95; sop:    14; eop:    14; out0:  -2
+branch: # 15; line:    98-  101; sop:    15; eop:    19
+path #1: 0, 14, 
+path #2: 0, 15, 
+branch: #  0; line:   124-  133; sop:     0; eop:    42; out0:  43; out1:  55
+branch: # 43; line:   133-  133; sop:    43; eop:    43; out0:  44; out1:  55
+branch: # 44; line:   134-  134; sop:    44; eop:    45; out0:  46; out1:  48
+branch: # 46; line:   134-  134; sop:    46; eop:    47; out0:  49
+branch: # 48; line:   134-  134; sop:    48; eop:    48; out0:  49
+branch: # 49; line:   134-  133; sop:    49; eop:    54; out0:  43; out1:  43
+branch: # 55; line:   133-  145; sop:    55; eop:    64; out0:  65; out1:  66
+branch: # 65; line:   146-  146; sop:    65; eop:    65; out0:  -2
+branch: # 66; line:   149-  149; sop:    66; eop:    66; out0:  67; out1: 113
+branch: # 67; line:   149-  149; sop:    67; eop:    67; out0:  68; out1: 113
+branch: # 68; line:   150-  152; sop:    68; eop:    71; out0:  89
+branch: # 72; line:   153-  155; sop:    72; eop:    82; out0:  83; out1:  85
+branch: # 83; line:   156-  156; sop:    83; eop:    84; out0:  -2
+branch: # 85; line:   159-  152; sop:    85; eop:    88; out0:  89
+branch: # 89; line:   152-  152; sop:    89; eop:    91; out0:  92; out1:  92; out2:  96; out3:  96
+branch: # 92; line:   152-  152; sop:    92; eop:    95; out0:  96
+branch: # 96; line:   152-  152; sop:    96; eop:    96; out0:  97; out1:  72
+branch: # 97; line:   162-  162; sop:    97; eop:    98; out0:  99; out1: 112
+branch: # 99; line:   163-  166; sop:    99; eop:   111; out0:  -2
+branch: #112; line:   149-  149; sop:   112; eop:   112; out0:  67
+branch: #113; line:   149-  171; sop:   113; eop:   115; out0: 116; out1: 132
+branch: #116; line:   172-  175; sop:   116; eop:   131; out0:  -2
+branch: #132; line:   177-  177; sop:   132; eop:   132; out0:  -2
+path #1: 0, 43, 44, 46, 49, 43, 55, 65, 
+path #2: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #3: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #4: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #5: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #6: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #7: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #8: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #9: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #10: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #11: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #12: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #13: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #14: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #15: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #16: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #17: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #18: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #19: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #20: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #21: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #22: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #23: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #24: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #25: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #26: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #27: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #28: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #29: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #30: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #31: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #32: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #33: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #34: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #35: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #36: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #37: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #38: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #39: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #40: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #41: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #42: 0, 43, 44, 46, 49, 43, 55, 66, 67, 113, 116, 
+path #43: 0, 43, 44, 46, 49, 43, 55, 66, 67, 113, 132, 
+path #44: 0, 43, 44, 46, 49, 43, 55, 66, 113, 116, 
+path #45: 0, 43, 44, 46, 49, 43, 55, 66, 113, 132, 
+path #46: 0, 43, 44, 46, 49, 43, 55, 65, 
+path #47: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #48: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #49: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #50: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #51: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #52: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #53: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #54: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #55: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #56: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #57: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #58: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #59: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #60: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #61: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #62: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #63: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #64: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #65: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #66: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #67: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #68: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #69: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #70: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #71: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #72: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #73: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #74: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #75: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #76: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #77: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #78: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #79: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #80: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #81: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #82: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #83: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #84: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #85: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #86: 0, 43, 44, 46, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #87: 0, 43, 44, 46, 49, 43, 55, 66, 67, 113, 116, 
+path #88: 0, 43, 44, 46, 49, 43, 55, 66, 67, 113, 132, 
+path #89: 0, 43, 44, 46, 49, 43, 55, 66, 113, 116, 
+path #90: 0, 43, 44, 46, 49, 43, 55, 66, 113, 132, 
+path #91: 0, 43, 44, 48, 49, 43, 55, 65, 
+path #92: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #93: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #94: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #95: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #96: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #97: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #98: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #99: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #100: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #101: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #102: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #103: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #104: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #105: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #106: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #107: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #108: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #109: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #110: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #111: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #112: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #113: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #114: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #115: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #116: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #117: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #118: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #119: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #120: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #121: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #122: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #123: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #124: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #125: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #126: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #127: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #128: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #129: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #130: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #131: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #132: 0, 43, 44, 48, 49, 43, 55, 66, 67, 113, 116, 
+path #133: 0, 43, 44, 48, 49, 43, 55, 66, 67, 113, 132, 
+path #134: 0, 43, 44, 48, 49, 43, 55, 66, 113, 116, 
+path #135: 0, 43, 44, 48, 49, 43, 55, 66, 113, 132, 
+path #136: 0, 43, 44, 48, 49, 43, 55, 65, 
+path #137: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #138: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #139: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #140: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #141: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #142: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #143: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #144: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #145: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #146: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #147: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #148: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #149: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #150: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #151: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #152: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #153: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #154: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #155: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #156: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #157: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #158: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #159: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #160: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #161: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #162: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #163: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #164: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #165: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #166: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #167: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #168: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #169: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #170: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #171: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #172: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #173: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #174: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #175: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #176: 0, 43, 44, 48, 49, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #177: 0, 43, 44, 48, 49, 43, 55, 66, 67, 113, 116, 
+path #178: 0, 43, 44, 48, 49, 43, 55, 66, 67, 113, 132, 
+path #179: 0, 43, 44, 48, 49, 43, 55, 66, 113, 116, 
+path #180: 0, 43, 44, 48, 49, 43, 55, 66, 113, 132, 
+path #181: 0, 43, 55, 65, 
+path #182: 0, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #183: 0, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #184: 0, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #185: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #186: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #187: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #188: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #189: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #190: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #191: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #192: 0, 43, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #193: 0, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #194: 0, 43, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #195: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #196: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #197: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #198: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #199: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #200: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #201: 0, 43, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #202: 0, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #203: 0, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #204: 0, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #205: 0, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #206: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #207: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+End of function get_category_by_path
+
+Function get_category_by_slug:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 8, Position 2 = 11
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  get_category_by_slug
+number of ops:  13
+compiled vars:  !0 = $slug, !1 = $category
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 187     0  E >   RECV                                             !0      
+ 188     1        INIT_FCALL_BY_NAME                                       'get_term_by'
+         2        SEND_VAL_EX                                              'slug'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAL_EX                                              'category'
+         5        DO_FCALL                                      0  $2      
+         6        ASSIGN                                                   !1, $2
+ 190     7      > JMPZ                                                     !1, ->11
+ 191     8    >   INIT_FCALL_BY_NAME                                       '_make_cat_compat'
+         9        SEND_VAR_EX                                              !1
+        10        DO_FCALL                                      0          
+ 194    11    > > RETURN                                                   !1
+ 195    12*     > RETURN                                                   null
+
+End of function get_category_by_slug
+
+Function get_cat_id:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 8, Position 2 = 10
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 10
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  get_cat_ID
+number of ops:  12
+compiled vars:  !0 = $cat_name, !1 = $cat
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 205     0  E >   RECV                                             !0      
+ 206     1        INIT_FCALL_BY_NAME                                       'get_term_by'
+         2        SEND_VAL_EX                                              'name'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAL_EX                                              'category'
+         5        DO_FCALL                                      0  $2      
+         6        ASSIGN                                                   !1, $2
+ 208     7      > JMPZ                                                     !1, ->10
+ 209     8    >   FETCH_OBJ_R                                      ~4      !1, 'term_id'
+         9      > RETURN                                                   ~4
+ 212    10    > > RETURN                                                   0
+ 213    11*     > RETURN                                                   null
+
+End of function get_cat_id
+
+Function get_cat_name:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 47) Position 1 = 10, Position 2 = 14
+Branch analysis from position: 10
+2 jumps found. (Code = 43) Position 1 = 15, Position 2 = 16
+Branch analysis from position: 15
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 16
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 14
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  get_cat_name
+number of ops:  19
+compiled vars:  !0 = $cat_id, !1 = $category
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 223     0  E >   RECV                                             !0      
+ 224     1        MAKE_REF                                         ~2      !0
+         2        ASSIGN                                                   !0, ~2
+ 225     3        INIT_FCALL_BY_NAME                                       'get_term'
+         4        SEND_VAR_EX                                              !0
+         5        SEND_VAL_EX                                              'category'
+         6        DO_FCALL                                      0  $4      
+         7        ASSIGN                                                   !1, $4
+ 227     8        BOOL_XOR                                         ~6      !1
+         9      > JMPNZ_EX                                         ~6      ~6, ->14
+        10    >   INIT_FCALL_BY_NAME                                       'is_wp_error'
+        11        SEND_VAR_EX                                              !1
+        12        DO_FCALL                                      0  $7      
+        13        BOOL                                             ~6      $7
+        14    > > JMPZ                                                     ~6, ->16
+ 228    15    > > RETURN                                                   ''
+ 231    16    >   FETCH_OBJ_R                                      ~8      !1, 'name'
+        17      > RETURN                                                   ~8
+ 232    18*     > RETURN                                                   null
+
+path #208: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #209: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #210: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #211: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #212: 0, 43, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #213: 0, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #214: 0, 43, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #215: 0, 43, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #216: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #217: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #218: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #219: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #220: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #221: 0, 43, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #222: 0, 43, 55, 66, 67, 113, 116, 
+path #223: 0, 43, 55, 66, 67, 113, 132, 
+path #224: 0, 43, 55, 66, 113, 116, 
+path #225: 0, 43, 55, 66, 113, 132, 
+path #226: 0, 55, 65, 
+path #227: 0, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #228: 0, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #229: 0, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #230: 0, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #231: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #232: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #233: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #234: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #235: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #236: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #237: 0, 55, 66, 67, 68, 89, 92, 96, 97, 99, 
+path #238: 0, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #239: 0, 55, 66, 67, 68, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #240: 0, 55, 66, 67, 68, 89, 92, 96, 72, 83, 
+path #241: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #242: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #243: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #244: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 99, 
+path #245: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 116, 
+path #246: 0, 55, 66, 67, 68, 89, 92, 96, 72, 85, 89, 96, 97, 112, 67, 113, 132, 
+path #247: 0, 55, 66, 67, 68, 89, 96, 97, 99, 
+path #248: 0, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 116, 
+path #249: 0, 55, 66, 67, 68, 89, 96, 97, 112, 67, 113, 132, 
+path #250: 0, 55, 66, 67, 68, 89, 96, 72, 83, 
+path #251: 0, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #252: 0, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #253: 0, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+path #254: 0, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 99, 
+path #255: 0, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 116, 
+path #256: 0, 55, 66, 67, 68, 89, 96, 72, 85, 89, 92, 96, 97, 112, 67, 113, 132, 
+branch: #  0; line:   187-  190; sop:     0; eop:     7; out0:   8; out1:  11
+branch: #  8; line:   191-  194; sop:     8; eop:    10; out0:  11
+branch: # 11; line:   194-  195; sop:    11; eop:    12
+path #1: 0, 8, 11, 
+path #2: 0, 11, 
+branch: #  0; line:   205-  208; sop:     0; eop:     7; out0:   8; out1:  10
+branch: #  8; line:   209-  209; sop:     8; eop:     9; out0:  -2
+branch: # 10; line:   212-  213; sop:    10; eop:    11
+path #1: 0, 8, 
+path #2: 0, 10, 
+branch: #  0; line:   223-  227; sop:     0; eop:     9; out0:  10; out1:  14
+branch: # 10; line:   227-  227; sop:    10; eop:    13; out0:  14
+branch: # 14; line:   227-  227; sop:    14; eop:    14; out0:  15; out1:  16
+branch: # 15; line:   228-  228; sop:    15; eop:    15; out0:  -2
+branch: # 16; line:   231-  232; sEnd of function get_cat_name
+
+Function cat_is_ancestor_of:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  cat_is_ancestor_of
+number of ops:  9
+compiled vars:  !0 = $cat1, !1 = $cat2
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 246     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 247     2        INIT_FCALL_BY_NAME                                       'term_is_ancestor_of'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAR_EX                                              !1
+         5        SEND_VAL_EX                                              'category'
+         6        DO_FCALL                                      0  $2      
+         7      > RETURN                                                   $2
+ 248     8*     > RETURN                                                   null
+
+End of function cat_is_ancestor_of
+
+Function sanitize_category:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  sanitize_category
+number of ops:  9
+compiled vars:  !0 = $category, !1 = $context
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 259     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      'display'
+ 260     2        INIT_FCALL_BY_NAME                                       'sanitize_term'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAL_EX                                              'category'
+         5        SEND_VAR_EX                                              !1
+         6        DO_FCALL                                      0  $2      
+         7      > RETURN                                                   $2
+ 261     8*     > RETURN                                                   null
+
+End of function sanitize_category
+
+Function sanitize_category_field:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  sanitize_category_field
+number of ops:  13
+compiled vars:  !0 = $field, !1 = $value, !2 = $cat_id, !3 = $context
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 274     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV                                             !2      
+         3        RECV                                             !3      
+ 275     4        INIT_FCALL_BY_NAME                                       'sanitize_term_field'
+         5        SEND_VAR_EX                                              !0
+         6        SEND_VAR_EX                                              !1
+         7        SEND_VAR_EX                                              !2
+         8        SEND_VAL_EX                                              'category'
+         9        SEND_VAR_EX                                              !3
+        10        DO_FCALL                                      0  $4      
+        11      > RETURN                                                   $4
+ 276    12*     > RETURN                                                   null
+
+End of function sanitize_category_field
+
+Function get_tags:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 13, Position 2 = 15
+Branch analysis from position: 13
+1 jumps found. (Code = 42) Position 1 = 21
+Branch analysis from position: 21
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 15
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  get_tags
+number of ops:  23
+compiled vars:  !0 = $args, !1 = $defaults, !2 = $tags
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 293     0  E >   RECV_INIT                                        !0      ''
+ 294     1        ASSIGN                                                   !1, <array>
+ 295     2        INIT_FCALL_BY_NAME                                       'wp_parse_args'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAR_EX                                              !1
+         5        DO_FCALL                                      0  $4      
+         6        ASSIGN                                                   !0, $4
+ 297     7        INIT_FCALL_BY_NAME                                       'get_terms'
+         8        SEND_VAR_EX                                              !0
+         9        DO_FCALL                                      0  $6      
+        10        ASSIGN                                                   !2, $6
+ 299    11        ISSET_ISEMPTY_CV                                 ~8      !2
+        12      > JMPZ                                                     ~8, ->15
+ 300    13    >   ASSIGN                                                   !2, <array>
+        14      > JMP                                                      ->21
+ 311    15    >   INIT_FCALL_BY_NAME                                       'apply_filters'
+        16        SEND_VAL_EX                                              'get_tags'
+        17        SEND_VAR_EX                                              !2
+        18        SEND_VAR_EX                                              !0
+        19        DO_FCALL                                      0  $10     
+        20        ASSIGN                                                   !2, $10
+ 314    21    > > RETURN                                                   !2
+ 315    22*     > RETURN                                                   null
+
+End of function get_tags
+
+Function get_tag:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  get_tag
+number of ops:  11
+compiled vars:  !0 = $tag, !1 = $output, !2 = $filter
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 339     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      <const ast>
+         2        RECV_INIT                                        !2      'raw'
+ 340     3        INIT_FCALL_BY_NAME                                       'get_term'
+         4        SEND_VAR_EX                                              !0
+         5        SEND_VAL_EX                                              'post_tag'
+         6        SEND_VAR_EX                                              !1
+         7        SEND_VAR_EX                                              !2
+         8        DO_FCALL                                      0  $3      
+         9      > RETURN                                                   $3
+ 341    10*     > RETURN                                                   null
+
+End of function get_tag
+
+Function clean_category_cache:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  clean_category_cache
+number of ops:  6
+compiled vars:  !0 = $id
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 352     0  E >   RECV                                             !0      
+ 353     1        INIT_FCALL_BY_NAME                                       'clean_term_cache'
+         2        SEND_VAR_EX                                              !0
+         3        SEND_VAL_EX                                              'category'
+         4        DO_FCALL                                      0          
+ 354     5      > RETURN                                                   null
+
+End of function clean_category_cache
+
+Function _make_cat_compat:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 3, Position 2 = 8
+Branch analysis from position: 3
+2 jumps found. (Code = 43) Position 1 = 9, Position 2 = 28
+Branch analysis from position: 9
+1 jumps found. (Code = 42) Position 1 = 57
+Branch analysis from position: 57
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 28
+2 jumps found. (Code = 46) Position 1 = 30, Position 2 = 32
+Branch analysis from position: 30
+2 jumps found. (Code = 43) Position 1 = 33, Position 2 = 57
+Branch analysis from position: 33
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 57
+Branch analysis from position: 32
+Branch analysis from position: 8
+filename:       /home/sanu/Desktop/Dataset/Normal files/category.php
+function name:  _make_cat_compat
+number of ops:  58
+compiled vars:  !0 = $category
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 376     0  E >   RECV                                             !0      
+ 377     1        TYPE_CHECK                                  256  ~1      !0
+         2      > JMPZ_EX                                          ~1      ~1, ->8
+         3    >   INIT_FCALL_BY_NAME                                       'is_wp_error'
+         4        SEND_VAR_EX                                              !0
+         5        DO_FCALL                                      0  $2      
+         6        BOOL_XOR                                         ~3      $2
+         7        BOOL                                             ~1      ~3
+         8    > > JMPZ                                                     ~1, ->28
+ 378     9    >   FETCH_OBJ_R                                      ~5      !0, 'term_id'
+        10        ASSIGN_OBJ                                               !0, 'cat_ID'
+        11        OP_DATA                                                  ~5
+ 379    12        FETCH_OBJ_R                                      ~7      !0, 'count'
+        13        ASSIGN_OBJ                                               !0, 'category_count'
+        14        OP_DATA                                                  ~7
+ 380    15        FETCH_OBJ_R                                      ~9      !0, 'description'
+        16        ASSIGN_OBJ                                               !0, 'category_description'
+        17        OP_DATA                                                  ~9
+ 381    18        FETCH_OBJ_R                                      ~11     !0, 'name'
+        19        ASSIGN_OBJ                                               !0, 'cat_name'
+        20        OP_DATA                                                  ~11
+ 382    21        FETCH_OBJ_R                                      ~13     !0, 'slug'
+        22        ASSIGN_OBJ                                               !0, 'category_nicename'
+        23        OP_DATA                                                  ~13
+ 383    24        FETCH_OBJ_R                                      ~15     !0, 'parent'
+        25        ASSIGN_OBJ                                               !0, 'category_parent'
+        26        OP_DATA                                                  ~15
+        27      > JMP                                                      ->57
+ 384    28    >   TYPE_CHECK                                  128  ~16     !0
+        29      > JMPZ_EX                                          ~16     ~16, ->32
+        30    >   ISSET_ISEMPTY_DIM_OBJ                         0  ~17     !0, 'term_id'
+        31        BOOL                                             ~16     ~17
+        32    > > JMPZ                                                     ~16, ->57
+ 385    33    >   FETCH_DIM_W                                      $19     !0, 'term_id'
+        34        DECLARE_INHERITED_CLASS                          $20     $19
+        35        FETCH_DIM_W                                      $18     !0, 'cat_ID'
+        36        ASSIGN_REF                                               $18, $20
+ 386    37        FETCH_DIM_W                                      $23     !0, 'count'
+        38        DECLARE_INHERITED_CLASS                          $24     $23
+        39        FETCH_DIM_W                                      $22     !0, 'category_count'
+        40        ASSIGN_REF                                               $22, $24
+ 387    41        FETCH_DIM_W                                      $27     !0, 'description'
+        42        DECLARE_INHERITED_CLASS                          $28     $27
+        43        FETCH_DIM_W                                      $26     !0, 'category_description'
+        44        ASSIGN_REF                                               $26, $28
+ 388    45        FETCH_DIM_W                                      $31     !0, 'name'
+        46        DECLARE_INHERITED_CLASS                          $32     $31
+        47        FETCH_DIM_W                                      $30     !0, 'cat_name'
+        48        ASSIGN_REF                                               $30, $32
+ 389    49        FETCH_DIM_W                                      $35     !0, 'slug'
+        50        DECLARE_INHERITED_CLASS                          $36     $35
+        51        FETCH_DIM_W                                      $34     !0, 'category_nicename'
+        52        ASSIGN_REF                                               $34, $36
+ 390    53        FETCH_DIM_W                                      $39     !0, 'parent'
+        54        DECLARE_INHERITED_CLASS                          $40     $39
+        55        FETCH_DIM_W                                      $38     !0, 'category_parent'
+        56        ASSIGN_REF                                               $38, $40
+ 392    57    > > RETURN                                                   null
+
+End of function _make_cat_compat
+
+op:    16; eop:    18
+path #1: 0, 10, 14, 15, 
+path #2: 0, 10, 14, 16, 
+path #3: 0, 14, 15, 
+path #4: 0, 14, 16, 
+branch: #  0; line:   246-  248; sop:     0; eop:     8
+path #1: 0, 
+branch: #  0; line:   259-  261; sop:     0; eop:     8
+path #1: 0, 
+branch: #  0; line:   274-  276; sop:     0; eop:    12
+path #1: 0, 
+branch: #  0; line:   293-  299; sop:     0; eop:    12; out0:  13; out1:  15
+branch: # 13; line:   300-  300; sop:    13; eop:    14; out0:  21
+branch: # 15; line:   311-  314; sop:    15; eop:    20; out0:  21
+branch: # 21; line:   314-  315; sop:    21; eop:    22
+path #1: 0, 13, 21, 
+path #2: 0, 15, 21, 
+branch: #  0; line:   339-  341; sop:     0; eop:    10
+path #1: 0, 
+branch: #  0; line:   352-  354; sop:     0; eop:     5; out0:  -2
+path #1: 0, 
+branch: #  0; line:   376-  377; sop:     0; eop:     2; out0:   3; out1:   8
+branch: #  3; line:   377-  377; sop:     3; eop:     7; out0:   8
+branch: #  8; line:   377-  377; sop:     8; eop:     8; out0:   9; out1:  28
+branch: #  9; line:   378-  383; sop:     9; eop:    27; out0:  57
+branch: # 28; line:   384-  384; sop:    28; eop:    29; out0:  30; out1:  32
+branch: # 30; line:   384-  384; sop:    30; eop:    31; out0:  32
+branch: # 32; line:   384-  384; sop:    32; eop:    32; out0:  33; out1:  57
+branch: # 33; line:   385-  392; sop:    33; eop:    56; out0:  57
+branch: # 57; line:   392-  392; sop:    57; eop:    57; out0:  -2; out1:  -2
+path #1: 0, 3, 8, 9, 57, 
+path #2: 0, 3, 8, 28, 30, 32, 33, 57, 
+path #3: 0, 3, 8, 28, 30, 32, 57, 
+path #4: 0, 3, 8, 28, 32, 33, 57, 
+path #5: 0, 3, 8, 28, 32, 57, 
+path #6: 0, 8, 9, 57, 
+path #7: 0, 8, 28, 30, 32, 33, 57, 
+path #8: 0, 8, 28, 30, 32, 57, 
+path #9: 0, 8, 28, 32, 33, 57, 
+path #10: 0, 8, 28, 32, 57, 

@@ -1,0 +1,306 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  (null)
+number of ops:  2
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  14     0  E >   ADD_INTERFACE                                            'wp_block_list'
+ 204     1      > RETURN                                                   1
+
+Class WP_Block_List:
+Function __construct:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 9
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 9
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  __construct
+number of ops:  16
+compiled vars:  !0 = $blocks, !1 = $available_context, !2 = $registry
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  54     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      <array>
+         2        RECV_INIT                                        !2      null
+  55     3        INSTANCEOF                                       ~3      !2, 'WP_Block_Type_Registry'
+         4        BOOL_XOR                                         ~4      ~3
+         5      > JMPZ                                                     ~4, ->9
+  56     6    >   INIT_STATIC_METHOD_CALL                                  'WP_Block_Type_Registry', 'get_instance'
+         7        DO_FCALL                                      0  $5      
+         8        ASSIGN                                                   !2, $5
+  59     9    >   ASSIGN_OBJ                                               'blocks'
+        10        OP_DATA                                                  !0
+  60    11        ASSIGN_OBJ                                               'available_context'
+        12        OP_DATA                                                  !1
+  61    13        ASSIGN_OBJ                                               'registry'
+        14        OP_DATA                                                  !2
+  62    15      > RETURN                                                   null
+
+End of function __construct
+
+Function offsetexists:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  offsetExists
+number of ops:  5
+compiled vars:  !0 = $index
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  75     0  E >   RECV                                             !0      
+  76     1        FETCH_OBJ_IS                                     ~1      'blocks'
+         2        ISSET_ISEMPTY_DIM_OBJ                         0  ~2      ~1, !0
+         3      > RETURN                                                   ~2
+  77     4*     > RETURN                                                   null
+
+End of function offsetexists
+
+Function offsetget:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 6, Position 2 = 8
+Branch analysis from position: 6
+2 jumps found. (Code = 43) Position 1 = 9, Position 2 = 22
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 22
+Branch analysis from position: 8
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  offsetGet
+number of ops:  24
+compiled vars:  !0 = $index, !1 = $block
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  89     0  E >   RECV                                             !0      
+  90     1        FETCH_OBJ_R                                      ~2      'blocks'
+         2        FETCH_DIM_R                                      ~3      ~2, !0
+         3        ASSIGN                                                   !1, ~3
+  92     4        ISSET_ISEMPTY_CV                                 ~5      !1
+         5      > JMPZ_EX                                          ~5      ~5, ->8
+         6    >   TYPE_CHECK                                  128  ~6      !1
+         7        BOOL                                             ~5      ~6
+         8    > > JMPZ                                                     ~5, ->22
+  93     9    >   NEW                                              $7      'WP_Block'
+        10        SEND_VAR_EX                                              !1
+        11        CHECK_FUNC_ARG                                           
+        12        FETCH_OBJ_FUNC_ARG                               $8      'available_context'
+        13        SEND_FUNC_ARG                                            $8
+        14        CHECK_FUNC_ARG                                           
+        15        FETCH_OBJ_FUNC_ARG                               $9      'registry'
+        16        SEND_FUNC_ARG                                            $9
+        17        DO_FCALL                                      0          
+        18        ASSIGN                                                   !1, $7
+  94    19        FETCH_OBJ_W                                      $12     'blocks'
+        20        ASSIGN_DIM                                               $12, !0
+        21        OP_DATA                                                  !1
+  97    22    > > RETURN                                                   !1
+  98    23*     > RETURN                                                   null
+
+End of function offsetget
+
+Function offsetset:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 8
+Branch analysis from position: 4
+1 jumps found. (Code = 42) Position 1 = 11
+Branch analysis from position: 11
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  offsetSet
+number of ops:  12
+compiled vars:  !0 = $index, !1 = $value
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 110     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 111     2        TYPE_CHECK                                    2  ~2      !0
+         3      > JMPZ                                                     ~2, ->8
+ 112     4    >   FETCH_OBJ_W                                      $3      'blocks'
+         5        ASSIGN_DIM                                               $3
+         6        OP_DATA                                                  !1
+         7      > JMP                                                      ->11
+ 114     8    >   FETCH_OBJ_W                                      $5      'blocks'
+         9        ASSIGN_DIM                                               $5, !0
+        10        OP_DATA                                                  !1
+ 116    11    > > RETURN                                                   null
+
+End of function offsetset
+
+Function offsetunset:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  offsetUnset
+number of ops:  4
+compiled vars:  !0 = $index
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 127     0  E >   RECV                                             !0      
+ 128     1        FETCH_OBJ_UNSET                                  $1      'blocks'
+         2        UNSET_DIM                                                $1, !0
+ 129     3      > RETURN                                                   null
+
+End of function offsetunset
+
+Function rewind:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  rewind
+number of ops:  5
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 139     0  E >   INIT_FCALL                                               'reset'
+         1        FETCH_OBJ_W                                      $0      'blocks'
+         2        SEND_REF                                                 $0
+         3        DO_ICALL                                                 
+ 140     4      > RETURN                                                   null
+
+End of function rewind
+
+Function current:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  current
+number of ops:  7
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 152     0  E >   INIT_METHOD_CALL                                         'offsetGet'
+         1        INIT_METHOD_CALL                                         'key'
+         2        DO_FCALL                                      0  $0      
+         3        SEND_VAR_NO_REF_EX                                       $0
+         4        DO_FCALL                                      0  $1      
+         5      > RETURN                                                   $1
+ 153     6*     > RETURN                                                   null
+
+End of function current
+
+Function key:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  key
+number of ops:  6
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 165     0  E >   INIT_FCALL                                               'key'
+         1        FETCH_OBJ_R                                      ~0      'blocks'
+         2        SEND_VAL                                                 ~0
+         3        DO_ICALL                                         $1      
+         4      > RETURN                                                   $1
+ 166     5*     > RETURN                                                   null
+
+End of function key
+
+Function next:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  next
+number of ops:  5
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 176     0  E >   INIT_FCALL                                               'next'
+         1        FETCH_OBJ_W                                      $0      'blocks'
+         2        SEND_REF                                                 $0
+         3        DO_ICALL                                                 
+ 177     4      > RETURN                                                   null
+
+End of function next
+
+Function valid:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  valid
+number of ops:  7
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 187     0  E >   INIT_FCALL                                               'key'
+         1        FETCH_OBJ_R                                      ~0      'blocks'
+         2        SEND_VAL                                                 ~0
+         3        DO_ICALL                                         $1      
+         4        IS_EQUAL                                         ~2      $1, null
+         5      > RETURN                                                   ~2
+ 188     6*     > RETURN                                                   null
+
+End of function valid
+
+Function count:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-list.php
+function name:  count
+number of ops:  4
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 200     0  E >   FETCH_OBJ_R                                      ~0      'blocks'
+         1        COUNT                                            ~1      ~0
+         2      > RETURN                                                   ~1
+ 201     3*     > RETURN                                                   null
+
+End of function count
+
+End of class WP_Block_List.
+
+branch: #  0; line:    14-  204; sop:     0; eop:     1; out0:  -2
+path #1: 0, 
+branch: #  0; line:    54-   55; sop:     0; eop:     5; out0:   6; out1:   9
+branch: #  6; line:    56-   59; sop:     6; eop:     8; out0:   9
+branch: #  9; line:    59-   62; sop:     9; eop:    15; out0:  -2
+path #1: 0, 6, 9, 
+path #2: 0, 9, 
+branch: #  0; line:    75-   77; sop:     0; eop:     4
+path #1: 0, 
+branch: #  0; line:    89-   92; sop:     0; eop:     5; out0:   6; out1:   8
+branch: #  6; line:    92-   92; sop:     6; eop:     7; out0:   8
+branch: #  8; line:    92-   92; sop:     8; eop:     8; out0:   9; out1:  22
+branch: #  9; line:    93-   97; sop:     9; eop:    21; out0:  22
+branch: # 22; line:    97-   98; sop:    22; eop:    23
+path #1: 0, 6, 8, 9, 22, 
+path #2: 0, 6, 8, 22, 
+path #3: 0, 8, 9, 22, 
+path #4: 0, 8, 22, 
+branch: #  0; line:   110-  111; sop:     0; eop:     3; out0:   4; out1:   8
+branch: #  4; line:   112-  112; sop:     4; eop:     7; out0:  11
+branch: #  8; line:   114-  116; sop:     8; eop:    10; out0:  11
+branch: # 11; line:   116-  116; sop:    11; eop:    11; out0:  -2; out1:  -2
+path #1: 0, 4, 11, 
+path #2: 0, 8, 11, 
+branch: #  0; line:   127-  129; sop:     0; eop:     3; out0:  -2
+path #1: 0, 
+branch: #  0; line:   139-  140; sop:     0; eop:     4; out0:  -2
+path #1: 0, 
+branch: #  0; line:   152-  153; sop:     0; eop:     6
+path #1: 0, 
+branch: #  0; line:   165-  166; sop:     0; eop:     5
+path #1: 0, 
+branch: #  0; line:   176-  177; sop:     0; eop:     4; out0:  -2
+path #1: 0, 
+branch: #  0; line:   187-  188; sop:     0; eop:     6
+path #1: 0, 
+branch: #  0; line:   200-  201; sop:     0; eop:     3
+path #1: 0, 

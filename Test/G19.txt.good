@@ -1,0 +1,947 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  (null)
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 276     0  E > > RETURN                                                   1
+
+Class PasswordHash:
+Function __construct:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 47) Position 1 = 6, Position 2 = 8
+Branch analysis from position: 6
+2 jumps found. (Code = 43) Position 1 = 9, Position 2 = 10
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 10
+Branch analysis from position: 8
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  __construct
+number of ops:  26
+compiled vars:  !0 = $iteration_count_log2, !1 = $portable_hashes
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  45     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+  47     2        ASSIGN_OBJ                                               'itoa64'
+         3        OP_DATA                                                  '.%2F0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+  49     4        IS_SMALLER_OR_EQUAL                              ~3      !0, 4
+         5      > JMPNZ_EX                                         ~3      ~3, ->8
+         6    >   IS_SMALLER_OR_EQUAL                              ~4      31, !0
+         7        BOOL                                             ~3      ~4
+         8    > > JMPZ                                                     ~3, ->10
+  50     9    >   ASSIGN                                                   !0, 8
+  51    10    >   ASSIGN_OBJ                                               'iteration_count_log2'
+        11        OP_DATA                                                  !0
+  53    12        ASSIGN_OBJ                                               'portable_hashes'
+        13        OP_DATA                                                  !1
+  55    14        INIT_FCALL                                               'microtime'
+        15        DO_ICALL                                         $9      
+        16        INIT_FCALL                                               'uniqid'
+        17        INIT_FCALL                                               'rand'
+        18        DO_ICALL                                         $10     
+        19        SEND_VAR                                                 $10
+        20        SEND_VAL                                                 <true>
+        21        DO_ICALL                                         $11     
+        22        CONCAT                                           ~12     $9, $11
+        23        ASSIGN_OBJ                                               'random_state'
+        24        OP_DATA                                                  ~12
+  56    25      > RETURN                                                   null
+
+End of function __construct
+
+Function passwordhash:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  PasswordHash
+number of ops:  7
+compiled vars:  !0 = $iteration_count_log2, !1 = $portable_hashes
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  61     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+  62     2        INIT_STATIC_METHOD_CALL                                  
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAR_EX                                              !1
+         5        DO_FCALL                                      0          
+  63     6      > RETURN                                                   null
+
+End of function passwordhash
+
+Function get_random_bytes:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 8, Position 2 = 16
+Branch analysis from position: 8
+2 jumps found. (Code = 43) Position 1 = 17, Position 2 = 25
+Branch analysis from position: 17
+2 jumps found. (Code = 43) Position 1 = 28, Position 2 = 58
+Branch analysis from position: 28
+1 jumps found. (Code = 42) Position 1 = 50
+Branch analysis from position: 50
+2 jumps found. (Code = 44) Position 1 = 52, Position 2 = 31
+Branch analysis from position: 52
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 31
+2 jumps found. (Code = 44) Position 1 = 52, Position 2 = 31
+Branch analysis from position: 52
+Branch analysis from position: 31
+Branch analysis from position: 58
+Branch analysis from position: 25
+Branch analysis from position: 16
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  get_random_bytes
+number of ops:  60
+compiled vars:  !0 = $count, !1 = $output, !2 = $fh, !3 = $i
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  65     0  E >   RECV                                             !0      
+  67     1        ASSIGN                                                   !1, ''
+  68     2        BEGIN_SILENCE                                    ~5      
+         3        INIT_FCALL                                               'is_readable'
+         4        SEND_VAL                                                 '%2Fdev%2Furandom'
+         5        DO_ICALL                                         $6      
+         6        END_SILENCE                                              ~5
+         7      > JMPZ_EX                                          ~7      $6, ->16
+  69     8    >   BEGIN_SILENCE                                    ~8      
+         9        INIT_FCALL                                               'fopen'
+        10        SEND_VAL                                                 '%2Fdev%2Furandom'
+        11        SEND_VAL                                                 'rb'
+        12        DO_ICALL                                         $9      
+        13        END_SILENCE                                              ~8
+        14        ASSIGN                                           $10     !2, $9
+        15        BOOL                                             ~7      $10
+        16    > > JMPZ                                                     ~7, ->25
+  70    17    >   INIT_FCALL                                               'fread'
+        18        SEND_VAR                                                 !2
+        19        SEND_VAR                                                 !0
+        20        DO_ICALL                                         $11     
+        21        ASSIGN                                                   !1, $11
+  71    22        INIT_FCALL                                               'fclose'
+        23        SEND_VAR                                                 !2
+        24        DO_ICALL                                                 
+  74    25    >   STRLEN                                           ~14     !1
+        26        IS_SMALLER_OR_EQUAL                              ~15     ~14, !0
+        27      > JMPZ                                                     ~15, ->58
+  75    28    >   ASSIGN                                                   !1, ''
+  76    29        ASSIGN                                                   !3, 0
+        30      > JMP                                                      ->50
+  78    31    >   INIT_FCALL                                               'md5'
+        32        INIT_FCALL                                               'microtime'
+        33        DO_ICALL                                         $19     
+        34        FETCH_OBJ_R                                      ~20     'random_state'
+        35        CONCAT                                           ~21     $19, ~20
+        36        SEND_VAL                                                 ~21
+        37        DO_ICALL                                         $22     
+  77    38        ASSIGN_OBJ                                               'random_state'
+  78    39        OP_DATA                                                  $22
+  80    40        INIT_FCALL                                               'pack'
+        41        SEND_VAL                                                 'H%2A'
+        42        INIT_FCALL                                               'md5'
+        43        FETCH_OBJ_R                                      ~23     'random_state'
+        44        SEND_VAL                                                 ~23
+        45        DO_ICALL                                         $24     
+        46        SEND_VAR                                                 $24
+        47        DO_ICALL                                         $25     
+        48        ASSIGN_OP                                     8          !1, $25
+  76    49        ASSIGN_OP                                     1          !3, 16
+        50    >   IS_SMALLER_OR_EQUAL                              ~28     !3, !0
+        51      > JMPNZ                                                    ~28, ->31
+  82    52    >   INIT_FCALL                                               'substr'
+        53        SEND_VAR                                                 !1
+        54        SEND_VAL                                                 0
+        55        SEND_VAR                                                 !0
+        56        DO_ICALL                                         $29     
+        57        ASSIGN                                                   !1, $29
+  85    58    > > RETURN                                                   !1
+  86    59*     > RETURN                                                   null
+
+End of function get_random_bytes
+
+Function encode64:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 16, Position 2 = 22
+Branch analysis from position: 16
+2 jumps found. (Code = 43) Position 1 = 30, Position 2 = 31
+Branch analysis from position: 30
+1 jumps found. (Code = 42) Position 1 = 55
+Branch analysis from position: 55
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 31
+2 jumps found. (Code = 43) Position 1 = 33, Position 2 = 39
+Branch analysis from position: 33
+2 jumps found. (Code = 43) Position 1 = 47, Position 2 = 48
+Branch analysis from position: 47
+1 jumps found. (Code = 42) Position 1 = 55
+Branch analysis from position: 55
+Branch analysis from position: 48
+2 jumps found. (Code = 44) Position 1 = 55, Position 2 = 4
+Branch analysis from position: 55
+Branch analysis from position: 4
+Branch analysis from position: 39
+Branch analysis from position: 22
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  encode64
+number of ops:  57
+compiled vars:  !0 = $input, !1 = $count, !2 = $output, !3 = $i, !4 = $value
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  88     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+  90     2        ASSIGN                                                   !2, ''
+  91     3        ASSIGN                                                   !3, 0
+  93     4    >   INIT_FCALL                                               'ord'
+         5        POST_INC                                         ~7      !3
+         6        FETCH_DIM_R                                      ~8      !0, ~7
+         7        SEND_VAL                                                 ~8
+         8        DO_ICALL                                         $9      
+         9        ASSIGN                                                   !4, $9
+  94    10        BW_AND                                           ~12     !4, 63
+        11        FETCH_OBJ_R                                      ~11     'itoa64'
+        12        FETCH_DIM_R                                      ~13     ~11, ~12
+        13        ASSIGN_OP                                     8          !2, ~13
+  95    14        IS_SMALLER_OR_EQUAL                              ~15     !3, !1
+        15      > JMPZ                                                     ~15, ->22
+  96    16    >   INIT_FCALL                                               'ord'
+        17        FETCH_DIM_R                                      ~16     !0, !3
+        18        SEND_VAL                                                 ~16
+        19        DO_ICALL                                         $17     
+        20        SL                                               ~18     $17, 8
+        21        ASSIGN_OP                                     9          !4, ~18
+  97    22    >   SR                                               ~21     !4, 6
+        23        BW_AND                                           ~22     ~21, 63
+        24        FETCH_OBJ_R                                      ~20     'itoa64'
+        25        FETCH_DIM_R                                      ~23     ~20, ~22
+        26        ASSIGN_OP                                     8          !2, ~23
+  98    27        POST_INC                                         ~25     !3
+        28        CAST                                          0  ~26     !1, ~25
+        29      > JMPZ                                                     ~26, ->31
+  99    30    > > JMP                                                      ->55
+ 100    31    >   IS_SMALLER_OR_EQUAL                              ~27     !3, !1
+        32      > JMPZ                                                     ~27, ->39
+ 101    33    >   INIT_FCALL                                               'ord'
+        34        FETCH_DIM_R                                      ~28     !0, !3
+        35        SEND_VAL                                                 ~28
+        36        DO_ICALL                                         $29     
+        37        SL                                               ~30     $29, 16
+        38        ASSIGN_OP                                     9          !4, ~30
+ 102    39    >   SR                                               ~33     !4, 12
+        40        BW_AND                                           ~34     ~33, 63
+        41        FETCH_OBJ_R                                      ~32     'itoa64'
+        42        FETCH_DIM_R                                      ~35     ~32, ~34
+        43        ASSIGN_OP                                     8          !2, ~35
+ 103    44        POST_INC                                         ~37     !3
+        45        CAST                                          0  ~38     !1, ~37
+        46      > JMPZ                                                     ~38, ->48
+ 104    47    > > JMP                                                      ->55
+ 105    48    >   SR                                               ~40     !4, 18
+        49        BW_AND                                           ~41     ~40, 63
+        50        FETCH_OBJ_R                                      ~39     'itoa64'
+        51        FETCH_DIM_R                                      ~42     ~39, ~41
+        52        ASSIGN_OP                                     8          !2, ~42
+ 106    53        IS_SMALLER_OR_EQUAL                              ~44     !3, !1
+        54      > JMPNZ                                                    ~44, ->4
+ 108    55    > > RETURN                                                   !2
+ 109    56*     > RETURN                                                   null
+
+End of function encode64
+
+Function gensalt_private:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 5, Position 2 = 7
+Branch analysis from position: 5
+1 jumps found. (Code = 42) Position 1 = 8
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  gensalt_private
+number of ops:  22
+compiled vars:  !0 = $input, !1 = $output
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 111     0  E >   RECV                                             !0      
+ 113     1        ASSIGN                                                   !1, '%24P%24'
+ 114     2        INIT_FCALL                                               'min'
+         3        FETCH_OBJ_R                                      ~4      'iteration_count_log2'
+ 115     4      > JMPZ                                                     <true>, ->7
+         5    >   QM_ASSIGN                                        ~5      5
+         6      > JMP                                                      ->8
+         7    >   QM_ASSIGN                                        ~5      3
+         8    >   ADD                                              ~6      ~4, ~5
+         9        SEND_VAL                                                 ~6
+        10        SEND_VAL                                                 30
+        11        DO_ICALL                                         $7      
+ 114    12        FETCH_OBJ_R                                      ~3      'itoa64'
+ 115    13        FETCH_DIM_R                                      ~8      ~3, $7
+        14        ASSIGN_OP                                     8          !1, ~8
+ 116    15        INIT_METHOD_CALL                                         'encode64'
+        16        SEND_VAR_EX                                              !0
+        17        SEND_VAL_EX                                              6
+        18        DO_FCALL                                      0  $10     
+        19        ASSIGN_OP                                     8          !1, $10
+ 118    20      > RETURN                                                   !1
+ 119    21*     > RETURN                                                   null
+
+branch: #  0; line:   276-  276; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:    45-   49; sop:     0; eop:     5; out0:   6; out1:   8
+branch: #  6; line:    49-   49; sop:     6; eop:     7; out0:   8
+branch: #  8; line:    49-   49; sop:     8; eop:     8; out0:   9; out1:  10
+branch: #  9; line:    50-   51; sop:     9; eop:     9; out0:  10
+branch: # 10; line:    51-   56; sop:    10; eop:    25; out0:  -2
+path #1: 0, 6, 8, 9, 10, 
+path #2: 0, 6, 8, 10, 
+path #3: 0, 8, 9, 10, 
+path #4: 0, 8, 10, 
+branch: #  0; line:    61-   63; sop:     0; eop:     6; out0:  -2
+path #1: 0, 
+branch: #  0; line:    65-   68; sop:     0; eop:     7; out0:   8; out1:  16
+branch: #  8; line:    69-   69; sop:     8; eop:    15; out0:  16
+branch: # 16; line:    69-   69; sop:    16; eop:    16; out0:  17; out1:  25
+branch: # 17; line:    70-   74; sop:    17; eop:    24; out0:  25
+branch: # 25; line:    74-   74; sop:    25; eop:    27; out0:  28; out1:  58
+branch: # 28; line:    75-   76; sop:    28; eop:    30; out0:  50
+branch: # 31; line:    78-   76; sop:    31; eop:    49; out0:  50
+branch: # 50; line:    76-   76; sop:    50; eop:    51; out0:  52; out1:  31; out2:  52; out3:  31
+branch: # 52; line:    82-   85; sop:    52; eop:    57; out0:  58
+branch: # 58; line:    85-   86; sop:    58; eop:    59
+path #1: 0, 8, 16, 17, 25, 28, 50, 52, 58, 
+path #2: 0, 8, 16, 17, 25, 28, 50, 31, 50, 52, 58, 
+path #3: 0, 8, 16, 17, 25, 28, 50, 31, 50, 52, 58, 
+path #4: 0, 8, 16, 17, 25, 28, 50, 52, 58, 
+path #5: 0, 8, 16, 17, 25, 28, 50, 31, 50, 52, 58, 
+path #6: 0, 8, 16, 17, 25, 28, 50, 31, 50, 52, 58, 
+path #7: 0, 8, 16, 17, 25, 58, 
+path #8: 0, 8, 16, 25, 28, 50, 52, 58, 
+path #9: 0, 8, 16, 25, 28, 50, 31, 50, 52, 58, 
+path #10: 0, 8, 16, 25, 28, 50, 31, 50, 52, 58, 
+path #11: 0, 8, 16, 25, 28, 50, 52, 58, 
+path #12: 0, 8, 16, 25, 28, 50, 31, 50, 52, 58, 
+path #13: 0, 8, 16, 25, 28, 50, 31, 50, 52, 58, 
+path #14: 0, 8, 16, 25, 58, 
+path #15: 0, 16, 17, 25, 28, 50, 52, 58, 
+path #16: 0, 16, 17, 25, 28, 50, 31, 50, 52, 58, 
+path #17: 0, 16, 17, 25, 28, 50, 31, 50, 52, 58, 
+path #18: 0, 16, 17, 25, 28, 50, 52, 58, 
+path #19: 0, 16, 17, 25, 28, 50, 31, 50, 52, 58, 
+path #20: 0, 16, 17, 25, 28, 50, 31, 50, 52, 58, 
+path #21: 0, 16, 17, 25, 58, 
+path #22: 0, 16, 25, 28, 50, 52, 58, 
+path #23: 0, 16, 25, 28, 50, 31, 50, 52, 58, 
+path #24: 0, 16, 25, 28, 50, 31, 50, 52, 58, 
+path #25: 0, 16, 25, 28, 50, 52, 58, 
+path #26: 0, 16, 25, 28, 50, 31, 50, 52, 58, 
+path #27: 0, 16, 25, 28, 50, 31, 50, 52, 58, 
+path #28: 0, 16, 25, 58, 
+branch: #  0; line:    88-   93; sop:     0; eop:     3; out0:   4
+branch: #  4; line:    93-   95; sop:     4; eop:    15; out0:  16; out1:  22
+branch: # 16; line:    96-   97; sop:    16; eop:    21; out0:  22
+branch: # 22; line:    97-   98; sop:    22; eop:    29; out0:  30; out1:  31
+branch: # 30; line:    99-   99; sop:    30; eop:    30; out0:  55
+branch: # 31; line:   100-  100; sop:    31; eop:    32; out0:  33; out1:  39
+branch: # 33; line:   101-  102; sop:    33; eop:    38; out0:  39
+branch: # 39; line:   102-  103; sop:    39; eop:    46; out0:  47; out1:  48
+branch: # 47; line:   104-  104; sop:    47; eop:    47; out0:  55
+branch: # 48; line:   105-  106; sop:    48; eop:    54; out0:  55; out1:   4
+branch: # 55; line:   108-  109; sop:    55; eop:    56
+path #1: 0, 4, 16, 22, 30, 55, 
+path #2: 0, 4, 16, 22, 31, 33, 39, 47, 55, 
+path #3: 0, 4, 16, 22, 31, 33, 39, 48, 55, 
+path #4: 0, 4, 16, 22, 31, 33, 39, 48, 4, 22, 30, 55, 
+path #5: 0, 4, 16, 22, 31, 39, 47, 55, 
+path #6: 0, 4, 16, 22, 31, 39, 48, 55, 
+path #7: 0, 4, 16, 22, 31, 39, 48, 4, 22, 30, 55, 
+path #8: 0, 4, 22, 30, 55, 
+path #9: 0, 4, 22, 31, 33, 39, 47, 55, 
+path #10: 0, 4, 22, 31, 33, 39, 48, 55, 
+path #11: 0, 4, 22, 31, 33, 39, 48, 4, 16, 22, 30, 55, 
+path #12: 0, 4, 22, 31, 39, 47, 55, 
+path #13: 0, 4, 22, 31, 39, 48, 55, 
+path #14: 0, 4, 22, 31, 39, 48, 4, 16, 22, 30, 55, 
+branch: #  0; line:   111-  115; sop:     0; eop:     4; out0:   5; out1:   7
+branch: #  5; line:   115-  115; sop:     5; eop:     6; out0:   8
+branchEnd of function gensalt_private
+
+Function crypt_private:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 10, Position 2 = 11
+Branch analysis from position: 10
+2 jumps found. (Code = 46) Position 1 = 19, Position 2 = 21
+Branch analysis from position: 19
+2 jumps found. (Code = 43) Position 1 = 22, Position 2 = 23
+Branch analysis from position: 22
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 23
+2 jumps found. (Code = 47) Position 1 = 32, Position 2 = 34
+Branch analysis from position: 32
+2 jumps found. (Code = 43) Position 1 = 35, Position 2 = 36
+Branch analysis from position: 35
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 36
+2 jumps found. (Code = 43) Position 1 = 47, Position 2 = 48
+Branch analysis from position: 47
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 48
+2 jumps found. (Code = 43) Position 1 = 49, Position 2 = 64
+Branch analysis from position: 49
+2 jumps found. (Code = 44) Position 1 = 63, Position 2 = 55
+Branch analysis from position: 63
+1 jumps found. (Code = 42) Position 1 = 84
+Branch analysis from position: 84
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 55
+Branch analysis from position: 64
+2 jumps found. (Code = 44) Position 1 = 84, Position 2 = 73
+Branch analysis from position: 84
+Branch analysis from position: 73
+Branch analysis from position: 34
+Branch analysis from position: 21
+Branch analysis from position: 11
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  crypt_private
+number of ops:  97
+compiled vars:  !0 = $password, !1 = $setting, !2 = $output, !3 = $id, !4 = $count_log2, !5 = $count, !6 = $salt, !7 = $hash
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 121     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 123     2        ASSIGN                                                   !2, '%2A0'
+ 124     3        INIT_FCALL                                               'substr'
+         4        SEND_VAR                                                 !1
+         5        SEND_VAL                                                 0
+         6        SEND_VAL                                                 2
+         7        DO_ICALL                                         $9      
+         8        IS_NOT_EQUAL                                     ~10     !2, $9
+         9      > JMPZ                                                     ~10, ->11
+ 125    10    >   ASSIGN                                                   !2, '%2A1'
+ 127    11    >   INIT_FCALL                                               'substr'
+        12        SEND_VAR                                                 !1
+        13        SEND_VAL                                                 0
+        14        SEND_VAL                                                 3
+        15        DO_ICALL                                         $12     
+        16        ASSIGN                                                   !3, $12
+ 129    17        IS_SMALLER                                       ~14     !3, '%24P%24'
+        18      > JMPZ_EX                                          ~14     ~14, ->21
+        19    >   IS_SMALLER                                       ~15     !3, '%24H%24'
+        20        BOOL                                             ~14     ~15
+        21    > > JMPZ                                                     ~14, ->23
+ 130    22    > > RETURN                                                   !2
+ 132    23    >   INIT_FCALL                                               'strpos'
+        24        FETCH_OBJ_R                                      ~16     'itoa64'
+        25        SEND_VAL                                                 ~16
+        26        FETCH_DIM_R                                      ~17     !1, 3
+        27        SEND_VAL                                                 ~17
+        28        DO_ICALL                                         $18     
+        29        ASSIGN                                                   !4, $18
+ 133    30        IS_SMALLER_OR_EQUAL                              ~20     !4, 7
+        31      > JMPNZ_EX                                         ~20     ~20, ->34
+        32    >   IS_SMALLER_OR_EQUAL                              ~21     30, !4
+        33        BOOL                                             ~20     ~21
+        34    > > JMPZ                                                     ~20, ->36
+ 134    35    > > RETURN                                                   !2
+ 136    36    >   SL                                               ~22     1, !4
+        37        ASSIGN                                                   !5, ~22
+ 138    38        INIT_FCALL                                               'substr'
+        39        SEND_VAR                                                 !1
+        40        SEND_VAL                                                 4
+        41        SEND_VAL                                                 8
+        42        DO_ICALL                                         $24     
+        43        ASSIGN                                                   !6, $24
+ 139    44        STRLEN                                           ~26     !6
+        45        IS_SMALLER                                       ~27     ~26, 8
+        46      > JMPZ                                                     ~27, ->48
+ 140    47    > > RETURN                                                   !2
+ 148    48    > > JMPZ                                                     <true>, ->64
+ 149    49    >   INIT_FCALL                                               'md5'
+        50        CONCAT                                           ~28     !6, !0
+        51        SEND_VAL                                                 ~28
+        52        SEND_VAL                                                 <true>
+        53        DO_ICALL                                         $29     
+        54        ASSIGN                                                   !7, $29
+ 151    55    >   INIT_FCALL                                               'md5'
+        56        CONCAT                                           ~31     !7, !0
+        57        SEND_VAL                                                 ~31
+        58        SEND_VAL                                                 <true>
+        59        DO_ICALL                                         $32     
+        60        ASSIGN                                                   !7, $32
+ 152    61        PRE_DEC                                          $34     !5
+        62      > JMPNZ                                                    $34, ->55
+        63    > > JMP                                                      ->84
+ 154    64    >   INIT_FCALL                                               'pack'
+        65        SEND_VAL                                                 'H%2A'
+        66        INIT_FCALL                                               'md5'
+        67        CONCAT                                           ~35     !6, !0
+        68        SEND_VAL                                                 ~35
+        69        DO_ICALL                                         $36     
+        70        SEND_VAR                                                 $36
+        71        DO_ICALL                                         $37     
+        72        ASSIGN                                                   !7, $37
+ 156    73    >   INIT_FCALL                                               'pack'
+        74        SEND_VAL                                                 'H%2A'
+        75        INIT_FCALL                                               'md5'
+        76        CONCAT                                           ~39     !7, !0
+        77        SEND_VAL                                                 ~39
+        78        DO_ICALL                                         $40     
+        79        SEND_VAR                                                 $40
+        80        DO_ICALL                                         $41     
+        81        ASSIGN                                                   !7, $41
+ 157    82        PRE_DEC                                          $43     !5
+        83      > JMPNZ                                                    $43, ->73
+ 160    84    >   INIT_FCALL                                               'substr'
+        85        SEND_VAR                                                 !1
+        86        SEND_VAL                                                 0
+        87        SEND_VAL                                                 12
+        88        DO_ICALL                                         $44     
+        89        ASSIGN                                                   !2, $44
+ 161    90        INIT_METHOD_CALL                                         'encode64'
+        91        SEND_VAR_EX                                              !7
+        92        SEND_VAL_EX                                              16
+        93        DO_FCALL                                      0  $46     
+        94        ASSIGN_OP                                     8          !2, $46
+ 163    95      > RETURN                                                   !2
+ 164    96*     > RETURN                                                   null
+
+: #  7; line:   115-  115; sop:     7; eop:     7; out0:   8
+branch: #  8; line:   115-  119; sop:     8; eop:    21
+path #1: 0, 5, 8, 
+path #2: 0, 7, 8, 
+branch: #  0; line:   121-  124; sop:     0; eop:     9; out0:  10; out1:  11
+branch: # 10; line:   125-  127; sop:    10; eop:    10; out0:  11
+branch: # 11; line:   127-  129; sop:    11; eop:    18; out0:  19; out1:  21
+branch: # 19; line:   129-  129; sop:    19; eop:    20; out0:  21
+branch: # 21; line:   129-  129; sop:    21; eop:    21; out0:  22; out1:  23
+branch: # 22; line:   130-  130; sop:    22; eop:    22; out0:  -2
+branch: # 23; line:   132-  133; sop:    23; eop:    31; out0:  32; out1:  34
+branch: # 32; line:   133-  133; sop:    32; eop:    33; out0:  34
+branch: # 34; line:   133-  133; sop:    34; eop:    34; out0:  35; out1:  36
+branch: # 35; line:   134-  134; sop:    35; eop:    35; out0:  -2
+branch: # 36; line:   136-  139; sop:    36; eop:    46; out0:  47; out1:  48
+branch: # 47; line:   140-  140; sop:    47; eop:    47; out0:  -2
+branch: # 48; line:   148-  148; sop:    48; eop:    48; out0:  49; out1:  64
+branch: # 49; line:   149-  151; sop:    49; eop:    54; out0:  55
+branch: # 55; line:   151-  152; sop:    55; eop:    62; out0:  63; out1:  55
+branch: # 63; line:   152-  152; sop:    63; eop:    63; out0:  84
+branch: # 64; line:   154-  156; sop:    64; eop:    72; out0:  73
+branch: # 73; line:   156-  157; sop:    73; eop:    83; out0:  84; out1:  73
+branch: # 84; line:   160-  164; sop:    84; eop:    96
+path #1: 0, 10, 11, 19, 21, 22, 
+path #2: 0, 10, 11, 19, 21, 23, 32, 34, 35, 
+path #3: 0, 10, 11, 19, 21, 23, 32, 34, 36, 47, 
+path #4: 0, 10, 11, 19, 21, 23, 32, 34, 36, 48, 49, 55, 63, 84, 
+path #5: 0, 10, 11, 19, 21, 23, 32, 34, 36, 48, 49, 55, 55, 63, 84, 
+path #6: 0, 10, 11, 19, 21, 23, 32, 34, 36, 48, 64, 73, 84, 
+path #7: 0, 10, 11, 19, 21, 23, 32, 34, 36, 48, 64, 73, 73, 84, 
+path #8: 0, 10, 11, 19, 21, 23, 34, 35, 
+path #9: 0, 10, 11, 19, 21, 23, 34, 36, 47, 
+path #10: 0, 10, 11, 19, 21, 23, 34, 36, 48, 49, 55, 63, 84, 
+path #11: 0, 10, 11, 19, 21, 23, 34, 36, 48, 49, 55, 55, 63, 84, 
+path #12: 0, 10, 11, 19, 21, 23, 34, 36, 48, 64, 73, 84, 
+path #13: 0, 10, 11, 19, 21, 23, 34, 36, 48, 64, 73, 73, 84, 
+path #14: 0, 10, 11, 21, 22, 
+path #15: 0, 10, 11, 21, 23, 32, 34, 35, 
+path #16: 0, 10, 11, 21, 23, 32, 34, 36, 47, 
+path #17: 0, 10, 11, 21, 23, 32, 34, 36, 48, 49, 55, 63, 84, 
+path #18: 0, 10, 11, 21, 23, 32, 34, 36, 48, 49, 55, 55, 63, 84, 
+path #19: 0, 10, 11, 21, 23, 32, 34, 36, 48, 64, 73, 84, 
+path #20: 0, 10, 11, 21, 23, 32, 34, 36, 48, 64, 73, 73, 84, 
+path #21: 0, 10, 11, 21, 23, 34, 35, 
+path #22: 0, 10, 11, 21, 23, 34, 36, 47, 
+path #23: 0, 10, 11, 21, 23, 34, 36, 48, 49, 55, 63, 84, 
+path #24: 0, 10, 11, 21, 23, 34, 36, 48, 49, 55, 55, 63, 84, 
+path #25: 0, 10, 11, 21, 23, 34, 36, 48, 64, 73, 84, 
+path #26: 0, 10, 11, 21, 23, 34, 36, 48, 64, 73, 73, 84, 
+path #27: 0, 11, 19, 21, 22, 
+path #28: 0, 11, 19, 21, 23, 32, 34, 35, 
+path #29: 0, 11, 19, 21, 23, 32, 34, 36, 47, 
+path #30: 0, 11, 19, 21, 23, 32, 34, 36, 48, 49, 55, 63, 84, 
+path #31: 0, 11, 19, 21, 23, 32, 34, 36, 48, 49, 55, 55, 63, 84, 
+path #32: 0, 11, 19, 21, 23, 32, 34, 36, 48, 64, 73, 84, 
+path #33: 0, 11, 19, 21, 23, 32, 34, 36, 48, 64, 73, 73, 84, 
+path #34: 0, 11, 19, 21, 23, 34, 35, 
+path #35: 0, 11, 19, 21, 23, 34, 36, 47, 
+path #36: 0, 11, 19, 21, 23, 34, 36, 48, 49, 55, 63, 84, 
+path #37: 0, 11, 19, 21, 23, 34, 36, 48, 49, 55, 55, 63, 84, 
+path #38: 0, 11, 19, 21, 23, 34, 36, 48, 64, 73, 84, 
+path #39: 0, 11, 19, 21, 23, 34, 36, 48, 64, 73, 73, 84, 
+path #40: 0, 11, 21, 22, 
+path #41: 0, 11, 21, 23, 32, 34, 35, 
+path #42: 0, 11, 21, 23, 32, 34, 36, 47, 
+path #43: 0, 11, 21, 23, 32, 34, 36, 48, 49, 55, 63, 84, 
+path #44: 0, 11, 21, 23, 32, 34, 36, 48, 49, 55, 55, 63, 84, 
+path #45: 0, 11, 21, 23, 32, 34, 36, 48, 64, 73, 84, 
+path #46: 0, 11, 21, 23, 32, 34, 36, 48, 64, 73, 73, 84, 
+path #47: 0, 11, 21, 23, 34, 35, 
+path #48: 0, 11, 21, 23, 34, 36, 47, 
+path #49: 0, 11, 21, 23, 34, 36, 48, 49, 55, 63, 84, 
+path #50: 0, 11, 21, 23, 34, 36, 48, 49End of function crypt_private
+
+Function gensalt_extended:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  gensalt_extended
+number of ops:  38
+compiled vars:  !0 = $input, !1 = $count_log2, !2 = $count, !3 = $output
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 166     0  E >   RECV                                             !0      
+ 168     1        INIT_FCALL                                               'min'
+         2        FETCH_OBJ_R                                      ~4      'iteration_count_log2'
+         3        ADD                                              ~5      ~4, 8
+         4        SEND_VAL                                                 ~5
+         5        SEND_VAL                                                 24
+         6        DO_ICALL                                         $6      
+         7        ASSIGN                                                   !1, $6
+ 171     8        SL                                               ~8      1, !1
+         9        SUB                                              ~9      ~8, 1
+        10        ASSIGN                                                   !2, ~9
+ 173    11        ASSIGN                                                   !3, '_'
+ 174    12        BW_AND                                           ~13     !2, 63
+        13        FETCH_OBJ_R                                      ~12     'itoa64'
+        14        FETCH_DIM_R                                      ~14     ~12, ~13
+        15        ASSIGN_OP                                     8          !3, ~14
+ 175    16        SR                                               ~17     !2, 6
+        17        BW_AND                                           ~18     ~17, 63
+        18        FETCH_OBJ_R                                      ~16     'itoa64'
+        19        FETCH_DIM_R                                      ~19     ~16, ~18
+        20        ASSIGN_OP                                     8          !3, ~19
+ 176    21        SR                                               ~22     !2, 12
+        22        BW_AND                                           ~23     ~22, 63
+        23        FETCH_OBJ_R                                      ~21     'itoa64'
+        24        FETCH_DIM_R                                      ~24     ~21, ~23
+        25        ASSIGN_OP                                     8          !3, ~24
+ 177    26        SR                                               ~27     !2, 18
+        27        BW_AND                                           ~28     ~27, 63
+        28        FETCH_OBJ_R                                      ~26     'itoa64'
+        29        FETCH_DIM_R                                      ~29     ~26, ~28
+        30        ASSIGN_OP                                     8          !3, ~29
+ 179    31        INIT_METHOD_CALL                                         'encode64'
+        32        SEND_VAR_EX                                              !0
+        33        SEND_VAL_EX                                              3
+        34        DO_FCALL                                      0  $31     
+        35        ASSIGN_OP                                     8          !3, $31
+ 181    36      > RETURN                                                   !3
+ 182    37*     > RETURN                                                   null
+
+End of function gensalt_extended
+
+Function gensalt_blowfish:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 33, Position 2 = 36
+Branch analysis from position: 33
+1 jumps found. (Code = 42) Position 1 = 63
+Branch analysis from position: 63
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 36
+2 jumps found. (Code = 44) Position 1 = 63, Position 2 = 19
+Branch analysis from position: 63
+Branch analysis from position: 19
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  gensalt_blowfish
+number of ops:  65
+compiled vars:  !0 = $input, !1 = $itoa64, !2 = $output, !3 = $i, !4 = $c1, !5 = $c2
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 184     0  E >   RECV                                             !0      
+ 194     1        ASSIGN                                                   !1, '.%2FABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+ 196     2        ASSIGN                                                   !2, '%242a%24'
+ 197     3        INIT_FCALL                                               'chr'
+         4        FETCH_OBJ_R                                      ~8      'iteration_count_log2'
+         5        DIV                                              ~9      ~8, 10
+         6        ADD                                              ~10     48, ~9
+         7        SEND_VAL                                                 ~10
+         8        DO_ICALL                                         $11     
+         9        ASSIGN_OP                                     8          !2, $11
+ 198    10        INIT_FCALL                                               'chr'
+        11        FETCH_OBJ_R                                      ~13     'iteration_count_log2'
+        12        MOD                                              ~14     ~13, 10
+        13        ADD                                              ~15     48, ~14
+        14        SEND_VAL                                                 ~15
+        15        DO_ICALL                                         $16     
+        16        ASSIGN_OP                                     8          !2, $16
+ 199    17        ASSIGN_OP                                     8          !2, '%24'
+ 201    18        ASSIGN                                                   !3, 0
+ 203    19    >   INIT_FCALL                                               'ord'
+        20        POST_INC                                         ~20     !3
+        21        FETCH_DIM_R                                      ~21     !0, ~20
+        22        SEND_VAL                                                 ~21
+        23        DO_ICALL                                         $22     
+        24        ASSIGN                                                   !4, $22
+ 204    25        SR                                               ~24     !4, 2
+        26        FETCH_DIM_R                                      ~25     !1, ~24
+        27        ASSIGN_OP                                     8          !2, ~25
+ 205    28        BW_AND                                           ~27     !4, 3
+        29        SL                                               ~28     ~27, 4
+        30        ASSIGN                                                   !4, ~28
+ 206    31        CAST                                          0  ~30     16, !3
+        32      > JMPZ                                                     ~30, ->36
+ 207    33    >   FETCH_DIM_R                                      ~31     !1, !4
+        34        ASSIGN_OP                                     8          !2, ~31
+ 208    35      > JMP                                                      ->63
+ 211    36    >   INIT_FCALL                                               'ord'
+        37        POST_INC                                         ~33     !3
+        38        FETCH_DIM_R                                      ~34     !0, ~33
+        39        SEND_VAL                                                 ~34
+        40        DO_ICALL                                         $35     
+        41        ASSIGN                                                   !5, $35
+ 212    42        SR                                               ~37     !5, 4
+        43        ASSIGN_OP                                     9          !4, ~37
+ 213    44        FETCH_DIM_R                                      ~39     !1, !4
+        45        ASSIGN_OP                                     8          !2, ~39
+ 214    46        BW_AND                                           ~41     !5, 15
+        47        SL                                               ~42     ~41, 2
+        48        ASSIGN                                                   !4, ~42
+ 216    49        INIT_FCALL                                               'ord'
+        50        POST_INC                                         ~44     !3
+        51        FETCH_DIM_R                                      ~45     !0, ~44
+        52        SEND_VAL                                                 ~45
+        53        DO_ICALL                                         $46     
+        54        ASSIGN                                                   !5, $46
+ 217    55        SR                                               ~48     !5, 6
+        56        ASSIGN_OP                                     9          !4, ~48
+ 218    57        FETCH_DIM_R                                      ~50     !1, !4
+        58        ASSIGN_OP                                     8          !2, ~50
+ 219    59        BW_AND                                           ~52     !5, 63
+        60        FETCH_DIM_R                                      ~53     !1, ~52
+        61        ASSIGN_OP                                     8          !2, ~53
+ 220    62      > JMPNZ                                                    1, ->19
+ 222    63    > > RETURN                                                   !2
+ 223    64*     > RETURN                                                   null
+
+End of function gensalt_blowfish
+
+Function hashpassword:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 5
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 5
+2 jumps found. (Code = 43) Position 1 = 10, Position 2 = 26
+Branch analysis from position: 10
+2 jumps found. (Code = 43) Position 1 = 25, Position 2 = 26
+Branch analysis from position: 25
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 26
+2 jumps found. (Code = 43) Position 1 = 30, Position 2 = 49
+Branch analysis from position: 30
+2 jumps found. (Code = 43) Position 1 = 33, Position 2 = 37
+Branch analysis from position: 33
+2 jumps found. (Code = 43) Position 1 = 48, Position 2 = 49
+Branch analysis from position: 48
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 49
+2 jumps found. (Code = 43) Position 1 = 52, Position 2 = 56
+Branch analysis from position: 52
+2 jumps found. (Code = 43) Position 1 = 67, Position 2 = 68
+Branch analysis from position: 67
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 68
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 56
+Branch analysis from position: 37
+Branch analysis from position: 49
+Branch analysis from position: 26
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  HashPassword
+number of ops:  70
+compiled vars:  !0 = $password, !1 = $random, !2 = $hash
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 225     0  E >   RECV                                             !0      
+ 227     1        STRLEN                                           ~3      !0
+         2        IS_SMALLER_OR_EQUAL                              ~4      4096, ~3
+         3      > JMPZ                                                     ~4, ->5
+ 228     4    > > RETURN                                                   '%2A'
+ 231     5    >   ASSIGN                                                   !1, ''
+ 233     6        FETCH_OBJ_R                                      ~6      'portable_hashes'
+         7        BOOL_XOR                                         ~7      ~6
+         8        BOOL                                             ~8      ~7
+         9      > JMPZ                                                     ~8, ->26
+ 234    10    >   INIT_METHOD_CALL                                         'get_random_bytes'
+        11        SEND_VAL_EX                                              16
+        12        DO_FCALL                                      0  $9      
+        13        ASSIGN                                                   !1, $9
+ 236    14        INIT_FCALL                                               'crypt'
+        15        SEND_VAR                                                 !0
+        16        INIT_METHOD_CALL                                         'gensalt_blowfish'
+        17        SEND_VAR_EX                                              !1
+        18        DO_FCALL                                      0  $11     
+        19        SEND_VAR                                                 $11
+        20        DO_ICALL                                         $12     
+        21        ASSIGN                                                   !2, $12
+ 237    22        STRLEN                                           ~14     !2
+        23        IS_NOT_EQUAL                                     ~15     ~14, 60
+        24      > JMPZ                                                     ~15, ->26
+ 238    25    > > RETURN                                                   !2
+ 241    26    >   FETCH_OBJ_R                                      ~16     'portable_hashes'
+        27        BOOL_XOR                                         ~17     ~16
+        28        BOOL                                             ~18     ~17
+        29      > JMPZ                                                     ~18, ->49
+ 242    30    >   STRLEN                                           ~19     !1
+        31        IS_SMALLER_OR_EQUAL                              ~20     ~19, 3
+        32      > JMPZ                                                     ~20, ->37
+ 243    33    >   INIT_METHOD_CALL                                         'get_random_bytes'
+        34        SEND_VAL_EX                                              3
+        35        DO_FCALL                                      0  $21     
+        36        ASSIGN                                                   !1, $21
+ 245    37    >   INIT_FCALL                                               'crypt'
+        38        SEND_VAR                                                 !0
+        39        INIT_METHOD_CALL                                         'gensalt_extended'
+        40        SEND_VAR_EX                                              !1
+        41        DO_FCALL                                      0  $23     
+        42        SEND_VAR                                                 $23
+        43        DO_ICALL                                         $24     
+        44        ASSIGN                                                   !2, $24
+ 246    45        STRLEN                                           ~26     !2
+        46        IS_NOT_EQUAL                                     ~27     ~26, 20
+        47      > JMPZ                                                     ~27, ->49
+ 247    48    > > RETURN                                                   !2
+ 250    49    >   STRLEN                                           ~28     !1
+        50        IS_SMALLER_OR_EQUAL                              ~29     ~28, 6
+        51      > JMPZ                                                     ~29, ->56
+ 251    52    >   INIT_METHOD_CALL                                         'get_random_bytes'
+        53        SEND_VAL_EX                                              6
+        54        DO_FCALL                                      0  $30     
+        55        ASSIGN                                                   !1, $30
+ 253    56    >   INIT_METHOD_CALL                                         'crypt_private'
+        57        SEND_VAR_EX                                              !0
+ 254    58        INIT_METHOD_CALL                                         'gensalt_private'
+        59        SEND_VAR_EX                                              !1
+        60        DO_FCALL                                      0  $32     
+        61        SEND_VAR_NO_REF_EX                                       $32
+        62        DO_FCALL                                      0  $33     
+        63        ASSIGN                                                   !2, $33
+ 255    64        STRLEN                                           ~35     !2
+        65        IS_NOT_EQUAL                                     ~36     ~35, 34
+        66      > JMPZ                                                     ~36, ->68
+ 256    67    > > RETURN                                                   !2
+ 261    68    > > RETURN                                                   '%2A'
+ 262    69*     > RETURN                                                   null
+
+End of function hashpassword
+
+Function checkpassword:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 5, Position 2 = 6
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 6
+2 jumps found. (Code = 43) Position 1 = 14, Position 2 = 19
+Branch analysis from position: 14
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 19
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpass.php
+function name:  CheckPassword
+number of ops:  22
+compiled vars:  !0 = $password, !1 = $stored_hash, !2 = $hash
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 264     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 266     2        STRLEN                                           ~3      !0
+         3        IS_SMALLER_OR_EQUAL                              ~4      4096, ~3
+         4      > JMPZ                                                     ~4, ->6
+ 267     5    > > RETURN                                                   <false>
+ 270     6    >   INIT_METHOD_CALL                                         'crypt_private'
+         7        SEND_VAR_EX                                              !0
+         8        SEND_VAR_EX                                              !1
+         9        DO_FCALL                                      0  $5      
+        10        ASSIGN                                                   !2, $5
+ 271    11        FETCH_DIM_R                                      ~7      !2, 0
+        12        IS_NOT_EQUAL                                     ~8      ~7, '%2A'
+        13      > JMPZ                                                     ~8, ->19
+ 272    14    >   INIT_FCALL                                               'crypt'
+        15        SEND_VAR                                                 !0
+        16        SEND_VAR                                                 !1
+        17        DO_ICALL                                         $9      
+        18        ASSIGN                                                   !2, $9
+ 274    19    >   IS_NOT_IDENTICAL                                 ~11     !2, !1
+        20      > RETURN                                                   ~11
+ 275    21*     > RETURN                                                   null
+
+End of function checkpassword
+
+End of class PasswordHash.
+
+, 55, 55, 63, 84, 
+path #51: 0, 11, 21, 23, 34, 36, 48, 64, 73, 84, 
+path #52: 0, 11, 21, 23, 34, 36, 48, 64, 73, 73, 84, 
+branch: #  0; line:   166-  182; sop:     0; eop:    37
+path #1: 0, 
+branch: #  0; line:   184-  203; sop:     0; eop:    18; out0:  19
+branch: # 19; line:   203-  206; sop:    19; eop:    32; out0:  33; out1:  36
+branch: # 33; line:   207-  208; sop:    33; eop:    35; out0:  63
+branch: # 36; line:   211-  220; sop:    36; eop:    62; out0:  63; out1:  19
+branch: # 63; line:   222-  223; sop:    63; eop:    64
+path #1: 0, 19, 33, 63, 
+path #2: 0, 19, 36, 63, 
+path #3: 0, 19, 36, 19, 33, 63, 
+branch: #  0; line:   225-  227; sop:     0; eop:     3; out0:   4; out1:   5
+branch: #  4; line:   228-  228; sop:     4; eop:     4; out0:  -2
+branch: #  5; line:   231-  233; sop:     5; eop:     9; out0:  10; out1:  26
+branch: # 10; line:   234-  237; sop:    10; eop:    24; out0:  25; out1:  26
+branch: # 25; line:   238-  238; sop:    25; eop:    25; out0:  -2
+branch: # 26; line:   241-  241; sop:    26; eop:    29; out0:  30; out1:  49
+branch: # 30; line:   242-  242; sop:    30; eop:    32; out0:  33; out1:  37
+branch: # 33; line:   243-  245; sop:    33; eop:    36; out0:  37
+branch: # 37; line:   245-  246; sop:    37; eop:    47; out0:  48; out1:  49
+branch: # 48; line:   247-  247; sop:    48; eop:    48; out0:  -2
+branch: # 49; line:   250-  250; sop:    49; eop:    51; out0:  52; out1:  56
+branch: # 52; line:   251-  253; sop:    52; eop:    55; out0:  56
+branch: # 56; line:   253-  255; sop:    56; eop:    66; out0:  67; out1:  68
+branch: # 67; line:   256-  256; sop:    67; eop:    67; out0:  -2
+branch: # 68; line:   261-  262; sop:    68; eop:    69
+path #1: 0, 4, 
+path #2: 0, 5, 10, 25, 
+path #3: 0, 5, 10, 26, 30, 33, 37, 48, 
+path #4: 0, 5, 10, 26, 30, 33, 37, 49, 52, 56, 67, 
+path #5: 0, 5, 10, 26, 30, 33, 37, 49, 52, 56, 68, 
+path #6: 0, 5, 10, 26, 30, 33, 37, 49, 56, 67, 
+path #7: 0, 5, 10, 26, 30, 33, 37, 49, 56, 68, 
+path #8: 0, 5, 10, 26, 30, 37, 48, 
+path #9: 0, 5, 10, 26, 30, 37, 49, 52, 56, 67, 
+path #10: 0, 5, 10, 26, 30, 37, 49, 52, 56, 68, 
+path #11: 0, 5, 10, 26, 30, 37, 49, 56, 67, 
+path #12: 0, 5, 10, 26, 30, 37, 49, 56, 68, 
+path #13: 0, 5, 10, 26, 49, 52, 56, 67, 
+path #14: 0, 5, 10, 26, 49, 52, 56, 68, 
+path #15: 0, 5, 10, 26, 49, 56, 67, 
+path #16: 0, 5, 10, 26, 49, 56, 68, 
+path #17: 0, 5, 26, 30, 33, 37, 48, 
+path #18: 0, 5, 26, 30, 33, 37, 49, 52, 56, 67, 
+path #19: 0, 5, 26, 30, 33, 37, 49, 52, 56, 68, 
+path #20: 0, 5, 26, 30, 33, 37, 49, 56, 67, 
+path #21: 0, 5, 26, 30, 33, 37, 49, 56, 68, 
+path #22: 0, 5, 26, 30, 37, 48, 
+path #23: 0, 5, 26, 30, 37, 49, 52, 56, 67, 
+path #24: 0, 5, 26, 30, 37, 49, 52, 56, 68, 
+path #25: 0, 5, 26, 30, 37, 49, 56, 67, 
+path #26: 0, 5, 26, 30, 37, 49, 56, 68, 
+path #27: 0, 5, 26, 49, 52, 56, 67, 
+path #28: 0, 5, 26, 49, 52, 56, 68, 
+path #29: 0, 5, 26, 49, 56, 67, 
+path #30: 0, 5, 26, 49, 56, 68, 
+branch: #  0; line:   264-  266; sop:     0; eop:     4; out0:   5; out1:   6
+branch: #  5; line:   267-  267; sop:     5; eop:     5; out0:  -2
+branch: #  6; line:   270-  271; sop:     6; eop:    13; out0:  14; out1:  19
+branch: # 14; line:   272-  274; sop:    14; eop:    18; out0:  19
+branch: # 19; line:   274-  275; sop:    19; eop:    21
+path #1: 0, 5, 
+path #2: 0, 6, 14, 19, 
+path #3: 0, 6, 19, 

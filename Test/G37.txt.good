@@ -1,0 +1,346 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  (null)
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 167     0  E > > RETURN                                                   1
+
+Function register_block_pattern:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  register_block_pattern
+number of ops:  10
+compiled vars:  !0 = $pattern_name, !1 = $pattern_properties
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 152     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 153     2        INIT_STATIC_METHOD_CALL                                  'WP_Block_Patterns_Registry', 'get_instance'
+         3        DO_FCALL                                      0  $2      
+         4        INIT_METHOD_CALL                                         $2, 'register'
+         5        SEND_VAR_EX                                              !0
+         6        SEND_VAR_EX                                              !1
+         7        DO_FCALL                                      0  $3      
+         8      > RETURN                                                   $3
+ 154     9*     > RETURN                                                   null
+
+End of function register_block_pattern
+
+Function unregister_block_pattern:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  unregister_block_pattern
+number of ops:  8
+compiled vars:  !0 = $pattern_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 164     0  E >   RECV                                             !0      
+ 165     1        INIT_STATIC_METHOD_CALL                                  'WP_Block_Patterns_Registry', 'get_instance'
+         2        DO_FCALL                                      0  $1      
+         3        INIT_METHOD_CALL                                         $1, 'unregister'
+         4        SEND_VAR_EX                                              !0
+         5        DO_FCALL                                      0  $2      
+         6      > RETURN                                                   $2
+ 166     7*     > RETURN                                                   null
+
+End of function unregister_block_pattern
+
+Class WP_Block_Patterns_Registry:
+Function register:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 47) Position 1 = 5, Position 2 = 8
+Branch analysis from position: 5
+2 jumps found. (Code = 43) Position 1 = 9, Position 2 = 18
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 18
+2 jumps found. (Code = 47) Position 1 = 21, Position 2 = 25
+Branch analysis from position: 21
+2 jumps found. (Code = 43) Position 1 = 26, Position 2 = 35
+Branch analysis from position: 26
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 35
+2 jumps found. (Code = 47) Position 1 = 38, Position 2 = 42
+Branch analysis from position: 38
+2 jumps found. (Code = 43) Position 1 = 43, Position 2 = 52
+Branch analysis from position: 43
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 52
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 42
+Branch analysis from position: 25
+Branch analysis from position: 8
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  register
+number of ops:  62
+compiled vars:  !0 = $pattern_name, !1 = $pattern_properties
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  40     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+  41     2        ISSET_ISEMPTY_CV                                 ~2      !0
+         3        BOOL_XOR                                         ~3      ~2
+         4      > JMPNZ_EX                                         ~3      ~3, ->8
+         5    >   TYPE_CHECK                                   64  ~4      !0
+         6        BOOL_XOR                                         ~5      ~4
+         7        BOOL                                             ~3      ~5
+         8    > > JMPZ                                                     ~3, ->18
+  42     9    >   INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        10        SEND_VAL_EX                                              'WP_Block_Patterns_Registry%3A%3Aregister'
+        11        INIT_FCALL_BY_NAME                                       '__'
+        12        SEND_VAL_EX                                              'Pattern+name+must+be+a+string.'
+        13        DO_FCALL                                      0  $6      
+        14        SEND_VAR_NO_REF_EX                                       $6
+        15        SEND_VAL_EX                                              '5.5.0'
+        16        DO_FCALL                                      0          
+  43    17      > RETURN                                                   <false>
+  46    18    >   ISSET_ISEMPTY_DIM_OBJ                         0  ~8      !1, 'title'
+        19        BOOL_XOR                                         ~9      ~8
+        20      > JMPNZ_EX                                         ~9      ~9, ->25
+        21    >   FETCH_DIM_R                                      ~10     !1, 'title'
+        22        TYPE_CHECK                                   64  ~11     ~10
+        23        BOOL_XOR                                         ~12     ~11
+        24        BOOL                                             ~9      ~12
+        25    > > JMPZ                                                     ~9, ->35
+  47    26    >   INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        27        SEND_VAL_EX                                              'WP_Block_Patterns_Registry%3A%3Aregister'
+        28        INIT_FCALL_BY_NAME                                       '__'
+        29        SEND_VAL_EX                                              'Pattern+title+must+be+a+string.'
+        30        DO_FCALL                                      0  $13     
+        31        SEND_VAR_NO_REF_EX                                       $13
+        32        SEND_VAL_EX                                              '5.5.0'
+        33        DO_FCALL                                      0          
+  48    34      > RETURN                                                   <false>
+  51    35    >   ISSET_ISEMPTY_DIM_OBJ                         0  ~15     !1, 'content'
+        36        BOOL_XOR                                         ~16     ~15
+        37      > JMPNZ_EX                                         ~16     ~16, ->42
+        38    >   FETCH_DIM_R                                      ~17     !1, 'content'
+        39        TYPE_CHECK                                   64  ~18     ~17
+        40        BOOL_XOR                                         ~19     ~18
+        41        BOOL                                             ~16     ~19
+        42    > > JMPZ                                                     ~16, ->52
+  52    43    >   INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        44        SEND_VAL_EX                                              'WP_Block_Patterns_Registry%3A%3Aregister'
+        45        INIT_FCALL_BY_NAME                                       '__'
+        46        SEND_VAL_EX                                              'Pattern+content+must+be+a+string.'
+        47        DO_FCALL                                      0  $20     
+        48        SEND_VAR_NO_REF_EX                                       $20
+        49        SEND_VAL_EX                                              '5.5.0'
+        50        DO_FCALL                                      0          
+  53    51      > RETURN                                                   <false>
+  56    52    >   INIT_FCALL                                               'array_merge'
+  57    53        SEND_VAR                                                 !1
+  58    54        INIT_ARRAY                                       ~24     !0, 'name'
+        55        SEND_VAL                                                 ~24
+        56        DO_ICALL                                         $25     
+  56    57        FETCH_OBJ_W                                      $22     'registered_patterns'
+        58        ASSIGN_DIM                                               $22, !0
+  58    59        OP_DATA                                                  $25
+  61    60      > RETURN                                                   <true>
+  62    61*     > RETURN                                                   null
+
+End of function register
+
+Function unregister:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 20
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 20
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  unregister
+number of ops:  24
+compiled vars:  !0 = $pattern_name, !1 = $message
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  72     0  E >   RECV                                             !0      
+  73     1        INIT_METHOD_CALL                                         'is_registered'
+         2        SEND_VAR_EX                                              !0
+         3        DO_FCALL                                      0  $2      
+         4        BOOL_XOR                                         ~3      $2
+         5      > JMPZ                                                     ~3, ->20
+  75     6    >   INIT_FCALL                                               'sprintf'
+         7        INIT_FCALL_BY_NAME                                       '__'
+         8        SEND_VAL_EX                                              'Pattern+%22%251%24s%22+not+found.'
+         9        DO_FCALL                                      0  $4      
+        10        SEND_VAR                                                 $4
+        11        SEND_VAR                                                 !0
+        12        DO_ICALL                                         $5      
+        13        ASSIGN                                                   !1, $5
+  76    14        INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        15        SEND_VAL_EX                                              'WP_Block_Patterns_Registry%3A%3Aunregister'
+        16        SEND_VAR_EX                                              !1
+        17        SEND_VAL_EX                                              '5.5.0'
+        18        DO_FCALL                                      0          
+  77    19      > RETURN                                                   <false>
+  80    20    >   FETCH_OBJ_UNSET                                  $8      'registered_patterns'
+        21        UNSET_DIM                                                $8, !0
+  82    22      > RETURN                                                   <true>
+  83    23*     > RETURN                                                   null
+
+End of function unregister
+
+Function get_registered:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 7
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  get_registered
+number of ops:  11
+compiled vars:  !0 = $pattern_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  93     0  E >   RECV                                             !0      
+  94     1        INIT_METHOD_CALL                                         'is_registered'
+         2        SEND_VAR_EX                                              !0
+         3        DO_FCALL                                      0  $1      
+         4        BOOL_XOR                                         ~2      $1
+         5      > JMPZ                                                     ~2, ->7
+  95     6    > > RETURN                                                   null
+  98     7    >   FETCH_OBJ_R                                      ~3      'registered_patterns'
+         8        FETCH_DIM_R                                      ~4      ~3, !0
+         9      > RETURN                                                   ~4
+  99    10*     > RETURN                                                   null
+
+End of function get_registered
+
+Function get_all_registered:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  get_all_registered
+number of ops:  6
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 110     0  E >   INIT_FCALL                                               'array_values'
+         1        FETCH_OBJ_R                                      ~0      'registered_patterns'
+         2        SEND_VAL                                                 ~0
+         3        DO_ICALL                                         $1      
+         4      > RETURN                                                   $1
+ 111     5*     > RETURN                                                   null
+
+End of function get_all_registered
+
+Function is_registered:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  is_registered
+number of ops:  5
+compiled vars:  !0 = $pattern_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 121     0  E >   RECV                                             !0      
+ 122     1        FETCH_OBJ_IS                                     ~1      'registered_patterns'
+         2        ISSET_ISEMPTY_DIM_OBJ                         0  ~2      ~1, !0
+         3      > RETURN                                                   ~2
+ 123     4*     > RETURN                                                   null
+
+End of function is_registered
+
+Function get_instance:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 7
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-patterns-registry.php
+function name:  get_instance
+number of ops:  10
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 135     0  E >   FETCH_STATIC_PROP_R          unknown             ~0      'instance'
+         1        IS_NOT_IDENTICAL                                 ~1      ~0, null
+         2      > JMPZ                                                     ~1, ->7
+ 136     3    >   NEW                                              $3      <undef>
+         4        DO_FCALL                                      0          
+         5        ASSIGN_STATIC_PROP                                       'instance'
+         6        OP_DATA                                                  $3
+ 139     7    >   FETCH_STATIC_PROP_R          unknown             ~5      'instance'
+         8      > RETURN                                                   ~5
+ 140     9*     > RETURN                                                   null
+
+End of function get_instance
+
+End of class WP_Block_Patterns_Registry.
+
+branch: #  0; line:   167-  167; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:   152-  154; sop:     0; eop:     9
+path #1: 0, 
+branch: #  0; line:   164-  166; sop:     0; eop:     7
+path #1: 0, 
+branch: #  0; line:    40-   41; sop:     0; eop:     4; out0:   5; out1:   8
+branch: #  5; line:    41-   41; sop:     5; eop:     7; out0:   8
+branch: #  8; line:    41-   41; sop:     8; eop:     8; out0:   9; out1:  18
+branch: #  9; line:    42-   43; sop:     9; eop:    17; out0:  -2
+branch: # 18; line:    46-   46; sop:    18; eop:    20; out0:  21; out1:  25
+branch: # 21; line:    46-   46; sop:    21; eop:    24; out0:  25
+branch: # 25; line:    46-   46; sop:    25; eop:    25; out0:  26; out1:  35
+branch: # 26; line:    47-   48; sop:    26; eop:    34; out0:  -2
+branch: # 35; line:    51-   51; sop:    35; eop:    37; out0:  38; out1:  42
+branch: # 38; line:    51-   51; sop:    38; eop:    41; out0:  42
+branch: # 42; line:    51-   51; sop:    42; eop:    42; out0:  43; out1:  52
+branch: # 43; line:    52-   53; sop:    43; eop:    51; out0:  -2
+branch: # 52; line:    56-   62; sop:    52; eop:    61
+path #1: 0, 5, 8, 9, 
+path #2: 0, 5, 8, 18, 21, 25, 26, 
+path #3: 0, 5, 8, 18, 21, 25, 35, 38, 42, 43, 
+path #4: 0, 5, 8, 18, 21, 25, 35, 38, 42, 52, 
+path #5: 0, 5, 8, 18, 21, 25, 35, 42, 43, 
+path #6: 0, 5, 8, 18, 21, 25, 35, 42, 52, 
+path #7: 0, 5, 8, 18, 25, 26, 
+path #8: 0, 5, 8, 18, 25, 35, 38, 42, 43, 
+path #9: 0, 5, 8, 18, 25, 35, 38, 42, 52, 
+path #10: 0, 5, 8, 18, 25, 35, 42, 43, 
+path #11: 0, 5, 8, 18, 25, 35, 42, 52, 
+path #12: 0, 8, 9, 
+path #13: 0, 8, 18, 21, 25, 26, 
+path #14: 0, 8, 18, 21, 25, 35, 38, 42, 43, 
+path #15: 0, 8, 18, 21, 25, 35, 38, 42, 52, 
+path #16: 0, 8, 18, 21, 25, 35, 42, 43, 
+path #17: 0, 8, 18, 21, 25, 35, 42, 52, 
+path #18: 0, 8, 18, 25, 26, 
+path #19: 0, 8, 18, 25, 35, 38, 42, 43, 
+path #20: 0, 8, 18, 25, 35, 38, 42, 52, 
+path #21: 0, 8, 18, 25, 35, 42, 43, 
+path #22: 0, 8, 18, 25, 35, 42, 52, 
+branch: #  0; line:    72-   73; sop:     0; eop:     5; out0:   6; out1:  20
+branch: #  6; line:    75-   77; sop:     6; eop:    19; out0:  -2
+branch: # 20; line:    80-   83; sop:    20; eop:    23
+path #1: 0, 6, 
+path #2: 0, 20, 
+branch: #  0; line:    93-   94; sop:     0; eop:     5; out0:   6; out1:   7
+branch: #  6; line:    95-   95; sop:     6; eop:     6; out0:  -2
+branch: #  7; line:    98-   99; sop:     7; eop:    10
+path #1: 0, 6, 
+path #2: 0, 7, 
+branch: #  0; line:   110-  111; sop:     0; eop:     5
+path #1: 0, 
+branch: #  0; line:   121-  123; sop:     0; eop:     4
+path #1: 0, 
+branch: #  0; line:   135-  135; sop:     0; eop:     2; out0:   3; out1:   7
+branch: #  3; line:   136-  139; sop:     3; eop:     6; out0:   7
+branch: #  7; line:   139-  140; sop:     7; eop:     9
+path #1: 0, 3, 7, 
+path #2: 0, 7, 

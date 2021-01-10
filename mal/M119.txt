@@ -1,0 +1,15 @@
+ECHO                    
+FETCH_IS                
+ISSET_ISEMPTY_DIM_OBJ   
+JMPZ                    
+ECHO                    
+FETCH_R                 
+FETCH_DIM_R             
+ASSIGN                  
+INIT_FCALL              
+SEND_VAR                
+DO_ICALL                
+ECHO                    
+EXIT                    
+ECHO                    
+RETURN                  

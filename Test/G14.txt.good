@@ -1,0 +1,58 @@
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 14, Position 2 = 19
+Branch analysis from position: 14
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 19
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-feed.php
+function name:  (null)
+number of ops:  40
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  10     0  E >   INIT_FCALL_BY_NAME                                       '_deprecated_file'
+         1        INIT_FCALL                                               'basename'
+         2        SEND_VAL                                                 '%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2Fclass-feed.php'
+         3        DO_ICALL                                         $0      
+         4        SEND_VAR_NO_REF_EX                                       $0
+         5        SEND_VAL_EX                                              '4.7.0'
+         6        SEND_VAL_EX                                              'fetch_feed%28%29'
+         7        DO_FCALL                                      0          
+  12     8        INIT_FCALL                                               'class_exists'
+         9        SEND_VAL                                                 'SimplePie'
+        10        SEND_VAL                                                 <false>
+        11        DO_ICALL                                         $2      
+        12        BOOL_XOR                                         ~3      $2
+        13      > JMPZ                                                     ~3, ->19
+  13    14    >   FETCH_CONSTANT                                   ~4      'ABSPATH'
+        15        FETCH_CONSTANT                                   ~5      'WPINC'
+        16        CONCAT                                           ~6      ~4, ~5
+        17        CONCAT                                           ~7      ~6, '%2Fclass-simplepie.php'
+        18        INCLUDE_OR_EVAL                                          ~7, REQUIRE_ONCE
+  16    19    >   FETCH_CONSTANT                                   ~9      'ABSPATH'
+        20        FETCH_CONSTANT                                   ~10     'WPINC'
+        21        CONCAT                                           ~11     ~9, ~10
+        22        CONCAT                                           ~12     ~11, '%2Fclass-wp-feed-cache.php'
+        23        INCLUDE_OR_EVAL                                          ~12, REQUIRE_ONCE
+  17    24        FETCH_CONSTANT                                   ~14     'ABSPATH'
+        25        FETCH_CONSTANT                                   ~15     'WPINC'
+        26        CONCAT                                           ~16     ~14, ~15
+        27        CONCAT                                           ~17     ~16, '%2Fclass-wp-feed-cache-transient.php'
+        28        INCLUDE_OR_EVAL                                          ~17, REQUIRE_ONCE
+  18    29        FETCH_CONSTANT                                   ~19     'ABSPATH'
+        30        FETCH_CONSTANT                                   ~20     'WPINC'
+        31        CONCAT                                           ~21     ~19, ~20
+        32        CONCAT                                           ~22     ~21, '%2Fclass-wp-simplepie-file.php'
+        33        INCLUDE_OR_EVAL                                          ~22, REQUIRE_ONCE
+  19    34        FETCH_CONSTANT                                   ~24     'ABSPATH'
+        35        FETCH_CONSTANT                                   ~25     'WPINC'
+        36        CONCAT                                           ~26     ~24, ~25
+        37        CONCAT                                           ~27     ~26, '%2Fclass-wp-simplepie-sanitize-kses.php'
+        38        INCLUDE_OR_EVAL                                          ~27, REQUIRE_ONCE
+  20    39      > RETURN                                                   1
+
+branch: #  0; line:    10-   12; sop:     0; eop:    13; out0:  14; out1:  19
+branch: # 14; line:    13-   16; sop:    14; eop:    18; out0:  19
+branch: # 19; line:    16-   20; sop:    19; eop:    39; out0:  -2
+path #1: 0, 14, 19, 
+path #2: 0, 19, 

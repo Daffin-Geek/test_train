@@ -1,0 +1,451 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  (null)
+number of ops:  16
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 396     0  E >   FETCH_CONSTANT                                   ~0      'ABSPATH'
+         1        FETCH_CONSTANT                                   ~1      'WPINC'
+         2        CONCAT                                           ~2      ~0, ~1
+         3        CONCAT                                           ~3      ~2, '%2Fcustomize%2Fclass-wp-customize-themes-section.php'
+         4        INCLUDE_OR_EVAL                                          ~3, REQUIRE_ONCE
+ 399     5        FETCH_CONSTANT                                   ~5      'ABSPATH'
+         6        FETCH_CONSTANT                                   ~6      'WPINC'
+         7        CONCAT                                           ~7      ~5, ~6
+         8        CONCAT                                           ~8      ~7, '%2Fcustomize%2Fclass-wp-customize-sidebar-section.php'
+         9        INCLUDE_OR_EVAL                                          ~8, REQUIRE_ONCE
+ 402    10        FETCH_CONSTANT                                   ~10     'ABSPATH'
+        11        FETCH_CONSTANT                                   ~11     'WPINC'
+        12        CONCAT                                           ~12     ~10, ~11
+        13        CONCAT                                           ~13     ~12, '%2Fcustomize%2Fclass-wp-customize-nav-menu-section.php'
+        14        INCLUDE_OR_EVAL                                          ~13, REQUIRE_ONCE
+ 403    15      > RETURN                                                   1
+
+Class WP_Customize_Section:
+Function __construct:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 77) Position 1 = 12, Position 2 = 19
+Branch analysis from position: 12
+2 jumps found. (Code = 78) Position 1 = 13, Position 2 = 19
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 15, Position 2 = 18
+Branch analysis from position: 15
+1 jumps found. (Code = 42) Position 1 = 12
+Branch analysis from position: 12
+Branch analysis from position: 18
+Branch analysis from position: 19
+2 jumps found. (Code = 43) Position 1 = 26, Position 2 = 31
+Branch analysis from position: 26
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 31
+Branch analysis from position: 19
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  __construct
+number of ops:  39
+compiled vars:  !0 = $manager, !1 = $id, !2 = $args, !3 = $keys, !4 = $key
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 172     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV_INIT                                        !2      <array>
+ 173     3        INIT_FCALL                                               'array_keys'
+         4        INIT_FCALL                                               'get_object_vars'
+         5        FETCH_THIS                                       ~5      
+         6        SEND_VAL                                                 ~5
+         7        DO_ICALL                                         $6      
+         8        SEND_VAR                                                 $6
+         9        DO_ICALL                                         $7      
+        10        ASSIGN                                                   !3, $7
+ 174    11      > FE_RESET_R                                       $9      !3, ->19
+        12    > > FE_FETCH_R                                               $9, !4, ->19
+ 175    13    >   ISSET_ISEMPTY_DIM_OBJ                         0  ~10     !2, !4
+        14      > JMPZ                                                     ~10, ->18
+ 176    15    >   FETCH_DIM_R                                      ~12     !2, !4
+        16        ASSIGN_OBJ                                               !4
+        17        OP_DATA                                                  ~12
+ 174    18    > > JMP                                                      ->12
+        19    >   FE_FREE                                                  $9
+ 180    20        ASSIGN_OBJ                                               'manager'
+        21        OP_DATA                                                  !0
+ 181    22        ASSIGN_OBJ                                               'id'
+        23        OP_DATA                                                  !1
+ 182    24        ISSET_ISEMPTY_PROP_OBJ                           ~15     'active_callback'
+        25      > JMPZ                                                     ~15, ->31
+ 183    26    >   FETCH_THIS                                       ~17     
+        27        INIT_ARRAY                                       ~18     ~17
+        28        ADD_ARRAY_ELEMENT                                ~18     'active_callback'
+        29        ASSIGN_OBJ                                               'active_callback'
+        30        OP_DATA                                                  ~18
+ 185    31    >   ASSIGN_STATIC_PROP_OP                         1          'instance_count'
+        32        OP_DATA                                                  1
+ 186    33        FETCH_STATIC_PROP_R          unknown             ~21     'instance_count'
+        34        ASSIGN_OBJ                                               'instance_number'
+        35        OP_DATA                                                  ~21
+ 188    36        ASSIGN_OBJ                                               'controls'
+        37        OP_DATA                                                  <array>
+ 189    38      > RETURN                                                   null
+
+End of function __construct
+
+Function active:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  active
+number of ops:  16
+compiled vars:  !0 = $section, !1 = $active
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 199     0  E >   FETCH_THIS                                       ~2      
+         1        ASSIGN                                                   !0, ~2
+ 200     2        FETCH_OBJ_R                                      ~4      'active_callback'
+         3        INIT_USER_CALL                                1          'call_user_func', ~4
+         4        FETCH_THIS                                       ~5      
+         5        SEND_USER                                                ~5
+         6        DO_FCALL                                      0  $6      
+         7        ASSIGN                                                   !1, $6
+ 210     8        INIT_FCALL_BY_NAME                                       'apply_filters'
+         9        SEND_VAL_EX                                              'customize_section_active'
+        10        SEND_VAR_EX                                              !1
+        11        SEND_VAR_EX                                              !0
+        12        DO_FCALL                                      0  $8      
+        13        ASSIGN                                                   !1, $8
+ 212    14      > RETURN                                                   !1
+ 213    15*     > RETURN                                                   null
+
+End of function active
+
+Function active_callback:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  active_callback
+number of ops:  2
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 226     0  E > > RETURN                                                   <true>
+ 227     1*     > RETURN                                                   null
+
+End of function active_callback
+
+Function json:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 31, Position 2 = 53
+Branch analysis from position: 31
+1 jumps found. (Code = 42) Position 1 = 58
+Branch analysis from position: 58
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 53
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  json
+number of ops:  60
+compiled vars:  !0 = $array
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 237     0  E >   INIT_FCALL_BY_NAME                                       'wp_array_slice_assoc'
+         1        FETCH_THIS                                       ~1      
+         2        MAKE_REF                                         ~2      ~1
+         3        SEND_VAL_EX                                              ~2
+         4        SEND_VAL_EX                                              <array>
+         5        DO_FCALL                                      0  $3      
+         6        ASSIGN                                                   !0, $3
+ 238     7        INIT_FCALL                                               'html_entity_decode'
+         8        FETCH_OBJ_R                                      ~6      'title'
+         9        SEND_VAL                                                 ~6
+        10        SEND_VAL                                                 3
+        11        INIT_FCALL_BY_NAME                                       'get_bloginfo'
+        12        SEND_VAL_EX                                              'charset'
+        13        DO_FCALL                                      0  $7      
+        14        SEND_VAR                                                 $7
+        15        DO_ICALL                                         $8      
+        16        ASSIGN_DIM                                               !0, 'title'
+        17        OP_DATA                                                  $8
+ 239    18        INIT_METHOD_CALL                                         'get_content'
+        19        DO_FCALL                                      0  $10     
+        20        ASSIGN_DIM                                               !0, 'content'
+        21        OP_DATA                                                  $10
+ 240    22        INIT_METHOD_CALL                                         'active'
+        23        DO_FCALL                                      0  $12     
+        24        ASSIGN_DIM                                               !0, 'active'
+        25        OP_DATA                                                  $12
+ 241    26        FETCH_OBJ_R                                      ~14     'instance_number'
+        27        ASSIGN_DIM                                               !0, 'instanceNumber'
+        28        OP_DATA                                                  ~14
+ 243    29        FETCH_OBJ_R                                      ~15     'panel'
+        30      > JMPZ                                                     ~15, ->53
+ 245    31    >   INIT_FCALL                                               'sprintf'
+        32        INIT_FCALL_BY_NAME                                       '__'
+        33        SEND_VAL_EX                                              'Customizing+%26%239656%3B+%25s'
+        34        DO_FCALL                                      0  $17     
+        35        SEND_VAR                                                 $17
+        36        INIT_FCALL_BY_NAME                                       'esc_html'
+        37        CHECK_FUNC_ARG                                           
+        38        FETCH_OBJ_R                                      ~18     'manager'
+        39        INIT_METHOD_CALL                                         ~18, 'get_panel'
+        40        CHECK_FUNC_ARG                                           
+        41        FETCH_OBJ_FUNC_ARG                               $19     'panel'
+        42        SEND_FUNC_ARG                                            $19
+        43        DO_FCALL                                      0  $20     
+        44        SEPARATE                                         $20     $20
+        45        FETCH_OBJ_FUNC_ARG                               $21     $20, 'title'
+        46        SEND_FUNC_ARG                                            $21
+        47        DO_FCALL                                      0  $22     
+        48        SEND_VAR                                                 $22
+        49        DO_ICALL                                         $23     
+        50        ASSIGN_DIM                                               !0, 'customizeAction'
+        51        OP_DATA                                                  $23
+        52      > JMP                                                      ->58
+ 247    53    >   INIT_FCALL_BY_NAME                                       '__'
+        54        SEND_VAL_EX                                              'Customizing'
+        55        DO_FCALL                                      0  $25     
+        56        ASSIGN_DIM                                               !0, 'customizeAction'
+        57        OP_DATA                                                  $25
+ 250    58    > > RETURN                                                   !0
+ 251    59*     > RETURN                                                   null
+
+End of function json
+
+Function check_capabilities:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 2, Position 2 = 9
+Branch analysis from position: 2
+2 jumps found. (Code = 43) Position 1 = 10, Position 2 = 11
+Branch analysis from position: 10
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+2 jumps found. (Code = 46) Position 1 = 13, Position 2 = 20
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 21, Position 2 = 22
+Branch analysis from position: 21
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 22
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 20
+Branch analysis from position: 9
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  check_capabilities
+number of ops:  24
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 262     0  E >   FETCH_OBJ_R                                      ~0      'capability'
+         1      > JMPZ_EX                                          ~0      ~0, ->9
+         2    >   INIT_FCALL_BY_NAME                                       'current_user_can'
+         3        CHECK_FUNC_ARG                                           
+         4        FETCH_OBJ_FUNC_ARG                               $1      'capability'
+         5        SEND_FUNC_ARG                                            $1
+         6        DO_FCALL                                      0  $2      
+         7        BOOL_XOR                                         ~3      $2
+         8        BOOL                                             ~0      ~3
+         9    > > JMPZ                                                     ~0, ->11
+ 263    10    > > RETURN                                                   <false>
+ 266    11    >   FETCH_OBJ_R                                      ~4      'theme_supports'
+        12      > JMPZ_EX                                          ~4      ~4, ->20
+        13    >   INIT_FCALL_BY_NAME                                       'current_theme_supports'
+        14        FETCH_OBJ_R                                      ~5      'theme_supports'
+        15        MAKE_REF                                         ~6      ~5
+        16        SEND_UNPACK                                              ~6
+        17        DO_FCALL                                      0  $7      
+        18        BOOL_XOR                                         ~8      $7
+        19        BOOL                                             ~4      ~8
+        20    > > JMPZ                                                     ~4, ->22
+ 267    21    > > RETURN                                                   <false>
+ 270    22    > > RETURN                                                   <true>
+ 271    23*     > RETURN                                                   null
+
+End of function check_capabilities
+
+Function get_content:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  get_content
+number of ops:  11
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 281     0  E >   INIT_FCALL                                               'ob_start'
+         1        DO_ICALL                                                 
+ 282     2        INIT_METHOD_CALL                                         'maybe_render'
+         3        DO_FCALL                                      0          
+ 283     4        INIT_FCALL                                               'trim'
+         5        INIT_FCALL                                               'ob_get_clean'
+         6        DO_ICALL                                         $2      
+         7        SEND_VAR                                                 $2
+         8        DO_ICALL                                         $3      
+         9      > RETURN                                                   $3
+ 284    10*     > RETURN                                                   null
+
+End of function get_content
+
+Function maybe_render:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 5
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  maybe_render
+number of ops:  19
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 292     0  E >   INIT_METHOD_CALL                                         'check_capabilities'
+         1        DO_FCALL                                      0  $0      
+         2        BOOL_XOR                                         ~1      $0
+         3      > JMPZ                                                     ~1, ->5
+ 293     4    > > RETURN                                                   null
+ 303     5    >   INIT_FCALL_BY_NAME                                       'do_action'
+         6        SEND_VAL_EX                                              'customize_render_section'
+         7        FETCH_THIS                                       $2      
+         8        SEND_VAR_EX                                              $2
+         9        DO_FCALL                                      0          
+ 312    10        INIT_FCALL_BY_NAME                                       'do_action'
+        11        NOP                                                      
+        12        FETCH_OBJ_R                                      ~4      'id'
+        13        FAST_CONCAT                                      ~5      'customize_render_section_', ~4
+        14        SEND_VAL_EX                                              ~5
+        15        DO_FCALL                                      0          
+ 314    16        INIT_METHOD_CALL                                         'render'
+        17        DO_FCALL                                      0          
+ 315    18      > RETURN                                                   null
+
+End of function maybe_render
+
+Function render:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  render
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 324     0  E > > RETURN                                                   null
+
+End of function render
+
+Function print_template:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  print_template
+number of ops:  8
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 338     0  E >   ECHO                                                     '%09%09%3Cscript+type%3D%22text%2Fhtml%22+id%3D%22tmpl-customize-section-'
+         1        FETCH_OBJ_R                                      ~0      'type'
+         2        ECHO                                                     ~0
+         3        ECHO                                                     '%22%3E%0A%09%09%09'
+ 339     4        INIT_METHOD_CALL                                         'render_template'
+         5        DO_FCALL                                      0          
+ 340     6        ECHO                                                     '%09%09%3C%2Fscript%3E%0A%09%09'
+ 342     7      > RETURN                                                   null
+
+End of function print_template
+
+Function render_template:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-section.php
+function name:  render_template
+number of ops:  14
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 356     0  E >   ECHO                                                     '%09%09%3Cli+id%3D%22accordion-section-%7B%7B+data.id+%7D%7D%22+class%3D%22accordion-section+control-section+control-section-%7B%7B+data.type+%7D%7D%22%3E%0A%09%09%09%3Ch3+class%3D%22accordion-section-title%22+tabindex%3D%220%22%3E%0A%09%09%09%09%7B%7B+data.title+%7D%7D%0A%09%09%09%09%3Cspan+class%3D%22screen-reader-text%22%3E'
+ 359     1        INIT_FCALL_BY_NAME                                       '_e'
+         2        SEND_VAL_EX                                              'Press+return+or+enter+to+open+this+section'
+         3        DO_FCALL                                      0          
+         4        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%3C%2Fh3%3E%0A%09%09%09%3Cul+class%3D%22accordion-section-content%22%3E%0A%09%09%09%09%3Cli+class%3D%22customize-section-description-container+section-meta+%3C%23+if+%28+data.description_hidden+%29+%7B+%23%3Ecustomize-info%3C%23+%7D+%23%3E%22%3E%0A%09%09%09%09%09%3Cdiv+class%3D%22customize-section-title%22%3E%0A%09%09%09%09%09%09%3Cbutton+class%3D%22customize-section-back%22+tabindex%3D%22-1%22%3E%0A%09%09%09%09%09%09%09%3Cspan+class%3D%22screen-reader-text%22%3E'
+ 365     5        INIT_FCALL_BY_NAME                                       '_e'
+         6        SEND_VAL_EX                                              'Back'
+         7        DO_FCALL                                      0          
+         8        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%09%09%09%3C%2Fbutton%3E%0A%09%09%09%09%09%09%3Ch3%3E%0A%09%09%09%09%09%09%09%3Cspan+class%3D%22customize-action%22%3E%0A%09%09%09%09%09%09%09%09%7B%7B%7B+data.customizeAction+%7D%7D%7D%0A%09%09%09%09%09%09%09%3C%2Fspan%3E%0A%09%09%09%09%09%09%09%7B%7B+data.title+%7D%7D%0A%09%09%09%09%09%09%3C%2Fh3%3E%0A%09%09%09%09%09%09%3C%23+if+%28+data.description+%26%26+data.description_hidden+%29+%7B+%23%3E%0A%09%09%09%09%09%09%09%3Cbutton+type%3D%22button%22+class%3D%22customize-help-toggle+dashicons+dashicons-editor-help%22+aria-expanded%3D%22false%22%3E%3Cspan+class%3D%22screen-reader-text%22%3E'
+ 374     9        INIT_FCALL_BY_NAME                                       '_e'
+        10        SEND_VAL_EX                                              'Help'
+        11        DO_FCALL                                      0          
+        12        ECHO                                                     '%3C%2Fspan%3E%3C%2Fbutton%3E%0A%09%09%09%09%09%09%09%3Cdiv+class%3D%22description+customize-section-description%22%3E%0A%09%09%09%09%09%09%09%09%7B%7B%7B+data.description+%7D%7D%7D%0A%09%09%09%09%09%09%09%3C%2Fdiv%3E%0A%09%09%09%09%09%09%3C%23+%7D+%23%3E%0A%0A%09%09%09%09%09%09%3Cdiv+class%3D%22customize-control-notifications-container%22%3E%3C%2Fdiv%3E%0A%09%09%09%09%09%3C%2Fdiv%3E%0A%0A%09%09%09%09%09%3C%23+if+%28+data.description+%26%26+%21+data.description_hidden+%29+%7B+%23%3E%0A%09%09%09%09%09%09%3Cdiv+class%3D%22description+customize-section-description%22%3E%0A%09%09%09%09%09%09%09%7B%7B%7B+data.description+%7D%7D%7D%0A%09%09%09%09%09%09%3C%2Fdiv%3E%0A%09%09%09%09%09%3C%23+%7D+%23%3E%0A%09%09%09%09%3C%2Fli%3E%0A%09%09%09%3C%2Ful%3E%0A%09%09%3C%2Fli%3E%0A%09%09'
+ 392    13      > RETURN                                                   null
+
+End of function render_template
+
+End of class WP_Customize_Section.
+
+branch: #  0; line:   396-  403; sop:     0; eop:    15; out0:  -2
+path #1: 0, 
+branch: #  0; line:   172-  174; sop:     0; eop:    11; out0:  12; out1:  19
+branch: # 12; line:   174-  174; sop:    12; eop:    12; out0:  13; out1:  19
+branch: # 13; line:   175-  175; sop:    13; eop:    14; out0:  15; out1:  18
+branch: # 15; line:   176-  174; sop:    15; eop:    17; out0:  18
+branch: # 18; line:   174-  174; sop:    18; eop:    18; out0:  12
+branch: # 19; line:   174-  182; sop:    19; eop:    25; out0:  26; out1:  31
+branch: # 26; line:   183-  185; sop:    26; eop:    30; out0:  31
+branch: # 31; line:   185-  189; sop:    31; eop:    38; out0:  -2
+path #1: 0, 12, 13, 15, 18, 12, 19, 26, 31, 
+path #2: 0, 12, 13, 15, 18, 12, 19, 31, 
+path #3: 0, 12, 13, 18, 12, 19, 26, 31, 
+path #4: 0, 12, 13, 18, 12, 19, 31, 
+path #5: 0, 12, 19, 26, 31, 
+path #6: 0, 12, 19, 31, 
+path #7: 0, 19, 26, 31, 
+path #8: 0, 19, 31, 
+branch: #  0; line:   199-  213; sop:     0; eop:    15
+path #1: 0, 
+branch: #  0; line:   226-  227; sop:     0; eop:     1
+path #1: 0, 
+branch: #  0; line:   237-  243; sop:     0; eop:    30; out0:  31; out1:  53
+branch: # 31; line:   245-  245; sop:    31; eop:    52; out0:  58
+branch: # 53; line:   247-  250; sop:    53; eop:    57; out0:  58
+branch: # 58; line:   250-  251; sop:    58; eop:    59
+path #1: 0, 31, 58, 
+path #2: 0, 53, 58, 
+branch: #  0; line:   262-  262; sop:     0; eop:     1; out0:   2; out1:   9
+branch: #  2; line:   262-  262; sop:     2; eop:     8; out0:   9
+branch: #  9; line:   262-  262; sop:     9; eop:     9; out0:  10; out1:  11
+branch: # 10; line:   263-  263; sop:    10; eop:    10; out0:  -2
+branch: # 11; line:   266-  266; sop:    11; eop:    12; out0:  13; out1:  20
+branch: # 13; line:   266-  266; sop:    13; eop:    19; out0:  20
+branch: # 20; line:   266-  266; sop:    20; eop:    20; out0:  21; out1:  22
+branch: # 21; line:   267-  267; sop:    21; eop:    21; out0:  -2
+branch: # 22; line:   270-  271; sop:    22; eop:    23
+path #1: 0, 2, 9, 10, 
+path #2: 0, 2, 9, 11, 13, 20, 21, 
+path #3: 0, 2, 9, 11, 13, 20, 22, 
+path #4: 0, 2, 9, 11, 20, 21, 
+path #5: 0, 2, 9, 11, 20, 22, 
+path #6: 0, 9, 10, 
+path #7: 0, 9, 11, 13, 20, 21, 
+path #8: 0, 9, 11, 13, 20, 22, 
+path #9: 0, 9, 11, 20, 21, 
+path #10: 0, 9, 11, 20, 22, 
+branch: #  0; line:   281-  284; sop:     0; eop:    10
+path #1: 0, 
+branch: #  0; line:   292-  292; sop:     0; eop:     3; out0:   4; out1:   5
+branch: #  4; line:   293-  293; sop:     4; eop:     4; out0:  -2
+branch: #  5; line:   303-  315; sop:     5; eop:    18; out0:  -2
+path #1: 0, 4, 
+path #2: 0, 5, 
+branch: #  0; line:   324-  324; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:   338-  342; sop:     0; eop:     7; out0:  -2
+path #1: 0, 
+branch: #  0; line:   356-  392; sop:     0; eop:    13; out0:  -2
+path #1: 0, 

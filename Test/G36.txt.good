@@ -1,0 +1,272 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  (null)
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 153     0  E > > RETURN                                                   1
+
+Function register_block_pattern_category:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  register_block_pattern_category
+number of ops:  10
+compiled vars:  !0 = $category_name, !1 = $category_properties
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 138     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 139     2        INIT_STATIC_METHOD_CALL                                  'WP_Block_Pattern_Categories_Registry', 'get_instance'
+         3        DO_FCALL                                      0  $2      
+         4        INIT_METHOD_CALL                                         $2, 'register'
+         5        SEND_VAR_EX                                              !0
+         6        SEND_VAR_EX                                              !1
+         7        DO_FCALL                                      0  $3      
+         8      > RETURN                                                   $3
+ 140     9*     > RETURN                                                   null
+
+End of function register_block_pattern_category
+
+Function unregister_block_pattern_category:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  unregister_block_pattern_category
+number of ops:  8
+compiled vars:  !0 = $category_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 150     0  E >   RECV                                             !0      
+ 151     1        INIT_STATIC_METHOD_CALL                                  'WP_Block_Pattern_Categories_Registry', 'get_instance'
+         2        DO_FCALL                                      0  $1      
+         3        INIT_METHOD_CALL                                         $1, 'unregister'
+         4        SEND_VAR_EX                                              !0
+         5        DO_FCALL                                      0  $2      
+         6      > RETURN                                                   $2
+ 152     7*     > RETURN                                                   null
+
+End of function unregister_block_pattern_category
+
+Class WP_Block_Pattern_Categories_Registry:
+Function register:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 47) Position 1 = 5, Position 2 = 8
+Branch analysis from position: 5
+2 jumps found. (Code = 43) Position 1 = 9, Position 2 = 18
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 18
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 8
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  register
+number of ops:  28
+compiled vars:  !0 = $category_name, !1 = $category_properties
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  37     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+  38     2        ISSET_ISEMPTY_CV                                 ~2      !0
+         3        BOOL_XOR                                         ~3      ~2
+         4      > JMPNZ_EX                                         ~3      ~3, ->8
+         5    >   TYPE_CHECK                                   64  ~4      !0
+         6        BOOL_XOR                                         ~5      ~4
+         7        BOOL                                             ~3      ~5
+         8    > > JMPZ                                                     ~3, ->18
+  39     9    >   INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        10        SEND_VAL_EX                                              'WP_Block_Pattern_Categories_Registry%3A%3Aregister'
+        11        INIT_FCALL_BY_NAME                                       '__'
+        12        SEND_VAL_EX                                              'Block+pattern+category+name+must+be+a+string.'
+        13        DO_FCALL                                      0  $6      
+        14        SEND_VAR_NO_REF_EX                                       $6
+        15        SEND_VAL_EX                                              '5.5.0'
+        16        DO_FCALL                                      0          
+  40    17      > RETURN                                                   <false>
+  43    18    >   INIT_FCALL                                               'array_merge'
+  44    19        INIT_ARRAY                                       ~10     !0, 'name'
+        20        SEND_VAL                                                 ~10
+  45    21        SEND_VAR                                                 !1
+        22        DO_ICALL                                         $11     
+  43    23        FETCH_OBJ_W                                      $8      'registered_categories'
+        24        ASSIGN_DIM                                               $8, !0
+  45    25        OP_DATA                                                  $11
+  48    26      > RETURN                                                   <true>
+  49    27*     > RETURN                                                   null
+
+End of function register
+
+Function unregister:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 20
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 20
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  unregister
+number of ops:  24
+compiled vars:  !0 = $category_name, !1 = $message
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  59     0  E >   RECV                                             !0      
+  60     1        INIT_METHOD_CALL                                         'is_registered'
+         2        SEND_VAR_EX                                              !0
+         3        DO_FCALL                                      0  $2      
+         4        BOOL_XOR                                         ~3      $2
+         5      > JMPZ                                                     ~3, ->20
+  62     6    >   INIT_FCALL                                               'sprintf'
+         7        INIT_FCALL_BY_NAME                                       '__'
+         8        SEND_VAL_EX                                              'Block+pattern+category+%22%251%24s%22+not+found.'
+         9        DO_FCALL                                      0  $4      
+        10        SEND_VAR                                                 $4
+        11        SEND_VAR                                                 !0
+        12        DO_ICALL                                         $5      
+        13        ASSIGN                                                   !1, $5
+  63    14        INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        15        SEND_VAL_EX                                              'WP_Block_Pattern_Categories_Registry%3A%3Aunregister'
+        16        SEND_VAR_EX                                              !1
+        17        SEND_VAL_EX                                              '5.5.0'
+        18        DO_FCALL                                      0          
+  64    19      > RETURN                                                   <false>
+  67    20    >   FETCH_OBJ_UNSET                                  $8      'registered_categories'
+        21        UNSET_DIM                                                $8, !0
+  69    22      > RETURN                                                   <true>
+  70    23*     > RETURN                                                   null
+
+End of function unregister
+
+Function get_registered:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 7
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  get_registered
+number of ops:  11
+compiled vars:  !0 = $category_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  80     0  E >   RECV                                             !0      
+  81     1        INIT_METHOD_CALL                                         'is_registered'
+         2        SEND_VAR_EX                                              !0
+         3        DO_FCALL                                      0  $1      
+         4        BOOL_XOR                                         ~2      $1
+         5      > JMPZ                                                     ~2, ->7
+  82     6    > > RETURN                                                   null
+  85     7    >   FETCH_OBJ_R                                      ~3      'registered_categories'
+         8        FETCH_DIM_R                                      ~4      ~3, !0
+         9      > RETURN                                                   ~4
+  86    10*     > RETURN                                                   null
+
+End of function get_registered
+
+Function get_all_registered:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  get_all_registered
+number of ops:  6
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  96     0  E >   INIT_FCALL                                               'array_values'
+         1        FETCH_OBJ_R                                      ~0      'registered_categories'
+         2        SEND_VAL                                                 ~0
+         3        DO_ICALL                                         $1      
+         4      > RETURN                                                   $1
+  97     5*     > RETURN                                                   null
+
+End of function get_all_registered
+
+Function is_registered:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  is_registered
+number of ops:  5
+compiled vars:  !0 = $category_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 107     0  E >   RECV                                             !0      
+ 108     1        FETCH_OBJ_IS                                     ~1      'registered_categories'
+         2        ISSET_ISEMPTY_DIM_OBJ                         0  ~2      ~1, !0
+         3      > RETURN                                                   ~2
+ 109     4*     > RETURN                                                   null
+
+End of function is_registered
+
+Function get_instance:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 7
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-pattern-categories-registry.php
+function name:  get_instance
+number of ops:  10
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 121     0  E >   FETCH_STATIC_PROP_R          unknown             ~0      'instance'
+         1        IS_NOT_IDENTICAL                                 ~1      ~0, null
+         2      > JMPZ                                                     ~1, ->7
+ 122     3    >   NEW                                              $3      <undef>
+         4        DO_FCALL                                      0          
+         5        ASSIGN_STATIC_PROP                                       'instance'
+         6        OP_DATA                                                  $3
+ 125     7    >   FETCH_STATIC_PROP_R          unknown             ~5      'instance'
+         8      > RETURN                                                   ~5
+ 126     9*     > RETURN                                                   null
+
+End of function get_instance
+
+End of class WP_Block_Pattern_Categories_Registry.
+
+branch: #  0; line:   153-  153; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:   138-  140; sop:     0; eop:     9
+path #1: 0, 
+branch: #  0; line:   150-  152; sop:     0; eop:     7
+path #1: 0, 
+branch: #  0; line:    37-   38; sop:     0; eop:     4; out0:   5; out1:   8
+branch: #  5; line:    38-   38; sop:     5; eop:     7; out0:   8
+branch: #  8; line:    38-   38; sop:     8; eop:     8; out0:   9; out1:  18
+branch: #  9; line:    39-   40; sop:     9; eop:    17; out0:  -2
+branch: # 18; line:    43-   49; sop:    18; eop:    27
+path #1: 0, 5, 8, 9, 
+path #2: 0, 5, 8, 18, 
+path #3: 0, 8, 9, 
+path #4: 0, 8, 18, 
+branch: #  0; line:    59-   60; sop:     0; eop:     5; out0:   6; out1:  20
+branch: #  6; line:    62-   64; sop:     6; eop:    19; out0:  -2
+branch: # 20; line:    67-   70; sop:    20; eop:    23
+path #1: 0, 6, 
+path #2: 0, 20, 
+branch: #  0; line:    80-   81; sop:     0; eop:     5; out0:   6; out1:   7
+branch: #  6; line:    82-   82; sop:     6; eop:     6; out0:  -2
+branch: #  7; line:    85-   86; sop:     7; eop:    10
+path #1: 0, 6, 
+path #2: 0, 7, 
+branch: #  0; line:    96-   97; sop:     0; eop:     5
+path #1: 0, 
+branch: #  0; line:   107-  109; sop:     0; eop:     4
+path #1: 0, 
+branch: #  0; line:   121-  121; sop:     0; eop:     2; out0:   3; out1:   7
+branch: #  3; line:   122-  125; sop:     3; eop:     6; out0:   7
+branch: #  7; line:   125-  126; sop:     7; eop:     9
+path #1: 0, 3, 7, 
+path #2: 0, 7, 

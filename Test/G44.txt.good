@@ -1,0 +1,1971 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  (null)
+number of ops:  96
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 701     0  E >   FETCH_CONSTANT                                   ~0      'ABSPATH'
+         1        FETCH_CONSTANT                                   ~1      'WPINC'
+         2        CONCAT                                           ~2      ~0, ~1
+         3        CONCAT                                           ~3      ~2, '%2Fcustomize%2Fclass-wp-customize-color-control.php'
+         4        INCLUDE_OR_EVAL                                          ~3, REQUIRE_ONCE
+ 706     5        FETCH_CONSTANT                                   ~5      'ABSPATH'
+         6        FETCH_CONSTANT                                   ~6      'WPINC'
+         7        CONCAT                                           ~7      ~5, ~6
+         8        CONCAT                                           ~8      ~7, '%2Fcustomize%2Fclass-wp-customize-media-control.php'
+         9        INCLUDE_OR_EVAL                                          ~8, REQUIRE_ONCE
+ 711    10        FETCH_CONSTANT                                   ~10     'ABSPATH'
+        11        FETCH_CONSTANT                                   ~11     'WPINC'
+        12        CONCAT                                           ~12     ~10, ~11
+        13        CONCAT                                           ~13     ~12, '%2Fcustomize%2Fclass-wp-customize-upload-control.php'
+        14        INCLUDE_OR_EVAL                                          ~13, REQUIRE_ONCE
+ 716    15        FETCH_CONSTANT                                   ~15     'ABSPATH'
+        16        FETCH_CONSTANT                                   ~16     'WPINC'
+        17        CONCAT                                           ~17     ~15, ~16
+        18        CONCAT                                           ~18     ~17, '%2Fcustomize%2Fclass-wp-customize-image-control.php'
+        19        INCLUDE_OR_EVAL                                          ~18, REQUIRE_ONCE
+ 721    20        FETCH_CONSTANT                                   ~20     'ABSPATH'
+        21        FETCH_CONSTANT                                   ~21     'WPINC'
+        22        CONCAT                                           ~22     ~20, ~21
+        23        CONCAT                                           ~23     ~22, '%2Fcustomize%2Fclass-wp-customize-background-image-control.php'
+        24        INCLUDE_OR_EVAL                                          ~23, REQUIRE_ONCE
+ 726    25        FETCH_CONSTANT                                   ~25     'ABSPATH'
+        26        FETCH_CONSTANT                                   ~26     'WPINC'
+        27        CONCAT                                           ~27     ~25, ~26
+        28        CONCAT                                           ~28     ~27, '%2Fcustomize%2Fclass-wp-customize-background-position-control.php'
+        29        INCLUDE_OR_EVAL                                          ~28, REQUIRE_ONCE
+ 731    30        FETCH_CONSTANT                                   ~30     'ABSPATH'
+        31        FETCH_CONSTANT                                   ~31     'WPINC'
+        32        CONCAT                                           ~32     ~30, ~31
+        33        CONCAT                                           ~33     ~32, '%2Fcustomize%2Fclass-wp-customize-cropped-image-control.php'
+        34        INCLUDE_OR_EVAL                                          ~33, REQUIRE_ONCE
+ 736    35        FETCH_CONSTANT                                   ~35     'ABSPATH'
+        36        FETCH_CONSTANT                                   ~36     'WPINC'
+        37        CONCAT                                           ~37     ~35, ~36
+        38        CONCAT                                           ~38     ~37, '%2Fcustomize%2Fclass-wp-customize-site-icon-control.php'
+        39        INCLUDE_OR_EVAL                                          ~38, REQUIRE_ONCE
+ 741    40        FETCH_CONSTANT                                   ~40     'ABSPATH'
+        41        FETCH_CONSTANT                                   ~41     'WPINC'
+        42        CONCAT                                           ~42     ~40, ~41
+        43        CONCAT                                           ~43     ~42, '%2Fcustomize%2Fclass-wp-customize-header-image-control.php'
+        44        INCLUDE_OR_EVAL                                          ~43, REQUIRE_ONCE
+ 746    45        FETCH_CONSTANT                                   ~45     'ABSPATH'
+        46        FETCH_CONSTANT                                   ~46     'WPINC'
+        47        CONCAT                                           ~47     ~45, ~46
+        48        CONCAT                                           ~48     ~47, '%2Fcustomize%2Fclass-wp-customize-theme-control.php'
+        49        INCLUDE_OR_EVAL                                          ~48, REQUIRE_ONCE
+ 751    50        FETCH_CONSTANT                                   ~50     'ABSPATH'
+        51        FETCH_CONSTANT                                   ~51     'WPINC'
+        52        CONCAT                                           ~52     ~50, ~51
+        53        CONCAT                                           ~53     ~52, '%2Fcustomize%2Fclass-wp-widget-area-customize-control.php'
+        54        INCLUDE_OR_EVAL                                          ~53, REQUIRE_ONCE
+ 756    55        FETCH_CONSTANT                                   ~55     'ABSPATH'
+        56        FETCH_CONSTANT                                   ~56     'WPINC'
+        57        CONCAT                                           ~57     ~55, ~56
+        58        CONCAT                                           ~58     ~57, '%2Fcustomize%2Fclass-wp-widget-form-customize-control.php'
+        59        INCLUDE_OR_EVAL                                          ~58, REQUIRE_ONCE
+ 761    60        FETCH_CONSTANT                                   ~60     'ABSPATH'
+        61        FETCH_CONSTANT                                   ~61     'WPINC'
+        62        CONCAT                                           ~62     ~60, ~61
+        63        CONCAT                                           ~63     ~62, '%2Fcustomize%2Fclass-wp-customize-nav-menu-control.php'
+        64        INCLUDE_OR_EVAL                                          ~63, REQUIRE_ONCE
+ 766    65        FETCH_CONSTANT                                   ~65     'ABSPATH'
+        66        FETCH_CONSTANT                                   ~66     'WPINC'
+        67        CONCAT                                           ~67     ~65, ~66
+        68        CONCAT                                           ~68     ~67, '%2Fcustomize%2Fclass-wp-customize-nav-menu-item-control.php'
+        69        INCLUDE_OR_EVAL                                          ~68, REQUIRE_ONCE
+ 771    70        FETCH_CONSTANT                                   ~70     'ABSPATH'
+        71        FETCH_CONSTANT                                   ~71     'WPINC'
+        72        CONCAT                                           ~72     ~70, ~71
+        73        CONCAT                                           ~73     ~72, '%2Fcustomize%2Fclass-wp-customize-nav-menu-location-control.php'
+        74        INCLUDE_OR_EVAL                                          ~73, REQUIRE_ONCE
+ 782    75        FETCH_CONSTANT                                   ~75     'ABSPATH'
+        76        FETCH_CONSTANT                                   ~76     'WPINC'
+        77        CONCAT                                           ~77     ~75, ~76
+        78        CONCAT                                           ~78     ~77, '%2Fcustomize%2Fclass-wp-customize-nav-menu-name-control.php'
+        79        INCLUDE_OR_EVAL                                          ~78, REQUIRE_ONCE
+ 787    80        FETCH_CONSTANT                                   ~80     'ABSPATH'
+        81        FETCH_CONSTANT                                   ~81     'WPINC'
+        82        CONCAT                                           ~82     ~80, ~81
+        83        CONCAT                                           ~83     ~82, '%2Fcustomize%2Fclass-wp-customize-nav-menu-locations-control.php'
+        84        INCLUDE_OR_EVAL                                          ~83, REQUIRE_ONCE
+ 792    85        FETCH_CONSTANT                                   ~85     'ABSPATH'
+        86        FETCH_CONSTANT                                   ~86     'WPINC'
+        87        CONCAT                                           ~87     ~85, ~86
+        88        CONCAT                                           ~88     ~87, '%2Fcustomize%2Fclass-wp-customize-nav-menu-auto-add-control.php'
+        89        INCLUDE_OR_EVAL                                          ~88, REQUIRE_ONCE
+ 797    90        FETCH_CONSTANT                                   ~90     'ABSPATH'
+        91        FETCH_CONSTANT                                   ~91     'WPINC'
+        92        CONCAT                                           ~92     ~90, ~91
+        93        CONCAT                                           ~93     ~92, '%2Fcustomize%2Fclass-wp-customize-date-time-control.php'
+        94        INCLUDE_OR_EVAL                                          ~93, REQUIRE_ONCE
+ 798    95      > RETURN                                                   1
+
+Class WP_Customize_Control:
+Function __construct:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 77) Position 1 = 12, Position 2 = 19
+Branch analysis from position: 12
+2 jumps found. (Code = 78) Position 1 = 13, Position 2 = 19
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 15, Position 2 = 18
+Branch analysis from position: 15
+1 jumps found. (Code = 42) Position 1 = 12
+Branch analysis from position: 12
+Branch analysis from position: 18
+Branch analysis from position: 19
+2 jumps found. (Code = 43) Position 1 = 26, Position 2 = 31
+Branch analysis from position: 26
+2 jumps found. (Code = 43) Position 1 = 39, Position 2 = 41
+Branch analysis from position: 39
+2 jumps found. (Code = 43) Position 1 = 45, Position 2 = 58
+Branch analysis from position: 45
+2 jumps found. (Code = 77) Position 1 = 47, Position 2 = 56
+Branch analysis from position: 47
+2 jumps found. (Code = 78) Position 1 = 48, Position 2 = 56
+Branch analysis from position: 48
+1 jumps found. (Code = 42) Position 1 = 47
+Branch analysis from position: 47
+Branch analysis from position: 56
+1 jumps found. (Code = 42) Position 1 = 72
+Branch analysis from position: 72
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 56
+Branch analysis from position: 58
+2 jumps found. (Code = 43) Position 1 = 61, Position 2 = 72
+Branch analysis from position: 61
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 72
+Branch analysis from position: 41
+Branch analysis from position: 31
+Branch analysis from position: 19
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  __construct
+number of ops:  75
+compiled vars:  !0 = $manager, !1 = $id, !2 = $args, !3 = $keys, !4 = $key, !5 = $settings, !6 = $setting
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 210     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV_INIT                                        !2      <array>
+ 211     3        INIT_FCALL                                               'array_keys'
+         4        INIT_FCALL                                               'get_object_vars'
+         5        FETCH_THIS                                       ~7      
+         6        SEND_VAL                                                 ~7
+         7        DO_ICALL                                         $8      
+         8        SEND_VAR                                                 $8
+         9        DO_ICALL                                         $9      
+        10        ASSIGN                                                   !3, $9
+ 212    11      > FE_RESET_R                                       $11     !3, ->19
+        12    > > FE_FETCH_R                                               $11, !4, ->19
+ 213    13    >   ISSET_ISEMPTY_DIM_OBJ                         0  ~12     !2, !4
+        14      > JMPZ                                                     ~12, ->18
+ 214    15    >   FETCH_DIM_R                                      ~14     !2, !4
+        16        ASSIGN_OBJ                                               !4
+        17        OP_DATA                                                  ~14
+ 212    18    > > JMP                                                      ->12
+        19    >   FE_FREE                                                  $11
+ 218    20        ASSIGN_OBJ                                               'manager'
+        21        OP_DATA                                                  !0
+ 219    22        ASSIGN_OBJ                                               'id'
+        23        OP_DATA                                                  !1
+ 220    24        ISSET_ISEMPTY_PROP_OBJ                           ~17     'active_callback'
+        25      > JMPZ                                                     ~17, ->31
+ 221    26    >   FETCH_THIS                                       ~19     
+        27        INIT_ARRAY                                       ~20     ~19
+        28        ADD_ARRAY_ELEMENT                                ~20     'active_callback'
+        29        ASSIGN_OBJ                                               'active_callback'
+        30        OP_DATA                                                  ~20
+ 223    31    >   ASSIGN_STATIC_PROP_OP                         1          'instance_count'
+        32        OP_DATA                                                  1
+ 224    33        FETCH_STATIC_PROP_R          unknown             ~23     'instance_count'
+        34        ASSIGN_OBJ                                               'instance_number'
+        35        OP_DATA                                                  ~23
+ 227    36        ISSET_ISEMPTY_PROP_OBJ                           ~24     'settings'
+        37        BOOL_XOR                                         ~25     ~24
+        38      > JMPZ                                                     ~25, ->41
+ 228    39    >   ASSIGN_OBJ                                               'settings'
+        40        OP_DATA                                                  !1
+ 231    41    >   ASSIGN                                                   !5, <array>
+ 232    42        FETCH_OBJ_R                                      ~28     'settings'
+        43        TYPE_CHECK                                  128  ~29     ~28
+        44      > JMPZ                                                     ~29, ->58
+ 233    45    >   FETCH_OBJ_R                                      ~30     'settings'
+        46      > FE_RESET_R                                       $31     ~30, ->56
+        47    > > FE_FETCH_R                                       ~32     $31, !6, ->56
+        48    >   ASSIGN                                                   !4, ~32
+ 234    49        FETCH_OBJ_R                                      ~35     'manager'
+        50        INIT_METHOD_CALL                                         ~35, 'get_setting'
+        51        SEND_VAR_EX                                              !6
+        52        DO_FCALL                                      0  $36     
+        53        ASSIGN_DIM                                               !5, !4
+        54        OP_DATA                                                  $36
+ 233    55      > JMP                                                      ->47
+        56    >   FE_FREE                                                  $31
+        57      > JMP                                                      ->72
+ 236    58    >   FETCH_OBJ_R                                      ~37     'settings'
+        59        TYPE_CHECK                                   64  ~38     ~37
+        60      > JMPZ                                                     ~38, ->72
+ 237    61    >   FETCH_OBJ_R                                      ~40     'manager'
+        62        INIT_METHOD_CALL                                         ~40, 'get_setting'
+        63        CHECK_FUNC_ARG                                           
+        64        FETCH_OBJ_FUNC_ARG                               $41     'settings'
+        65        SEND_FUNC_ARG                                            $41
+        66        DO_FCALL                                      0  $42     
+        67        ASSIGN_OBJ                                               'setting'
+        68        OP_DATA                                                  $42
+ 238    69        FETCH_OBJ_R                                      ~44     'setting'
+        70        ASSIGN_DIM                                               !5, 'default'
+        71        OP_DATA                                                  ~44
+ 240    72    >   ASSIGN_OBJ                                               'settings'
+        73        OP_DATA                                                  !5
+ 241    74      > RETURN                                                   null
+
+branch: #  0; line:   701-  798; sop:     0; eop:    95; out0:  -2
+path #1: 0, 
+branch: #  0; line:   210-  212; sop:     0; eop:    11; out0:  12; out1:  19
+branch: # 12; line:   212-  212; sop:    12; eop:    12; out0:  13; out1:  19
+branch: # 13; line:   213-  213; sop:    13; eop:    14; out0:  15; out1:  18
+branch: # 15; line:   214-  212; sop:    15; eop:    17; out0:  18
+branch: # 18; line:   212-  212; sop:    18; eop:    18; out0:  12
+branch: # 19; line:   212-  220; sop:    19; eop:    25; out0:  26; out1:  31
+branch: # 26; line:   221-  223; sop:    26; eop:    30; out0:  31
+branch: # 31; line:   223-  227; sop:    31; eop:    38; out0:  39; out1:  41
+branch: # 39; line:   228-  231; sop:    39; eop:    40; out0:  41
+branch: # 41; line:   231-  232; sop:    41; eop:    44; out0:  45; out1:  58
+branch: # 45; line:   233-  233; sop:    45; eop:    46; out0:  47; out1:  56
+branch: # 47; line:   233-  233; sop:    47; eop:    47; out0:  48; out1:  56
+branch: # 48; line:   233-  233; sop:    48; eop:    55; out0:  47
+branch: # 56; line:   233-  233; sop:    56; eop:    57; out0:  72
+branch: # 58; line:   236-  236; sop:    58; eop:    60; out0:  61; out1:  72
+branch: # 61; line:   237-  240; sop:    61; eop:    71; out0:  72
+branch: # 72; line:   240-  241; sop:    72; eop:    74; out0:  -2; out1:  -2
+path #1: 0, 12, 13, 15, 18, 12, 19, 26, 31, 39, 41, 45, 47, 48, 47, 56, 72, 
+path #2: 0, 12, 13, 15, 18, 12, 19, 26, 31, 39, 41, 45, 47, 56, 72, 
+path #3: 0, 12, 13, 15, 18, 12, 19, 26, 31, 39, 41, 45, 56, 72, 
+path #4: 0, 12, 13, 15, 18, 12, 19, 26, 31, 39, 41, 58, 61, 72, 
+path #5: 0, 12, 13, 15, 18, 12, 19, 26, 31, 39, 41, 58, 72, 
+path #6: 0, 12, 13, 15, 18, 12, 19, 26, 31, 41, 45, 47, 48, 47, 56, 72, 
+path #7: 0, 12, 13, 15, 18, 12, 19, 26, 31, 41, 45, 47, 56, 72, 
+path #8: 0, 12, 13, 15, 18, 12, 19, 26, 31, 41, 45, 56, 72, 
+path #9: 0, 12, 13, 15, 18, 12, 19, 26, 31, 41, 58, 61, 72, 
+path #10: 0, 12, 13, 15, 18, 12, 19, 26, 31, 41, 58, 72, 
+path #11: 0, 12, 13, 15, 18, 12, 19, 31, 39, 41, 45, 47, 48, 47, 56, 72, 
+path #12: 0, 12, 13, 15, 18, 12, 19, 31, 39, 41, 45, 47, 56, 72, 
+path #13: 0, 12, 13, 15, 18, 12, 19, 31, 39, 41, 45, 56, 72, 
+path #14: 0, 12, 13, 15, 18, 12, 19, 31, 39, 41, 58, 61, 72, 
+path #15: 0, 12, 13, 15, 18, 12, 19, 31, 39, 41, 58, 72, 
+path #16: 0, 12, 13, 15, 18, 12, 19, 31, 41, 45, 47, 48, 47, 56, 72, 
+path #17: 0, 12, 13, 15, 18, 12, 19, 31, 41, 45, 47, 56, 72, 
+path #18: 0, 12, 13, 15, 18, 12, 19, 31, 41, 45, 56, 72, 
+path #19: 0, 12, 13, 15, 18, 12, 19, 31, 41, 58, 61, 72, 
+path #20: 0, 12, 13, 15, 18, 12, 19, 31, 41, 58, 72, 
+path #21: 0, 12, 13, 18, 12, 19, 26, 31, 39, 41, 45, 47, 48, 47, 56, 72, 
+path #22: 0, 12, 13, 18, 12, 19, 26, 31, 39, 41, 45, 47, 56, 72, 
+path #23: 0, 12, 13, 18, 12, 19, 26, 31, 39, 41, 45, 56, 72, 
+path #24: 0, 12, 13, 18, 12, 19, 26, 31, 39, 41, 58, 61, 72, 
+path #25: 0, 12, 13, 18, 12, 19, 26, 31, 39, 41, 58, 72, 
+path #26: 0, 12, 13, 18, 12, 19, 26, 31, 41, 45, 47, 48, 47, 56, 72, 
+path #27: 0, 12, 13, 18, 12, 19, 26, 31, 41, 45, 47, 56, 72, 
+path #28: 0, 12, 13, 18, 12, 19, 26, 31, 41, 45, 56, 72, 
+path #29: 0, 12, 13, 18, 12, 19, 26, 31, 41, 58, 61, 72, 
+path #30: 0, 12, 13, 18, 12, 19, 26, 31, 41, 58, 72, 
+path #31: 0, 12, 13, 18, 12, 19, 31, 39, 41, 45, 47, 48, 47, 56, 72, 
+path #32: 0, 12, 13, 18, 12, 19, 31, 39, 41, 45, 47, 56, 72, 
+path #33: 0, 12, 13, 18, 12, 19, 31, 39, 41, 45, 56, 72, 
+path #34: 0, 12, 13, 18, 12, 19, 31, 39, 41, 58, 61, 72, 
+path #35: 0, 12, 13, 18, 12, 19, 31, 39, 41, 58, 72, 
+path #36: 0, 12, 13, 18, 12, 19, 31, 41, 45, 47, 48, 47, 56, 72, 
+path #37: 0, 12, 13, 18, 12, 19, 31, 41, 45, 47, 56, 72, 
+path #38: 0, 12, 13, 18, 12, 19, 31, 41, 45, 56, 72, 
+path #39: 0, 12, 13, 18, 12, 19, 31, 41, 58, 61, 72, 
+path #40: 0, 12, 13, 18, 12, 19, 31, 41, 58, 72, 
+path #41: 0, 12, 19, 26, 31, 39, 41, 45, 47, 48, 47, 56, 72, 
+path #42: 0, 12, 19, 26, 31, 39, 41, 45, 47, 56, 72, 
+path #43: 0, 12, 19, 26, 31, 39, 41, 45, 56, 72, 
+path #44: 0, 12, 19, 26, 31, 39, 41, 58, 61, 72, 
+path #45: 0, 12, 19, 26, 31, 39, 41, 58, 72, 
+path #46: 0, 12, 1End of function __construct
+
+Function enqueue:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  enqueue
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 248     0  E > > RETURN                                                   null
+
+End of function enqueue
+
+Function active:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  active
+number of ops:  16
+compiled vars:  !0 = $control, !1 = $active
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 258     0  E >   FETCH_THIS                                       ~2      
+         1        ASSIGN                                                   !0, ~2
+ 259     2        FETCH_OBJ_R                                      ~4      'active_callback'
+         3        INIT_USER_CALL                                1          'call_user_func', ~4
+         4        FETCH_THIS                                       ~5      
+         5        SEND_USER                                                ~5
+         6        DO_FCALL                                      0  $6      
+         7        ASSIGN                                                   !1, $6
+ 269     8        INIT_FCALL_BY_NAME                                       'apply_filters'
+         9        SEND_VAL_EX                                              'customize_control_active'
+        10        SEND_VAR_EX                                              !1
+        11        SEND_VAR_EX                                              !0
+        12        DO_FCALL                                      0  $8      
+        13        ASSIGN                                                   !1, $8
+ 271    14      > RETURN                                                   !1
+ 272    15*     > RETURN                                                   null
+
+End of function active
+
+Function active_callback:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  active_callback
+number of ops:  2
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 285     0  E > > RETURN                                                   <true>
+ 286     1*     > RETURN                                                   null
+
+End of function active_callback
+
+Function value:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 9
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  value
+number of ops:  10
+compiled vars:  !0 = $setting_key
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 297     0  E >   RECV_INIT                                        !0      'default'
+ 298     1        FETCH_OBJ_IS                                     ~1      'settings'
+         2        ISSET_ISEMPTY_DIM_OBJ                         0  ~2      ~1, !0
+         3      > JMPZ                                                     ~2, ->9
+ 299     4    >   FETCH_OBJ_R                                      ~3      'settings'
+         5        FETCH_DIM_R                                      ~4      ~3, !0
+         6        INIT_METHOD_CALL                                         ~4, 'value'
+         7        DO_FCALL                                      0  $5      
+         8      > RETURN                                                   $5
+ 301     9    > > RETURN                                                   null
+
+End of function value
+
+Function to_json:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 77) Position 1 = 5, Position 2 = 13
+Branch analysis from position: 5
+2 jumps found. (Code = 78) Position 1 = 6, Position 2 = 13
+Branch analysis from position: 6
+1 jumps found. (Code = 42) Position 1 = 5
+Branch analysis from position: 5
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 51, Position 2 = 55
+Branch analysis from position: 51
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 55
+Branch analysis from position: 13
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  to_json
+number of ops:  56
+compiled vars:  !0 = $setting, !1 = $key
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 309     0  E >   FETCH_OBJ_W                                      $2      'json'
+         1        ASSIGN_DIM                                               $2, 'settings'
+         2        OP_DATA                                                  <array>
+ 310     3        FETCH_OBJ_R                                      ~4      'settings'
+         4      > FE_RESET_R                                       $5      ~4, ->13
+         5    > > FE_FETCH_R                                       ~6      $5, !0, ->13
+         6    >   ASSIGN                                                   !1, ~6
+ 311     7        FETCH_OBJ_R                                      ~11     !0, 'id'
+         8        FETCH_OBJ_W                                      $8      'json'
+         9        FETCH_DIM_W                                      $9      $8, 'settings'
+        10        ASSIGN_DIM                                               $9, !1
+        11        OP_DATA                                                  ~11
+ 310    12      > JMP                                                      ->5
+        13    >   FE_FREE                                                  $5
+ 314    14        FETCH_OBJ_R                                      ~14     'type'
+        15        FETCH_OBJ_W                                      $12     'json'
+        16        ASSIGN_DIM                                               $12, 'type'
+        17        OP_DATA                                                  ~14
+ 315    18        FETCH_OBJ_R                                      ~17     'priority'
+        19        FETCH_OBJ_W                                      $15     'json'
+        20        ASSIGN_DIM                                               $15, 'priority'
+        21        OP_DATA                                                  ~17
+ 316    22        INIT_METHOD_CALL                                         'active'
+        23        DO_FCALL                                      0  $20     
+        24        FETCH_OBJ_W                                      $18     'json'
+        25        ASSIGN_DIM                                               $18, 'active'
+        26        OP_DATA                                                  $20
+ 317    27        FETCH_OBJ_R                                      ~23     'section'
+        28        FETCH_OBJ_W                                      $21     'json'
+        29        ASSIGN_DIM                                               $21, 'section'
+        30        OP_DATA                                                  ~23
+ 318    31        INIT_METHOD_CALL                                         'get_content'
+        32        DO_FCALL                                      0  $26     
+        33        FETCH_OBJ_W                                      $24     'json'
+        34        ASSIGN_DIM                                               $24, 'content'
+        35        OP_DATA                                                  $26
+ 319    36        FETCH_OBJ_R                                      ~29     'label'
+        37        FETCH_OBJ_W                                      $27     'json'
+        38        ASSIGN_DIM                                               $27, 'label'
+        39        OP_DATA                                                  ~29
+ 320    40        FETCH_OBJ_R                                      ~32     'description'
+        41        FETCH_OBJ_W                                      $30     'json'
+        42        ASSIGN_DIM                                               $30, 'description'
+        43        OP_DATA                                                  ~32
+ 321    44        FETCH_OBJ_R                                      ~35     'instance_number'
+        45        FETCH_OBJ_W                                      $33     'json'
+        46        ASSIGN_DIM                                               $33, 'instanceNumber'
+        47        OP_DATA                                                  ~35
+ 323    48        FETCH_OBJ_R                                      ~36     'type'
+        49        IS_NOT_IDENTICAL                                 ~37     ~36, 'dropdown-pages'
+        50      > JMPZ                                                     ~37, ->55
+ 324    51    >   FETCH_OBJ_R                                      ~40     'allow_addition'
+        52        FETCH_OBJ_W                                      $38     'json'
+        53        ASSIGN_DIM                                               $38, 'allow_addition'
+        54        OP_DATA                                                  ~40
+ 326    55    > > RETURN                                                   null
+
+End of function to_json
+
+Function json:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  json
+number of ops:  5
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 336     0  E >   INIT_METHOD_CALL                                         'to_json'
+         1        DO_FCALL                                      0          
+ 337     2        FETCH_OBJ_R                                      ~1      'json'
+         3      > RETURN                                                   ~1
+ 338     4*     > RETURN                                                   null
+
+End of function json
+
+Function check_capabilities:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 3, Position 2 = 10
+Branch analysis from position: 3
+2 jumps found. (Code = 43) Position 1 = 11, Position 2 = 12
+Branch analysis from position: 11
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 12
+2 jumps found. (Code = 77) Position 1 = 14, Position 2 = 25
+Branch analysis from position: 14
+2 jumps found. (Code = 78) Position 1 = 15, Position 2 = 25
+Branch analysis from position: 15
+2 jumps found. (Code = 47) Position 1 = 17, Position 2 = 21
+Branch analysis from position: 17
+2 jumps found. (Code = 43) Position 1 = 22, Position 2 = 24
+Branch analysis from position: 22
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 24
+1 jumps found. (Code = 42) Position 1 = 14
+Branch analysis from position: 14
+Branch analysis from position: 21
+Branch analysis from position: 25
+2 jumps found. (Code = 46) Position 1 = 35, Position 2 = 39
+Branch analysis from position: 35
+2 jumps found. (Code = 43) Position 1 = 40, Position 2 = 41
+Branch analysis from position: 40
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 41
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 39
+Branch analysis from position: 25
+Branch analysis from position: 10
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  check_capabilities
+number of ops:  43
+compiled vars:  !0 = $setting, !1 = $section
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 353     0  E >   ISSET_ISEMPTY_PROP_OBJ                           ~2      'capability'
+         1        BOOL_XOR                                         ~3      ~2
+         2      > JMPZ_EX                                          ~3      ~3, ->10
+         3    >   INIT_FCALL_BY_NAME                                       'current_user_can'
+         4        CHECK_FUNC_ARG                                           
+         5        FETCH_OBJ_FUNC_ARG                               $4      'capability'
+         6        SEND_FUNC_ARG                                            $4
+         7        DO_FCALL                                      0  $5      
+         8        BOOL_XOR                                         ~6      $5
+         9        BOOL                                             ~3      ~6
+        10    > > JMPZ                                                     ~3, ->12
+ 354    11    > > RETURN                                                   <false>
+ 357    12    >   FETCH_OBJ_R                                      ~7      'settings'
+        13      > FE_RESET_R                                       $8      ~7, ->25
+        14    > > FE_FETCH_R                                               $8, !0, ->25
+ 358    15    >   BOOL_XOR                                         ~9      !0
+        16      > JMPNZ_EX                                         ~9      ~9, ->21
+        17    >   INIT_METHOD_CALL                                         !0, 'check_capabilities'
+        18        DO_FCALL                                      0  $10     
+        19        BOOL_XOR                                         ~11     $10
+        20        BOOL                                             ~9      ~11
+        21    > > JMPZ                                                     ~9, ->24
+ 359    22    >   FE_FREE                                                  $8
+        23      > RETURN                                                   <false>
+ 357    24    > > JMP                                                      ->14
+        25    >   FE_FREE                                                  $8
+ 363    26        FETCH_OBJ_R                                      ~12     'manager'
+        27        INIT_METHOD_CALL                                         ~12, 'get_section'
+        28        CHECK_FUNC_ARG                                           
+        29        FETCH_OBJ_FUNC_ARG                               $13     'section'
+        30        SEND_FUNC_ARG                                            $13
+        31        DO_FCALL                                      0  $14     
+        32        ASSIGN                                                   !1, $14
+ 364    33        ISSET_ISEMPTY_CV                                 ~16     !1
+        34      > JMPZ_EX                                          ~16     ~16, ->39
+        35    >   INIT_METHOD_CALL                                         !1, 'check_capabilities'
+        36        DO_FCALL                                      0  $17     
+        37        BOOL_XOR                                         ~18     $17
+        38        BOOL                                             ~16     ~18
+        39    > > JMPZ                                                     ~16, ->41
+ 365    40    > > RETURN                                                   <false>
+ 368    41    > > RETURN                                                   <true>
+ 369    42*     > RETURN                                                   null
+
+9, 26, 31, 41, 45, 47, 48, 47, 56, 72, 
+path #47: 0, 12, 19, 26, 31, 41, 45, 47, 56, 72, 
+path #48: 0, 12, 19, 26, 31, 41, 45, 56, 72, 
+path #49: 0, 12, 19, 26, 31, 41, 58, 61, 72, 
+path #50: 0, 12, 19, 26, 31, 41, 58, 72, 
+path #51: 0, 12, 19, 31, 39, 41, 45, 47, 48, 47, 56, 72, 
+path #52: 0, 12, 19, 31, 39, 41, 45, 47, 56, 72, 
+path #53: 0, 12, 19, 31, 39, 41, 45, 56, 72, 
+path #54: 0, 12, 19, 31, 39, 41, 58, 61, 72, 
+path #55: 0, 12, 19, 31, 39, 41, 58, 72, 
+path #56: 0, 12, 19, 31, 41, 45, 47, 48, 47, 56, 72, 
+path #57: 0, 12, 19, 31, 41, 45, 47, 56, 72, 
+path #58: 0, 12, 19, 31, 41, 45, 56, 72, 
+path #59: 0, 12, 19, 31, 41, 58, 61, 72, 
+path #60: 0, 12, 19, 31, 41, 58, 72, 
+path #61: 0, 19, 26, 31, 39, 41, 45, 47, 48, 47, 56, 72, 
+path #62: 0, 19, 26, 31, 39, 41, 45, 47, 56, 72, 
+path #63: 0, 19, 26, 31, 39, 41, 45, 56, 72, 
+path #64: 0, 19, 26, 31, 39, 41, 58, 61, 72, 
+path #65: 0, 19, 26, 31, 39, 41, 58, 72, 
+path #66: 0, 19, 26, 31, 41, 45, 47, 48, 47, 56, 72, 
+path #67: 0, 19, 26, 31, 41, 45, 47, 56, 72, 
+path #68: 0, 19, 26, 31, 41, 45, 56, 72, 
+path #69: 0, 19, 26, 31, 41, 58, 61, 72, 
+path #70: 0, 19, 26, 31, 41, 58, 72, 
+path #71: 0, 19, 31, 39, 41, 45, 47, 48, 47, 56, 72, 
+path #72: 0, 19, 31, 39, 41, 45, 47, 56, 72, 
+path #73: 0, 19, 31, 39, 41, 45, 56, 72, 
+path #74: 0, 19, 31, 39, 41, 58, 61, 72, 
+path #75: 0, 19, 31, 39, 41, 58, 72, 
+path #76: 0, 19, 31, 41, 45, 47, 48, 47, 56, 72, 
+path #77: 0, 19, 31, 41, 45, 47, 56, 72, 
+path #78: 0, 19, 31, 41, 45, 56, 72, 
+path #79: 0, 19, 31, 41, 58, 61, 72, 
+path #80: 0, 19, 31, 41, 58, 72, 
+branch: #  0; line:   248-  248; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:   258-  272; sop:     0; eop:    15
+path #1: 0, 
+branch: #  0; line:   285-  286; sop:     0; eop:     1
+path #1: 0, 
+branch: #  0; line:   297-  298; sop:     0; eop:     3; out0:   4; out1:   9
+branch: #  4; line:   299-  299; sop:     4; eop:     8; out0:  -2
+branch: #  9; line:   301-  301; sop:     9; eop:     9; out0:  -2
+path #1: 0, 4, 
+path #2: 0, 9, 
+branch: #  0; line:   309-  310; sop:     0; eop:     4; out0:   5; out1:  13
+branch: #  5; line:   310-  310; sop:     5; eop:     5; out0:   6; out1:  13
+branch: #  6; line:   310-  310; sop:     6; eop:    12; out0:   5
+branch: # 13; line:   310-  323; sop:    13; eop:    50; out0:  51; out1:  55
+branch: # 51; line:   324-  326; sop:    51; eop:    54; out0:  55
+branch: # 55; line:   326-  326; sop:    55; eop:    55; out0:  -2
+path #1: 0, 5, 6, 5, 13, 51, 55, 
+path #2: 0, 5, 6, 5, 13, 55, 
+path #3: 0, 5, 13, 51, 55, 
+path #4: 0, 5, 13, 55, 
+path #5: 0, 13, 51, 55, 
+path #6: 0, 13, 55, 
+branch: #  0; line:   336-  338; sop:     0; eop:     4
+path #1: 0, 
+branch: #  0; line:   353-  353; sop:     0; eop:     2; out0:   3; out1:  10
+branch: #  3; line:   353-  353; sop:     3; eop:     9; out0:  10
+branch: # 10; line:   353-  353; sop:    10; eop:    10; out0:  11; out1:  12
+branch: # 11; line:   354-  354; sop:    11; eop:    11; out0:  -2
+branch: # 12; line:   357-  357; sop:    12; eop:    13; out0:  14; out1:  25
+branch: # 14; line:   357-  357; sop:    14; eop:    14; out0:  15; out1:  25
+branch: # 15; line:   358-  358; sop:    15; eop:    16; out0:  17; out1:  21
+branch: # 17; line:   358-  358; sop:    17; eop:    20; out0:  21
+branch: # 21; line:   358-  358; sop:    21; eop:    21; out0:  22; out1:  24
+branch: # 22; line:   359-  359; sop:    22; eop:    23; out0:  -2
+branch: # 24; line:   357-  357; sop:    24; eop:    24; out0:  14
+branch: # 25; line:   357-  364; sop:    25; eop:    34; out0:  35; out1:  39
+branch: # 35; line:   364-  364; sop:    35; eop:    38; out0:  39
+branch: # 39; line:   364-  364; sop:    39; eop:    39; out0:  40; out1:  41
+branch: # 40; line:   365-  365; sop:    40; eop:    40; out0:  -2
+branch: # 41; line:   368-  369; sop:    41; eop:    42
+path #1: 0, 3, 10, 11, 
+path #2: 0, 3, 10, 12, 14, 15, 17, 21, 22, 
+path #3: 0, 3, 10, 12, 14, 15, 17, 21, 24, 14, 25, 35, 39, 40, 
+path #4: 0, 3, 10, 12, 14, 15, 17, 21, 24, 14, 25, 35, 39, 41, 
+path #5: 0, 3, 10, 12, 14, 15, 17, 21, 24, 14, End of function check_capabilities
+
+Function get_content:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  get_content
+number of ops:  11
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 379     0  E >   INIT_FCALL                                               'ob_start'
+         1        DO_ICALL                                                 
+ 380     2        INIT_METHOD_CALL                                         'maybe_render'
+         3        DO_FCALL                                      0          
+ 381     4        INIT_FCALL                                               'trim'
+         5        INIT_FCALL                                               'ob_get_clean'
+         6        DO_ICALL                                         $2      
+         7        SEND_VAR                                                 $2
+         8        DO_ICALL                                         $3      
+         9      > RETURN                                                   $3
+ 382    10*     > RETURN                                                   null
+
+End of function get_content
+
+Function maybe_render:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 5
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  maybe_render
+number of ops:  21
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 391     0  E >   INIT_METHOD_CALL                                         'check_capabilities'
+         1        DO_FCALL                                      0  $0      
+         2        BOOL_XOR                                         ~1      $0
+         3      > JMPZ                                                     ~1, ->5
+ 392     4    > > RETURN                                                   null
+ 402     5    >   INIT_FCALL_BY_NAME                                       'do_action'
+         6        SEND_VAL_EX                                              'customize_render_control'
+         7        FETCH_THIS                                       $2      
+         8        SEND_VAR_EX                                              $2
+         9        DO_FCALL                                      0          
+ 414    10        INIT_FCALL_BY_NAME                                       'do_action'
+        11        NOP                                                      
+        12        FETCH_OBJ_R                                      ~4      'id'
+        13        FAST_CONCAT                                      ~5      'customize_render_control_', ~4
+        14        SEND_VAL_EX                                              ~5
+        15        FETCH_THIS                                       $6      
+        16        SEND_VAR_EX                                              $6
+        17        DO_FCALL                                      0          
+ 416    18        INIT_METHOD_CALL                                         'render'
+        19        DO_FCALL                                      0          
+ 417    20      > RETURN                                                   null
+
+End of function maybe_render
+
+Function render:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  render
+number of ops:  26
+compiled vars:  !0 = $id, !1 = $class
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 425     0  E >   INIT_FCALL                                               'str_replace'
+         1        SEND_VAL                                                 <array>
+         2        SEND_VAL                                                 <array>
+         3        FETCH_OBJ_R                                      ~2      'id'
+         4        SEND_VAL                                                 ~2
+         5        DO_ICALL                                         $3      
+         6        CONCAT                                           ~4      'customize-control-', $3
+         7        ASSIGN                                                   !0, ~4
+ 426     8        FETCH_OBJ_R                                      ~6      'type'
+         9        CONCAT                                           ~7      'customize-control+customize-control-', ~6
+        10        ASSIGN                                                   !1, ~7
+ 428    11        INIT_FCALL                                               'printf'
+        12        SEND_VAL                                                 '%3Cli+id%3D%22%25s%22+class%3D%22%25s%22%3E'
+        13        INIT_FCALL_BY_NAME                                       'esc_attr'
+        14        SEND_VAR_EX                                              !0
+        15        DO_FCALL                                      0  $9      
+        16        SEND_VAR                                                 $9
+        17        INIT_FCALL_BY_NAME                                       'esc_attr'
+        18        SEND_VAR_EX                                              !1
+        19        DO_FCALL                                      0  $10     
+        20        SEND_VAR                                                 $10
+        21        DO_ICALL                                                 
+ 429    22        INIT_METHOD_CALL                                         'render_content'
+        23        DO_FCALL                                      0          
+ 430    24        ECHO                                                     '%3C%2Fli%3E'
+ 431    25      > RETURN                                                   null
+
+End of function render
+
+Function get_link:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 4, Position 2 = 8
+Branch analysis from position: 4
+2 jumps found. (Code = 43) Position 1 = 9, Position 2 = 20
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 20
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 8
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  get_link
+number of ops:  27
+compiled vars:  !0 = $setting_key
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 443     0  E >   RECV_INIT                                        !0      'default'
+ 444     1        FETCH_OBJ_IS                                     ~1      'settings'
+         2        ISSET_ISEMPTY_DIM_OBJ                         0  ~2      ~1, !0
+         3      > JMPZ_EX                                          ~2      ~2, ->8
+         4    >   FETCH_OBJ_R                                      ~3      'settings'
+         5        FETCH_DIM_R                                      ~4      ~3, !0
+         6        INSTANCEOF                                       ~5      ~4, 'WP_Customize_Setting'
+         7        BOOL                                             ~2      ~5
+         8    > > JMPZ                                                     ~2, ->20
+ 445     9    >   INIT_FCALL_BY_NAME                                       'esc_attr'
+        10        CHECK_FUNC_ARG                                           
+        11        FETCH_OBJ_FUNC_ARG                               $6      'settings'
+        12        FETCH_DIM_FUNC_ARG                               $7      $6, !0
+        13        FETCH_OBJ_FUNC_ARG                               $8      $7, 'id'
+        14        SEND_FUNC_ARG                                            $8
+        15        DO_FCALL                                      0  $9      
+        16        CONCAT                                           ~10     'data-customize-setting-link%3D%22', $9
+        17        CONCAT                                           ~11     ~10, '%22'
+        18      > RETURN                                                   ~11
+        19*       JMP                                                      ->26
+ 447    20    >   INIT_FCALL_BY_NAME                                       'esc_attr'
+        21        SEND_VAR_EX                                              !0
+        22        DO_FCALL                                      0  $12     
+        23        CONCAT                                           ~13     'data-customize-setting-key-link%3D%22', $12
+        24        CONCAT                                           ~14     ~13, '%22'
+        25      > RETURN                                                   ~14
+ 449    26*     > RETURN                                                   null
+
+End of function get_link
+
+Function link:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  link
+number of ops:  6
+compiled vars:  !0 = $setting_key
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 459     0  E >   RECV_INIT                                        !0      'default'
+ 460     1        INIT_METHOD_CALL                                         'get_link'
+         2        SEND_VAR_EX                                              !0
+         3        DO_FCALL                                      0  $1      
+         4        ECHO                                                     $1
+ 461     5      > RETURN                                                   null
+
+End of function link
+
+Function input_attrs:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 77) Position 1 = 2, Position 2 = 12
+Branch analysis from position: 2
+2 jumps found. (Code = 78) Position 1 = 3, Position 2 = 12
+Branch analysis from position: 3
+1 jumps found. (Code = 42) Position 1 = 2
+Branch analysis from position: 2
+Branch analysis from position: 12
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 12
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  input_attrs
+number of ops:  14
+compiled vars:  !0 = $value, !1 = $attr
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 469     0  E >   FETCH_OBJ_R                                      ~2      'input_attrs'
+         1      > FE_RESET_R                                       $3      ~2, ->12
+         2    > > FE_FETCH_R                                       ~4      $3, !0, ->12
+         3    >   ASSIGN                                                   !1, ~4
+ 470     4        CONCAT                                           ~6      !1, '%3D%22'
+         5        INIT_FCALL_BY_NAME                                       'esc_attr'
+         6        SEND_VAR_EX                                              !0
+         7        DO_FCALL                                      0  $7      
+         8        CONCAT                                           ~8      ~6, $7
+         9        CONCAT                                           ~9      ~8, '%22+'
+        10        ECHO                                                     ~9
+ 469    11      > JMP                                                      ->2
+        12    >   FE_FREE                                                  $3
+ 472    13      > RETURN                                                   null
+
+End of function input_attrs
+
+Function render_content:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 9, Position 2 = 16
+Branch analysis from position: 9
+1 jumps found. (Code = 42) Position 1 = 17
+Branch analysis from position: 17
+7 jumps found. (Code = 188) Position 1 = 31, Position 2 = 81, Position 3 = 164, Position 4 = 234, Position 5 = 286, Position 6 = 474, Position 7 = 20
+Branch analysis from position: 31
+2 jumps found. (Code = 43) Position 1 = 70, Position 2 = 79
+Branch analysis from position: 70
+1 jumps found. (Code = 42) Position 1 = 539
+Branch analysis from position: 539
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 79
+Branch analysis from position: 81
+2 jumps found. (Code = 43) Position 1 = 83, Position 2 = 85
+Branch analysis from position: 83
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 85
+2 jumps found. (Code = 43) Position 1 = 92, Position 2 = 100
+Branch analysis from position: 92
+2 jumps found. (Code = 43) Position 1 = 104, Position 2 = 113
+Branch analysis from position: 104
+2 jumps found. (Code = 77) Position 1 = 116, Position 2 = 161
+Branch analysis from position: 116
+2 jumps found. (Code = 78) Position 1 = 117, Position 2 = 161
+Branch analysis from position: 117
+1 jumps found. (Code = 42) Position 1 = 116
+Branch analysis from position: 116
+Branch analysis from position: 161
+1 jumps found. (Code = 42) Position 1 = 539
+Branch analysis from position: 539
+Branch analysis from position: 161
+Branch analysis from position: 113
+Branch analysis from position: 100
+Branch analysis from position: 164
+2 jumps found. (Code = 43) Position 1 = 166, Position 2 = 168
+Branch analysis from position: 166
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 168
+2 jumps found. (Code = 43) Position 1 = 172, Position 2 = 185
+Branch analysis from position: 172
+2 jumps found. (Code = 43) Position 1 = 189, Position 2 = 198
+Branch analysis from position: 189
+2 jumps found. (Code = 77) Position 1 = 211, Position 2 = 231
+Branch analysis from position: 211
+2 jumps found. (Code = 78) Position 1 = 212, Position 2 = 231
+Branch analysis from position: 212
+1 jumps found. (Code = 42) Position 1 = 211
+Branch analysis from position: 211
+Branch analysis from position: 231
+1 jumps found. (Code = 42) Position 1 = 539
+Branch analysis from position: 539
+Branch analysis from position: 231
+Branch analysis from position: 198
+Branch analysis from position: 185
+Branch analysis from position: 234
+2 jumps found. (Code = 43) Position 1 = 238, Position 2 = 251
+Branch analysis from position: 238
+2 jumps found. (Code = 43) Position 1 = 255, Position 2 = 264
+Branch analysis from position: 255
+1 jumps found. (Code = 42) Position 1 = 539
+Branch analysis from position: 539
+Branch analysis from position: 264
+Branch analysis from position: 251
+Branch analysis from position: 286
+2 jumps found. (Code = 43) Position 1 = 290, Position 2 = 303
+Branch analysis from position: 290
+2 jumps found. (Code = 43) Position 1 = 307, Position 2 = 316
+Branch analysis from position: 307
+2 jumps found. (Code = 43) Position 1 = 338, Position 2 = 359
+Branch analysis from position: 338
+2 jumps found. (Code = 46) Position 1 = 381, Position 2 = 385
+Branch analysis from position: 381
+2 jumps found. (Code = 43) Position 1 = 386, Position 2 = 426
+Branch analysis from position: 386
+2 jumps found. (Code = 77) Position 1 = 390, Position 2 = 417
+Branch analysis from position: 390
+2 jumps found. (Code = 78) Position 1 = 391, Position 2 = 417
+Branch analysis from position: 391
+2 jumps found. (Code = 46) Position 1 = 396, Position 2 = 399
+Branch analysis from position: 396
+2 jumps found. (Code = 43) Position 1 = 400, Position 2 = 416
+Branch analysis from position: 400
+1 jumps found. (Code = 42) Position 1 = 390
+Branch analysis from position: 390
+Branch analysis from position: 416
+Branch analysis from position: 399
+Branch analysis from position: 417
+2 jumps found. (Code = 43) Position 1 = 419, Position 2 = 426
+Branch analysis from position: 419
+2 jumps found. (Code = 46) Position 1 = 430, Position 2 = 434
+Branch analysis from position: 430
+2 jumps found. (Code = 46) Position 1 = 435, Position 2 = 439
+Branch analysis from position: 435
+2 jumps found. (Code = 43) Position 1 = 440, Position 2 = 472
+Branch analysis from position: 440
+1 jumps found. (Code = 42) Position 1 = 539
+Branch analysis from position: 539
+Branch analysis from position: 472
+Branch analysis from position: 439
+Branch analysis from position: 434
+Branch analysis from position: 426
+Branch analysis from position: 417
+Branch analysis from position: 426
+Branch analysis from position: 385
+Branch analysis from position: 359
+Branch analysis from position: 316
+Branch analysis from position: 303
+Branch analysis from position: 474
+2 jumps found. (Code = 43) Position 1 = 478, Position 2 = 491
+Branch analysis from position: 478
+2 jumps found. (Code = 43) Position 1 = 495, Position 2 = 504
+Branch analysis from position: 495
+2 jumps found. (Code = 43) Position 1 = 526, Position 2 = 534
+Branch analysis from position: 526
+1 jumps found. (Code = 42) Position 1 = 539
+Branch analysis from position: 539
+Branch analysis from position: 534
+Branch analysis from position: 504
+Branch analysis from position: 491
+Branch analysis from position: 20
+2 jumps found. (Code = 44) Position 1 = 22, Position 2 = 31
+Branch analysis from position: 22
+2 jumps found. (Code = 44) Position 1 = 24, Position 2 = 81
+Branch analysis from position: 24
+2 jumps found. (Code = 44) Position 1 = 26, Position 2 = 164
+Branch analysis from position: 26
+2 jumps found. (Code = 44) Position 1 = 28, Position 2 = 234
+Branch analysis from position: 28
+2 jumps found. (Code = 44) Position 1 = 30, Position 2 = 286
+Branch analysis from position: 30
+1 jumps found. (Code = 42) Position 1 = 474
+Branch analysis from position: 474
+Branch analysis from position: 286
+Branch analysis from position: 234
+Branch analysis from position: 164
+Branch analysis from position: 81
+Branch analysis from position: 31
+Branch analysis from position: 16
+7 jumps found. (Code = 188) Position 1 = 31, Position 2 = 81, Position 3 = 164, Position 4 = 234, Position 5 = 286, Position 6 = 474, Position 7 = 20
+Branch analysis from position: 31
+Branch analysis from position: 81
+Branch analysis from position: 164
+Branch analysis from position: 234
+Branch analysis from position: 286
+Branch analysis from position: 474
+Branch analysis from position: 20
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  render_content
+number of ops:  541
+compiled vars:  !0 = $input_id, !1 = $description_id, !2 = $describedby_attr, !3 = $name, !4 = $label, !5 = $value, !6 = $dropdown_name, !7 = $show_option_none, !8 = $option_none_value, !9 = $dropdown, !10 = $nav_menus_created_posts_setting, !11 = $auto_draft_page_options, !12 = $auto_draft_page_id, !13 = $post
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 487     0  E >   FETCH_OBJ_R                                      ~14     'id'
+         1        CONCAT                                           ~15     '_customize-input-', ~14
+         2        ASSIGN                                                   !0, ~15
+ 488     3        FETCH_OBJ_R                                      ~17     'id'
+         4        CONCAT                                           ~18     '_customize-description-', ~17
+         5        ASSIGN                                                   !1, ~18
+ 489     6        ISSET_ISEMPTY_PROP_OBJ                           ~20     'description'
+         7        BOOL_XOR                                         ~21     ~20
+         8      > JMPZ                                                     ~21, ->16
+         9    >   INIT_FCALL_BY_NAME                                       'esc_attr'
+        10        SEND_VAR_EX                                              !1
+        11        DO_FCALL                                      0  $22     
+        12        CONCAT                                           ~23     '+aria-describedby%3D%22', $22
+        13        CONCAT                                           ~24     ~23, '%22+'
+        14        QM_ASSIGN                                        ~25     ~24
+        15      > JMP                                                      ->17
+        16    >   QM_ASSIGN                                        ~25     ''
+        17    >   ASSIGN                                                   !2, ~25
+ 490    18        FETCH_OBJ_R                                      ~27     'type'
+        19      > SWITCH_STRING                                            ~27, [ 'checkbox':->31, 'radio':->81, 'select':->164, 'textarea':->234, 'dropdown-pages':->286, ], ->474
+ 491    20    >   CASE                                             ~28     ~27, 'checkbox'
+        21      > JMPNZ                                                    ~28, ->31
+ 509    22    >   CASE                                             ~28     ~27, 'radio'
+        23      > JMPNZ                                                    ~28, ->81
+ 539    24    >   CASE                                             ~28     ~27, 'select'
+        25      > JMPNZ                                                    ~28, ->164
+ 561    26    >   CASE                                             ~28     ~27, 'textarea'
+        27      > JMPNZ                                                    ~28, ->234
+ 578    28    >   CASE                                             ~28     ~27, 'dropdown-pages'
+        29      > JMPNZ                                                    ~28, ->286
+        30    > > JMP                                                      ->474
+ 493    31    >   ECHO                                                     '%09%09%09%09%3Cspan+class%3D%22customize-inside-control-row%22%3E%0A%09%09%09%09%09%3Cinput%0A%09%09%09%09%09%09id%3D%22'
+ 495    32        INIT_FCALL_BY_NAME                                       'esc_attr'
+        33        SEND_VAR_EX                                              !0
+        34        DO_FCALL                                      0  $29     
+        35        ECHO                                                     $29
+        36        ECHO                                                     '%22%0A%09%09%09%09%09%09'
+ 496    37        ECHO                                                     !2
+ 497    38        ECHO                                                     '%09%09%09%09%09%09type%3D%22checkbox%22%0A%09%09%09%09%09%09value%3D%22'
+ 498    39        INIT_FCALL_BY_NAME                                       'esc_attr'
+        40        INIT_METHOD_CALL                                         'value'
+        41        DO_FCALL                                      0  $30     
+        42        SEND_VAR_NO_REF_EX                                       $30
+        43        DO_FCALL                                      0  $31     
+        44        ECHO                                                     $31
+        45        ECHO                                                     '%22%0A%09%09%09%09%09%09'
+ 499    46        INIT_METHOD_CALL                                         'link'
+        47        DO_FCALL                                      0          
+ 500    48        ECHO                                                     '%09%09%09%09%09%09'
+        49        INIT_FCALL_BY_NAME                                       'checked'
+        50        INIT_METHOD_CALL                                         'value'
+        51        DO_FCALL                                      0  $33     
+        52        SEND_VAR_NO_REF_EX                                       $33
+        53        DO_FCALL                                      0          
+ 501    54        ECHO                                                     '%09%09%09%09%09%2F%3E%0A%09%09%09%09%09%3Clabel+for%3D%22'
+ 502    55        INIT_FCALL_BY_NAME                                       'esc_attr'
+        56        SEND_VAR_EX                                              !0
+        57        DO_FCALL                                      0  $35     
+        58        ECHO                                                     $35
+        59        ECHO                                                     '%22%3E'
+        60        INIT_FCALL_BY_NAME                                       'esc_html'
+        61        CHECK_FUNC_ARG                                           
+        62        FETCH_OBJ_FUNC_ARG                               $36     'label'
+        63        SEND_FUNC_ARG                                            $36
+        64        DO_FCALL                                      0  $37     
+        65        ECHO                                                     $37
+        66        ECHO                                                     '%3C%2Flabel%3E%0A%09%09%09%09%09'
+ 503    67        ISSET_ISEMPTY_PROP_OBJ                           ~38     'description'
+        68        BOOL_XOR                                         ~39     ~38
+        69      > JMPZ                                                     ~39, ->79
+ 504    70    >   ECHO                                                     '%09%09%09%09%09%09%3Cspan+id%3D%22'
+        71        INIT_FCALL_BY_NAME                                       'esc_attr'
+        72        SEND_VAR_EX                                              !1
+        73        DO_FCALL                                      0  $40     
+        74        ECHO                                                     $40
+        75        ECHO                                                     '%22+class%3D%22description+customize-control-description%22%3E'
+        76        FETCH_OBJ_R                                      ~41     'description'
+        77        ECHO                                                     ~41
+        78        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%09%09'
+ 506    79    >   ECHO                                                     '%09%09%09%09%3C%2Fspan%3E%0A%09%09%09%09'
+ 508    80      > JMP                                                      ->539
+ 510    81    >   ISSET_ISEMPTY_PROP_OBJ                           ~42     'choices'
+        82      > JMPZ                                                     ~42, ->85
+ 511    83    >   FREE                                                     ~27
+        84      > RETURN                                                   null
+ 514    85    >   FETCH_OBJ_R                                      ~43     'id'
+        86        CONCAT                                           ~44     '_customize-radio-', ~43
+        87        ASSIGN                                                   !3, ~44
+ 516    88        ECHO                                                     '%09%09%09%09'
+        89        ISSET_ISEMPTY_PROP_OBJ                           ~46     'label'
+        90        BOOL_XOR                                         ~47     ~46
+        91      > JMPZ                                                     ~47, ->100
+ 517    92    >   ECHO                                                     '%09%09%09%09%09%3Cspan+class%3D%22customize-control-title%22%3E'
+        93        INIT_FCALL_BY_NAME                                       'esc_html'
+        94        CHECK_FUNC_ARG                                           
+        95        FETCH_OBJ_FUNC_ARG                               $48     'label'
+        96        SEND_FUNC_ARG                                            $48
+        97        DO_FCALL                                      0  $49     
+        98        ECHO                                                     $49
+        99        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%09'
+ 519   100    >   ECHO                                                     '%09%09%09%09'
+       101        ISSET_ISEMPTY_PROP_OBJ                           ~50     'description'
+       102        BOOL_XOR                                         ~51     ~50
+       103      > JMPZ                                                     ~51, ->113
+ 520   104    >   ECHO                                                     '%09%09%09%09%09%3Cspan+id%3D%22'
+       105        INIT_FCALL_BY_NAME                                       'esc_attr'
+       106        SEND_VAR_EX                                              !1
+       107        DO_FCALL                                      0  $52     
+       108        ECHO                                                     $52
+       109        ECHO                                                     '%22+class%3D%22description+customize-control-description%22%3E'
+       110        FETCH_OBJ_R                                      ~53     'description'
+       111        ECHO                                                     ~53
+       112        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%09'
+ 522   113    >   ECHO                                                     '%0A%09%09%09%09'
+ 523   114        FETCH_OBJ_R                                      ~54     'choices'
+       115      > FE_RESET_R                                       $55     ~54, ->161
+       116    > > FE_FETCH_R                                       ~56     $55, !4, ->161
+       117    >   ASSIGN                                                   !5, ~56
+ 524   118        ECHO                                                     '%09%09%09%09%09%3Cspan+class%3D%22customize-inside-control-row%22%3E%0A%09%09%09%09%09%09%3Cinput%0A%09%09%09%09%09%09%09id%3D%22'
+ 526   119        INIT_FCALL_BY_NAME                                       'esc_attr'
+       120        CONCAT                                           ~58     !0, '-radio-'
+       121        CONCAT                                           ~59     ~58, !5
+       122        SEND_VAL_EX                                              ~59
+       123        DO_FCALL                                      0  $60     
+       124        ECHO                                                     $60
+       125        ECHO                                                     '%22%0A%09%09%09%09%09%09%09type%3D%22radio%22%0A%09%09%09%09%09%09%09'
+ 528   126        ECHO                                                     !2
+ 529   127        ECHO                                                     '%09%09%09%09%09%09%09value%3D%22'
+       128        INIT_FCALL_BY_NAME                                       'esc_attr'
+       129        SEND_VAR_EX                                              !5
+       130        DO_FCALL                                      0  $61     
+       131        ECHO                                                     $61
+       132        ECHO                                                     '%22%0A%09%09%09%09%09%09%09name%3D%22'
+ 530   133        INIT_FCALL_BY_NAME                                       'esc_attr'
+       134        SEND_VAR_EX                                              !3
+       135        DO_FCALL                                      0  $62     
+       136        ECHO                                                     $62
+       137        ECHO                                                     '%22%0A%09%09%09%09%09%09%09'
+ 531   138        INIT_METHOD_CALL                                         'link'
+       139        DO_FCALL                                      0          
+ 532   140        ECHO                                                     '%09%09%09%09%09%09%09'
+       141        INIT_FCALL_BY_NAME                                       'checked'
+       142        INIT_METHOD_CALL                                         'value'
+       143        DO_FCALL                                      0  $64     
+       144        SEND_VAR_NO_REF_EX                                       $64
+       145        SEND_VAR_EX                                              !5
+       146        DO_FCALL                                      0          
+ 533   147        ECHO                                                     '%09%09%09%09%09%09%09%2F%3E%0A%09%09%09%09%09%09%3Clabel+for%3D%22'
+ 534   148        INIT_FCALL_BY_NAME                                       'esc_attr'
+       149        CONCAT                                           ~66     !0, '-radio-'
+       150        CONCAT                                           ~67     ~66, !5
+       151        SEND_VAL_EX                                              ~67
+       152        DO_FCALL                                      0  $68     
+       153        ECHO                                                     $68
+       154        ECHO                                                     '%22%3E'
+       155        INIT_FCALL_BY_NAME                                       'esc_html'
+       156        SEND_VAR_EX                                              !4
+       157        DO_FCALL                                      0  $69     
+       158        ECHO                                                     $69
+       159        ECHO                                                     '%3C%2Flabel%3E%0A%09%09%09%09%09%3C%2Fspan%3E%0A%09%09%09%09'
+ 523   160      > JMP                                                      ->116
+       161    >   FE_FREE                                                  $55
+ 537   162        ECHO                                                     '%09%09%09%09'
+ 538   163      > JMP                                                      ->539
+ 540   164    >   ISSET_ISEMPTY_PROP_OBJ                           ~70     'choices'
+       165      > JMPZ                                                     ~70, ->168
+ 541   166    >   FREE                                                     ~27
+       167      > RETURN                                                   null
+ 545   168    >   ECHO                                                     '%09%09%09%09'
+       169        ISSET_ISEMPTY_PROP_OBJ                           ~71     'label'
+       170        BOOL_XOR                                         ~72     ~71
+       171      > JMPZ                                                     ~72, ->185
+ 546   172    >   ECHO                                                     '%09%09%09%09%09%3Clabel+for%3D%22'
+       173        INIT_FCALL_BY_NAME                                       'esc_attr'
+       174        SEND_VAR_EX                                              !0
+       175        DO_FCALL                                      0  $73     
+       176        ECHO                                                     $73
+       177        ECHO                                                     '%22+class%3D%22customize-control-title%22%3E'
+       178        INIT_FCALL_BY_NAME                                       'esc_html'
+       179        CHECK_FUNC_ARG                                           
+       180        FETCH_OBJ_FUNC_ARG                               $74     'label'
+       181        SEND_FUNC_ARG                                            $74
+       182        DO_FCALL                                      0  $75     
+       183        ECHO                                                     $75
+       184        ECHO                                                     '%3C%2Flabel%3E%0A%09%09%09%09'
+ 548   185    >   ECHO                                                     '%09%09%09%09'
+       186        ISSET_ISEMPTY_PROP_OBJ                           ~76     'description'
+       187        BOOL_XOR                                         ~77     ~76
+       188      > JMPZ                                                     ~77, ->198
+ 549   189    >   ECHO                                                     '%09%09%09%09%09%3Cspan+id%3D%22'
+       190        INIT_FCALL_BY_NAME                                       'esc_attr'
+       191        SEND_VAR_EX                                              !1
+       192        DO_FCALL                                      0  $78     
+       193        ECHO                                                     $78
+       194        ECHO                                                     '%22+class%3D%22description+customize-control-description%22%3E'
+       195        FETCH_OBJ_R                                      ~79     'description'
+       196        ECHO                                                     ~79
+       197        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%09'
+ 551   198    >   ECHO                                                     '%0A%09%09%09%09%3Cselect+id%3D%22'
+ 552   199        INIT_FCALL_BY_NAME                                       'esc_attr'
+       200        SEND_VAR_EX                                              !0
+       201        DO_FCALL                                      0  $80     
+       202        ECHO                                                     $80
+       203        ECHO                                                     '%22+'
+       204        ECHO                                                     !2
+       205        ECHO                                                     '+'
+       206        INIT_METHOD_CALL                                         'link'
+       207        DO_FCALL                                      0          
+       208        ECHO                                                     '%3E%0A%09%09%09%09%09'
+ 554   209        FETCH_OBJ_R                                      ~82     'choices'
+       210      > FE_RESET_R                                       $83     ~82, ->231
+       211    > > FE_FETCH_R                                       ~84     $83, !4, ->231
+       212    >   ASSIGN                                                   !5, ~84
+ 555   213        INIT_FCALL_BY_NAME                                       'esc_attr'
+       214        SEND_VAR_EX                                              !5
+       215        DO_FCALL                                      0  $86     
+       216        CONCAT                                           ~87     '%3Coption+value%3D%22', $86
+       217        CONCAT                                           ~88     ~87, '%22'
+       218        INIT_FCALL_BY_NAME                                       'selected'
+       219        INIT_METHOD_CALL                                         'value'
+       220        DO_FCALL                                      0  $89     
+       221        SEND_VAR_NO_REF_EX                                       $89
+       222        SEND_VAR_EX                                              !5
+       223        SEND_VAL_EX                                              <false>
+       224        DO_FCALL                                      0  $90     
+       225        CONCAT                                           ~91     ~88, $90
+       226        CONCAT                                           ~92     ~91, '%3E'
+       227        CONCAT                                           ~93     ~92, !4
+       228        CONCAT                                           ~94     ~93, '%3C%2Foption%3E'
+       229        ECHO                                                     ~94
+ 554   230      > JMP                                                      ->211
+       231    >   FE_FREE                                                  $83
+ 558   232        ECHO                                                     '%09%09%09%09%3C%2Fselect%3E%0A%09%09%09%09'
+ 560   233      > JMP                                                      ->539
+ 563   234    >   ECHO                                                     '%09%09%09%09'
+       235        ISSET_ISEMPTY_PROP_OBJ                           ~95     'label'
+       236        BOOL_XOR                                         ~96     ~95
+       237      > JMPZ                                                     ~96, ->251
+ 564   238    >   ECHO                                                     '%09%09%09%09%09%3Clabel+for%3D%22'
+       239        INIT_FCALL_BY_NAME                                       'esc_attr'
+       240        SEND_VAR_EX                                              !0
+       241        DO_FCALL                                      0  $97     
+       242        ECHO                                                     $97
+       243        ECHO                                                     '%22+class%3D%22customize-control-title%22%3E'
+       244        INIT_FCALL_BY_NAME                                       'esc_html'
+       245        CHECK_FUNC_ARG                                           
+       246        FETCH_OBJ_FUNC_ARG                               $98     'label'
+       247        SEND_FUNC_ARG                                            $98
+       248        DO_FCALL                                      0  $99     
+       249        ECHO                                                     $99
+       250        ECHO                                                     '%3C%2Flabel%3E%0A%09%09%09%09'
+ 566   251    >   ECHO                                                     '%09%09%09%09'
+       252        ISSET_ISEMPTY_PROP_OBJ                           ~100    'description'
+       253        BOOL_XOR                                         ~101    ~100
+       254      > JMPZ                                                     ~101, ->264
+ 567   255    >   ECHO                                                     '%09%09%09%09%09%3Cspan+id%3D%22'
+       256        INIT_FCALL_BY_NAME                                       'esc_attr'
+       257        SEND_VAR_EX                                              !1
+       258        DO_FCALL                                      0  $102    
+       259        ECHO                                                     $102
+       260        ECHO                                                     '%22+class%3D%22description+customize-control-description%22%3E'
+       261        FETCH_OBJ_R                                      ~103    'description'
+       262        ECHO                                                     ~103
+       263        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%09'
+ 569   264    >   ECHO                                                     '%09%09%09%09%3Ctextarea%0A%09%09%09%09%09id%3D%22'
+ 570   265        INIT_FCALL_BY_NAME                                       'esc_attr'
+       266        SEND_VAR_EX                                              !0
+       267        DO_FCALL                                      0  $104    
+       268        ECHO                                                     $104
+       269        ECHO                                                     '%22%0A%09%09%09%09%09rows%3D%225%22%0A%09%09%09%09%09'
+ 572   270        ECHO                                                     !2
+ 573   271        ECHO                                                     '%09%09%09%09%09'
+       272        INIT_METHOD_CALL                                         'input_attrs'
+       273        DO_FCALL                                      0          
+ 574   274        ECHO                                                     '%09%09%09%09%09'
+       275        INIT_METHOD_CALL                                         'link'
+       276        DO_FCALL                                      0          
+ 575   277        ECHO                                                     '%09%09%09%09%3E'
+       278        INIT_FCALL_BY_NAME                                       'esc_textarea'
+       279        INIT_METHOD_CALL                                         'value'
+       280        DO_FCALL                                      0  $107    
+       281        SEND_VAR_NO_REF_EX                                       $107
+       282        DO_FCALL                                      0  $108    
+       283        ECHO                                                     $108
+       284        ECHO                                                     '%3C%2Ftextarea%3E%0A%09%09%09%09'
+ 577   285      > JMP                                                      ->539
+ 580   286    >   ECHO                                                     '%09%09%09%09'
+       287        ISSET_ISEMPTY_PROP_OBJ                           ~109    'label'
+       288        BOOL_XOR                                         ~110    ~109
+       289      > JMPZ                                                     ~110, ->303
+ 581   290    >   ECHO                                                     '%09%09%09%09%09%3Clabel+for%3D%22'
+       291        INIT_FCALL_BY_NAME                                       'esc_attr'
+       292        SEND_VAR_EX                                              !0
+       293        DO_FCALL                                      0  $111    
+       294        ECHO                                                     $111
+       295        ECHO                                                     '%22+class%3D%22customize-control-title%22%3E'
+       296        INIT_FCALL_BY_NAME                                       'esc_html'
+       297        CHECK_FUNC_ARG                                           
+       298        FETCH_OBJ_FUNC_ARG                               $112    'label'
+       299        SEND_FUNC_ARG                                            $112
+       300        DO_FCALL                                      0  $113    
+       301        ECHO                                                     $113
+       302        ECHO                                                     '%3C%2Flabel%3E%0A%09%09%09%09'
+ 583   303    >   ECHO                                                     '%09%09%09%09'
+       304        ISSET_ISEMPTY_PROP_OBJ                           ~114    'description'
+       305        BOOL_XOR                                         ~115    ~114
+       306      > JMPZ                                                     ~115, ->316
+ 584   307    >   ECHO                                                     '%09%09%09%09%09%3Cspan+id%3D%22'
+       308        INIT_FCALL_BY_NAME                                       'esc_attr'
+       309        SEND_VAR_EX                                              !1
+       310        DO_FCALL                                      0  $116    
+       311        ECHO                                                     $116
+       312        ECHO                                                     '%22+class%3D%22description+customize-control-description%22%3E'
+       313        FETCH_OBJ_R                                      ~117    'description'
+       314        ECHO                                                     ~117
+       315        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%09'
+ 586   316    >   ECHO                                                     '%0A%09%09%09%09'
+ 588   317        FETCH_OBJ_R                                      ~118    'id'
+       318        CONCAT                                           ~119    '_customize-dropdown-pages-', ~118
+       319        ASSIGN                                                   !6, ~119
+ 589   320        INIT_FCALL_BY_NAME                                       '__'
+       321        SEND_VAL_EX                                              '%26mdash%3B+Select+%26mdash%3B'
+       322        DO_FCALL                                      0  $121    
+       323        ASSIGN                                                   !7, $121
+ 590   324        ASSIGN                                                   !8, '0'
+ 591   325        INIT_FCALL_BY_NAME                                       'wp_dropdown_pages'
+ 593   326        INIT_ARRAY                                       ~124    !6, 'name'
+ 594   327        ADD_ARRAY_ELEMENT                                ~124    0, 'echo'
+ 595   328        ADD_ARRAY_ELEMENT                                ~124    !7, 'show_option_none'
+ 596   329        ADD_ARRAY_ELEMENT                                ~124    !8, 'option_none_value'
+ 597   330        INIT_METHOD_CALL                                         'value'
+       331        DO_FCALL                                      0  $125    
+       332        ADD_ARRAY_ELEMENT                                ~124    $125, 'selected'
+       333        SEND_VAL_EX                                              ~124
+       334        DO_FCALL                                      0  $126    
+       335        ASSIGN                                                   !9, $126
+ 600   336        ISSET_ISEMPTY_CV                                 ~128    !9
+       337      > JMPZ                                                     ~128, ->359
+ 601   338    >   INIT_FCALL                                               'sprintf'
+       339        SEND_VAL                                                 '%3Cselect+id%3D%22%251%24s%22+name%3D%22%251%24s%22%3E'
+       340        INIT_FCALL_BY_NAME                                       'esc_attr'
+       341        SEND_VAR_EX                                              !6
+       342        DO_FCALL                                      0  $129    
+       343        SEND_VAR                                                 $129
+       344        DO_ICALL                                         $130    
+       345        ASSIGN                                                   !9, $130
+ 602   346        INIT_FCALL                                               'sprintf'
+       347        SEND_VAL                                                 '%3Coption+value%3D%22%251%24s%22%3E%252%24s%3C%2Foption%3E'
+       348        INIT_FCALL_BY_NAME                                       'esc_attr'
+       349        SEND_VAR_EX                                              !8
+       350        DO_FCALL                                      0  $132    
+       351        SEND_VAR                                                 $132
+       352        INIT_FCALL_BY_NAME                                       'esc_html'
+       353        SEND_VAR_EX                                              !7
+       354        DO_FCALL                                      0  $133    
+       355        SEND_VAR                                                 $133
+       356        DO_ICALL                                         $134    
+       357        ASSIGN_OP                                     8          !9, $134
+ 603   358        ASSIGN_OP                                     8          !9, '%3C%2Fselect%3E'
+ 607   359    >   INIT_FCALL                                               'str_replace'
+       360        SEND_VAL                                                 '%3Cselect'
+       361        INIT_METHOD_CALL                                         'get_link'
+       362        DO_FCALL                                      0  $137    
+       363        CONCAT                                           ~138    '%3Cselect+', $137
+       364        CONCAT                                           ~139    ~138, '+id%3D%22'
+       365        INIT_FCALL_BY_NAME                                       'esc_attr'
+       366        SEND_VAR_EX                                              !0
+       367        DO_FCALL                                      0  $140    
+       368        CONCAT                                           ~141    ~139, $140
+       369        CONCAT                                           ~142    ~141, '%22+'
+       370        CONCAT                                           ~143    ~142, !2
+       371        SEND_VAL                                                 ~143
+       372        SEND_VAR                                                 !9
+       373        DO_ICALL                                         $144    
+       374        ASSIGN                                                   !9, $144
+ 611   375        FETCH_OBJ_R                                      ~146    'manager'
+       376        INIT_METHOD_CALL                                         ~146, 'get_setting'
+       377        SEND_VAL_EX                                              'nav_menus_created_posts'
+       378        DO_FCALL                                      0  $147    
+       379        ASSIGN                                                   !10, $147
+ 612   380      > JMPZ_EX                                          ~149    !10, ->385
+       381    >   INIT_FCALL_BY_NAME                                       'current_user_can'
+       382        SEND_VAL_EX                                              'publish_pages'
+       383        DO_FCALL                                      0  $150    
+       384        BOOL                                             ~149    $150
+       385    > > JMPZ                                                     ~149, ->426
+ 613   386    >   ASSIGN                                                   !11, ''
+ 614   387        INIT_METHOD_CALL                                         !10, 'value'
+       388        DO_FCALL                                      0  $152    
+       389      > FE_RESET_R                                       $153    $152, ->417
+       390    > > FE_FETCH_R                                               $153, !12, ->417
+ 615   391    >   INIT_FCALL_BY_NAME                                       'get_post'
+       392        SEND_VAR_EX                                              !12
+       393        DO_FCALL                                      0  $154    
+       394        ASSIGN                                                   !13, $154
+ 616   395      > JMPZ_EX                                          ~156    !13, ->399
+       396    >   FETCH_OBJ_R                                      ~157    !13, 'post_type'
+       397        IS_NOT_IDENTICAL                                 ~158    ~157, 'page'
+       398        BOOL                                             ~156    ~158
+       399    > > JMPZ                                                     ~156, ->416
+ 617   400    >   INIT_FCALL                                               'sprintf'
+       401        SEND_VAL                                                 '%3Coption+value%3D%22%251%24s%22%3E%252%24s%3C%2Foption%3E'
+       402        INIT_FCALL_BY_NAME                                       'esc_attr'
+       403        CHECK_FUNC_ARG                                           
+       404        FETCH_OBJ_FUNC_ARG                               $159    !13, 'ID'
+       405        SEND_FUNC_ARG                                            $159
+       406        DO_FCALL                                      0  $160    
+       407        SEND_VAR                                                 $160
+       408        INIT_FCALL_BY_NAME                                       'esc_html'
+       409        CHECK_FUNC_ARG                                           
+       410        FETCH_OBJ_FUNC_ARG                               $161    !13, 'post_title'
+       411        SEND_FUNC_ARG                                            $161
+       412        DO_FCALL                                      0  $162    
+       413        SEND_VAR                                                 $162
+       414        DO_ICALL                                         $163    
+       415        ASSIGN_OP                                     8          !11, $163
+ 614   416    > > JMP                                                      ->390
+       417    >   FE_FREE                                                  $153
+ 620   418      > JMPZ                                                     !11, ->426
+ 621   419    >   INIT_FCALL                                               'str_replace'
+       420        SEND_VAL                                                 '%3C%2Fselect%3E'
+       421        CONCAT                                           ~165    !11, '%3C%2Fselect%3E'
+       422        SEND_VAL                                                 ~165
+       423        SEND_VAR                                                 !9
+       424        DO_ICALL                                         $166    
+       425        ASSIGN                                                   !9, $166
+ 625   426    >   ECHO                                                     !9
+ 627   427        ECHO                                                     '%09%09%09%09'
+       428        FETCH_OBJ_R                                      ~168    'allow_addition'
+       429      > JMPZ_EX                                          ~168    ~168, ->434
+       430    >   INIT_FCALL_BY_NAME                                       'current_user_can'
+       431        SEND_VAL_EX                                              'publish_pages'
+       432        DO_FCALL                                      0  $169    
+       433        BOOL                                             ~168    $169
+       434    > > JMPZ_EX                                          ~168    ~168, ->439
+       435    >   INIT_FCALL_BY_NAME                                       'current_user_can'
+       436        SEND_VAL_EX                                              'edit_theme_options'
+       437        DO_FCALL                                      0  $170    
+       438        BOOL                                             ~168    $170
+       439    > > JMPZ                                                     ~168, ->472
+ 628   440    >   ECHO                                                     '%09%09%09%09%09%3Cbutton+type%3D%22button%22+class%3D%22button-link+add-new-toggle%22%3E%0A%09%09%09%09%09%09'
+ 631   441        INIT_FCALL                                               'printf'
+       442        INIT_FCALL_BY_NAME                                       '__'
+       443        SEND_VAL_EX                                              '%2B+%25s'
+       444        DO_FCALL                                      0  $171    
+       445        SEND_VAR                                                 $171
+       446        INIT_FCALL_BY_NAME                                       'get_post_type_object'
+       447        SEND_VAL_EX                                              'page'
+       448        DO_FCALL                                      0  $172    
+       449        FETCH_OBJ_R                                      ~173    $172, 'labels'
+       450        FETCH_OBJ_R                                      ~174    ~173, 'add_new_item'
+       451        SEND_VAL                                                 ~174
+       452        DO_ICALL                                                 
+ 633   453        ECHO                                                     '%09%09%09%09%09%3C%2Fbutton%3E%0A%09%09%09%09%09%3Cdiv+class%3D%22new-content-item%22%3E%0A%09%09%09%09%09%09%3Clabel+for%3D%22create-input-'
+ 635   454        FETCH_OBJ_R                                      ~176    'id'
+       455        ECHO                                                     ~176
+       456        ECHO                                                     '%22%3E%3Cspan+class%3D%22screen-reader-text%22%3E'
+       457        INIT_FCALL_BY_NAME                                       '_e'
+       458        SEND_VAL_EX                                              'New+page+title'
+       459        DO_FCALL                                      0          
+       460        ECHO                                                     '%3C%2Fspan%3E%3C%2Flabel%3E%0A%09%09%09%09%09%09%3Cinput+type%3D%22text%22+id%3D%22create-input-'
+ 636   461        FETCH_OBJ_R                                      ~178    'id'
+       462        ECHO                                                     ~178
+       463        ECHO                                                     '%22+class%3D%22create-item-input%22+placeholder%3D%22'
+       464        INIT_FCALL_BY_NAME                                       'esc_attr_e'
+       465        SEND_VAL_EX                                              'New+page+title%26hellip%3B'
+       466        DO_FCALL                                      0          
+       467        ECHO                                                     '%22%3E%0A%09%09%09%09%09%09%3Cbutton+type%3D%22button%22+class%3D%22button+add-content%22%3E'
+ 637   468        INIT_FCALL_BY_NAME                                       '_e'
+       469        SEND_VAL_EX                                              'Add'
+       470        DO_FCALL                                      0          
+       471        ECHO                                                     '%3C%2Fbutton%3E%0A%09%09%09%09%09%3C%2Fdiv%3E%0A%09%09%09%09'
+ 640   472    >   ECHO                                                     '%09%09%09%09'
+ 641   473      > JMP                                                      ->539
+ 644   474    >   ECHO                                                     '%09%09%09%09'
+       475        ISSET_ISEMPTY_PROP_OBJ                           ~181    'label'
+       476        BOOL_XOR                                         ~182    ~181
+       477      > JMPZ                                                     ~182, ->491
+ 645   478    >   ECHO                                                     '%09%09%09%09%09%3Clabel+for%3D%22'
+       479        INIT_FCALL_BY_NAME                                       'esc_attr'
+       480        SEND_VAR_EX                                              !0
+       481        DO_FCALL                                      0  $183    
+       482        ECHO                                                     $183
+       483        ECHO                                                     '%22+class%3D%22customize-control-title%22%3E'
+       484        INIT_FCALL_BY_NAME                                       'esc_html'
+       485        CHECK_FUNC_ARG                                           
+       486        FETCH_OBJ_FUNC_ARG                               $184    'label'
+       487        SEND_FUNC_ARG                                            $184
+       488        DO_FCALL                                      0  $185    
+       489        ECHO                                                     $185
+       490        ECHO                                                     '%3C%2Flabel%3E%0A%09%09%09%09'
+ 647   491    >   ECHO                                                     '%09%09%09%09'
+       492        ISSET_ISEMPTY_PROP_OBJ                           ~186    'description'
+       493        BOOL_XOR                                         ~187    ~186
+       494      > JMPZ                                                     ~187, ->504
+ 648   495    >   ECHO                                                     '%09%09%09%09%09%3Cspan+id%3D%22'
+       496        INIT_FCALL_BY_NAME                                       'esc_attr'
+       497        SEND_VAR_EX                                              !1
+       498        DO_FCALL                                      0  $188    
+       499        ECHO                                                     $188
+       500        ECHO                                                     '%22+class%3D%22description+customize-control-description%22%3E'
+       501        FETCH_OBJ_R                                      ~189    'description'
+       502        ECHO                                                     ~189
+       503        ECHO                                                     '%3C%2Fspan%3E%0A%09%09%09%09'
+ 650   504    >   ECHO                                                     '%09%09%09%09%3Cinput%0A%09%09%09%09%09id%3D%22'
+ 651   505        INIT_FCALL_BY_NAME                                       'esc_attr'
+       506        SEND_VAR_EX                                              !0
+       507        DO_FCALL                                      0  $190    
+       508        ECHO                                                     $190
+       509        ECHO                                                     '%22%0A%09%09%09%09%09type%3D%22'
+ 652   510        INIT_FCALL_BY_NAME                                       'esc_attr'
+       511        CHECK_FUNC_ARG                                           
+       512        FETCH_OBJ_FUNC_ARG                               $191    'type'
+       513        SEND_FUNC_ARG                                            $191
+       514        DO_FCALL                                      0  $192    
+       515        ECHO                                                     $192
+       516        ECHO                                                     '%22%0A%09%09%09%09%09'
+ 653   517        ECHO                                                     !2
+ 654   518        ECHO                                                     '%09%09%09%09%09'
+       519        INIT_METHOD_CALL                                         'input_attrs'
+       520        DO_FCALL                                      0          
+ 655   521        ECHO                                                     '%09%09%09%09%09'
+       522        FETCH_OBJ_IS                                     ~194    'input_attrs'
+       523        ISSET_ISEMPTY_DIM_OBJ                         0  ~195    ~194, 'value'
+       524        BOOL_XOR                                         ~196    ~195
+       525      > JMPZ                                                     ~196, ->534
+ 656   526    >   ECHO                                                     '%09%09%09%09%09%09value%3D%22'
+       527        INIT_FCALL_BY_NAME                                       'esc_attr'
+       528        INIT_METHOD_CALL                                         'value'
+       529        DO_FCALL                                      0  $197    
+       530        SEND_VAR_NO_REF_EX                                       $197
+       531        DO_FCALL                                      0  $198    
+       532        ECHO                                                     $198
+       533        ECHO                                                     '%22%0A%09%09%09%09%09'
+ 658   534    >   ECHO                                                     '%09%09%09%09%09'
+       535        INIT_METHOD_CALL                                         'link'
+       536        DO_FCALL                                      0          
+ 659   537        ECHO                                                     '%09%09%09%09%09%2F%3E%0A%09%09%09%09'
+ 661   538      > JMP                                                      ->539
+       539    >   FREE                                                     ~27
+ 663   540      > RETURN                                                   null
+
+25, 39, 40, 
+path #6: 0, 3, 10, 12, 14, 15, 17, 21, 24, 14, 25, 39, 41, 
+path #7: 0, 3, 10, 12, 14, 15, 21, 22, 
+path #8: 0, 3, 10, 12, 14, 15, 21, 24, 14, 25, 35, 39, 40, 
+path #9: 0, 3, 10, 12, 14, 15, 21, 24, 14, 25, 35, 39, 41, 
+path #10: 0, 3, 10, 12, 14, 15, 21, 24, 14, 25, 39, 40, 
+path #11: 0, 3, 10, 12, 14, 15, 21, 24, 14, 25, 39, 41, 
+path #12: 0, 3, 10, 12, 14, 25, 35, 39, 40, 
+path #13: 0, 3, 10, 12, 14, 25, 35, 39, 41, 
+path #14: 0, 3, 10, 12, 14, 25, 39, 40, 
+path #15: 0, 3, 10, 12, 14, 25, 39, 41, 
+path #16: 0, 3, 10, 12, 25, 35, 39, 40, 
+path #17: 0, 3, 10, 12, 25, 35, 39, 41, 
+path #18: 0, 3, 10, 12, 25, 39, 40, 
+path #19: 0, 3, 10, 12, 25, 39, 41, 
+path #20: 0, 10, 11, 
+path #21: 0, 10, 12, 14, 15, 17, 21, 22, 
+path #22: 0, 10, 12, 14, 15, 17, 21, 24, 14, 25, 35, 39, 40, 
+path #23: 0, 10, 12, 14, 15, 17, 21, 24, 14, 25, 35, 39, 41, 
+path #24: 0, 10, 12, 14, 15, 17, 21, 24, 14, 25, 39, 40, 
+path #25: 0, 10, 12, 14, 15, 17, 21, 24, 14, 25, 39, 41, 
+path #26: 0, 10, 12, 14, 15, 21, 22, 
+path #27: 0, 10, 12, 14, 15, 21, 24, 14, 25, 35, 39, 40, 
+path #28: 0, 10, 12, 14, 15, 21, 24, 14, 25, 35, 39, 41, 
+path #29: 0, 10, 12, 14, 15, 21, 24, 14, 25, 39, 40, 
+path #30: 0, 10, 12, 14, 15, 21, 24, 14, 25, 39, 41, 
+path #31: 0, 10, 12, 14, 25, 35, 39, 40, 
+path #32: 0, 10, 12, 14, 25, 35, 39, 41, 
+path #33: 0, 10, 12, 14, 25, 39, 40, 
+path #34: 0, 10, 12, 14, 25, 39, 41, 
+path #35: 0, 10, 12, 25, 35, 39, 40, 
+path #36: 0, 10, 12, 25, 35, 39, 41, 
+path #37: 0, 10, 12, 25, 39, 40, 
+path #38: 0, 10, 12, 25, 39, 41, 
+branch: #  0; line:   379-  382; sop:     0; eop:    10
+path #1: 0, 
+branch: #  0; line:   391-  391; sop:     0; eop:     3; out0:   4; out1:   5
+branch: #  4; line:   392-  392; sop:     4; eop:     4; out0:  -2
+branch: #  5; line:   402-  417; sop:     5; eop:    20; out0:  -2
+path #1: 0, 4, 
+path #2: 0, 5, 
+branch: #  0; line:   425-  431; sop:     0; eop:    25; out0:  -2
+path #1: 0, 
+branch: #  0; line:   443-  444; sop:     0; eop:     3; out0:   4; out1:   8
+branch: #  4; line:   444-  444; sop:     4; eop:     7; out0:   8
+branch: #  8; line:   444-  444; sop:     8; eop:     8; out0:   9; out1:  20
+branch: #  9; line:   445-  445; sop:     9; eop:    18; out0:  -2
+branch: # 20; line:   447-  449; sop:    20; eop:    26
+path #1: 0, 4, 8, 9, 
+path #2: 0, 4, 8, 20, 
+path #3: 0, 8, 9, 
+path #4: 0, 8, 20, 
+branch: #  0; line:   459-  461; sop:     0; eop:     5; out0:  -2
+path #1: 0, 
+branch: #  0; line:   469-  469; sop:     0; eop:     1; out0:   2; out1:  12
+branch: #  2; line:   469-  469; sop:     2; eop:     2; out0:   3; out1:  12
+branch: #  3; line:   469-  469; sop:     3; eop:    11; out0:   2
+branch: # 12; line:   469-  472; sop:    12; eop:    13; out0:  -2
+path #1: 0, 2, 3, 2, 12, 
+path #2: 0, 2, 12, 
+path #3: 0, 12, 
+branch: #  0; line:   487-  489; sop:     0; eop:     8; out0:   9; out1:  16
+branch: #  9; line:   489-  489; sop:     9; eop:    15; out0:  17
+branch: # 16; line:   489-  489; sop:    16; eop:    16; out0:  17
+branch: # 17; line:   489-  490; sop:    17; eop:    19; out0:  31; out1:  81; out2: 164; out3: 234; out4: 286; out5: 474; out6:  20; out7:  31; out8:  81; out9: 164; out10: 234; out11: 286; out12: 474; out13:  20
+branch: # 20; line:   491-  491; sop:    20; eop:    21; out0:  22; out1:  31
+branch: # 22; line:   509-  509; sop:    22; eop:    23; out0:  24; out1:  81
+branch: # 24; line:   539-  539; sop:    24; eop:    25; out0:  26; out1: 164
+branch: # 26; line:   561-  561; sop:    26; eop:    27; out0:  28; out1: 234
+branch: # 28; line:   578-  578; sop:    28; eop:    29; out0:  30; out1: 286
+branch: # 30; line:   578-  578; sop:    30; eop:    30; out0: 474
+branch: # 31; line:   493-  503; sop:    31; eop:    69; out0:  70; out1:  79
+branch: # 70; line:   504-  506; sop:    70; eop:    78; out0:  79
+branch: # 79; line:   506-  508; sop:    79; eop:    80; out0: 539
+branch: # 81; line:   510-  510; sop:    81; eop:    82; out0:  83; out1:  85
+branch: # 83; line:   511-  511; sop:    83; eop:    84; out0:  -2
+branch: # 85; line:   514-  516; sop:    85; eop:    91; out0:  92; out1: 100
+branch: # 92; line:   517-  519; sop:    92; eop:    99; out0: 100
+branch: #100; line:   519-  519; sop:   100; eop:   103; out0: 104; out1: 113
+branch: #104; line:   520-  522; sop:   104; eop:   112; out0: 113
+branch: #113; line:   522-  523; sop:   113; eop:   115; out0: 116; out1: 161
+branch: #116; line:   523-  523; sop:   116; eop:   116; out0: 117; out1: 161
+branch: #117; line:   523-  523; sop:   117; eop:   160; out0: 116
+branch: #161; line:   523-  538; sop:   161; eop:   163; out0: 539
+branch: #164; line:   540-  540; sop:   164; eop:   165; out0: 166; out1: 168
+branch: #166; line:   541-  541; sop:   166; eop:   167; out0:  -2
+branch: #168; line:   545-  545; sop:   168; eop:   171; out0: 172; out1: 185
+branch: #172; line:   546-  548; sop:   172; eop:   184; out0: 185
+branch: #185; line:   548-  548; sop:   185; eop:   188; out0: 189; out1: 198
+branch: #189; line:   549-  551; sop:   189; eop:   197; out0: 198
+branch: #198; line:   551-  554; sop:   198; eop:   210; out0: 211; out1: 231
+branch: #211; line:   554-  554; sop:   211; eop:   211; out0: 212; out1: 231
+branch: #212; line:   554-  554; sop:   212; eop:   230; out0: 211
+branch: #231; line:   554-  560; sop:   231; eop:   233; out0: 539
+branch: #234; line:   563-  563; sop:   234; eop:   237; out0: 238; out1: 251
+branch: #238; line:   564-  566; sop:   238; eop:   250; out0: 251
+branch: #251; line:   566-  566; sop:   251; eop:   254; out0: 255; out1: 264
+branch: #255; line:   567-  569; sop:   255; eop:   263; out0: 264
+branch: #264; line:   569-  577; sop:   264; eop:   285; out0: 539
+branch: #286; line:   580-  580; sop:   286; eop:   289; out0: 290; out1: 303
+branch: #290; line:   581-  583; sop:   290; eop:   302; out0: 303
+branch: #303; line:   583-  583; sop:   303; eop:   306; out0: 307; out1: 316
+branch: #307; line:   584-  586; sop:   307; eop:   315; out0: 316
+branch: #316; line:   586-  600; sop:   316; eop:   337; out0: 338; out1: 359
+branch: #338; line:   601-  607; sop:   338; eop:   358; out0: 359
+branch: #359; line:   607-  612; sop:   359; eop:   380; out0: 381; out1: 385
+branch: #381; line:   612-  612; sop:   381; eop:   384; out0: 385
+branch: #385; line:   612-  612; sop:   385; eop:   385; out0: 386; out1: 426
+branch: #386; line:   613-  614; sop:   386; eop:   389; out0: 390; out1: 417
+branch: #390; line:   614-  614; sop:   390; eop:   390; out0: 391; out1: 417
+branch: #391; line:   615-  616; sop:   391; eop:   395; out0: 396; out1: 399
+branch: #396; line:   616-  616; sop:   396; eop:   398; out0: 399
+branch: #399; line:   616-  616; sop:   399; eop:   399; out0: 400; out1: 416
+branch: #400; line:   617-  614; sop:   400; eop:   415; out0: 416
+branch: #416; line:   614-  614; sop:   416; eop:   416; out0: 390
+branch: #417; line:   614-  620; sop:   417; eop:   418; out0: 419; out1: 426
+branch: #419; line:   621-  625; sop:   419; eop:   425; out0: 426
+branch: #426; line:   625-  627; sop:   426; eop:   429; out0: 430; out1: 434
+branch: #430; line:   627-  627; sop:   430; eop:   433; out0: 434
+branch: #434; line:   627-  627; sop:   434; eop:   434; out0: 435; out1: 439
+branch: #435; line:   627-  627; sop:   435; eop:   438; out0: 439
+branch: #439; line:   627-  627; sop:   439; eop:   439; out0: 440; out1: 472
+branch: #440; line:   628-  640; sop:   440; eop:   471; out0: 472
+branch: #472; line:   640-  641; sop:   472; eop:   473; out0: 539
+branch: #474; line:   644-  644; sop:   474; eop:   477; out0: 478; out1: 491
+branch: #478; line:   645-  647; sop:   478; eop:   490; out0: 491
+branch: #491; line:   647-  647; sop:   491; eop:   494; out0: 495; out1: 504
+branch: #495; line:   648-  650; sop:   495; eop:   503; out0: 504
+branch: #504; line:   650-  655; sop:   504; eop:   525; out0: 526; out1: 534
+branch: #526; line:   656-  658; sop:   526; eop:   533; out0: 534
+branch: #534; line:   658-  661; sop:   534; eop:   538; out0: 539
+branch: #539; line:   661-  663; sop:   539; eop:   540; out0:  -2
+path #1: 0, 9, 17, 31, 70, 79, 539, 
+path #2: 0, 9, 17, 31, 79, 539, 
+path #3: 0, 9, 17, 81, 83, 
+path #4: 0, 9, 17, 81, 85, 92, 100, 104, 113, 116, 117, 116, 161, 539, 
+path #5: 0, 9, 17, 81, 85, 92, 100, 104, 113, 116, 161, 539, 
+path #6: 0, 9, 17, 81, 85, 92, 100, 104, 113, 161, 539, 
+path #7: 0, 9, 17, 81, 85, 92, 100, 113, 116, 117, 116, 161, 539, 
+path #8: 0, 9, 17, 81, 85, 92, 100, 113, 116, 161, 539, 
+path #9: 0, 9, 17, 81, 85, 92, 100, 113, 161, 539, 
+path #10: 0, 9, 17, 81, 85, 100, 104, 113, 116, 117, 116, 161, 539, 
+path #11: 0, 9, 17, 81, 85, 100, 104, 113, 116, 161, 539, 
+path #12: 0, 9, 17, 81, 85, 100, 104, 113, 161, 539, 
+path #13: 0, 9, 17, 81, 85, 100, 113, 116, 117, 116, 161, 539, 
+path #14: 0, 9, 17, 81, 85, 100, 113, 116, 161, 539, 
+path #15: 0, 9, 17, 81, 85, 100, 113, 161, 539, 
+path #16: 0, 9, 17, 164, 166, 
+path #17: 0, 9, 17, 164, 168, 172, 185, 189, 198, 211, 212, 211, 231, 539, 
+path #18: 0, 9, 17, 164, 168, 172, 185, 189, 198, 211, 231, 539, 
+path #19: 0, 9, 17, 164, 168, 172, 185, 189, 198, 231, 539, 
+path #20: 0, 9, 17, 164, 168, 172, 185, 198, 211, 212, 211, 231, 539, 
+path #21: 0, 9, 17, 164, 168, 172, 185, 198, 211, 231, 539, 
+path #22: 0, 9, 17, 164, 168, 172, 185, 198, 231, 539, 
+path #23: 0, 9, 17, 164, 168, 185, 189, 198, 211, 212, 211, 231, 539, 
+path #24: 0, 9, 17, 164, 168, 185, 189, 198, 211, 231, 539, 
+path #25: 0, 9, 17, 164, 168, 185, 189, 198, 231, 539, 
+path #26: 0, 9, 17, 164, 168, 185, 198, 211, 212, 211, 231, 539, 
+path #27: 0, 9, 17, 164, 168, 185, 198, 211, 231, 539, 
+path #28: 0, 9, 17, 164, 168, 185, 198, 231, 539, 
+path #29: 0, 9, 17, 234, 238, 251, 255, 264, 539, 
+path #30: 0, 9, 17, 234, 238, 251, 264, 539, 
+path #31: 0, 9, 17, 234, 251, 255, 264, 539, 
+path #32: 0, 9, 17, 234, 251, 264, 539, 
+path #33: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #34: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #35: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #36: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #37: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #38: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #39: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #40: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #41: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #42: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #43: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #44: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #45: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #46: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #47: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #48: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 439, 472, 539, 
+path #49: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #50: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #51: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #52: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #53: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #54: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #55: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #56: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #57: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #58: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #59: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #60: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #61: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #62: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #63: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #64: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 434, 439, 472, 539, 
+path #65: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #66: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #67: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #68: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #69: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #70: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #71: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #72: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #73: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #74: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #75: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #76: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #77: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #78: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #79: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #80: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 434, 439, 472, 539, 
+path #81: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #82: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #83: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #84: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #85: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #86: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #87: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #88: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #89: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #90: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #91: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #92: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #93: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #94: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #95: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #96: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 391, 399, 416, 390, 417, 426, 434, 439, 472, 539, 
+path #97: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #98: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #99: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #100: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #101: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #102: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #103: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #104: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #105: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #106: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #107: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #108: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #109: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #110: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #111: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #112: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 390, 417, 426, 434, 439, 472, 539, 
+path #113: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #114: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #115: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #116: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #117: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #118: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #119: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #120: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 419, 426, 434, 439, 472, 539, 
+path #121: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #122: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #123: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #124: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 426, 430, 434, 439, 472, 539, 
+path #125: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #126: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 426, 434, 435, 439, 472, 539, 
+path #127: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 426, 434, 439, 440, 472, 539, 
+path #128: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 386, 417, 426, 434, 439, 472, 539, 
+path #129: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #130: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 426, 430, 434, 435, 439, 472, 539, 
+path #131: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 426, 430, 434, 439, 440, 472, 539, 
+path #132: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 426, 430, 434, 439, 472, 539, 
+path #133: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 426, 434, 435, 439, 440, 472, 539, 
+path #134: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 426, 434, 435, 439, 472, 539, 
+path #135: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 426, 434, 439, 440, 472, 539, 
+path #136: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 381, 385, 426, 434, 439, 472, 539, 
+path #137: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #138: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #139: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #140: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #141: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #142: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #143: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #144: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #145: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #146: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #147: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #148: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #149: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #150: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #151: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #152: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 439, 472, 539, 
+path #153: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #154: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #155: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #156: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #157: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #158: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #159: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #160: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #161: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #162: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #163: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #164: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #165: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #166: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #167: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #168: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 396, 399, 416, 390, 417, 426, 434, 439, 472, 539, 
+path #169: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #170: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #171: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #172: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #173: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #174: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #175: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #176: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #177: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #178: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #179: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #180: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #181: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #182: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #183: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #184: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 400, 416, 390, 417, 426, 434, 439, 472, 539, 
+path #185: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #186: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #187: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #188: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #189: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #190: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #191: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #192: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #193: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #194: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #195: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #196: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #197: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #198: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #199: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #200: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 391, 399, 416, 390, 417, 426, 434, 439, 472, 539, 
+path #201: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #202: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #203: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #204: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #205: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #206: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #207: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #208: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #209: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #210: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #211: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #212: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #213: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #214: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #215: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #216: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 390, 417, 426, 434, 439, 472, 539, 
+path #217: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #218: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #219: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #220: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #221: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #222: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #223: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #224: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 419, 426, 434, 439, 472, 539, 
+path #225: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #226: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #227: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #228: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 426, 430, 434, 439, 472, 539, 
+path #229: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #230: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 426, 434, 435, 439, 472, 539, 
+path #231: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 426, 434, 439, 440, 472, 539, 
+path #232: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 386, 417, 426, 434, 439, 472, 539, 
+path #233: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #234: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 426, 430, 434, 435, 439, 472, 539, 
+path #235: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 426, 430, 434, 439, 440, 472, 539, 
+path #236: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 426, 430, 434, 439, 472, 539, 
+path #237: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 426, 434, 435, 439, 440, 472, 539, 
+path #238: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 426, 434, 435, 439, 472, 539, 
+path #239: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 426, 434, 439, 440, 472, 539, 
+path #240: 0, 9, 17, 286, 290, 303, 307, 316, 338, 359, 385, 426, 434, 439, 472, 539, 
+path #241: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #242: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 435, 439, 472, 539, 
+path #243: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 440, 472, 539, 
+path #244: 0, 9, 17, 286, 290, 303, 30End of function render_content
+
+Function print_template:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  print_template
+number of ops:  8
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 678     0  E >   ECHO                                                     '%09%09%3Cscript+type%3D%22text%2Fhtml%22+id%3D%22tmpl-customize-control-'
+         1        FETCH_OBJ_R                                      ~0      'type'
+         2        ECHO                                                     ~0
+         3        ECHO                                                     '-content%22%3E%0A%09%09%09'
+ 679     4        INIT_METHOD_CALL                                         'content_template'
+         5        DO_FCALL                                      0          
+ 680     6        ECHO                                                     '%09%09%3C%2Fscript%3E%0A%09%09'
+ 682     7      > RETURN                                                   null
+
+End of function print_template
+
+Function content_template:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-customize-control.php
+function name:  content_template
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 694     0  E > > RETURN                                                   null
+
+End of function content_template
+
+End of class WP_Customize_Control.
+
+7, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 430, 434, 439, 472, 539, 
+path #245: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 440, 472, 539, 
+path #246: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 435, 439, 472, 539, 
+path #247: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 439, 440, 472, 539, 
+path #248: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 419, 426, 434, 439, 472, 539, 
+path #249: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 440, 472, 539, 
+path #250: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 435, 439, 472, 539, 
+path #251: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 439, 440, 472, 539, 
+path #252: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 430, 434, 439, 472, 539, 
+path #253: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 435, 439, 440, 472, 539, 
+path #254: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 435, 439, 472, 539, 
+path #255: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 439, 440, 472, 539, 
+path #256: 0, 9, 17, 286, 290, 303, 307, 316, 359, 381, 385, 386, 390, 391, 396, 399, 400, 416, 390, 417, 426, 434, 439, 472, 539, 
+branch: #  0; line:   678-  682; sop:     0; eop:     7; out0:  -2
+path #1: 0, 
+branch: #  0; line:   694-  694; sop:     0; eop:     0; out0:  -2
+path #1: 0, 

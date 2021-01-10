@@ -1,0 +1,47 @@
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 18
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 18
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-phpmailer.php
+function name:  (null)
+number of ops:  29
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+   6     0  E >   INIT_FCALL                                               'function_exists'
+         1        SEND_VAL                                                 '_deprecated_file'
+         2        DO_ICALL                                         $0      
+         3      > JMPZ                                                     $0, ->18
+   7     4    >   INIT_FCALL_BY_NAME                                       '_deprecated_file'
+   8     5        INIT_FCALL                                               'basename'
+         6        SEND_VAL                                                 '%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2Fclass-phpmailer.php'
+         7        DO_ICALL                                         $1      
+         8        SEND_VAR_NO_REF_EX                                       $1
+   9     9        SEND_VAL_EX                                              '5.5.0'
+  10    10        FETCH_CONSTANT                                   ~2      'WPINC'
+        11        CONCAT                                           ~3      ~2, '%2FPHPMailer%2FPHPMailer.php'
+        12        SEND_VAL_EX                                              ~3
+  11    13        INIT_FCALL_BY_NAME                                       '__'
+        14        SEND_VAL_EX                                              'The+PHPMailer+class+has+been+moved+to+wp-includes%2FPHPMailer+subdirectory+and+now+uses+the+PHPMailer%5CPHPMailer+namespace.'
+        15        DO_FCALL                                      0  $4      
+        16        SEND_VAR_NO_REF_EX                                       $4
+        17        DO_FCALL                                      0          
+  15    18    >   INCLUDE_OR_EVAL                                          '%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2FPHPMailer%2FPHPMailer.php', REQUIRE_ONCE
+  16    19        INCLUDE_OR_EVAL                                          '%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2FPHPMailer%2FException.php', REQUIRE_ONCE
+  18    20        INIT_FCALL                                               'class_alias'
+        21        SEND_VAL                                                 'PHPMailer%5CPHPMailer%5CPHPMailer'
+        22        SEND_VAL                                                 'PHPMailer'
+        23        DO_ICALL                                                 
+  19    24        INIT_FCALL                                               'class_alias'
+        25        SEND_VAL                                                 'PHPMailer%5CPHPMailer%5CException'
+        26        SEND_VAL                                                 'phpmailerException'
+        27        DO_ICALL                                                 
+  20    28      > RETURN                                                   1
+
+branch: #  0; line:     6-    6; sop:     0; eop:     3; out0:   4; out1:  18
+branch: #  4; line:     7-   15; sop:     4; eop:    17; out0:  18
+branch: # 18; line:    15-   20; sop:    18; eop:    28; out0:  -2
+path #1: 0, 4, 18, 
+path #2: 0, 18, 

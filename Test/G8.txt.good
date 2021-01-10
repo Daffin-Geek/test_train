@@ -1,0 +1,70 @@
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 5, Position 2 = 6
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 6
+filename:       /home/sanu/Desktop/Dataset/Normal files/cache-compat.php
+function name:  (null)
+number of ops:  7
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  11     0  E >   INIT_FCALL                                               'function_exists'
+         1        SEND_VAL                                                 'wp_cache_get_multiple'
+         2        DO_ICALL                                         $0      
+         3        BOOL_XOR                                         ~1      $0
+         4      > JMPZ                                                     ~1, ->6
+  28     5    >   DECLARE_FUNCTION                                         'wp_cache_get_multiple'
+  38     6    > > RETURN                                                   1
+
+Function %00wp_cache_get_multiple%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2Fcache-compat.php%3A28%240:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 77) Position 1 = 5, Position 2 = 14
+Branch analysis from position: 5
+2 jumps found. (Code = 78) Position 1 = 6, Position 2 = 14
+Branch analysis from position: 6
+1 jumps found. (Code = 42) Position 1 = 5
+Branch analysis from position: 5
+Branch analysis from position: 14
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 14
+filename:       /home/sanu/Desktop/Dataset/Normal files/cache-compat.php
+function name:  wp_cache_get_multiple
+number of ops:  17
+compiled vars:  !0 = $keys, !1 = $group, !2 = $force, !3 = $values, !4 = $key
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  28     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      ''
+         2        RECV_INIT                                        !2      <false>
+  29     3        ASSIGN                                                   !3, <array>
+  31     4      > FE_RESET_R                                       $6      !0, ->14
+         5    > > FE_FETCH_R                                               $6, !4, ->14
+  32     6    >   INIT_FCALL_BY_NAME                                       'wp_cache_get'
+         7        SEND_VAR_EX                                              !4
+         8        SEND_VAR_EX                                              !1
+         9        SEND_VAR_EX                                              !2
+        10        DO_FCALL                                      0  $8      
+        11        ASSIGN_DIM                                               !3, !4
+        12        OP_DATA                                                  $8
+  31    13      > JMP                                                      ->5
+        14    >   FE_FREE                                                  $6
+  35    15      > RETURN                                                   !3
+  36    16*     > RETURN                                                   null
+
+End of function %00wp_cache_get_multiple%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2Fcache-compat.php%3A28%240
+
+branch: #  0; line:    11-   11; sop:     0; eop:     4; out0:   5; out1:   6
+branch: #  5; line:    28-   38; sop:     5; eop:     5; out0:   6
+branch: #  6; line:    38-   38; sop:     6; eop:     6; out0:  -2
+path #1: 0, 5, 6, 
+path #2: 0, 6, 
+branch: #  0; line:    28-   31; sop:     0; eop:     4; out0:   5; out1:  14
+branch: #  5; line:    31-   31; sop:     5; eop:     5; out0:   6; out1:  14
+branch: #  6; line:    32-   31; sop:     6; eop:    13; out0:   5
+branch: # 14; line:    31-   36; sop:    14; eop:    16
+path #1: 0, 5, 6, 5, 14, 
+path #2: 0, 5, 14, 
+path #3: 0, 14, 

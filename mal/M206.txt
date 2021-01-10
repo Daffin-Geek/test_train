@@ -1,0 +1,13 @@
+ASSIGN      
+INIT_FCALL  
+FETCH_R     
+FETCH_DIM_R 
+CONCAT      
+CONCAT      
+FETCH_R     
+FETCH_DIM_R 
+CONCAT      
+SEND_VAL    
+DO_ICALL    
+ECHO        
+RETURN      

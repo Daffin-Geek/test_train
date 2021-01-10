@@ -1,0 +1,12 @@
+ADD_INTERFACE 
+RETURN        
+RECV          
+RECV          
+RECV          
+NEW           
+SEND_VAR_EX   
+SEND_VAR_EX   
+SEND_VAR_EX   
+DO_FCALL      
+RETURN        
+RETURN        

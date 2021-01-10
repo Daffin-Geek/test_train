@@ -1,0 +1,8 @@
+INIT_FCALL_BY_NAME 
+INIT_FCALL         
+SEND_VAL           
+DO_ICALL           
+SEND_VAR_NO_REF_EX 
+SEND_VAL_EX        
+DO_FCALL           
+RETURN             

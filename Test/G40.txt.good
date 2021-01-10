@@ -1,0 +1,314 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-type.php
+function name:  (null)
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 293     0  E > > RETURN                                                   1
+
+Class WP_Block_Type:
+Function __construct:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-type.php
+function name:  __construct
+number of ops:  8
+compiled vars:  !0 = $block_type, !1 = $args
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 164     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      <array>
+ 165     2        ASSIGN_OBJ                                               'name'
+         3        OP_DATA                                                  !0
+ 167     4        INIT_METHOD_CALL                                         'set_props'
+         5        SEND_VAR_EX                                              !1
+         6        DO_FCALL                                      0          
+ 168     7      > RETURN                                                   null
+
+End of function __construct
+
+Function render:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 7
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-type.php
+function name:  render
+number of ops:  19
+compiled vars:  !0 = $attributes, !1 = $content
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 179     0  E >   RECV_INIT                                        !0      <array>
+         1        RECV_INIT                                        !1      ''
+ 180     2        INIT_METHOD_CALL                                         'is_dynamic'
+         3        DO_FCALL                                      0  $2      
+         4        BOOL_XOR                                         ~3      $2
+         5      > JMPZ                                                     ~3, ->7
+ 181     6    > > RETURN                                                   ''
+ 184     7    >   INIT_METHOD_CALL                                         'prepare_attributes_for_render'
+         8        SEND_VAR_EX                                              !0
+         9        DO_FCALL                                      0  $4      
+        10        ASSIGN                                                   !0, $4
+ 186    11        FETCH_OBJ_R                                      ~6      'render_callback'
+        12        INIT_USER_CALL                                2          'call_user_func', ~6
+        13        SEND_USER                                                !0
+        14        SEND_USER                                                !1
+        15        DO_FCALL                                      0  $7      
+        16        MAKE_REF                                         ~8      $7
+        17      > RETURN                                                   ~8
+ 187    18*     > RETURN                                                   null
+
+End of function render
+
+Function is_dynamic:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-type.php
+function name:  is_dynamic
+number of ops:  6
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 198     0  E >   INIT_FCALL                                               'is_callable'
+         1        FETCH_OBJ_R                                      ~0      'render_callback'
+         2        SEND_VAL                                                 ~0
+         3        DO_ICALL                                         $1      
+         4      > RETURN                                                   $1
+ 199     5*     > RETURN                                                   null
+
+End of function is_dynamic
+
+Function prepare_attributes_for_render:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 5
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 5
+2 jumps found. (Code = 77) Position 1 = 6, Position 2 = 27
+Branch analysis from position: 6
+2 jumps found. (Code = 78) Position 1 = 7, Position 2 = 27
+Branch analysis from position: 7
+2 jumps found. (Code = 43) Position 1 = 12, Position 2 = 13
+Branch analysis from position: 12
+1 jumps found. (Code = 42) Position 1 = 6
+Branch analysis from position: 6
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 25, Position 2 = 26
+Branch analysis from position: 25
+1 jumps found. (Code = 42) Position 1 = 6
+Branch analysis from position: 6
+Branch analysis from position: 26
+Branch analysis from position: 27
+2 jumps found. (Code = 77) Position 1 = 35, Position 2 = 43
+Branch analysis from position: 35
+2 jumps found. (Code = 78) Position 1 = 36, Position 2 = 43
+Branch analysis from position: 36
+2 jumps found. (Code = 43) Position 1 = 39, Position 2 = 42
+Branch analysis from position: 39
+1 jumps found. (Code = 42) Position 1 = 35
+Branch analysis from position: 35
+Branch analysis from position: 42
+Branch analysis from position: 43
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 43
+Branch analysis from position: 27
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-type.php
+function name:  prepare_attributes_for_render
+number of ops:  46
+compiled vars:  !0 = $attributes, !1 = $value, !2 = $attribute_name, !3 = $schema, !4 = $is_valid, !5 = $missing_schema_attributes
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 210     0  E >   RECV                                             !0      
+ 213     1        ISSET_ISEMPTY_PROP_OBJ                           ~6      'attributes'
+         2        BOOL_XOR                                         ~7      ~6
+         3      > JMPZ                                                     ~7, ->5
+ 214     4    > > RETURN                                                   !0
+ 217     5    > > FE_RESET_R                                       $8      !0, ->27
+         6    > > FE_FETCH_R                                       ~9      $8, !1, ->27
+         7    >   ASSIGN                                                   !2, ~9
+ 220     8        FETCH_OBJ_IS                                     ~11     'attributes'
+         9        ISSET_ISEMPTY_DIM_OBJ                         0  ~12     ~11, !2
+        10        BOOL_XOR                                         ~13     ~12
+        11      > JMPZ                                                     ~13, ->13
+ 221    12    > > JMP                                                      ->6
+ 224    13    >   FETCH_OBJ_R                                      ~14     'attributes'
+        14        FETCH_DIM_R                                      ~15     ~14, !2
+        15        ASSIGN                                                   !3, ~15
+ 230    16        INIT_FCALL_BY_NAME                                       'rest_validate_value_from_schema'
+        17        SEND_VAR_EX                                              !1
+        18        SEND_VAR_EX                                              !3
+        19        DO_FCALL                                      0  $17     
+        20        ASSIGN                                                   !4, $17
+ 231    21        INIT_FCALL_BY_NAME                                       'is_wp_error'
+        22        SEND_VAR_EX                                              !4
+        23        DO_FCALL                                      0  $19     
+        24      > JMPZ                                                     $19, ->26
+ 232    25    >   UNSET_DIM                                                !0, !2
+ 217    26    > > JMP                                                      ->6
+        27    >   FE_FREE                                                  $8
+ 238    28        INIT_FCALL                                               'array_diff_key'
+        29        FETCH_OBJ_R                                      ~20     'attributes'
+        30        SEND_VAL                                                 ~20
+        31        SEND_VAR                                                 !0
+        32        DO_ICALL                                         $21     
+        33        ASSIGN                                                   !5, $21
+ 239    34      > FE_RESET_R                                       $23     !5, ->43
+        35    > > FE_FETCH_R                                       ~24     $23, !3, ->43
+        36    >   ASSIGN                                                   !2, ~24
+ 240    37        ISSET_ISEMPTY_DIM_OBJ                         0  ~26     !3, 'default'
+        38      > JMPZ                                                     ~26, ->42
+ 241    39    >   FETCH_DIM_R                                      ~28     !3, 'default'
+        40        ASSIGN_DIM                                               !0, !2
+        41        OP_DATA                                                  ~28
+ 239    42    > > JMP                                                      ->35
+        43    >   FE_FREE                                                  $23
+ 245    44      > RETURN                                                   !0
+ 246    45*     > RETURN                                                   null
+
+End of function prepare_attributes_for_render
+
+Function set_props:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 77) Position 1 = 18, Position 2 = 23
+Branch analysis from position: 18
+2 jumps found. (Code = 78) Position 1 = 19, Position 2 = 23
+Branch analysis from position: 19
+1 jumps found. (Code = 42) Position 1 = 18
+Branch analysis from position: 18
+Branch analysis from position: 23
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 23
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-type.php
+function name:  set_props
+number of ops:  25
+compiled vars:  !0 = $args, !1 = $property_value, !2 = $property_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 255     0  E >   RECV                                             !0      
+ 256     1        INIT_FCALL_BY_NAME                                       'wp_parse_args'
+ 257     2        SEND_VAR_EX                                              !0
+ 259     3        SEND_VAL_EX                                              <array>
+         4        DO_FCALL                                      0  $3      
+         5        ASSIGN                                                   !0, $3
+ 263     6        FETCH_OBJ_R                                      ~6      'name'
+         7        ASSIGN_DIM                                               !0, 'name'
+         8        OP_DATA                                                  ~6
+ 273     9        INIT_FCALL_BY_NAME                                       'apply_filters'
+        10        SEND_VAL_EX                                              'register_block_type_args'
+        11        SEND_VAR_EX                                              !0
+        12        CHECK_FUNC_ARG                                           
+        13        FETCH_OBJ_FUNC_ARG                               $7      'name'
+        14        SEND_FUNC_ARG                                            $7
+        15        DO_FCALL                                      0  $8      
+        16        ASSIGN                                                   !0, $8
+ 275    17      > FE_RESET_R                                       $10     !0, ->23
+        18    > > FE_FETCH_R                                       ~11     $10, !1, ->23
+        19    >   ASSIGN                                                   !2, ~11
+ 276    20        ASSIGN_OBJ                                               !2
+        21        OP_DATA                                                  !1
+ 275    22      > JMP                                                      ->18
+        23    >   FE_FREE                                                  $10
+ 278    24      > RETURN                                                   null
+
+End of function set_props
+
+Function get_attributes:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 6
+Branch analysis from position: 3
+1 jumps found. (Code = 42) Position 1 = 7
+Branch analysis from position: 7
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-type.php
+function name:  get_attributes
+number of ops:  9
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 288     0  E >   FETCH_OBJ_R                                      ~0      'attributes'
+         1        TYPE_CHECK                                  128  ~1      ~0
+         2      > JMPZ                                                     ~1, ->6
+ 289     3    >   FETCH_OBJ_R                                      ~2      'attributes'
+         4        QM_ASSIGN                                        ~3      ~2
+         5      > JMP                                                      ->7
+ 290     6    >   QM_ASSIGN                                        ~3      <array>
+         7    > > RETURN                                                   ~3
+ 291     8*     > RETURN                                                   null
+
+End of function get_attributes
+
+End of class WP_Block_Type.
+
+branch: #  0; line:   293-  293; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:   164-  168; sop:     0; eop:     7; out0:  -2
+path #1: 0, 
+branch: #  0; line:   179-  180; sop:     0; eop:     5; out0:   6; out1:   7
+branch: #  6; line:   181-  181; sop:     6; eop:     6; out0:  -2
+branch: #  7; line:   184-  187; sop:     7; eop:    18
+path #1: 0, 6, 
+path #2: 0, 7, 
+branch: #  0; line:   198-  199; sop:     0; eop:     5
+path #1: 0, 
+branch: #  0; line:   210-  213; sop:     0; eop:     3; out0:   4; out1:   5
+branch: #  4; line:   214-  214; sop:     4; eop:     4; out0:  -2
+branch: #  5; line:   217-  217; sop:     5; eop:     5; out0:   6; out1:  27
+branch: #  6; line:   217-  217; sop:     6; eop:     6; out0:   7; out1:  27
+branch: #  7; line:   217-  220; sop:     7; eop:    11; out0:  12; out1:  13
+branch: # 12; line:   221-  221; sop:    12; eop:    12; out0:   6
+branch: # 13; line:   224-  231; sop:    13; eop:    24; out0:  25; out1:  26
+branch: # 25; line:   232-  217; sop:    25; eop:    25; out0:  26
+branch: # 26; line:   217-  217; sop:    26; eop:    26; out0:   6
+branch: # 27; line:   217-  239; sop:    27; eop:    34; out0:  35; out1:  43
+branch: # 35; line:   239-  239; sop:    35; eop:    35; out0:  36; out1:  43
+branch: # 36; line:   239-  240; sop:    36; eop:    38; out0:  39; out1:  42
+branch: # 39; line:   241-  239; sop:    39; eop:    41; out0:  42
+branch: # 42; line:   239-  239; sop:    42; eop:    42; out0:  35
+branch: # 43; line:   239-  246; sop:    43; eop:    45
+path #1: 0, 4, 
+path #2: 0, 5, 6, 7, 12, 6, 27, 35, 36, 39, 42, 35, 43, 
+path #3: 0, 5, 6, 7, 12, 6, 27, 35, 36, 42, 35, 43, 
+path #4: 0, 5, 6, 7, 12, 6, 27, 35, 43, 
+path #5: 0, 5, 6, 7, 12, 6, 27, 43, 
+path #6: 0, 5, 6, 7, 13, 25, 26, 6, 27, 35, 36, 39, 42, 35, 43, 
+path #7: 0, 5, 6, 7, 13, 25, 26, 6, 27, 35, 36, 42, 35, 43, 
+path #8: 0, 5, 6, 7, 13, 25, 26, 6, 27, 35, 43, 
+path #9: 0, 5, 6, 7, 13, 25, 26, 6, 27, 43, 
+path #10: 0, 5, 6, 7, 13, 26, 6, 27, 35, 36, 39, 42, 35, 43, 
+path #11: 0, 5, 6, 7, 13, 26, 6, 27, 35, 36, 42, 35, 43, 
+path #12: 0, 5, 6, 7, 13, 26, 6, 27, 35, 43, 
+path #13: 0, 5, 6, 7, 13, 26, 6, 27, 43, 
+path #14: 0, 5, 6, 27, 35, 36, 39, 42, 35, 43, 
+path #15: 0, 5, 6, 27, 35, 36, 42, 35, 43, 
+path #16: 0, 5, 6, 27, 35, 43, 
+path #17: 0, 5, 6, 27, 43, 
+path #18: 0, 5, 27, 35, 36, 39, 42, 35, 43, 
+path #19: 0, 5, 27, 35, 36, 42, 35, 43, 
+path #20: 0, 5, 27, 35, 43, 
+path #21: 0, 5, 27, 43, 
+branch: #  0; line:   255-  275; sop:     0; eop:    17; out0:  18; out1:  23
+branch: # 18; line:   275-  275; sop:    18; eop:    18; out0:  19; out1:  23
+branch: # 19; line:   275-  275; sop:    19; eop:    22; out0:  18
+branch: # 23; line:   275-  278; sop:    23; eop:    24; out0:  -2
+path #1: 0, 18, 19, 18, 23, 
+path #2: 0, 18, 23, 
+path #3: 0, 23, 
+branch: #  0; line:   288-  288; sop:     0; eop:     2; out0:   3; out1:   6
+branch: #  3; line:   289-  289; sop:     3; eop:     5; out0:   7
+branch: #  6; line:   290-  290; sop:     6; eop:     6; out0:   7
+branch: #  7; line:   290-  291; sop:     7; eop:     8
+path #1: 0, 3, 7, 
+path #2: 0, 6, 7, 

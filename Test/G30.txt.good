@@ -1,0 +1,132 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-page-dropdown.php
+function name:  (null)
+number of ops:  2
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  17     0  E >   ADD_INTERFACE                                            'walker_pagedropdown', 'walker'
+  92     1      > RETURN                                                   1
+
+Class Walker_PageDropdown:
+Function start_el:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 47) Position 1 = 14, Position 2 = 18
+Branch analysis from position: 14
+2 jumps found. (Code = 43) Position 1 = 19, Position 2 = 21
+Branch analysis from position: 19
+2 jumps found. (Code = 43) Position 1 = 37, Position 2 = 38
+Branch analysis from position: 37
+2 jumps found. (Code = 43) Position 1 = 43, Position 2 = 52
+Branch analysis from position: 43
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 52
+Branch analysis from position: 38
+Branch analysis from position: 21
+Branch analysis from position: 18
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-page-dropdown.php
+function name:  start_el
+number of ops:  65
+compiled vars:  !0 = $output, !1 = $page, !2 = $depth, !3 = $args, !4 = $id, !5 = $pad, !6 = $title
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  59     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV_INIT                                        !2      0
+         3        RECV_INIT                                        !3      <array>
+         4        RECV_INIT                                        !4      0
+  60     5        INIT_FCALL                                               'str_repeat'
+         6        SEND_VAL                                                 '%26nbsp%3B'
+         7        MUL                                              ~7      !2, 3
+         8        SEND_VAL                                                 ~7
+         9        DO_ICALL                                         $8      
+        10        ASSIGN                                                   !5, $8
+  62    11        ISSET_ISEMPTY_DIM_OBJ                         0  ~10     !3, 'value_field'
+        12        BOOL_XOR                                         ~11     ~10
+        13      > JMPNZ_EX                                         ~11     ~11, ->18
+        14    >   FETCH_DIM_R                                      ~12     !3, 'value_field'
+        15        ISSET_ISEMPTY_PROP_OBJ                           ~13     !1, ~12
+        16        BOOL_XOR                                         ~14     ~13
+        17        BOOL                                             ~11     ~14
+        18    > > JMPZ                                                     ~11, ->21
+  63    19    >   ASSIGN_DIM                                               !3, 'value_field'
+        20        OP_DATA                                                  'ID'
+  66    21    >   ROPE_INIT                                     3  ~17     '%09%3Coption+class%3D%22level-'
+        22        ROPE_ADD                                      1  ~17     ~17, !2
+        23        ROPE_END                                      2  ~16     ~17, '%22+value%3D%22'
+        24        INIT_FCALL_BY_NAME                                       'esc_attr'
+        25        CHECK_FUNC_ARG                                           
+        26        FETCH_DIM_R                                      ~19     !3, 'value_field'
+        27        FETCH_OBJ_FUNC_ARG                               $20     !1, ~19
+        28        SEND_FUNC_ARG                                            $20
+        29        DO_FCALL                                      0  $21     
+        30        CONCAT                                           ~22     ~16, $21
+        31        CONCAT                                           ~23     ~22, '%22'
+        32        ASSIGN_OP                                     8          !0, ~23
+  67    33        FETCH_OBJ_R                                      ~25     !1, 'ID'
+        34        FETCH_DIM_R                                      ~26     !3, 'selected'
+        35        IS_NOT_EQUAL                                     ~27     ~25, ~26
+        36      > JMPZ                                                     ~27, ->38
+  68    37    >   ASSIGN_OP                                     8          !0, '+selected%3D%22selected%22'
+  70    38    >   ASSIGN_OP                                     8          !0, '%3E'
+  72    39        FETCH_OBJ_R                                      ~30     !1, 'post_title'
+        40        ASSIGN                                                   !6, ~30
+  73    41        IS_NOT_IDENTICAL                                 ~32     !6, ''
+        42      > JMPZ                                                     ~32, ->52
+  75    43    >   INIT_FCALL                                               'sprintf'
+        44        INIT_FCALL_BY_NAME                                       '__'
+        45        SEND_VAL_EX                                              '%23%25d+%28no+title%29'
+        46        DO_FCALL                                      0  $33     
+        47        SEND_VAR                                                 $33
+        48        FETCH_OBJ_R                                      ~34     !1, 'ID'
+        49        SEND_VAL                                                 ~34
+        50        DO_ICALL                                         $35     
+        51        ASSIGN                                                   !6, $35
+  86    52    >   INIT_FCALL_BY_NAME                                       'apply_filters'
+        53        SEND_VAL_EX                                              'list_pages'
+        54        SEND_VAR_EX                                              !6
+        55        SEND_VAR_EX                                              !1
+        56        DO_FCALL                                      0  $37     
+        57        ASSIGN                                                   !6, $37
+  88    58        INIT_FCALL_BY_NAME                                       'esc_html'
+        59        SEND_VAR_EX                                              !6
+        60        DO_FCALL                                      0  $39     
+        61        CONCAT                                           ~40     !5, $39
+        62        ASSIGN_OP                                     8          !0, ~40
+  89    63        ASSIGN_OP                                     8          !0, '%3C%2Foption%3E%0A'
+  90    64      > RETURN                                                   null
+
+End of function start_el
+
+End of class Walker_PageDropdown.
+
+branch: #  0; line:    17-   92; sop:     0; eop:     1; out0:  -2
+path #1: 0, 
+branch: #  0; line:    59-   62; sop:     0; eop:    13; out0:  14; out1:  18
+branch: # 14; line:    62-   62; sop:    14; eop:    17; out0:  18
+branch: # 18; line:    62-   62; sop:    18; eop:    18; out0:  19; out1:  21
+branch: # 19; line:    63-   66; sop:    19; eop:    20; out0:  21
+branch: # 21; line:    66-   67; sop:    21; eop:    36; out0:  37; out1:  38
+branch: # 37; line:    68-   70; sop:    37; eop:    37; out0:  38
+branch: # 38; line:    70-   73; sop:    38; eop:    42; out0:  43; out1:  52
+branch: # 43; line:    75-   86; sop:    43; eop:    51; out0:  52
+branch: # 52; line:    86-   90; sop:    52; eop:    64; out0:  -2
+path #1: 0, 14, 18, 19, 21, 37, 38, 43, 52, 
+path #2: 0, 14, 18, 19, 21, 37, 38, 52, 
+path #3: 0, 14, 18, 19, 21, 38, 43, 52, 
+path #4: 0, 14, 18, 19, 21, 38, 52, 
+path #5: 0, 14, 18, 21, 37, 38, 43, 52, 
+path #6: 0, 14, 18, 21, 37, 38, 52, 
+path #7: 0, 14, 18, 21, 38, 43, 52, 
+path #8: 0, 14, 18, 21, 38, 52, 
+path #9: 0, 18, 19, 21, 37, 38, 43, 52, 
+path #10: 0, 18, 19, 21, 37, 38, 52, 
+path #11: 0, 18, 19, 21, 38, 43, 52, 
+path #12: 0, 18, 19, 21, 38, 52, 
+path #13: 0, 18, 21, 37, 38, 43, 52, 
+path #14: 0, 18, 21, 37, 38, 52, 
+path #15: 0, 18, 21, 38, 43, 52, 
+path #16: 0, 18, 21, 38, 52, 

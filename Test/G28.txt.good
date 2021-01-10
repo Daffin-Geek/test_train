@@ -1,0 +1,1682 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  (null)
+number of ops:  2
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  17     0  E >   ADD_INTERFACE                                            'walker_comment', 'walker'
+ 470     1      > RETURN                                                   1
+
+Class Walker_Comment:
+Function start_lvl:
+Finding entry points
+Branch analysis from position: 0
+5 jumps found. (Code = 188) Position 1 = 16, Position 2 = 17, Position 3 = 19, Position 4 = 19, Position 5 = 9
+Branch analysis from position: 16
+1 jumps found. (Code = 42) Position 1 = 21
+Branch analysis from position: 21
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 17
+1 jumps found. (Code = 42) Position 1 = 21
+Branch analysis from position: 21
+Branch analysis from position: 19
+1 jumps found. (Code = 42) Position 1 = 21
+Branch analysis from position: 21
+Branch analysis from position: 19
+Branch analysis from position: 9
+2 jumps found. (Code = 44) Position 1 = 11, Position 2 = 16
+Branch analysis from position: 11
+2 jumps found. (Code = 44) Position 1 = 13, Position 2 = 17
+Branch analysis from position: 13
+2 jumps found. (Code = 44) Position 1 = 15, Position 2 = 19
+Branch analysis from position: 15
+1 jumps found. (Code = 42) Position 1 = 19
+Branch analysis from position: 19
+Branch analysis from position: 19
+Branch analysis from position: 17
+Branch analysis from position: 16
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  start_lvl
+number of ops:  23
+compiled vars:  !0 = $output, !1 = $depth, !2 = $args
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  55     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      0
+         2        RECV_INIT                                        !2      <array>
+  56     3        ADD                                              ~5      !1, 1
+         4        FETCH_W                      global              $3      'GLOBALS'
+         5        ASSIGN_DIM                                               $3, 'comment_depth'
+         6        OP_DATA                                                  ~5
+  58     7        FETCH_DIM_R                                      ~6      !2, 'style'
+         8      > SWITCH_STRING                                            ~6, [ 'div':->16, 'ol':->17, 'ul':->19, ], ->19
+  59     9    >   CASE                                             ~7      ~6, 'div'
+        10      > JMPNZ                                                    ~7, ->16
+  61    11    >   CASE                                             ~7      ~6, 'ol'
+        12      > JMPNZ                                                    ~7, ->17
+  64    13    >   CASE                                             ~7      ~6, 'ul'
+        14      > JMPNZ                                                    ~7, ->19
+        15    > > JMP                                                      ->19
+  60    16    > > JMP                                                      ->21
+  62    17    >   ASSIGN_OP                                     8          !0, '%3Col+class%3D%22children%22%3E%0A'
+  63    18      > JMP                                                      ->21
+  66    19    >   ASSIGN_OP                                     8          !0, '%3Cul+class%3D%22children%22%3E%0A'
+  67    20      > JMP                                                      ->21
+        21    >   FREE                                                     ~6
+  69    22      > RETURN                                                   null
+
+End of function start_lvl
+
+Function end_lvl:
+Finding entry points
+Branch analysis from position: 0
+5 jumps found. (Code = 188) Position 1 = 16, Position 2 = 17, Position 3 = 19, Position 4 = 19, Position 5 = 9
+Branch analysis from position: 16
+1 jumps found. (Code = 42) Position 1 = 21
+Branch analysis from position: 21
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 17
+1 jumps found. (Code = 42) Position 1 = 21
+Branch analysis from position: 21
+Branch analysis from position: 19
+1 jumps found. (Code = 42) Position 1 = 21
+Branch analysis from position: 21
+Branch analysis from position: 19
+Branch analysis from position: 9
+2 jumps found. (Code = 44) Position 1 = 11, Position 2 = 16
+Branch analysis from position: 11
+2 jumps found. (Code = 44) Position 1 = 13, Position 2 = 17
+Branch analysis from position: 13
+2 jumps found. (Code = 44) Position 1 = 15, Position 2 = 19
+Branch analysis from position: 15
+1 jumps found. (Code = 42) Position 1 = 19
+Branch analysis from position: 19
+Branch analysis from position: 19
+Branch analysis from position: 17
+Branch analysis from position: 16
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  end_lvl
+number of ops:  23
+compiled vars:  !0 = $output, !1 = $depth, !2 = $args
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  84     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      0
+         2        RECV_INIT                                        !2      <array>
+  85     3        ADD                                              ~5      !1, 1
+         4        FETCH_W                      global              $3      'GLOBALS'
+         5        ASSIGN_DIM                                               $3, 'comment_depth'
+         6        OP_DATA                                                  ~5
+  87     7        FETCH_DIM_R                                      ~6      !2, 'style'
+         8      > SWITCH_STRING                                            ~6, [ 'div':->16, 'ol':->17, 'ul':->19, ], ->19
+  88     9    >   CASE                                             ~7      ~6, 'div'
+        10      > JMPNZ                                                    ~7, ->16
+  90    11    >   CASE                                             ~7      ~6, 'ol'
+        12      > JMPNZ                                                    ~7, ->17
+  93    13    >   CASE                                             ~7      ~6, 'ul'
+        14      > JMPNZ                                                    ~7, ->19
+        15    > > JMP                                                      ->19
+  89    16    > > JMP                                                      ->21
+  91    17    >   ASSIGN_OP                                     8          !0, '%3C%2Fol%3E%3C%21--+.children+--%3E%0A'
+  92    18      > JMP                                                      ->21
+  95    19    >   ASSIGN_OP                                     8          !0, '%3C%2Ful%3E%3C%21--+.children+--%3E%0A'
+  96    20      > JMP                                                      ->21
+        21    >   FREE                                                     ~6
+  98    22      > RETURN                                                   null
+
+End of function end_lvl
+
+Function display_element:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 8, Position 2 = 9
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 9
+2 jumps found. (Code = 46) Position 1 = 25, Position 2 = 27
+Branch analysis from position: 25
+2 jumps found. (Code = 43) Position 1 = 28, Position 2 = 42
+Branch analysis from position: 28
+2 jumps found. (Code = 77) Position 1 = 30, Position 2 = 40
+Branch analysis from position: 30
+2 jumps found. (Code = 78) Position 1 = 31, Position 2 = 40
+Branch analysis from position: 31
+1 jumps found. (Code = 42) Position 1 = 30
+Branch analysis from position: 30
+Branch analysis from position: 40
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 40
+Branch analysis from position: 42
+Branch analysis from position: 27
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  display_element
+number of ops:  43
+compiled vars:  !0 = $element, !1 = $children_elements, !2 = $max_depth, !3 = $depth, !4 = $args, !5 = $output, !6 = $id_field, !7 = $id, !8 = $child
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 131     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV                                             !2      
+         3        RECV                                             !3      
+         4        RECV                                             !4      
+         5        RECV                                             !5      
+ 132     6        BOOL_XOR                                         ~9      !0
+         7      > JMPZ                                                     ~9, ->9
+ 133     8    > > RETURN                                                   null
+ 136     9    >   FETCH_OBJ_R                                      ~10     'db_fields'
+        10        FETCH_DIM_R                                      ~11     ~10, 'id'
+        11        ASSIGN                                                   !6, ~11
+ 137    12        FETCH_OBJ_R                                      ~13     !0, !6
+        13        ASSIGN                                                   !7, ~13
+ 139    14        INIT_STATIC_METHOD_CALL                                  'display_element'
+        15        SEND_VAR_EX                                              !0
+        16        SEND_VAR_EX                                              !1
+        17        SEND_VAR_EX                                              !2
+        18        SEND_VAR_EX                                              !3
+        19        SEND_VAR_EX                                              !4
+        20        SEND_VAR_EX                                              !5
+        21        DO_FCALL                                      0          
+ 146    22        ADD                                              ~16     !3, 1
+        23        CAST                                          0  ~17     !2, ~16
+        24      > JMPZ_EX                                          ~17     ~17, ->27
+        25    >   ISSET_ISEMPTY_DIM_OBJ                         0  ~18     !1, !7
+        26        BOOL                                             ~17     ~18
+        27    > > JMPZ                                                     ~17, ->42
+ 147    28    >   FETCH_DIM_R                                      ~19     !1, !7
+        29      > FE_RESET_R                                       $20     ~19, ->40
+        30    > > FE_FETCH_R                                               $20, !8, ->40
+ 148    31    >   INIT_METHOD_CALL                                         'display_element'
+        32        SEND_VAR_EX                                              !8
+        33        SEND_VAR_EX                                              !1
+        34        SEND_VAR_EX                                              !2
+        35        SEND_VAR_EX                                              !3
+        36        SEND_VAR_EX                                              !4
+        37        SEND_VAR_EX                                              !5
+        38        DO_FCALL                                      0          
+ 147    39      > JMP                                                      ->30
+        40    >   FE_FREE                                                  $20
+ 151    41        UNSET_DIM                                                !1, !7
+ 154    42    > > RETURN                                                   null
+
+End of function display_element
+
+Function start_el:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 16, Position 2 = 28
+Branch analysis from position: 16
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 28
+2 jumps found. (Code = 43) Position 1 = 31, Position 2 = 40
+Branch analysis from position: 31
+2 jumps found. (Code = 47) Position 1 = 43, Position 2 = 46
+Branch analysis from position: 43
+2 jumps found. (Code = 46) Position 1 = 47, Position 2 = 49
+Branch analysis from position: 47
+2 jumps found. (Code = 43) Position 1 = 50, Position 2 = 61
+Branch analysis from position: 50
+1 jumps found. (Code = 42) Position 1 = 85
+Branch analysis from position: 85
+2 jumps found. (Code = 43) Position 1 = 88, Position 2 = 97
+Branch analysis from position: 88
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 97
+Branch analysis from position: 61
+2 jumps found. (Code = 43) Position 1 = 64, Position 2 = 75
+Branch analysis from position: 64
+1 jumps found. (Code = 42) Position 1 = 85
+Branch analysis from position: 85
+Branch analysis from position: 75
+2 jumps found. (Code = 43) Position 1 = 88, Position 2 = 97
+Branch analysis from position: 88
+Branch analysis from position: 97
+Branch analysis from position: 49
+Branch analysis from position: 46
+Branch analysis from position: 40
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  start_el
+number of ops:  98
+compiled vars:  !0 = $output, !1 = $comment, !2 = $depth, !3 = $args, !4 = $id
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 172     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV_INIT                                        !2      0
+         3        RECV_INIT                                        !3      <array>
+         4        RECV_INIT                                        !4      0
+ 173     5        POST_INC                                         ~5      !2
+         6        FREE                                                     ~5
+ 174     7        FETCH_W                      global              $6      'GLOBALS'
+         8        ASSIGN_DIM                                               $6, 'comment_depth'
+         9        OP_DATA                                                  !2
+ 175    10        FETCH_W                      global              $8      'GLOBALS'
+        11        ASSIGN_DIM                                               $8, 'comment'
+        12        OP_DATA                                                  !1
+ 177    13        ISSET_ISEMPTY_DIM_OBJ                         1  ~10     !3, 'callback'
+        14        BOOL_XOR                                         ~11     ~10
+        15      > JMPZ                                                     ~11, ->28
+ 178    16    >   INIT_FCALL                                               'ob_start'
+        17        DO_ICALL                                                 
+ 179    18        FETCH_DIM_R                                      ~13     !3, 'callback'
+        19        INIT_USER_CALL                                3          'call_user_func', ~13
+        20        SEND_USER                                                !1
+        21        SEND_USER                                                !3
+        22        SEND_USER                                                !2
+        23        DO_FCALL                                      0          
+ 180    24        INIT_FCALL                                               'ob_get_clean'
+        25        DO_ICALL                                         $15     
+        26        ASSIGN_OP                                     8          !0, $15
+ 181    27      > RETURN                                                   null
+ 184    28    >   FETCH_OBJ_R                                      ~17     !1, 'comment_type'
+        29        IS_NOT_IDENTICAL                                 ~18     ~17, 'comment'
+        30      > JMPZ                                                     ~18, ->40
+ 185    31    >   INIT_FCALL_BY_NAME                                       'add_filter'
+        32        SEND_VAL_EX                                              'comment_text'
+        33        FETCH_THIS                                       ~19     
+        34        INIT_ARRAY                                       ~20     ~19
+        35        ADD_ARRAY_ELEMENT                                ~20     'filter_comment_text'
+        36        SEND_VAL_EX                                              ~20
+        37        SEND_VAL_EX                                              40
+        38        SEND_VAL_EX                                              2
+        39        DO_FCALL                                      0          
+ 188    40    >   FETCH_OBJ_R                                      ~22     !1, 'comment_type'
+        41        IS_NOT_IDENTICAL                                 ~23     ~22, 'pingback'
+        42      > JMPNZ_EX                                         ~23     ~23, ->46
+        43    >   FETCH_OBJ_R                                      ~24     !1, 'comment_type'
+        44        IS_NOT_IDENTICAL                                 ~25     ~24, 'trackback'
+        45        BOOL                                             ~23     ~25
+        46    > > JMPZ_EX                                          ~23     ~23, ->49
+        47    >   FETCH_DIM_R                                      ~26     !3, 'short_ping'
+        48        BOOL                                             ~23     ~26
+        49    > > JMPZ                                                     ~23, ->61
+ 189    50    >   INIT_FCALL                                               'ob_start'
+        51        DO_ICALL                                                 
+ 190    52        INIT_METHOD_CALL                                         'ping'
+        53        SEND_VAR_EX                                              !1
+        54        SEND_VAR_EX                                              !2
+        55        SEND_VAR_EX                                              !3
+        56        DO_FCALL                                      0          
+ 191    57        INIT_FCALL                                               'ob_get_clean'
+        58        DO_ICALL                                         $29     
+        59        ASSIGN_OP                                     8          !0, $29
+        60      > JMP                                                      ->85
+ 192    61    >   FETCH_DIM_R                                      ~31     !3, 'format'
+        62        IS_NOT_IDENTICAL                                 ~32     ~31, 'html5'
+        63      > JMPZ                                                     ~32, ->75
+ 193    64    >   INIT_FCALL                                               'ob_start'
+        65        DO_ICALL                                                 
+ 194    66        INIT_METHOD_CALL                                         'html5_comment'
+        67        SEND_VAR_EX                                              !1
+        68        SEND_VAR_EX                                              !2
+        69        SEND_VAR_EX                                              !3
+        70        DO_FCALL                                      0          
+ 195    71        INIT_FCALL                                               'ob_get_clean'
+        72        DO_ICALL                                         $35     
+        73        ASSIGN_OP                                     8          !0, $35
+        74      > JMP                                                      ->85
+ 197    75    >   INIT_FCALL                                               'ob_start'
+        76        DO_ICALL                                                 
+ 198    77        INIT_METHOD_CALL                                         'comment'
+        78        SEND_VAR_EX                                              !1
+        79        SEND_VAR_EX                                              !2
+        80        SEND_VAR_EX                                              !3
+        81        DO_FCALL                                      0          
+ 199    82        INIT_FCALL                                               'ob_get_clean'
+        83        DO_ICALL                                         $39     
+        84        ASSIGN_OP                                     8          !0, $39
+ 202    85    >   FETCH_OBJ_R                                      ~41     !1, 'comment_type'
+        86        IS_NOT_IDENTICAL                                 ~42     ~41, 'comment'
+        87      > JMPZ                                                     ~42, ->97
+ 203    88    >   INIT_FCALL_BY_NAME                                       'remove_filter'
+        89        SEND_VAL_EX                                              'comment_text'
+        90        FETCH_THIS                                       ~43     
+        91        INIT_ARRAY                                       ~44     ~43
+        92        ADD_ARRAY_ELEMENT                                ~44     'filter_comment_text'
+        93        SEND_VAL_EX                                              ~44
+        94        SEND_VAL_EX                                              40
+        95        SEND_VAL_EX                                              2
+        96        DO_FCALL                                      0          
+ 205    97    > > RETURN                                                   null
+
+branch: #  0; line:    17-  470; sop:     0; eop:     1; out0:  -2
+path #1: 0, 
+branch: #  0; line:    55-   58; sop:     0; eop:     8; out0:  16; out1:  17; out2:  19; out3:  19; out4:   9
+branch: #  9; line:    59-   59; sop:     9; eop:    10; out0:  11; out1:  16
+branch: # 11; line:    61-   61; sop:    11; eop:    12; out0:  13; out1:  17
+branch: # 13; line:    64-   64; sop:    13; eop:    14; out0:  15; out1:  19
+branch: # 15; line:    64-   64; sop:    15; eop:    15; out0:  19
+branch: # 16; line:    60-   60; sop:    16; eop:    16; out0:  21
+branch: # 17; line:    62-   63; sop:    17; eop:    18; out0:  21
+branch: # 19; line:    66-   67; sop:    19; eop:    20; out0:  21
+branch: # 21; line:    67-   69; sop:    21; eop:    22; out0:  -2
+path #1: 0, 16, 21, 
+path #2: 0, 17, 21, 
+path #3: 0, 19, 21, 
+path #4: 0, 19, 21, 
+path #5: 0, 9, 11, 13, 15, 19, 21, 
+path #6: 0, 9, 11, 13, 19, 21, 
+path #7: 0, 9, 11, 17, 21, 
+path #8: 0, 9, 16, 21, 
+branch: #  0; line:    84-   87; sop:     0; eop:     8; out0:  16; out1:  17; out2:  19; out3:  19; out4:   9
+branch: #  9; line:    88-   88; sop:     9; eop:    10; out0:  11; out1:  16
+branch: # 11; line:    90-   90; sop:    11; eop:    12; out0:  13; out1:  17
+branch: # 13; line:    93-   93; sop:    13; eop:    14; out0:  15; out1:  19
+branch: # 15; line:    93-   93; sop:    15; eop:    15; out0:  19
+branch: # 16; line:    89-   89; sop:    16; eop:    16; out0:  21
+branch: # 17; line:    91-   92; sop:    17; eop:    18; out0:  21
+branch: # 19; line:    95-   96; sop:    19; eop:    20; out0:  21
+branch: # 21; line:    96-   98; sop:    21; eop:    22; out0:  -2
+path #1: 0, 16, 21, 
+path #2: 0, 17, 21, 
+path #3: 0, 19, 21, 
+path #4: 0, 19, 21, 
+path #5: 0, 9, 11, 13, 15, 19, 21, 
+path #6: 0, 9, 11, 13, 19, 21, 
+path #7: 0, 9, 11, 17, 21, 
+path #8: 0, 9, 16, 21, 
+branch: #  0; line:   131-  132; sop:     0; eop:     7; out0:   8; out1:   9
+branch: #  8; line:   133-  133; sop:     8; eop:     8; out0:  -2
+branch: #  9; line:   136-  146; sop:     9; eop:    24; out0:  25; out1:  27
+branch: # 25; line:   146-  146; sop:    25; eop:    26; out0:  27
+branch: # 27; line:   146-  146; sop:    27; eop:    27; out0:  28; out1:  42
+branch: # 28; line:   147-  147; sop:    28; eop:    29; out0:  30; out1:  40
+branch: # 30; line:   147-  147; sop:    30; eop:    30; out0:  31; out1:  40
+branch: # 31; line:   148-  147; sop:    31; eop:    39; out0:  30
+branch: # 40; line:   147-  154; sop:    40; eop:    41; out0:  42
+branch: # 42; line:   154-  154; sop:    42; eop:    42; out0:  -2
+path #1: 0, 8, 
+path #2: 0, 9, 25, 27, 28, 30, 31, 30, 40, 42, 
+path #3: 0, 9, 25, 27, 28, 30, 40, 42, 
+path #4: 0, 9, 25, 27, 28, 40, 42, 
+path #5: 0, 9, 25, 27, 42, 
+path #6: 0, 9, 27, 28, 30, 31, 30, 40, 42, 
+path #7: 0, 9, 27, 28, 30, 40, 42, 
+path #8: 0, 9, 27, 28, 40, 42, 
+path #9: 0, 9, 27, 42, 
+branch: #  0; line:   172-  177; sop:     0; eop:    15; out0:  16; out1:  28
+branch: # 16; line:   178-  181; sop:    16; eop:    27; out0:  -2
+branch: # 28; line:   184-  184; sop:    28; eop:    30; out0:  31; out1:  40
+branch: # 31; line:   185-  188; sop:    31; eop:    39; out0:  40
+branch: # 40; line:   188-  188; sop:    40; eop:    42; out0:  43; out1:  46
+branch: # 43; line:   188-  188; sop:    43; eop:    45; out0:  46
+branch: # 46; line:   188-  188; sop:    46; eop:    46; out0:  47; out1:  49
+branch: # 47; line:   188-  188; sop:    47; eop:    48; out0:  49
+branch: # 49; line:   188-  188; sop:    49; eop:    49; out0:  50; out1:  61
+branch: # 50; line:   189-  191; sop:    50; eop:    60; out0:  85
+branch: # 61; line:   192-  192; sop:    61; eop:    63; out0:  64; out1:  75
+branch: # 64; line:   193-  195; sop:    64; eop:    74; out0:  85
+branch: # 75; line:   197-  202; sop:    75; eop:    84; out0:  85
+branch: # 85; line:   202-  202; sop:    85; eop:    87; out0:  88; out1:  97; out2:  88; out3:  97
+branch: # 88; line:   203-  205; sop:    88; eop:    96; out0:  97
+branch: # 97; line:   205-  205; sop:    97; eop:    97; out0:  -2
+path #1: 0, 16, 
+path #2: 0, 28, 31, 40, 43, 46, 47, 49, 50, 85, 88, 97, 
+path #3: 0, 28, 31, 40, 43, 46, 47, 49, 50, 85, 97, 
+path #4: 0, 28, 31, 40, 43, 46, 47, 49, 50, 85, 88, 97, 
+path #5: 0, 28, 31, 40, 43, 46, 47, 49, 50, 85, 97, 
+path #6: 0, 28, 31, 40, 43, 46, 47, 49, 61, 64, 85, 88, 97, 
+path #7: 0, 28, 31, 40, 43, 46, 47, 49, 61, 64, 85, 97, 
+path #8: 0, 28, 31, 40, 43, 46, 47, 49, 61, 64, 85, 88, 97, 
+path #9: 0, 28, 31, 40, 43, 46, 47, 49, 61, 64, 85, 97, 
+path #10: 0, 28, 31, 40, 43, 46, 47, 49, 61, 75, 85, 88, 97, 
+path #11: 0, 28, 31, 40, 43, 46, 47, 49, 61, 75, 85, 97, 
+path #12: 0, 28, 31, 40, 43, 46, 47, 49, 61, 75, 85, 88, 97, 
+path #13: 0, 28, 31, 40, 43, 46, 47, 49, 61, 75, 85, 97, 
+path #14: 0, 28, 31, 40, 43, 46, 49, 50, 85, 88, 97, 
+path #15: 0, 28, 31, 40, 43, 46, 49, 50, 85, 97, 
+path #16: 0, 28, 31, 40, 43, 46, 49, 50, 85, 88, 97, 
+path #17: 0, 28, 31, 40, 43, 46, 49, 50, 85, 97, 
+path #18: 0, 28, 31, 40, 43, 46, 49, 61, 64, 85, 88, 97, 
+path #19: 0, 28, 31, 40, 43, 46, 49, 61, 64, 85, 97, 
+path #20: 0, 28, 31, 40, 43, 46, 49, 61, 64, 85, 88, 97, 
+path #21: 0, 28, 31, 40, 43, 46, 49, 61, 64, 85, 97, 
+path #22: 0, 28, 31, 40, 43, 46, 49, 61, 75, 85, 88, 97, 
+path #23: 0, 28, 31, 40, 43, 46, 49, 61, 75, 85, 97, 
+path #24: 0, 28, 31, 40, 43, 46, 49, 61, 75, 85, 88, 97, 
+path #25: 0, 28, 31, 40, 43, 46, 49, 61, 75, 85, 97, 
+path #26: 0, 28, 31, 40, 46, 47, 49, 50, 85, 88, 97, 
+path #27: 0, 28, 31, 40, 46, 47, 49, 50, 85, 97, 
+path #28: 0, 28, 31, 40, 46, 47, 49, 50, 85, 88, 97, 
+path #29: 0, 28, 31, 40, 46, 47, 49, 50, 85, 97, 
+path #30: 0, 28, 31, 40, 46, 47, 49, 61, 64, 85, 88, 97, 
+path #31: 0, 28, 31, 40, 46, 47, 49, 61, 64, 85, 97, 
+path #32: 0, 28, 31, 40, 46, 47, 49, 61, 64, 85, 88, 97, 
+path #33: 0, 28, 31, 40, 46, 47, 49, 61, 64, 85, 97, 
+path #34: 0, 28, 31, 40, 46, 47, 49, 61, 75, 85, 88, 97, 
+path #35: 0, 28, 31, 40, 46, 47, 49, 61, 75, 85, 97, 
+path #36: 0, 28, 31, 40, 46, 47, 49, 61, 75, 85, 88, 97, 
+path #37: 0, 28, 31, 40, 46, 47, 49, 61, 75, 85, 97, 
+path #38: 0, 28, 31, 40, 46, 49, 50, 85, 88, 97, 
+path #39: 0, 28, 31, 40, 46, 49, 50, 85, 97, 
+path #40: 0, 28, 31, 40, 46, 49, 50, 85, 88, 97, 
+path #41: 0, 28, 31, 40, 46, 49, 50, 85, 97, 
+path #42: 0, 28, 31, 40, 46, 49, 61, 64, 85, 88, 97, 
+path #43: 0, 28, 31, 40, 46, 49, 61, 64, 85, 97, 
+path #44: 0, 28, 31, 40, 46, 49, 61, 64, 85, 88, 97, 
+path #45: 0, 28, 31, 40, 46, 49, 61, 64, 85, 97, 
+path #46: 0, 28, 31, 40, 46, 49, 61, 75, 85, 88, 97, 
+path #47: 0, 28, 31, 40, 46, 49, 61, 75, 85, 97, 
+path #48: 0, 28, 31, 40, 46, 49, 61, 75, 85, 88, 97, 
+path #49: 0, 28, 31, 40, 46, 49, 61, 75, 85, 97, 
+path #50: 0, 28, 40, 43, 46, 47, 49, 50, 85, 88, 97, 
+path #51: 0, 28, 40, 43, 46, 47, 49, 50, 85, 97, 
+path #52: 0, 28, 40, 43, 46, 47, 49, 50, 85, 88, 97, 
+path #53: 0, 28, 40, 43, 46, 47, 49, 50, 85, 97, 
+path #54: 0, 28, 40, 43, 46, 47, 49, 61, 64, 85, 88, 97, 
+path #55: 0, 28, 40, 43, 46, 47, 49, 61, 64, 85, 97, 
+path #56: 0, 28, 40, 43, 46, 47, 49, 61, 64, 85, 88, 97, 
+path #57: 0, 28, 40, 43, 46, 47, 49, 61, 64, 85, 97, 
+path #58: 0, 28, 40, 43, 46, 47, 49, 61, 75, 85, 88, 97, 
+path #59: 0, 28, 40, 43, 46, 47, 49, 61, 75, 85, 97, 
+path #60: 0, 28, 40, 43, 46, 47, 49, 61, 75, 85, 88, 97, 
+path #61: 0, 28, 40, 43, 46, 47, 49, 61, 75, 85, 97, 
+path #62: 0, 28, 40, 43, 46, 49, 50, 85, 88, 97, 
+path #63: 0, 28, 40, 43, 46, 49, 50, 85, 97, 
+path #64: 0, 28, 40, 43, 46, 49, 50, 85, 88, 97, 
+path #65: 0, 28, 40, 43, 46, 49, 50, 85, 97, 
+path #66: 0, 28, 40, 43, 46, 49, 61, 64, 85, 88, 97, 
+path #67: 0, 28, 40, 43, 46, 49, 61, 64, 85, 97, 
+path #68: 0, 28, 40, 43, 46, 49, 61, 64, 85, 88, 97, 
+path #69: 0, 28, 40, 43, 46, 49, 61, 64, 85, 97, 
+path #70: 0, 28, 40, 43, 46, 49, 61, 75, 85, 88, 97, 
+path #71: 0, 28, 40, 43, 46, 49, 61, 75, 85, 97, 
+path #72: 0, 28, 40, 43, 46, 49, 61, 75, 85, 88, 97, 
+path #73: 0, 28, 40, 43, 46, 49, 61, 75, 85, 97, 
+path #74: 0, 28, 40, 46, 47, 49, 50, 85, 88, 97, 
+path #75: 0, 28, 40, 46, 47, 49, 50, 85, 97, 
+path #76: 0, 28, 40, 46, 47, 49, 50, 85, 88, 97, 
+path #77: 0, 28, 40, 46, 47, 49, 50, 85, 97, 
+path #78: 0, 28, 40, 46, 47, 49, 61, 64, 85, 88, 97, 
+pEnd of function start_el
+
+Function end_el:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 7, Position 2 = 19
+Branch analysis from position: 7
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 19
+2 jumps found. (Code = 43) Position 1 = 22, Position 2 = 24
+Branch analysis from position: 22
+1 jumps found. (Code = 42) Position 1 = 25
+Branch analysis from position: 25
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 24
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  end_el
+number of ops:  26
+compiled vars:  !0 = $output, !1 = $comment, !2 = $depth, !3 = $args
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 220     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV_INIT                                        !2      0
+         3        RECV_INIT                                        !3      <array>
+ 221     4        ISSET_ISEMPTY_DIM_OBJ                         1  ~4      !3, 'end-callback'
+         5        BOOL_XOR                                         ~5      ~4
+         6      > JMPZ                                                     ~5, ->19
+ 222     7    >   INIT_FCALL                                               'ob_start'
+         8        DO_ICALL                                                 
+ 223     9        FETCH_DIM_R                                      ~7      !3, 'end-callback'
+        10        INIT_USER_CALL                                3          'call_user_func', ~7
+        11        SEND_USER                                                !1
+        12        SEND_USER                                                !3
+        13        SEND_USER                                                !2
+        14        DO_FCALL                                      0          
+ 224    15        INIT_FCALL                                               'ob_get_clean'
+        16        DO_ICALL                                         $9      
+        17        ASSIGN_OP                                     8          !0, $9
+ 225    18      > RETURN                                                   null
+ 227    19    >   FETCH_DIM_R                                      ~11     !3, 'style'
+        20        IS_NOT_IDENTICAL                                 ~12     ~11, 'div'
+        21      > JMPZ                                                     ~12, ->24
+ 228    22    >   ASSIGN_OP                                     8          !0, '%3C%2Fdiv%3E%3C%21--+%23comment-%23%23+--%3E%0A'
+        23      > JMP                                                      ->25
+ 230    24    >   ASSIGN_OP                                     8          !0, '%3C%2Fli%3E%3C%21--+%23comment-%23%23+--%3E%0A'
+ 232    25    > > RETURN                                                   null
+
+End of function end_el
+
+Function ping:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 8
+Branch analysis from position: 6
+1 jumps found. (Code = 42) Position 1 = 9
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  ping
+number of ops:  39
+compiled vars:  !0 = $comment, !1 = $depth, !2 = $args, !3 = $tag
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 245     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV                                             !2      
+ 246     3        FETCH_DIM_R                                      ~4      !2, 'style'
+         4        IS_NOT_IDENTICAL                                 ~5      ~4, 'div'
+         5      > JMPZ                                                     ~5, ->8
+         6    >   QM_ASSIGN                                        ~6      'div'
+         7      > JMP                                                      ->9
+         8    >   QM_ASSIGN                                        ~6      'li'
+         9    >   ASSIGN                                                   !3, ~6
+ 248    10        ECHO                                                     '%09%09%3C'
+        11        ECHO                                                     !3
+        12        ECHO                                                     '+id%3D%22comment-'
+        13        INIT_FCALL_BY_NAME                                       'comment_ID'
+        14        DO_FCALL                                      0          
+        15        ECHO                                                     '%22+'
+        16        INIT_FCALL_BY_NAME                                       'comment_class'
+        17        SEND_VAL_EX                                              ''
+        18        SEND_VAR_EX                                              !0
+        19        DO_FCALL                                      0          
+        20        ECHO                                                     '%3E%0A%09%09%09%3Cdiv+class%3D%22comment-body%22%3E%0A%09%09%09%09'
+ 250    21        INIT_FCALL_BY_NAME                                       '_e'
+        22        SEND_VAL_EX                                              'Pingback%3A'
+        23        DO_FCALL                                      0          
+        24        ECHO                                                     '+'
+        25        INIT_FCALL_BY_NAME                                       'comment_author_link'
+        26        SEND_VAR_EX                                              !0
+        27        DO_FCALL                                      0          
+        28        ECHO                                                     '+'
+        29        INIT_FCALL_BY_NAME                                       'edit_comment_link'
+        30        INIT_FCALL_BY_NAME                                       '__'
+        31        SEND_VAL_EX                                              'Edit'
+        32        DO_FCALL                                      0  $12     
+        33        SEND_VAR_NO_REF_EX                                       $12
+        34        SEND_VAL_EX                                              '%3Cspan+class%3D%22edit-link%22%3E'
+        35        SEND_VAL_EX                                              '%3C%2Fspan%3E'
+        36        DO_FCALL                                      0          
+ 251    37        ECHO                                                     '%09%09%09%3C%2Fdiv%3E%0A%09%09'
+ 253    38      > RETURN                                                   null
+
+End of function ping
+
+Function filter_comment_text:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 46) Position 1 = 9, Position 2 = 12
+Branch analysis from position: 9
+2 jumps found. (Code = 46) Position 1 = 13, Position 2 = 15
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 16, Position 2 = 21
+Branch analysis from position: 16
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 21
+Branch analysis from position: 15
+Branch analysis from position: 12
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  filter_comment_text
+number of ops:  23
+compiled vars:  !0 = $comment_text, !1 = $comment, !2 = $commenter, !3 = $show_pending_links
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 267     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 268     2        INIT_FCALL_BY_NAME                                       'wp_get_current_commenter'
+         3        DO_FCALL                                      0  $4      
+         4        ASSIGN                                                   !2, $4
+ 269     5        ISSET_ISEMPTY_DIM_OBJ                         1  ~6      !2, 'comment_author'
+         6        BOOL_XOR                                         ~7      ~6
+         7        ASSIGN                                                   !3, ~7
+ 271     8      > JMPZ_EX                                          ~9      !1, ->12
+         9    >   FETCH_OBJ_R                                      ~10     !1, 'comment_approved'
+        10        IS_NOT_EQUAL                                     ~11     ~10, '0'
+        11        BOOL                                             ~9      ~11
+        12    > > JMPZ_EX                                          ~9      ~9, ->15
+        13    >   BOOL_XOR                                         ~12     !3
+        14        BOOL                                             ~9      ~12
+        15    > > JMPZ                                                     ~9, ->21
+ 272    16    >   INIT_FCALL_BY_NAME                                       'wp_kses'
+        17        SEND_VAR_EX                                              !0
+        18        SEND_VAL_EX                                              <array>
+        19        DO_FCALL                                      0  $13     
+        20        ASSIGN                                                   !0, $13
+ 275    21    > > RETURN                                                   !0
+ 276    22*     > RETURN                                                   null
+
+End of function filter_comment_text
+
+Function comment:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 9
+Branch analysis from position: 6
+1 jumps found. (Code = 42) Position 1 = 11
+Branch analysis from position: 11
+2 jumps found. (Code = 46) Position 1 = 16, Position 2 = 18
+Branch analysis from position: 16
+2 jumps found. (Code = 43) Position 1 = 21, Position 2 = 26
+Branch analysis from position: 21
+1 jumps found. (Code = 42) Position 1 = 30
+Branch analysis from position: 30
+2 jumps found. (Code = 43) Position 1 = 36, Position 2 = 38
+Branch analysis from position: 36
+1 jumps found. (Code = 42) Position 1 = 39
+Branch analysis from position: 39
+2 jumps found. (Code = 43) Position 1 = 49, Position 2 = 53
+Branch analysis from position: 49
+2 jumps found. (Code = 43) Position 1 = 57, Position 2 = 64
+Branch analysis from position: 57
+2 jumps found. (Code = 46) Position 1 = 72, Position 2 = 74
+Branch analysis from position: 72
+2 jumps found. (Code = 43) Position 1 = 75, Position 2 = 79
+Branch analysis from position: 75
+2 jumps found. (Code = 43) Position 1 = 94, Position 2 = 97
+Branch analysis from position: 94
+2 jumps found. (Code = 43) Position 1 = 161, Position 2 = 162
+Branch analysis from position: 161
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 162
+Branch analysis from position: 97
+Branch analysis from position: 79
+Branch analysis from position: 74
+Branch analysis from position: 64
+Branch analysis from position: 53
+Branch analysis from position: 38
+2 jumps found. (Code = 43) Position 1 = 49, Position 2 = 53
+Branch analysis from position: 49
+Branch analysis from position: 53
+Branch analysis from position: 26
+2 jumps found. (Code = 43) Position 1 = 36, Position 2 = 38
+Branch analysis from position: 36
+Branch analysis from position: 38
+Branch analysis from position: 18
+Branch analysis from position: 9
+2 jumps found. (Code = 46) Position 1 = 16, Position 2 = 18
+Branch analysis from position: 16
+Branch analysis from position: 18
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  comment
+number of ops:  164
+compiled vars:  !0 = $comment, !1 = $depth, !2 = $args, !3 = $tag, !4 = $add_below, !5 = $commenter, !6 = $show_pending_links, !7 = $moderation_note, !8 = $comment_author
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 289     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV                                             !2      
+ 290     3        FETCH_DIM_R                                      ~9      !2, 'style'
+         4        IS_NOT_IDENTICAL                                 ~10     ~9, 'div'
+         5      > JMPZ                                                     ~10, ->9
+ 291     6    >   ASSIGN                                                   !3, 'div'
+ 292     7        ASSIGN                                                   !4, 'comment'
+         8      > JMP                                                      ->11
+ 294     9    >   ASSIGN                                                   !3, 'li'
+ 295    10        ASSIGN                                                   !4, 'div-comment'
+ 298    11    >   INIT_FCALL_BY_NAME                                       'wp_get_current_commenter'
+        12        DO_FCALL                                      0  $15     
+        13        ASSIGN                                                   !5, $15
+ 299    14        ISSET_ISEMPTY_DIM_OBJ                         0  ~17     !5, 'comment_author'
+        15      > JMPZ_EX                                          ~17     ~17, ->18
+        16    >   FETCH_DIM_R                                      ~18     !5, 'comment_author'
+        17        BOOL                                             ~17     ~18
+        18    >   ASSIGN                                                   !6, ~17
+ 301    19        FETCH_DIM_R                                      ~20     !5, 'comment_author_email'
+        20      > JMPZ                                                     ~20, ->26
+ 302    21    >   INIT_FCALL_BY_NAME                                       '__'
+        22        SEND_VAL_EX                                              'Your+comment+is+awaiting+moderation.'
+        23        DO_FCALL                                      0  $21     
+        24        ASSIGN                                                   !7, $21
+        25      > JMP                                                      ->30
+ 304    26    >   INIT_FCALL_BY_NAME                                       '__'
+        27        SEND_VAL_EX                                              'Your+comment+is+awaiting+moderation.+This+is+a+preview%2C+your+comment+will+be+visible+after+it+has+been+approved.'
+        28        DO_FCALL                                      0  $23     
+        29        ASSIGN                                                   !7, $23
+ 307    30    >   ECHO                                                     '%09%09%3C'
+        31        ECHO                                                     !3
+        32        ECHO                                                     '+'
+        33        INIT_FCALL_BY_NAME                                       'comment_class'
+        34        FETCH_OBJ_R                                      ~25     'has_children'
+        35      > JMPZ                                                     ~25, ->38
+        36    >   QM_ASSIGN                                        ~26     'parent'
+        37      > JMP                                                      ->39
+        38    >   QM_ASSIGN                                        ~26     ''
+        39    >   SEND_VAL_EX                                              ~26
+        40        SEND_VAR_EX                                              !0
+        41        DO_FCALL                                      0          
+        42        ECHO                                                     '+id%3D%22comment-'
+        43        INIT_FCALL_BY_NAME                                       'comment_ID'
+        44        DO_FCALL                                      0          
+        45        ECHO                                                     '%22%3E%0A%09%09'
+ 308    46        FETCH_DIM_R                                      ~29     !2, 'style'
+        47        IS_EQUAL                                         ~30     ~29, 'div'
+        48      > JMPZ                                                     ~30, ->53
+ 309    49    >   ECHO                                                     '%09%09%3Cdiv+id%3D%22div-comment-'
+        50        INIT_FCALL_BY_NAME                                       'comment_ID'
+        51        DO_FCALL                                      0          
+        52        ECHO                                                     '%22+class%3D%22comment-body%22%3E%0A%09%09'
+ 311    53    >   ECHO                                                     '%09%09%3Cdiv+class%3D%22comment-author+vcard%22%3E%0A%09%09%09'
+ 313    54        FETCH_DIM_R                                      ~32     !2, 'avatar_size'
+        55        IS_SMALLER                                       ~33     ~32, 0
+        56      > JMPZ                                                     ~33, ->64
+ 314    57    >   INIT_FCALL_BY_NAME                                       'get_avatar'
+        58        SEND_VAR_EX                                              !0
+        59        CHECK_FUNC_ARG                                           
+        60        FETCH_DIM_FUNC_ARG                               $34     !2, 'avatar_size'
+        61        SEND_FUNC_ARG                                            $34
+        62        DO_FCALL                                      0  $35     
+        63        ECHO                                                     $35
+ 317    64    >   ECHO                                                     '%09%09%09'
+ 318    65        INIT_FCALL_BY_NAME                                       'get_comment_author_link'
+        66        SEND_VAR_EX                                              !0
+        67        DO_FCALL                                      0  $36     
+        68        ASSIGN                                                   !8, $36
+ 320    69        FETCH_OBJ_R                                      ~38     !0, 'comment_approved'
+        70        IS_NOT_EQUAL                                     ~39     ~38, '0'
+        71      > JMPZ_EX                                          ~39     ~39, ->74
+        72    >   BOOL_XOR                                         ~40     !6
+        73        BOOL                                             ~39     ~40
+        74    > > JMPZ                                                     ~39, ->79
+ 321    75    >   INIT_FCALL_BY_NAME                                       'get_comment_author'
+        76        SEND_VAR_EX                                              !0
+        77        DO_FCALL                                      0  $41     
+        78        ASSIGN                                                   !8, $41
+ 324    79    >   INIT_FCALL                                               'printf'
+ 326    80        INIT_FCALL_BY_NAME                                       '__'
+        81        SEND_VAL_EX                                              '%25s+%3Cspan+class%3D%22says%22%3Esays%3A%3C%2Fspan%3E'
+        82        DO_FCALL                                      0  $43     
+        83        SEND_VAR                                                 $43
+ 327    84        INIT_FCALL                                               'sprintf'
+        85        SEND_VAL                                                 '%3Ccite+class%3D%22fn%22%3E%25s%3C%2Fcite%3E'
+        86        SEND_VAR                                                 !8
+        87        DO_ICALL                                         $44     
+        88        SEND_VAR                                                 $44
+        89        DO_ICALL                                                 
+ 330    90        ECHO                                                     '%09%09%3C%2Fdiv%3E%0A%09%09'
+ 331    91        FETCH_OBJ_R                                      ~46     !0, 'comment_approved'
+        92        IS_NOT_EQUAL                                     ~47     ~46, '0'
+        93      > JMPZ                                                     ~47, ->97
+ 332    94    >   ECHO                                                     '%09%09%3Cem+class%3D%22comment-awaiting-moderation%22%3E'
+        95        ECHO                                                     !7
+        96        ECHO                                                     '%3C%2Fem%3E%0A%09%09%3Cbr+%2F%3E%0A%09%09'
+ 335    97    >   ECHO                                                     '%0A%09%09%3Cdiv+class%3D%22comment-meta+commentmetadata%22%3E%3Ca+href%3D%22'
+ 336    98        INIT_FCALL_BY_NAME                                       'esc_url'
+        99        INIT_FCALL_BY_NAME                                       'get_comment_link'
+       100        SEND_VAR_EX                                              !0
+       101        SEND_VAR_EX                                              !2
+       102        DO_FCALL                                      0  $48     
+       103        SEND_VAR_NO_REF_EX                                       $48
+       104        DO_FCALL                                      0  $49     
+       105        ECHO                                                     $49
+       106        ECHO                                                     '%22%3E%0A%09%09%09'
+ 339   107        INIT_FCALL                                               'printf'
+       108        INIT_FCALL_BY_NAME                                       '__'
+       109        SEND_VAL_EX                                              '%251%24s+at+%252%24s'
+       110        DO_FCALL                                      0  $50     
+       111        SEND_VAR                                                 $50
+       112        INIT_FCALL_BY_NAME                                       'get_comment_date'
+       113        SEND_VAL_EX                                              ''
+       114        SEND_VAR_EX                                              !0
+       115        DO_FCALL                                      0  $51     
+       116        SEND_VAR                                                 $51
+       117        INIT_FCALL_BY_NAME                                       'get_comment_time'
+       118        DO_FCALL                                      0  $52     
+       119        SEND_VAR                                                 $52
+       120        DO_ICALL                                                 
+ 341   121        ECHO                                                     '%09%09%09%09%3C%2Fa%3E%0A%09%09%09%09'
+ 343   122        INIT_FCALL_BY_NAME                                       'edit_comment_link'
+       123        INIT_FCALL_BY_NAME                                       '__'
+       124        SEND_VAL_EX                                              '%28Edit%29'
+       125        DO_FCALL                                      0  $54     
+       126        SEND_VAR_NO_REF_EX                                       $54
+       127        SEND_VAL_EX                                              '%26nbsp%3B%26nbsp%3B'
+       128        SEND_VAL_EX                                              ''
+       129        DO_FCALL                                      0          
+ 345   130        ECHO                                                     '%09%09%3C%2Fdiv%3E%0A%0A%09%09'
+ 348   131        INIT_FCALL_BY_NAME                                       'comment_text'
+ 349   132        SEND_VAR_EX                                              !0
+ 350   133        INIT_FCALL                                               'array_merge'
+ 351   134        SEND_VAR                                                 !2
+ 353   135        INIT_ARRAY                                       ~56     !4, 'add_below'
+ 354   136        ADD_ARRAY_ELEMENT                                ~56     !1, 'depth'
+ 355   137        FETCH_DIM_R                                      ~57     !2, 'max_depth'
+       138        ADD_ARRAY_ELEMENT                                ~56     ~57, 'max_depth'
+       139        SEND_VAL                                                 ~56
+       140        DO_ICALL                                         $58     
+       141        SEND_VAR_NO_REF_EX                                       $58
+       142        DO_FCALL                                      0          
+ 360   143        ECHO                                                     '%0A%09%09'
+ 362   144        INIT_FCALL_BY_NAME                                       'comment_reply_link'
+ 363   145        INIT_FCALL                                               'array_merge'
+ 364   146        SEND_VAR                                                 !2
+ 366   147        INIT_ARRAY                                       ~60     !4, 'add_below'
+ 367   148        ADD_ARRAY_ELEMENT                                ~60     !1, 'depth'
+ 368   149        FETCH_DIM_R                                      ~61     !2, 'max_depth'
+       150        ADD_ARRAY_ELEMENT                                ~60     ~61, 'max_depth'
+ 369   151        ADD_ARRAY_ELEMENT                                ~60     '%3Cdiv+class%3D%22reply%22%3E', 'before'
+ 370   152        ADD_ARRAY_ELEMENT                                ~60     '%3C%2Fdiv%3E', 'after'
+       153        SEND_VAL                                                 ~60
+       154        DO_ICALL                                         $62     
+       155        SEND_VAR_NO_REF_EX                                       $62
+       156        DO_FCALL                                      0          
+ 375   157        ECHO                                                     '%0A%09%09'
+ 376   158        FETCH_DIM_R                                      ~64     !2, 'style'
+       159        IS_EQUAL                                         ~65     ~64, 'div'
+       160      > JMPZ                                                     ~65, ->162
+ 377   161    >   ECHO                                                     '%09%09%3C%2Fdiv%3E%0A%09%09'
+ 379   162    >   ECHO                                                     '%09%09'
+ 380   163      > RETURN                                                   null
+
+ath #79: 0, 28, 40, 46, 47, 49, 61, 64, 85, 97, 
+path #80: 0, 28, 40, 46, 47, 49, 61, 64, 85, 88, 97, 
+path #81: 0, 28, 40, 46, 47, 49, 61, 64, 85, 97, 
+path #82: 0, 28, 40, 46, 47, 49, 61, 75, 85, 88, 97, 
+path #83: 0, 28, 40, 46, 47, 49, 61, 75, 85, 97, 
+path #84: 0, 28, 40, 46, 47, 49, 61, 75, 85, 88, 97, 
+path #85: 0, 28, 40, 46, 47, 49, 61, 75, 85, 97, 
+path #86: 0, 28, 40, 46, 49, 50, 85, 88, 97, 
+path #87: 0, 28, 40, 46, 49, 50, 85, 97, 
+path #88: 0, 28, 40, 46, 49, 50, 85, 88, 97, 
+path #89: 0, 28, 40, 46, 49, 50, 85, 97, 
+path #90: 0, 28, 40, 46, 49, 61, 64, 85, 88, 97, 
+path #91: 0, 28, 40, 46, 49, 61, 64, 85, 97, 
+path #92: 0, 28, 40, 46, 49, 61, 64, 85, 88, 97, 
+path #93: 0, 28, 40, 46, 49, 61, 64, 85, 97, 
+path #94: 0, 28, 40, 46, 49, 61, 75, 85, 88, 97, 
+path #95: 0, 28, 40, 46, 49, 61, 75, 85, 97, 
+path #96: 0, 28, 40, 46, 49, 61, 75, 85, 88, 97, 
+path #97: 0, 28, 40, 46, 49, 61, 75, 85, 97, 
+branch: #  0; line:   220-  221; sop:     0; eop:     6; out0:   7; out1:  19
+branch: #  7; line:   222-  225; sop:     7; eop:    18; out0:  -2
+branch: # 19; line:   227-  227; sop:    19; eop:    21; out0:  22; out1:  24
+branch: # 22; line:   228-  228; sop:    22; eop:    23; out0:  25
+branch: # 24; line:   230-  232; sop:    24; eop:    24; out0:  25
+branch: # 25; line:   232-  232; sop:    25; eop:    25; out0:  -2; out1:  -2
+path #1: 0, 7, 
+path #2: 0, 19, 22, 25, 
+path #3: 0, 19, 24, 25, 
+branch: #  0; line:   245-  246; sop:     0; eop:     5; out0:   6; out1:   8
+branch: #  6; line:   246-  246; sop:     6; eop:     7; out0:   9
+branch: #  8; line:   246-  246; sop:     8; eop:     8; out0:   9
+branch: #  9; line:   246-  253; sop:     9; eop:    38; out0:  -2; out1:  -2
+path #1: 0, 6, 9, 
+path #2: 0, 8, 9, 
+branch: #  0; line:   267-  271; sop:     0; eop:     8; out0:   9; out1:  12
+branch: #  9; line:   271-  271; sop:     9; eop:    11; out0:  12
+branch: # 12; line:   271-  271; sop:    12; eop:    12; out0:  13; out1:  15
+branch: # 13; line:   271-  271; sop:    13; eop:    14; out0:  15
+branch: # 15; line:   271-  271; sop:    15; eop:    15; out0:  16; out1:  21
+branch: # 16; line:   272-  275; sop:    16; eop:    20; out0:  21
+branch: # 21; line:   275-  276; sop:    21; eop:    22
+path #1: 0, 9, 12, 13, 15, 16, 21, 
+path #2: 0, 9, 12, 13, 15, 21, 
+path #3: 0, 9, 12, 15, 16, 21, 
+path #4: 0, 9, 12, 15, 21, 
+path #5: 0, 12, 13, 15, 16, 21, 
+path #6: 0, 12, 13, 15, 21, 
+path #7: 0, 12, 15, 16, 21, 
+path #8: 0, 12, 15, 21, 
+branch: #  0; line:   289-  290; sop:     0; eop:     5; out0:   6; out1:   9
+branch: #  6; line:   291-  292; sop:     6; eop:     8; out0:  11
+branch: #  9; line:   294-  298; sop:     9; eop:    10; out0:  11
+branch: # 11; line:   298-  299; sop:    11; eop:    15; out0:  16; out1:  18; out2:  16; out3:  18
+branch: # 16; line:   299-  299; sop:    16; eop:    17; out0:  18
+branch: # 18; line:   299-  301; sop:    18; eop:    20; out0:  21; out1:  26
+branch: # 21; line:   302-  302; sop:    21; eop:    25; out0:  30
+branch: # 26; line:   304-  307; sop:    26; eop:    29; out0:  30
+branch: # 30; line:   307-  307; sop:    30; eop:    35; out0:  36; out1:  38; out2:  36; out3:  38
+branch: # 36; line:   307-  307; sop:    36; eop:    37; out0:  39
+branch: # 38; line:   307-  307; sop:    38; eop:    38; out0:  39
+branch: # 39; line:   307-  308; sop:    39; eop:    48; out0:  49; out1:  53; out2:  49; out3:  53
+branch: # 49; line:   309-  311; sop:    49; eop:    52; out0:  53
+branch: # 53; line:   311-  313; sop:    53; eop:    56; out0:  57; out1:  64
+branch: # 57; line:   314-  317; sop:    57; eop:    63; out0:  64
+branch: # 64; line:   317-  320; sop:    64; eop:    71; out0:  72; out1:  74
+branch: # 72; line:   320-  320; sop:    72; eop:    73; out0:  74
+branch: # 74; line:   320-  320; sop:    74; eop:    74; out0:  75; out1:  79
+branch: # 75; line:   321-  324; sop:    75; eop:    78; out0:  79
+branch: # 79; line:   324-  331; sop:    79; eop:    93; out0:  94; out1:  97
+branch: # 94; line:   332-  335; sop:    94; eop:    96; out0:  97
+branch: # 97; line:   335-  376; sop:    97; eop:   160; out0: 161; out1: 162
+branch: #161; line:   377-  379; sop:   161; eop:   161; out0: 162
+branch: #162; line:   379-  380; sop:   162; eop:   163; out0:  -2
+path #1: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #2: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #3: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #4: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 75, 79, 97, 162, 
+path #5: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #6: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 79, 94, 97, 162, 
+path #7: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 79, 97, 161, 162, 
+path #8: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 79, 97, 162, 
+path #9: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #10: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 75, 79, 94, 97, 162, 
+path #11: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 75, 79, 97, 161, 162, 
+path #12: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 75, 79, 97, 162, 
+path #13: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 79, 94, 97, 161, 162, 
+path #14: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 79, 94, 97, 162, 
+path #15: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 79, 97, 161, 162, 
+path #16: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 79, 97, 162, 
+path #17: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #18: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #19: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #20: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 75, 79, 97, 162, 
+path #21: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #22: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 79, 94, 97, 162, 
+path #23: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 79, 97, 161, 162, 
+path #24: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 79, 97, 162, 
+path #25: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #26: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 75, 79, 94, 97, 162, 
+path #27: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 75, 79, 97, 161, 162, 
+path #28: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 75, 79, 97, 162, 
+path #29: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 79, 94, 97, 161, 162, 
+path #30: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 79, 94, 97, 162, 
+path #31: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 79, 97, 161, 162, 
+path #32: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 79, 97, 162, 
+path #33: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #34: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #35: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #36: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 75, 79, 97, 162, 
+path #37: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #38: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 79, 94, 97, 162, 
+path #39: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 79, 97, 161, 162, 
+path #40: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 79, 97, 162, 
+path #41: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #42: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 75, 79, 94, 97, 162, 
+path #43: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 75, 79, 97, 161, 162, 
+path #44: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 75, 79, 97, 162, 
+path #45: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 79, 94, 97, 161, 162, 
+path #46: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 79, 94, 97, 162, 
+path #47: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 79, 97, 161, 162, 
+path #48: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 79, 97, 162, 
+path #49: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #50: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #51: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #52: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 75, 79, 97, 162, 
+path #53: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #54: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 79, 94, 97, 162, 
+path #55: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 79, 97, 161, 162, 
+path #56: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 79, 97, 162, 
+path #57: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #58: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 75, 79, 94, 97, 162, 
+path #59: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 75, 79, 97, 161, 162, 
+path #60: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 75, 79, 97, 162, 
+path #61: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 79, 94, 97, 161, 162, 
+path #62: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 79, 94, 97, 162, 
+path #63: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 79, 97, 161, 162, 
+path #64: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 79, 97, 162, 
+path #65: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #66: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #67: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #68: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 75, 79, 97, 162, 
+path #69: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #70: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 79, 94, 97, 162, 
+path #71: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 79, 97, 161, 162, 
+path #72: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 72, 74, 79, 97, 162, 
+path #73: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #74: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 75, 79, 94, 97, 162, 
+path #75: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 75, 79, 97, 161, 162, 
+path #76: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 75, 79, 97, 162, 
+path #77: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 79, 94, 97, 161, 162, 
+path #78: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 79, 94, 97, 162, 
+path #79: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 79, 97, 161, 162, 
+path #80: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 57, 64, 74, 79, 97, 162, 
+path #81: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #82: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #83: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #84: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 75, 79, 97, 162, 
+path #85: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #86: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 79, 94, 97, 162, 
+path #87: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 79, 97, 161, 162, 
+path #88: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 72, 74, 79, 97, 162, 
+path #89: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #90: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 75, 79, 94, 97, 162, 
+path #91: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 75, 79, 97, 161, 162, 
+path #92: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 75, 79, 97, 162, 
+path #93: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 79, 94, 97, 161, 162, 
+path #94: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 79, 94, 97, 162, 
+path #95: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 79, 97, 161, 162, 
+path #96: 0, 6, 11, 16, 18, 21, 30, 36, 39, 49, 53, 64, 74, 79, 97, 162, 
+path #97: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #98: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #99: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #100: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 75, 79, 97, 162, 
+path #101: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #102: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 79, 94, 97, 162, 
+path #103: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 79, 97, 161, 162, 
+path #104: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 72, 74, 79, 97, 162, 
+path #105: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #106: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 75, 79, 94, 97, 162, 
+path #107: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 75, 79, 97, 161, 162, 
+path #108: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 75, 79, 97, 162, 
+path #109: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 79, 94, 97, 161, 162, 
+path #110: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 79, 94, 97, 162, 
+path #111: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 79, 97, 161, 162, 
+path #112: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 57, 64, 74, 79, 97, 162, 
+path #113: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #114: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #115: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #116: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 75, 79, 97, 162, 
+path #117: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #118: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 79, 94, 97, 162, 
+path #119: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 79, 97, 161, 162, 
+path #120: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 72, 74, 79, 97, 162, 
+path #121: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #122: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 75, 79, 94, 97, 162, 
+path #123: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 75, 79, 97, 161, 162, 
+path #124: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 75, 79, 97, 162, 
+path #125: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 79, 94, 97, 161, 162, 
+path #126: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 79, 94, 97, 162, 
+path #127: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 79, 97, 161, 162, 
+path #128: 0, 6, 11, 16, 18, 21, 30, 36, 39, 53, 64, 74, 79, 97, 162, 
+path #129: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #130: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #131: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #132: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 75, 79, 97, 162, 
+path #133: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #134: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 79, 94, 97, 162, 
+path #135: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 79, 97, 161, 162, 
+path #136: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 79, 97, 162, 
+path #137: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #138: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 75, 79, 94, 97, 162, 
+path #139: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 75, 79, 97, 161, 162, 
+path #140: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 75, 79, 97, 162, 
+path #141: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 79, 94, 97, 161, 162, 
+path #142: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 79, 94, 97, 162, 
+path #143: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 79, 97, 161, 162, 
+path #144: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 79, 97, 162, 
+path #145: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #146: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #147: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #148: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 75, 79, 97, 162, 
+path #149: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #150: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 79, 94, 97, 162, 
+path #151: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 79, 97, 161, 162, 
+path #152: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 79, 97, 162, 
+path #153: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #154: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 75, 79, 94, 97, 162, 
+path #155: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 75, 79, 97, 161, 162, 
+path #156: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 75, 79, 97, 162, 
+path #157: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 79, 94, 97, 161, 162, 
+path #158: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 79, 94, 97, 162, 
+path #159: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 79, 97, 161, 162, 
+path #160: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 79, 97, 162, 
+path #161: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #162: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #163: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #164: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 75, 79, 97, 162, 
+path #165: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #166: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 79, 94, 97, 162, 
+path #167: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 79, 97, 161, 162, 
+path #168: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 79, 97, 162, 
+path #169: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #170: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 75, 79, 94, 97, 162, 
+path #171: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 75, 79, 97, 161, 162, 
+path #172: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 75, 79, 97, 162, 
+path #173: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 79, 94, 97, 161, 162, 
+path #174: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 79, 94, 97, 162, 
+path #175: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 79, 97, 161, 162, 
+path #176: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 79, 97, 162, 
+path #177: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #178: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #179: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #180: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 75, 79, 97, 162, 
+path #181: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #182: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 79, 94, 97, 162, 
+path #183: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 79, 97, 161, 162, 
+path #184: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 79, 97, 162, 
+path #185: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #186: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 75, 79, 94, 97, 162, 
+path #187: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 75, 79, 97, 161, 162, 
+path #188: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 75, 79, 97, 162, 
+path #189: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 79, 94, 97, 161, 162, 
+path #190: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 79, 94, 97, 162, 
+path #191: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 79, 97, 161, 162, 
+path #192: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 79, 97, 162, 
+path #193: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #194: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #195: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #196: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 75, 79, 97, 162, 
+path #197: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #198: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 79, 94, 97, 162, 
+path #199: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 79, 97, 161, 162, 
+path #200: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 72, 74, 79, 97, 162, 
+path #201: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #202: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 75, 79, 94, 97, 162, 
+path #203: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 75, 79, 97, 161, 162, 
+path #204: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 75, 79, 97, 162, 
+path #205: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 79, 94, 97, 161, 162, 
+path #206: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 79, 94, 97, 162, 
+path #207: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 79, 97, 161, 162, 
+path #208: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 57, 64, 74, 79, 97, 162, 
+path #209: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #210: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #211: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #212: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 75, 79, 97, 162, 
+path #213: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #214: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 79, 94, 97, 162, 
+path #215: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 79, 97, 161, 162, 
+path #216: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 72, 74, 79, 97, 162, 
+path #217: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #218: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 75, 79, 94, 97, 162, 
+path #219: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 75, 79, 97, 161, 162, 
+path #220: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 75, 79, 97, 162, 
+path #221: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 79, 94, 97, 161, 162, 
+path #222: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 79, 94, 97, 162, 
+path #223: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 79, 97, 161, 162, 
+path #224: 0, 6, 11, 16, 18, 21, 30, 38, 39, 49, 53, 64, 74, 79, 97, 162, 
+path #225: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #226: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #227: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #228: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 75, 79, 97, 162, 
+path #229: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #230: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 79, 94, 97, 162, 
+path #231: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 79, 97, 161, 162, 
+path #232: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 72, 74, 79, 97, 162, 
+path #233: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #234: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 75, 79, 94, 97, 162, 
+path #235: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 75, 79, 97, 161, 162, 
+path #236: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 75, 79, 97, 162, 
+path #237: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 79, 94, 97, 161, 162, 
+path #238: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 79, 94, 97, 162, 
+path #239: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 79, 97, 161, 162, 
+path #240: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 57, 64, 74, 79, 97, 162, 
+path #241: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 75, 79, 94, 97, 161, 162, 
+path #242: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 75, 79, 94, 97, 162, 
+path #243: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 75, 79, 97, 161, 162, 
+path #244: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72,End of function comment
+
+Function html5_comment:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 8
+Branch analysis from position: 6
+1 jumps found. (Code = 42) Position 1 = 9
+Branch analysis from position: 9
+2 jumps found. (Code = 43) Position 1 = 18, Position 2 = 23
+Branch analysis from position: 18
+1 jumps found. (Code = 42) Position 1 = 27
+Branch analysis from position: 27
+2 jumps found. (Code = 43) Position 1 = 36, Position 2 = 38
+Branch analysis from position: 36
+1 jumps found. (Code = 42) Position 1 = 39
+Branch analysis from position: 39
+2 jumps found. (Code = 43) Position 1 = 49, Position 2 = 56
+Branch analysis from position: 49
+2 jumps found. (Code = 46) Position 1 = 64, Position 2 = 66
+Branch analysis from position: 64
+2 jumps found. (Code = 43) Position 1 = 67, Position 2 = 71
+Branch analysis from position: 67
+2 jumps found. (Code = 43) Position 1 = 123, Position 2 = 126
+Branch analysis from position: 123
+2 jumps found. (Code = 47) Position 1 = 133, Position 2 = 134
+Branch analysis from position: 133
+2 jumps found. (Code = 43) Position 1 = 135, Position 2 = 148
+Branch analysis from position: 135
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 148
+Branch analysis from position: 134
+Branch analysis from position: 126
+Branch analysis from position: 71
+Branch analysis from position: 66
+Branch analysis from position: 56
+Branch analysis from position: 38
+2 jumps found. (Code = 43) Position 1 = 49, Position 2 = 56
+Branch analysis from position: 49
+Branch analysis from position: 56
+Branch analysis from position: 23
+2 jumps found. (Code = 43) Position 1 = 36, Position 2 = 38
+Branch analysis from position: 36
+Branch analysis from position: 38
+Branch analysis from position: 8
+2 jumps found. (Code = 43) Position 1 = 18, Position 2 = 23
+Branch analysis from position: 18
+Branch analysis from position: 23
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-walker-comment.php
+function name:  html5_comment
+number of ops:  150
+compiled vars:  !0 = $comment, !1 = $depth, !2 = $args, !3 = $tag, !4 = $commenter, !5 = $show_pending_links, !6 = $moderation_note, !7 = $comment_author
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 393     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+         2        RECV                                             !2      
+ 394     3        FETCH_DIM_R                                      ~8      !2, 'style'
+         4        IS_NOT_IDENTICAL                                 ~9      ~8, 'div'
+         5      > JMPZ                                                     ~9, ->8
+         6    >   QM_ASSIGN                                        ~10     'div'
+         7      > JMP                                                      ->9
+         8    >   QM_ASSIGN                                        ~10     'li'
+         9    >   ASSIGN                                                   !3, ~10
+ 396    10        INIT_FCALL_BY_NAME                                       'wp_get_current_commenter'
+        11        DO_FCALL                                      0  $12     
+        12        ASSIGN                                                   !4, $12
+ 397    13        ISSET_ISEMPTY_DIM_OBJ                         1  ~14     !4, 'comment_author'
+        14        BOOL_XOR                                         ~15     ~14
+        15        ASSIGN                                                   !5, ~15
+ 399    16        FETCH_DIM_R                                      ~17     !4, 'comment_author_email'
+        17      > JMPZ                                                     ~17, ->23
+ 400    18    >   INIT_FCALL_BY_NAME                                       '__'
+        19        SEND_VAL_EX                                              'Your+comment+is+awaiting+moderation.'
+        20        DO_FCALL                                      0  $18     
+        21        ASSIGN                                                   !6, $18
+        22      > JMP                                                      ->27
+ 402    23    >   INIT_FCALL_BY_NAME                                       '__'
+        24        SEND_VAL_EX                                              'Your+comment+is+awaiting+moderation.+This+is+a+preview%2C+your+comment+will+be+visible+after+it+has+been+approved.'
+        25        DO_FCALL                                      0  $20     
+        26        ASSIGN                                                   !6, $20
+ 405    27    >   ECHO                                                     '%09%09%3C'
+        28        ECHO                                                     !3
+        29        ECHO                                                     '+id%3D%22comment-'
+        30        INIT_FCALL_BY_NAME                                       'comment_ID'
+        31        DO_FCALL                                      0          
+        32        ECHO                                                     '%22+'
+        33        INIT_FCALL_BY_NAME                                       'comment_class'
+        34        FETCH_OBJ_R                                      ~23     'has_children'
+        35      > JMPZ                                                     ~23, ->38
+        36    >   QM_ASSIGN                                        ~24     'parent'
+        37      > JMP                                                      ->39
+        38    >   QM_ASSIGN                                        ~24     ''
+        39    >   SEND_VAL_EX                                              ~24
+        40        SEND_VAR_EX                                              !0
+        41        DO_FCALL                                      0          
+        42        ECHO                                                     '%3E%0A%09%09%09%3Carticle+id%3D%22div-comment-'
+ 406    43        INIT_FCALL_BY_NAME                                       'comment_ID'
+        44        DO_FCALL                                      0          
+        45        ECHO                                                     '%22+class%3D%22comment-body%22%3E%0A%09%09%09%09%3Cfooter+class%3D%22comment-meta%22%3E%0A%09%09%09%09%09%3Cdiv+class%3D%22comment-author+vcard%22%3E%0A%09%09%09%09%09%09'
+ 410    46        FETCH_DIM_R                                      ~27     !2, 'avatar_size'
+        47        IS_SMALLER                                       ~28     ~27, 0
+        48      > JMPZ                                                     ~28, ->56
+ 411    49    >   INIT_FCALL_BY_NAME                                       'get_avatar'
+        50        SEND_VAR_EX                                              !0
+        51        CHECK_FUNC_ARG                                           
+        52        FETCH_DIM_FUNC_ARG                               $29     !2, 'avatar_size'
+        53        SEND_FUNC_ARG                                            $29
+        54        DO_FCALL                                      0  $30     
+        55        ECHO                                                     $30
+ 414    56    >   ECHO                                                     '%09%09%09%09%09%09'
+ 415    57        INIT_FCALL_BY_NAME                                       'get_comment_author_link'
+        58        SEND_VAR_EX                                              !0
+        59        DO_FCALL                                      0  $31     
+        60        ASSIGN                                                   !7, $31
+ 417    61        FETCH_OBJ_R                                      ~33     !0, 'comment_approved'
+        62        IS_NOT_EQUAL                                     ~34     ~33, '0'
+        63      > JMPZ_EX                                          ~34     ~34, ->66
+        64    >   BOOL_XOR                                         ~35     !5
+        65        BOOL                                             ~34     ~35
+        66    > > JMPZ                                                     ~34, ->71
+ 418    67    >   INIT_FCALL_BY_NAME                                       'get_comment_author'
+        68        SEND_VAR_EX                                              !0
+        69        DO_FCALL                                      0  $36     
+        70        ASSIGN                                                   !7, $36
+ 421    71    >   INIT_FCALL                                               'printf'
+ 423    72        INIT_FCALL_BY_NAME                                       '__'
+        73        SEND_VAL_EX                                              '%25s+%3Cspan+class%3D%22says%22%3Esays%3A%3C%2Fspan%3E'
+        74        DO_FCALL                                      0  $38     
+        75        SEND_VAR                                                 $38
+ 424    76        INIT_FCALL                                               'sprintf'
+        77        SEND_VAL                                                 '%3Cb+class%3D%22fn%22%3E%25s%3C%2Fb%3E'
+        78        SEND_VAR                                                 !7
+        79        DO_ICALL                                         $39     
+        80        SEND_VAR                                                 $39
+        81        DO_ICALL                                                 
+ 427    82        ECHO                                                     '%09%09%09%09%09%3C%2Fdiv%3E%3C%21--+.comment-author+--%3E%0A%0A%09%09%09%09%09%3Cdiv+class%3D%22comment-metadata%22%3E%0A%09%09%09%09%09%09%3Ca+href%3D%22'
+ 430    83        INIT_FCALL_BY_NAME                                       'esc_url'
+        84        INIT_FCALL_BY_NAME                                       'get_comment_link'
+        85        SEND_VAR_EX                                              !0
+        86        SEND_VAR_EX                                              !2
+        87        DO_FCALL                                      0  $41     
+        88        SEND_VAR_NO_REF_EX                                       $41
+        89        DO_FCALL                                      0  $42     
+        90        ECHO                                                     $42
+        91        ECHO                                                     '%22%3E%0A%09%09%09%09%09%09%09%3Ctime+datetime%3D%22'
+ 431    92        INIT_FCALL_BY_NAME                                       'comment_time'
+        93        SEND_VAL_EX                                              'c'
+        94        DO_FCALL                                      0          
+        95        ECHO                                                     '%22%3E%0A%09%09%09%09%09%09%09%09'
+ 434    96        INIT_FCALL                                               'printf'
+        97        INIT_FCALL_BY_NAME                                       '__'
+        98        SEND_VAL_EX                                              '%251%24s+at+%252%24s'
+        99        DO_FCALL                                      0  $44     
+       100        SEND_VAR                                                 $44
+       101        INIT_FCALL_BY_NAME                                       'get_comment_date'
+       102        SEND_VAL_EX                                              ''
+       103        SEND_VAR_EX                                              !0
+       104        DO_FCALL                                      0  $45     
+       105        SEND_VAR                                                 $45
+       106        INIT_FCALL_BY_NAME                                       'get_comment_time'
+       107        DO_FCALL                                      0  $46     
+       108        SEND_VAR                                                 $46
+       109        DO_ICALL                                                 
+ 436   110        ECHO                                                     '%09%09%09%09%09%09%09%3C%2Ftime%3E%0A%09%09%09%09%09%09%3C%2Fa%3E%0A%09%09%09%09%09%09'
+ 438   111        INIT_FCALL_BY_NAME                                       'edit_comment_link'
+       112        INIT_FCALL_BY_NAME                                       '__'
+       113        SEND_VAL_EX                                              'Edit'
+       114        DO_FCALL                                      0  $48     
+       115        SEND_VAR_NO_REF_EX                                       $48
+       116        SEND_VAL_EX                                              '%3Cspan+class%3D%22edit-link%22%3E'
+       117        SEND_VAL_EX                                              '%3C%2Fspan%3E'
+       118        DO_FCALL                                      0          
+ 439   119        ECHO                                                     '%09%09%09%09%09%3C%2Fdiv%3E%3C%21--+.comment-metadata+--%3E%0A%0A%09%09%09%09%09'
+ 441   120        FETCH_OBJ_R                                      ~50     !0, 'comment_approved'
+       121        IS_NOT_EQUAL                                     ~51     ~50, '0'
+       122      > JMPZ                                                     ~51, ->126
+ 442   123    >   ECHO                                                     '%09%09%09%09%09%3Cem+class%3D%22comment-awaiting-moderation%22%3E'
+       124        ECHO                                                     !6
+       125        ECHO                                                     '%3C%2Fem%3E%0A%09%09%09%09%09'
+ 444   126    >   ECHO                                                     '%09%09%09%09%3C%2Ffooter%3E%3C%21--+.comment-meta+--%3E%0A%0A%09%09%09%09%3Cdiv+class%3D%22comment-content%22%3E%0A%09%09%09%09%09'
+ 447   127        INIT_FCALL_BY_NAME                                       'comment_text'
+       128        DO_FCALL                                      0          
+ 448   129        ECHO                                                     '%09%09%09%09%3C%2Fdiv%3E%3C%21--+.comment-content+--%3E%0A%0A%09%09%09%09'
+ 451   130        FETCH_OBJ_R                                      ~53     !0, 'comment_approved'
+       131        IS_NOT_EQUAL                                     ~54     ~53, '1'
+       132      > JMPNZ_EX                                         ~54     ~54, ->134
+       133    >   BOOL                                             ~54     !5
+       134    > > JMPZ                                                     ~54, ->148
+ 452   135    >   INIT_FCALL_BY_NAME                                       'comment_reply_link'
+ 453   136        INIT_FCALL                                               'array_merge'
+ 454   137        SEND_VAR                                                 !2
+ 456   138        INIT_ARRAY                                       ~55     'div-comment', 'add_below'
+ 457   139        ADD_ARRAY_ELEMENT                                ~55     !1, 'depth'
+ 458   140        FETCH_DIM_R                                      ~56     !2, 'max_depth'
+       141        ADD_ARRAY_ELEMENT                                ~55     ~56, 'max_depth'
+ 459   142        ADD_ARRAY_ELEMENT                                ~55     '%3Cdiv+class%3D%22reply%22%3E', 'before'
+ 460   143        ADD_ARRAY_ELEMENT                                ~55     '%3C%2Fdiv%3E', 'after'
+       144        SEND_VAL                                                 ~55
+       145        DO_ICALL                                         $57     
+       146        SEND_VAR_NO_REF_EX                                       $57
+       147        DO_FCALL                                      0          
+ 466   148    >   ECHO                                                     '%09%09%09%3C%2Farticle%3E%3C%21--+.comment-body+--%3E%0A%09%09'
+ 468   149      > RETURN                                                   null
+
+ 74, 75, 79, 97, 162, 
+path #245: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 79, 94, 97, 161, 162, 
+path #246: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 79, 94, 97, 162, 
+path #247: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 79, 97, 161, 162, 
+path #248: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 72, 74, 79, 97, 162, 
+path #249: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 75, 79, 94, 97, 161, 162, 
+path #250: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 75, 79, 94, 97, 162, 
+path #251: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 75, 79, 97, 161, 162, 
+path #252: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 75, 79, 97, 162, 
+path #253: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 79, 94, 97, 161, 162, 
+path #254: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 79, 94, 97, 162, 
+path #255: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 79, 97, 161, 162, 
+path #256: 0, 6, 11, 16, 18, 21, 30, 38, 39, 53, 64, 74, 79, 97, 162, 
+branch: #  0; line:   393-  394; sop:     0; eop:     5; out0:   6; out1:   8
+branch: #  6; line:   394-  394; sop:     6; eop:     7; out0:   9
+branch: #  8; line:   394-  394; sop:     8; eop:     8; out0:   9
+branch: #  9; line:   394-  399; sop:     9; eop:    17; out0:  18; out1:  23; out2:  18; out3:  23
+branch: # 18; line:   400-  400; sop:    18; eop:    22; out0:  27
+branch: # 23; line:   402-  405; sop:    23; eop:    26; out0:  27
+branch: # 27; line:   405-  405; sop:    27; eop:    35; out0:  36; out1:  38; out2:  36; out3:  38
+branch: # 36; line:   405-  405; sop:    36; eop:    37; out0:  39
+branch: # 38; line:   405-  405; sop:    38; eop:    38; out0:  39
+branch: # 39; line:   405-  410; sop:    39; eop:    48; out0:  49; out1:  56; out2:  49; out3:  56
+branch: # 49; line:   411-  414; sop:    49; eop:    55; out0:  56
+branch: # 56; line:   414-  417; sop:    56; eop:    63; out0:  64; out1:  66
+branch: # 64; line:   417-  417; sop:    64; eop:    65; out0:  66
+branch: # 66; line:   417-  417; sop:    66; eop:    66; out0:  67; out1:  71
+branch: # 67; line:   418-  421; sop:    67; eop:    70; out0:  71
+branch: # 71; line:   421-  441; sop:    71; eop:   122; out0: 123; out1: 126
+branch: #123; line:   442-  444; sop:   123; eop:   125; out0: 126
+branch: #126; line:   444-  451; sop:   126; eop:   132; out0: 133; out1: 134
+branch: #133; line:   451-  451; sop:   133; eop:   133; out0: 134
+branch: #134; line:   451-  451; sop:   134; eop:   134; out0: 135; out1: 148
+branch: #135; line:   452-  466; sop:   135; eop:   147; out0: 148
+branch: #148; line:   466-  468; sop:   148; eop:   149; out0:  -2
+path #1: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #2: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #3: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #4: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 123, 126, 134, 148, 
+path #5: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #6: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 126, 133, 134, 148, 
+path #7: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 126, 134, 135, 148, 
+path #8: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 126, 134, 148, 
+path #9: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #10: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 123, 126, 133, 134, 148, 
+path #11: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 123, 126, 134, 135, 148, 
+path #12: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 123, 126, 134, 148, 
+path #13: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 126, 133, 134, 135, 148, 
+path #14: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 126, 133, 134, 148, 
+path #15: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 126, 134, 135, 148, 
+path #16: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 126, 134, 148, 
+path #17: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #18: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #19: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #20: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 123, 126, 134, 148, 
+path #21: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #22: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 126, 133, 134, 148, 
+path #23: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 126, 134, 135, 148, 
+path #24: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 126, 134, 148, 
+path #25: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #26: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 123, 126, 133, 134, 148, 
+path #27: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 123, 126, 134, 135, 148, 
+path #28: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 123, 126, 134, 148, 
+path #29: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 126, 133, 134, 135, 148, 
+path #30: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 126, 133, 134, 148, 
+path #31: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 126, 134, 135, 148, 
+path #32: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 126, 134, 148, 
+path #33: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #34: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #35: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #36: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 123, 126, 134, 148, 
+path #37: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #38: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 126, 133, 134, 148, 
+path #39: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 126, 134, 135, 148, 
+path #40: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 126, 134, 148, 
+path #41: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #42: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 123, 126, 133, 134, 148, 
+path #43: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 123, 126, 134, 135, 148, 
+path #44: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 123, 126, 134, 148, 
+path #45: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 126, 133, 134, 135, 148, 
+path #46: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 126, 133, 134, 148, 
+path #47: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 126, 134, 135, 148, 
+path #48: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 126, 134, 148, 
+path #49: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #50: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #51: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #52: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 123, 126, 134, 148, 
+path #53: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #54: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 126, 133, 134, 148, 
+path #55: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 126, 134, 135, 148, 
+path #56: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 126, 134, 148, 
+path #57: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #58: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 123, 126, 133, 134, 148, 
+path #59: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 123, 126, 134, 135, 148, 
+path #60: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 123, 126, 134, 148, 
+path #61: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 126, 133, 134, 135, 148, 
+path #62: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 126, 133, 134, 148, 
+path #63: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 126, 134, 135, 148, 
+path #64: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 126, 134, 148, 
+path #65: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #66: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #67: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #68: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 123, 126, 134, 148, 
+path #69: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #70: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 126, 133, 134, 148, 
+path #71: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 126, 134, 135, 148, 
+path #72: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 67, 71, 126, 134, 148, 
+path #73: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #74: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 123, 126, 133, 134, 148, 
+path #75: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 123, 126, 134, 135, 148, 
+path #76: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 123, 126, 134, 148, 
+path #77: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 126, 133, 134, 135, 148, 
+path #78: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 126, 133, 134, 148, 
+path #79: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 126, 134, 135, 148, 
+path #80: 0, 6, 9, 18, 27, 36, 39, 49, 56, 64, 66, 71, 126, 134, 148, 
+path #81: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #82: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #83: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #84: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 123, 126, 134, 148, 
+path #85: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #86: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 126, 133, 134, 148, 
+path #87: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 126, 134, 135, 148, 
+path #88: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 67, 71, 126, 134, 148, 
+path #89: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #90: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 123, 126, 133, 134, 148, 
+path #91: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 123, 126, 134, 135, 148, 
+path #92: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 123, 126, 134, 148, 
+path #93: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 126, 133, 134, 135, 148, 
+path #94: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 126, 133, 134, 148, 
+path #95: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 126, 134, 135, 148, 
+path #96: 0, 6, 9, 18, 27, 36, 39, 49, 56, 66, 71, 126, 134, 148, 
+path #97: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #98: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #99: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #100: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 123, 126, 134, 148, 
+path #101: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #102: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 126, 133, 134, 148, 
+path #103: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 126, 134, 135, 148, 
+path #104: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 67, 71, 126, 134, 148, 
+path #105: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #106: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 123, 126, 133, 134, 148, 
+path #107: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 123, 126, 134, 135, 148, 
+path #108: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 123, 126, 134, 148, 
+path #109: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 126, 133, 134, 135, 148, 
+path #110: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 126, 133, 134, 148, 
+path #111: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 126, 134, 135, 148, 
+path #112: 0, 6, 9, 18, 27, 36, 39, 56, 64, 66, 71, 126, 134, 148, 
+path #113: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #114: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #115: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #116: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 123, 126, 134, 148, 
+path #117: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #118: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 126, 133, 134, 148, 
+path #119: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 126, 134, 135, 148, 
+path #120: 0, 6, 9, 18, 27, 36, 39, 56, 66, 67, 71, 126, 134, 148, 
+path #121: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #122: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 123, 126, 133, 134, 148, 
+path #123: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 123, 126, 134, 135, 148, 
+path #124: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 123, 126, 134, 148, 
+path #125: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 126, 133, 134, 135, 148, 
+path #126: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 126, 133, 134, 148, 
+path #127: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 126, 134, 135, 148, 
+path #128: 0, 6, 9, 18, 27, 36, 39, 56, 66, 71, 126, 134, 148, 
+path #129: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #130: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #131: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #132: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 123, 126, 134, 148, 
+path #133: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #134: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 126, 133, 134, 148, 
+path #135: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 126, 134, 135, 148, 
+path #136: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 126, 134, 148, 
+path #137: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #138: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 123, 126, 133, 134, 148, 
+path #139: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 123, 126, 134, 135, 148, 
+path #140: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 123, 126, 134, 148, 
+path #141: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 126, 133, 134, 135, 148, 
+path #142: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 126, 133, 134, 148, 
+path #143: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 126, 134, 135, 148, 
+path #144: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 126, 134, 148, 
+path #145: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #146: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #147: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #148: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 123, 126, 134, 148, 
+path #149: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #150: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 126, 133, 134, 148, 
+path #151: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 126, 134, 135, 148, 
+path #152: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 126, 134, 148, 
+path #153: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #154: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 123, 126, 133, 134, 148, 
+path #155: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 123, 126, 134, 135, 148, 
+path #156: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 123, 126, 134, 148, 
+path #157: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 126, 133, 134, 135, 148, 
+path #158: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 126, 133, 134, 148, 
+path #159: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 126, 134, 135, 148, 
+path #160: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 126, 134, 148, 
+path #161: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #162: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #163: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #164: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 123, 126, 134, 148, 
+path #165: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #166: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 126, 133, 134, 148, 
+path #167: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 126, 134, 135, 148, 
+path #168: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 126, 134, 148, 
+path #169: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #170: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 123, 126, 133, 134, 148, 
+path #171: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 123, 126, 134, 135, 148, 
+path #172: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 123, 126, 134, 148, 
+path #173: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 126, 133, 134, 135, 148, 
+path #174: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 126, 133, 134, 148, 
+path #175: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 126, 134, 135, 148, 
+path #176: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 126, 134, 148, 
+path #177: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #178: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #179: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #180: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 123, 126, 134, 148, 
+path #181: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #182: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 126, 133, 134, 148, 
+path #183: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 126, 134, 135, 148, 
+path #184: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 126, 134, 148, 
+path #185: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #186: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 123, 126, 133, 134, 148, 
+path #187: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 123, 126, 134, 135, 148, 
+path #188: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 123, 126, 134, 148, 
+path #189: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 126, 133, 134, 135, 148, 
+path #190: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 126, 133, 134, 148, 
+path #191: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 126, 134, 135, 148, 
+path #192: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 126, 134, 148, 
+path #193: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #194: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #195: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #196: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 123, 126, 134, 148, 
+path #197: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #198: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 126, 133, 134, 148, 
+path #199: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 126, 134, 135, 148, 
+path #200: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 67, 71, 126, 134, 148, 
+path #201: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #202: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 123, 126, 133, 134, 148, 
+path #203: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 123, 126, 134, 135, 148, 
+path #204: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 123, 126, 134, 148, 
+path #205: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 126, 133, 134, 135, 148, 
+path #206: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 126, 133, 134, 148, 
+path #207: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 126, 134, 135, 148, 
+path #208: 0, 6, 9, 18, 27, 38, 39, 49, 56, 64, 66, 71, 126, 134, 148, 
+path #209: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #210: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #211: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #212: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 123, 126, 134, 148, 
+path #213: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #214: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 126, 133, 134, 148, 
+path #215: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 126, 134, 135, 148, 
+path #216: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 67, 71, 126, 134, 148, 
+path #217: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #218: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 123, 126, 133, 134, 148, 
+path #219: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 123, 126, 134, 135, 148, 
+path #220: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 123, 126, 134, 148, 
+path #221: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 126, 133, 134, 135, 148, 
+path #222: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 126, 133, 134, 148, 
+path #223: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 126, 134, 135, 148, 
+path #224: 0, 6, 9, 18, 27, 38, 39, 49, 56, 66, 71, 126, 134, 148, 
+path #225: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #226: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #227: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #228: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 123, 126, 134, 148, 
+path #229: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #230: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 126, 133, 134, 148, 
+path #231: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 126, 134, 135, 148, 
+End of function html5_comment
+
+End of class Walker_Comment.
+
+path #232: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 67, 71, 126, 134, 148, 
+path #233: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #234: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 123, 126, 133, 134, 148, 
+path #235: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 123, 126, 134, 135, 148, 
+path #236: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 123, 126, 134, 148, 
+path #237: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 126, 133, 134, 135, 148, 
+path #238: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 126, 133, 134, 148, 
+path #239: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 126, 134, 135, 148, 
+path #240: 0, 6, 9, 18, 27, 38, 39, 56, 64, 66, 71, 126, 134, 148, 
+path #241: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 123, 126, 133, 134, 135, 148, 
+path #242: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 123, 126, 133, 134, 148, 
+path #243: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 123, 126, 134, 135, 148, 
+path #244: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 123, 126, 134, 148, 
+path #245: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 126, 133, 134, 135, 148, 
+path #246: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 126, 133, 134, 148, 
+path #247: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 126, 134, 135, 148, 
+path #248: 0, 6, 9, 18, 27, 38, 39, 56, 66, 67, 71, 126, 134, 148, 
+path #249: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 123, 126, 133, 134, 135, 148, 
+path #250: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 123, 126, 133, 134, 148, 
+path #251: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 123, 126, 134, 135, 148, 
+path #252: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 123, 126, 134, 148, 
+path #253: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 126, 133, 134, 135, 148, 
+path #254: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 126, 133, 134, 148, 
+path #255: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 126, 134, 135, 148, 
+path #256: 0, 6, 9, 18, 27, 38, 39, 56, 66, 71, 126, 134, 148, 

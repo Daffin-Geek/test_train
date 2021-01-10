@@ -1,0 +1,311 @@
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-styles-registry.php
+function name:  (null)
+number of ops:  1
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 161     0  E > > RETURN                                                   1
+
+Class WP_Block_Styles_Registry:
+Function register:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 47) Position 1 = 5, Position 2 = 8
+Branch analysis from position: 5
+2 jumps found. (Code = 43) Position 1 = 9, Position 2 = 19
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 19
+2 jumps found. (Code = 47) Position 1 = 22, Position 2 = 26
+Branch analysis from position: 22
+2 jumps found. (Code = 43) Position 1 = 27, Position 2 = 37
+Branch analysis from position: 27
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 37
+2 jumps found. (Code = 43) Position 1 = 43, Position 2 = 46
+Branch analysis from position: 43
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 46
+Branch analysis from position: 26
+Branch analysis from position: 8
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-styles-registry.php
+function name:  register
+number of ops:  52
+compiled vars:  !0 = $block_name, !1 = $style_properties, !2 = $message, !3 = $block_style_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  43     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+  45     2        ISSET_ISEMPTY_CV                                 ~4      !0
+         3        BOOL_XOR                                         ~5      ~4
+         4      > JMPNZ_EX                                         ~5      ~5, ->8
+         5    >   TYPE_CHECK                                   64  ~6      !0
+         6        BOOL_XOR                                         ~7      ~6
+         7        BOOL                                             ~5      ~7
+         8    > > JMPZ                                                     ~5, ->19
+  46     9    >   INIT_FCALL_BY_NAME                                       '__'
+        10        SEND_VAL_EX                                              'Block+name+must+be+a+string.'
+        11        DO_FCALL                                      0  $8      
+        12        ASSIGN                                                   !2, $8
+  47    13        INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        14        SEND_VAL_EX                                              'WP_Block_Styles_Registry%3A%3Aregister'
+        15        SEND_VAR_EX                                              !2
+        16        SEND_VAL_EX                                              '5.3.0'
+        17        DO_FCALL                                      0          
+  48    18      > RETURN                                                   <false>
+  51    19    >   ISSET_ISEMPTY_DIM_OBJ                         0  ~11     !1, 'name'
+        20        BOOL_XOR                                         ~12     ~11
+        21      > JMPNZ_EX                                         ~12     ~12, ->26
+        22    >   FETCH_DIM_R                                      ~13     !1, 'name'
+        23        TYPE_CHECK                                   64  ~14     ~13
+        24        BOOL_XOR                                         ~15     ~14
+        25        BOOL                                             ~12     ~15
+        26    > > JMPZ                                                     ~12, ->37
+  52    27    >   INIT_FCALL_BY_NAME                                       '__'
+        28        SEND_VAL_EX                                              'Block+style+name+must+be+a+string.'
+        29        DO_FCALL                                      0  $16     
+        30        ASSIGN                                                   !2, $16
+  53    31        INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        32        SEND_VAL_EX                                              'WP_Block_Styles_Registry%3A%3Aregister'
+        33        SEND_VAR_EX                                              !2
+        34        SEND_VAL_EX                                              '5.3.0'
+        35        DO_FCALL                                      0          
+  54    36      > RETURN                                                   <false>
+  57    37    >   FETCH_DIM_R                                      ~19     !1, 'name'
+        38        ASSIGN                                                   !3, ~19
+  59    39        FETCH_OBJ_IS                                     ~21     'registered_block_styles'
+        40        ISSET_ISEMPTY_DIM_OBJ                         0  ~22     ~21, !0
+        41        BOOL_XOR                                         ~23     ~22
+        42      > JMPZ                                                     ~23, ->46
+  60    43    >   FETCH_OBJ_W                                      $24     'registered_block_styles'
+        44        ASSIGN_DIM                                               $24, !0
+        45        OP_DATA                                                  <array>
+  62    46    >   FETCH_OBJ_W                                      $26     'registered_block_styles'
+        47        FETCH_DIM_W                                      $27     $26, !0
+        48        ASSIGN_DIM                                               $27, !3
+        49        OP_DATA                                                  !1
+  64    50      > RETURN                                                   <true>
+  65    51*     > RETURN                                                   null
+
+End of function register
+
+Function unregister:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 8, Position 2 = 23
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 23
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-styles-registry.php
+function name:  unregister
+number of ops:  28
+compiled vars:  !0 = $block_name, !1 = $block_style_name, !2 = $message
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  74     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+  75     2        INIT_METHOD_CALL                                         'is_registered'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAR_EX                                              !1
+         5        DO_FCALL                                      0  $3      
+         6        BOOL_XOR                                         ~4      $3
+         7      > JMPZ                                                     ~4, ->23
+  77     8    >   INIT_FCALL                                               'sprintf'
+         9        INIT_FCALL_BY_NAME                                       '__'
+        10        SEND_VAL_EX                                              'Block+%22%251%24s%22+does+not+contain+a+style+named+%22%252%24s%22.'
+        11        DO_FCALL                                      0  $5      
+        12        SEND_VAR                                                 $5
+        13        SEND_VAR                                                 !0
+        14        SEND_VAR                                                 !1
+        15        DO_ICALL                                         $6      
+        16        ASSIGN                                                   !2, $6
+  78    17        INIT_FCALL_BY_NAME                                       '_doing_it_wrong'
+        18        SEND_VAL_EX                                              'WP_Block_Styles_Registry%3A%3Aunregister'
+        19        SEND_VAR_EX                                              !2
+        20        SEND_VAL_EX                                              '5.3.0'
+        21        DO_FCALL                                      0          
+  79    22      > RETURN                                                   <false>
+  82    23    >   FETCH_OBJ_UNSET                                  $9      'registered_block_styles'
+        24        FETCH_DIM_UNSET                                  $10     $9, !0
+        25        UNSET_DIM                                                $10, !1
+  84    26      > RETURN                                                   <true>
+  85    27*     > RETURN                                                   null
+
+End of function unregister
+
+Function get_registered:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 8, Position 2 = 9
+Branch analysis from position: 8
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 9
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-styles-registry.php
+function name:  get_registered
+number of ops:  14
+compiled vars:  !0 = $block_name, !1 = $block_style_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  96     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+  97     2        INIT_METHOD_CALL                                         'is_registered'
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAR_EX                                              !1
+         5        DO_FCALL                                      0  $2      
+         6        BOOL_XOR                                         ~3      $2
+         7      > JMPZ                                                     ~3, ->9
+  98     8    > > RETURN                                                   null
+ 101     9    >   FETCH_OBJ_R                                      ~4      'registered_block_styles'
+        10        FETCH_DIM_R                                      ~5      ~4, !0
+        11        FETCH_DIM_R                                      ~6      ~5, !1
+        12      > RETURN                                                   ~6
+ 102    13*     > RETURN                                                   null
+
+End of function get_registered
+
+Function get_all_registered:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-styles-registry.php
+function name:  get_all_registered
+number of ops:  3
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 113     0  E >   FETCH_OBJ_R                                      ~0      'registered_block_styles'
+         1      > RETURN                                                   ~0
+ 114     2*     > RETURN                                                   null
+
+End of function get_all_registered
+
+Function get_registered_styles_for_block:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 7
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-styles-registry.php
+function name:  get_registered_styles_for_block
+number of ops:  9
+compiled vars:  !0 = $block_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 124     0  E >   RECV                                             !0      
+ 125     1        FETCH_OBJ_IS                                     ~1      'registered_block_styles'
+         2        ISSET_ISEMPTY_DIM_OBJ                         0  ~2      ~1, !0
+         3      > JMPZ                                                     ~2, ->7
+ 126     4    >   FETCH_OBJ_R                                      ~3      'registered_block_styles'
+         5        FETCH_DIM_R                                      ~4      ~3, !0
+         6      > RETURN                                                   ~4
+ 128     7    > > RETURN                                                   <array>
+ 129     8*     > RETURN                                                   null
+
+End of function get_registered_styles_for_block
+
+Function is_registered:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-styles-registry.php
+function name:  is_registered
+number of ops:  7
+compiled vars:  !0 = $block_name, !1 = $block_style_name
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 140     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 141     2        FETCH_OBJ_IS                                     ~2      'registered_block_styles'
+         3        FETCH_DIM_IS                                     ~3      ~2, !0
+         4        ISSET_ISEMPTY_DIM_OBJ                         0  ~4      ~3, !1
+         5      > RETURN                                                   ~4
+ 142     6*     > RETURN                                                   null
+
+End of function is_registered
+
+Function get_instance:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 7
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-wp-block-styles-registry.php
+function name:  get_instance
+number of ops:  10
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 154     0  E >   FETCH_STATIC_PROP_R          unknown             ~0      'instance'
+         1        IS_NOT_IDENTICAL                                 ~1      ~0, null
+         2      > JMPZ                                                     ~1, ->7
+ 155     3    >   NEW                                              $3      <undef>
+         4        DO_FCALL                                      0          
+         5        ASSIGN_STATIC_PROP                                       'instance'
+         6        OP_DATA                                                  $3
+ 158     7    >   FETCH_STATIC_PROP_R          unknown             ~5      'instance'
+         8      > RETURN                                                   ~5
+ 159     9*     > RETURN                                                   null
+
+End of function get_instance
+
+End of class WP_Block_Styles_Registry.
+
+branch: #  0; line:   161-  161; sop:     0; eop:     0; out0:  -2
+path #1: 0, 
+branch: #  0; line:    43-   45; sop:     0; eop:     4; out0:   5; out1:   8
+branch: #  5; line:    45-   45; sop:     5; eop:     7; out0:   8
+branch: #  8; line:    45-   45; sop:     8; eop:     8; out0:   9; out1:  19
+branch: #  9; line:    46-   48; sop:     9; eop:    18; out0:  -2
+branch: # 19; line:    51-   51; sop:    19; eop:    21; out0:  22; out1:  26
+branch: # 22; line:    51-   51; sop:    22; eop:    25; out0:  26
+branch: # 26; line:    51-   51; sop:    26; eop:    26; out0:  27; out1:  37
+branch: # 27; line:    52-   54; sop:    27; eop:    36; out0:  -2
+branch: # 37; line:    57-   59; sop:    37; eop:    42; out0:  43; out1:  46
+branch: # 43; line:    60-   62; sop:    43; eop:    45; out0:  46
+branch: # 46; line:    62-   65; sop:    46; eop:    51
+path #1: 0, 5, 8, 9, 
+path #2: 0, 5, 8, 19, 22, 26, 27, 
+path #3: 0, 5, 8, 19, 22, 26, 37, 43, 46, 
+path #4: 0, 5, 8, 19, 22, 26, 37, 46, 
+path #5: 0, 5, 8, 19, 26, 27, 
+path #6: 0, 5, 8, 19, 26, 37, 43, 46, 
+path #7: 0, 5, 8, 19, 26, 37, 46, 
+path #8: 0, 8, 9, 
+path #9: 0, 8, 19, 22, 26, 27, 
+path #10: 0, 8, 19, 22, 26, 37, 43, 46, 
+path #11: 0, 8, 19, 22, 26, 37, 46, 
+path #12: 0, 8, 19, 26, 27, 
+path #13: 0, 8, 19, 26, 37, 43, 46, 
+path #14: 0, 8, 19, 26, 37, 46, 
+branch: #  0; line:    74-   75; sop:     0; eop:     7; out0:   8; out1:  23
+branch: #  8; line:    77-   79; sop:     8; eop:    22; out0:  -2
+branch: # 23; line:    82-   85; sop:    23; eop:    27
+path #1: 0, 8, 
+path #2: 0, 23, 
+branch: #  0; line:    96-   97; sop:     0; eop:     7; out0:   8; out1:   9
+branch: #  8; line:    98-   98; sop:     8; eop:     8; out0:  -2
+branch: #  9; line:   101-  102; sop:     9; eop:    13
+path #1: 0, 8, 
+path #2: 0, 9, 
+branch: #  0; line:   113-  114; sop:     0; eop:     2
+path #1: 0, 
+branch: #  0; line:   124-  125; sop:     0; eop:     3; out0:   4; out1:   7
+branch: #  4; line:   126-  126; sop:     4; eop:     6; out0:  -2
+branch: #  7; line:   128-  129; sop:     7; eop:     8
+path #1: 0, 4, 
+path #2: 0, 7, 
+branch: #  0; line:   140-  142; sop:     0; eop:     6
+path #1: 0, 
+branch: #  0; line:   154-  154; sop:     0; eop:     2; out0:   3; out1:   7
+branch: #  3; line:   155-  158; sop:     3; eop:     6; out0:   7
+branch: #  7; line:   158-  159; sop:     7; eop:     9
+path #1: 0, 3, 7, 
+path #2: 0, 7, 

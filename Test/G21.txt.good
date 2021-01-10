@@ -1,0 +1,2439 @@
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 5, Position 2 = 6
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 6
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  (null)
+number of ops:  7
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 656     0  E >   INIT_FCALL                                               'function_exists'
+         1        SEND_VAL                                                 'stripos'
+         2        DO_ICALL                                         $0      
+         3        BOOL_XOR                                         ~1      $0
+         4      > JMPZ                                                     ~1, ->6
+ 657     5    >   DECLARE_FUNCTION                                         'stripos'
+ 661     6    > > RETURN                                                   1
+
+Function %00stripos%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2Fclass-pop3.php%3A657%240:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  stripos
+number of ops:  12
+compiled vars:  !0 = $haystack, !1 = $needle
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 657     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 658     2        INIT_FCALL                                               'strpos'
+         3        SEND_VAR                                                 !0
+         4        INIT_FCALL                                               'stristr'
+         5        SEND_VAR                                                 !0
+         6        SEND_VAR                                                 !1
+         7        DO_ICALL                                         $2      
+         8        SEND_VAR                                                 $2
+         9        DO_ICALL                                         $3      
+        10      > RETURN                                                   $3
+ 659    11*     > RETURN                                                   null
+
+End of function %00stripos%2Fhome%2Fsanu%2FDesktop%2FDataset%2FNormal+files%2Fclass-pop3.php%3A657%240
+
+Class POP3:
+Function __construct:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 10, Position 2 = 14
+Branch analysis from position: 10
+2 jumps found. (Code = 43) Position 1 = 12, Position 2 = 14
+Branch analysis from position: 12
+2 jumps found. (Code = 43) Position 1 = 17, Position 2 = 26
+Branch analysis from position: 17
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 26
+Branch analysis from position: 14
+Branch analysis from position: 14
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  __construct
+number of ops:  28
+compiled vars:  !0 = $server, !1 = $timeout
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  50     0  E >   RECV_INIT                                        !0      ''
+         1        RECV_INIT                                        !1      ''
+  51     2        INIT_FCALL                                               'settype'
+         3        FETCH_OBJ_W                                      $2      'BUFFER'
+         4        SEND_REF                                                 $2
+         5        SEND_VAL                                                 'integer'
+         6        DO_ICALL                                                 
+  52     7        ISSET_ISEMPTY_CV                                 ~4      !0
+         8        BOOL_XOR                                         ~5      ~4
+         9      > JMPZ                                                     ~5, ->14
+  56    10    >   ISSET_ISEMPTY_PROP_OBJ                           ~6      'MAILSERVER'
+        11      > JMPZ                                                     ~6, ->14
+  57    12    >   ASSIGN_OBJ                                               'MAILSERVER'
+        13        OP_DATA                                                  !0
+  59    14    >   ISSET_ISEMPTY_CV                                 ~8      !1
+        15        BOOL_XOR                                         ~9      ~8
+        16      > JMPZ                                                     ~9, ->26
+  60    17    >   INIT_FCALL                                               'settype'
+        18        SEND_REF                                                 !1
+        19        SEND_VAL                                                 'integer'
+        20        DO_ICALL                                                 
+  61    21        ASSIGN_OBJ                                               'TIMEOUT'
+        22        OP_DATA                                                  !1
+  62    23        INIT_FCALL                                               'set_time_limit'
+        24        SEND_VAR                                                 !1
+        25        DO_ICALL                                                 
+  64    26    > > RETURN                                                   <true>
+  65    27*     > RETURN                                                   null
+
+End of function __construct
+
+Function pop3:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  POP3
+number of ops:  7
+compiled vars:  !0 = $server, !1 = $timeout
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  70     0  E >   RECV_INIT                                        !0      ''
+         1        RECV_INIT                                        !1      ''
+  71     2        INIT_STATIC_METHOD_CALL                                  
+         3        SEND_VAR_EX                                              !0
+         4        SEND_VAR_EX                                              !1
+         5        DO_FCALL                                      0          
+  72     6      > RETURN                                                   null
+
+End of function pop3
+
+Function update_timer:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  update_timer
+number of ops:  6
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  75     0  E >   INIT_FCALL                                               'set_time_limit'
+         1        FETCH_OBJ_R                                      ~0      'TIMEOUT'
+         2        SEND_VAL                                                 ~0
+         3        DO_ICALL                                                 
+  76     4      > RETURN                                                   <true>
+  77     5*     > RETURN                                                   null
+
+End of function update_timer
+
+Function connect:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 47) Position 1 = 5, Position 2 = 7
+Branch analysis from position: 5
+2 jumps found. (Code = 43) Position 1 = 8, Position 2 = 9
+Branch analysis from position: 8
+2 jumps found. (Code = 43) Position 1 = 12, Position 2 = 14
+Branch analysis from position: 12
+2 jumps found. (Code = 43) Position 1 = 16, Position 2 = 24
+Branch analysis from position: 16
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 24
+2 jumps found. (Code = 43) Position 1 = 36, Position 2 = 50
+Branch analysis from position: 36
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 50
+2 jumps found. (Code = 43) Position 1 = 68, Position 2 = 77
+Branch analysis from position: 68
+2 jumps found. (Code = 43) Position 1 = 82, Position 2 = 94
+Branch analysis from position: 82
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 94
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 77
+Branch analysis from position: 14
+Branch analysis from position: 9
+Branch analysis from position: 7
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  connect
+number of ops:  103
+compiled vars:  !0 = $server, !1 = $port, !2 = $fp, !3 = $errno, !4 = $errstr, !5 = $reply
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  79     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      110
+  85     2        ISSET_ISEMPTY_CV                                 ~6      !1
+         3        BOOL_XOR                                         ~7      ~6
+         4      > JMPNZ_EX                                         ~7      ~7, ->7
+         5    >   BOOL_XOR                                         ~8      !1
+         6        BOOL                                             ~7      ~8
+         7    > > JMPZ                                                     ~7, ->9
+         8    >   ASSIGN                                                   !1, 110
+  86     9    >   ISSET_ISEMPTY_PROP_OBJ                           ~10     'MAILSERVER'
+        10        BOOL_XOR                                         ~11     ~10
+        11      > JMPZ                                                     ~11, ->14
+  87    12    >   FETCH_OBJ_R                                      ~12     'MAILSERVER'
+        13        ASSIGN                                                   !0, ~12
+  89    14    >   ISSET_ISEMPTY_CV                                 ~14     !0
+        15      > JMPZ                                                     ~14, ->24
+  90    16    >   INIT_FCALL                                               '_'
+        17        SEND_VAL                                                 'No+server+specified'
+        18        DO_ICALL                                         $16     
+        19        CONCAT                                           ~17     'POP3+connect%3A+', $16
+        20        ASSIGN_OBJ                                               'ERROR'
+        21        OP_DATA                                                  ~17
+  91    22        UNSET_OBJ                                                'FP'
+  92    23      > RETURN                                                   <false>
+  95    24    >   BEGIN_SILENCE                                    ~18     
+        25        INIT_FCALL                                               'fsockopen'
+        26        MAKE_REF                                         ~19     !0
+        27        SEND_VAL                                                 ~19
+        28        SEND_VAR                                                 !1
+        29        SEND_REF                                                 !3
+        30        SEND_REF                                                 !4
+        31        DO_ICALL                                         $20     
+        32        END_SILENCE                                              ~18
+        33        ASSIGN                                                   !2, $20
+  97    34        BOOL_XOR                                         ~22     !2
+        35      > JMPZ                                                     ~22, ->50
+  98    36    >   INIT_FCALL                                               '_'
+        37        SEND_VAL                                                 'Error+'
+        38        DO_ICALL                                         $24     
+        39        CONCAT                                           ~25     'POP3+connect%3A+', $24
+        40        ROPE_INIT                                     5  ~27     '%5B'
+        41        ROPE_ADD                                      1  ~27     ~27, !3
+        42        ROPE_ADD                                      2  ~27     ~27, '%5D+%5B'
+        43        ROPE_ADD                                      3  ~27     ~27, !4
+        44        ROPE_END                                      4  ~26     ~27, '%5D'
+        45        CONCAT                                           ~30     ~25, ~26
+        46        ASSIGN_OBJ                                               'ERROR'
+        47        OP_DATA                                                  ~30
+  99    48        UNSET_OBJ                                                'FP'
+ 100    49      > RETURN                                                   <false>
+ 103    50    >   INIT_FCALL                                               'socket_set_blocking'
+        51        SEND_VAR                                                 !2
+        52        SEND_VAL                                                 -1
+        53        DO_ICALL                                                 
+ 104    54        INIT_METHOD_CALL                                         'update_timer'
+        55        DO_FCALL                                      0          
+ 105    56        INIT_FCALL                                               'fgets'
+        57        SEND_VAR                                                 !2
+        58        FETCH_OBJ_R                                      ~33     'BUFFER'
+        59        SEND_VAL                                                 ~33
+        60        DO_ICALL                                         $34     
+        61        ASSIGN                                                   !5, $34
+ 106    62        INIT_METHOD_CALL                                         'strip_clf'
+        63        SEND_VAR_EX                                              !5
+        64        DO_FCALL                                      0  $36     
+        65        ASSIGN                                                   !5, $36
+ 107    66        FETCH_OBJ_R                                      ~38     'DEBUG'
+        67      > JMPZ                                                     ~38, ->77
+ 108    68    >   INIT_FCALL                                               'error_log'
+        69        ROPE_INIT                                     5  ~40     'POP3+SEND+%5Bconnect%3A+'
+        70        ROPE_ADD                                      1  ~40     ~40, !0
+        71        ROPE_ADD                                      2  ~40     ~40, '%5D+GOT+%5B'
+        72        ROPE_ADD                                      3  ~40     ~40, !5
+        73        ROPE_END                                      4  ~39     ~40, '%5D'
+        74        SEND_VAL                                                 ~39
+        75        SEND_VAL                                                 0
+        76        DO_ICALL                                                 
+ 109    77    >   INIT_METHOD_CALL                                         'is_ok'
+        78        SEND_VAR_EX                                              !5
+        79        DO_FCALL                                      0  $44     
+        80        BOOL_XOR                                         ~45     $44
+        81      > JMPZ                                                     ~45, ->94
+ 110    82    >   INIT_FCALL                                               '_'
+        83        SEND_VAL                                                 'Error+'
+        84        DO_ICALL                                         $47     
+        85        CONCAT                                           ~48     'POP3+connect%3A+', $47
+        86        ROPE_INIT                                     3  ~50     '%5B'
+        87        ROPE_ADD                                      1  ~50     ~50, !5
+        88        ROPE_END                                      2  ~49     ~50, '%5D'
+        89        CONCAT                                           ~52     ~48, ~49
+        90        ASSIGN_OBJ                                               'ERROR'
+        91        OP_DATA                                                  ~52
+ 111    92        UNSET_OBJ                                                'FP'
+ 112    93      > RETURN                                                   <false>
+ 114    94    >   ASSIGN_OBJ                                               'FP'
+        95        OP_DATA                                                  !2
+ 115    96        INIT_METHOD_CALL                                         'parse_banner'
+        97        SEND_VAR_EX                                              !5
+        98        DO_FCALL                                      0  $55     
+        99        ASSIGN_OBJ                                               'BANNER'
+       100        OP_DATA                                                  $55
+ 116   101      > RETURN                                                   <true>
+ 117   102*     > RETURN                                                   null
+
+branch: #  0; line:   656-  656; sop:     0; eop:     4; out0:   5; out1:   6
+branch: #  5; line:   657-  661; sop:     5; eop:     5; out0:   6
+branch: #  6; line:   661-  661; sop:     6; eop:     6; out0:  -2
+path #1: 0, 5, 6, 
+path #2: 0, 6, 
+branch: #  0; line:   657-  659; sop:     0; eop:    11
+path #1: 0, 
+branch: #  0; line:    50-   52; sop:     0; eop:     9; out0:  10; out1:  14
+branch: # 10; line:    56-   56; sop:    10; eop:    11; out0:  12; out1:  14
+branch: # 12; line:    57-   59; sop:    12; eop:    13; out0:  14
+branch: # 14; line:    59-   59; sop:    14; eop:    16; out0:  17; out1:  26
+branch: # 17; line:    60-   64; sop:    17; eop:    25; out0:  26
+branch: # 26; line:    64-   65; sop:    26; eop:    27
+path #1: 0, 10, 12, 14, 17, 26, 
+path #2: 0, 10, 12, 14, 26, 
+path #3: 0, 10, 14, 17, 26, 
+path #4: 0, 10, 14, 26, 
+path #5: 0, 14, 17, 26, 
+path #6: 0, 14, 26, 
+branch: #  0; line:    70-   72; sop:     0; eop:     6; out0:  -2
+path #1: 0, 
+branch: #  0; line:    75-   77; sop:     0; eop:     5
+path #1: 0, 
+branch: #  0; line:    79-   85; sop:     0; eop:     4; out0:   5; out1:   7
+branch: #  5; line:    85-   85; sop:     5; eop:     6; out0:   7
+branch: #  7; line:    85-   85; sop:     7; eop:     7; out0:   8; out1:   9
+branch: #  8; line:    85-   86; sop:     8; eop:     8; out0:   9
+branch: #  9; line:    86-   86; sop:     9; eop:    11; out0:  12; out1:  14
+branch: # 12; line:    87-   89; sop:    12; eop:    13; out0:  14
+branch: # 14; line:    89-   89; sop:    14; eop:    15; out0:  16; out1:  24
+branch: # 16; line:    90-   92; sop:    16; eop:    23; out0:  -2
+branch: # 24; line:    95-   97; sop:    24; eop:    35; out0:  36; out1:  50
+branch: # 36; line:    98-  100; sop:    36; eop:    49; out0:  -2
+branch: # 50; line:   103-  107; sop:    50; eop:    67; out0:  68; out1:  77
+branch: # 68; line:   108-  109; sop:    68; eop:    76; out0:  77
+branch: # 77; line:   109-  109; sop:    77; eop:    81; out0:  82; out1:  94
+branch: # 82; line:   110-  112; sop:    82; eop:    93; out0:  -2
+branch: # 94; line:   114-  117; sop:    94; eop:   102
+path #1: 0, 5, 7, 8, 9, 12, 14, 16, 
+path #2: 0, 5, 7, 8, 9, 12, 14, 24, 36, 
+path #3: 0, 5, 7, 8, 9, 12, 14, 24, 50, 68, 77, 82, 
+path #4: 0, 5, 7, 8, 9, 12, 14, 24, 50, 68, 77, 94, 
+path #5: 0, 5, 7, 8, 9, 12, 14, 24, 50, 77, 82, 
+path #6: 0, 5, 7, 8, 9, 12, 14, 24, 50, 77, 94, 
+path #7: 0, 5, 7, 8, 9, 14, 16, 
+path #8: 0, 5, 7, 8, 9, 14, 24, 36, 
+path #9: 0, 5, 7, 8, 9, 14, 24, 50, 68, 77, 82, 
+path #10: 0, 5, 7, 8, 9, 14, 24, 50, 68, 77, 94, 
+path #11: 0, 5, 7, 8, 9, 14, 24, 50, 77, 82, 
+path #12: 0, 5, 7, 8, 9, 14, 24, 50, 77, 94, 
+path #13: 0, 5, 7, 9, 12, 14, 16, 
+path #14: 0, 5, 7, 9, 12, 14, 24, 36, 
+path #15: 0, 5, 7, 9, 12, 14, 24, 50, 68, 77, 82, 
+path #16: 0, 5, 7, 9, 12, 14, 24, 50, 68, 77, 94, 
+path #17: 0, 5, 7, 9, 12, 14, 24, 50, 77, 82, 
+path #18: 0, 5, 7, 9, 12, 14, 24, 50, 77, 94, 
+path #19: 0, 5, 7, 9, 14, 16, 
+path #20: 0, 5, 7, 9, 14, 24, 36, 
+path #21: 0, 5, 7, 9, 14, 24, 50, 68, 77, 82, 
+path #22: 0, 5, 7, 9, 14, 24, 50, 68, 77, 94, 
+path #23: 0, 5, 7, 9, 14, 24, 50, 77, 82, 
+path #24: 0, 5, 7, 9, 14, 24, 50, 77, 94, 
+path #25: 0, 7, 8, 9, 12, 14, 16, 
+path #26: 0, 7, 8, 9, 12, 14, 24, 36, 
+path #27: 0, 7, 8, 9, 12, 14, 24, 50, 68, 77, 82, 
+path #28: 0, 7, 8, 9, 12, 14, 24, 50, 68, 77, 94, 
+path #29: 0, 7, 8, 9, 12, 14, 24, 50, 77, 82, 
+path #30: 0, 7, 8, 9, 12, 14, 24, 50, 77, 94, 
+path #31: 0, 7, 8, 9, 14, 16, 
+path #32: 0, 7, 8, 9, 14, 24, 36, 
+path #33: 0, 7, 8, 9, 14, 24, 50, 68, 77, 82, 
+path #34: 0, 7, 8, 9, 14, 24, 50, 68, 77, 94, 
+path #35: 0, 7, 8, 9, 14, 24, 50, 77, 82, 
+path #36: 0, 7, 8, 9, 14, 24, 50, 77, 94, 
+path #37: 0, 7, 9, 12, 14, 16, 
+path #38: 0, 7, 9, 12, 14, 24, 36, 
+path #39: 0, 7, 9, 12, 14, 24, 50, 68, 77, 82, 
+path #40: 0, 7, 9, 12, 14, 24, 50, 68, 77, 94, 
+path #41: 0, 7, 9, 12, 14, 24, 50, 77, 82, 
+path #42: 0, 7, 9, 12, 14, 24, 50, 77, 94, 
+path #43: 0, 7, 9, 14, 16, 
+path #44: 0, 7, 9, 14, 24, 36, 
+path #45: 0, 7, 9, 14, 24, 50, 68, 77, 82, 
+path #46: 0, 7, 9, 14, 24, 50, 68, 77, 94, End of function connect
+
+Function user:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 11
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+2 jumps found. (Code = 43) Position 1 = 14, Position 2 = 22
+Branch analysis from position: 14
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 22
+2 jumps found. (Code = 43) Position 1 = 33, Position 2 = 45
+Branch analysis from position: 33
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 45
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  user
+number of ops:  47
+compiled vars:  !0 = $user, !1 = $reply
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 119     0  E >   RECV_INIT                                        !0      ''
+ 122     1        ISSET_ISEMPTY_CV                                 ~2      !0
+         2      > JMPZ                                                     ~2, ->11
+ 123     3    >   INIT_FCALL                                               '_'
+         4        SEND_VAL                                                 'no+login+ID+submitted'
+         5        DO_ICALL                                         $4      
+         6        CONCAT                                           ~5      'POP3+user%3A+', $4
+         7        ASSIGN_OBJ                                               'ERROR'
+         8        OP_DATA                                                  ~5
+ 124     9      > RETURN                                                   <false>
+        10*       JMP                                                      ->46
+ 125    11    >   ISSET_ISEMPTY_PROP_OBJ                           ~6      'FP'
+        12        BOOL_XOR                                         ~7      ~6
+        13      > JMPZ                                                     ~7, ->22
+ 126    14    >   INIT_FCALL                                               '_'
+        15        SEND_VAL                                                 'connection+not+established'
+        16        DO_ICALL                                         $9      
+        17        CONCAT                                           ~10     'POP3+user%3A+', $9
+        18        ASSIGN_OBJ                                               'ERROR'
+        19        OP_DATA                                                  ~10
+ 127    20      > RETURN                                                   <false>
+        21*       JMP                                                      ->46
+ 129    22    >   INIT_METHOD_CALL                                         'send_cmd'
+        23        NOP                                                      
+        24        FAST_CONCAT                                      ~11     'USER+', !0
+        25        SEND_VAL_EX                                              ~11
+        26        DO_FCALL                                      0  $12     
+        27        ASSIGN                                                   !1, $12
+ 130    28        INIT_METHOD_CALL                                         'is_ok'
+        29        SEND_VAR_EX                                              !1
+        30        DO_FCALL                                      0  $14     
+        31        BOOL_XOR                                         ~15     $14
+        32      > JMPZ                                                     ~15, ->45
+ 131    33    >   INIT_FCALL                                               '_'
+        34        SEND_VAL                                                 'Error+'
+        35        DO_ICALL                                         $17     
+        36        CONCAT                                           ~18     'POP3+user%3A+', $17
+        37        ROPE_INIT                                     3  ~20     '%5B'
+        38        ROPE_ADD                                      1  ~20     ~20, !1
+        39        ROPE_END                                      2  ~19     ~20, '%5D'
+        40        CONCAT                                           ~22     ~18, ~19
+        41        ASSIGN_OBJ                                               'ERROR'
+        42        OP_DATA                                                  ~22
+ 132    43      > RETURN                                                   <false>
+        44*       JMP                                                      ->46
+ 134    45    > > RETURN                                                   <true>
+ 136    46*     > RETURN                                                   null
+
+End of function user
+
+Function pass:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 11
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+2 jumps found. (Code = 43) Position 1 = 14, Position 2 = 22
+Branch analysis from position: 14
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 22
+2 jumps found. (Code = 43) Position 1 = 33, Position 2 = 47
+Branch analysis from position: 33
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 47
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  pass
+number of ops:  55
+compiled vars:  !0 = $pass, !1 = $reply, !2 = $count
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 138     0  E >   RECV_INIT                                        !0      ''
+ 142     1        ISSET_ISEMPTY_CV                                 ~3      !0
+         2      > JMPZ                                                     ~3, ->11
+ 143     3    >   INIT_FCALL                                               '_'
+         4        SEND_VAL                                                 'No+password+submitted'
+         5        DO_ICALL                                         $5      
+         6        CONCAT                                           ~6      'POP3+pass%3A+', $5
+         7        ASSIGN_OBJ                                               'ERROR'
+         8        OP_DATA                                                  ~6
+ 144     9      > RETURN                                                   <false>
+        10*       JMP                                                      ->54
+ 145    11    >   ISSET_ISEMPTY_PROP_OBJ                           ~7      'FP'
+        12        BOOL_XOR                                         ~8      ~7
+        13      > JMPZ                                                     ~8, ->22
+ 146    14    >   INIT_FCALL                                               '_'
+        15        SEND_VAL                                                 'connection+not+established'
+        16        DO_ICALL                                         $10     
+        17        CONCAT                                           ~11     'POP3+pass%3A+', $10
+        18        ASSIGN_OBJ                                               'ERROR'
+        19        OP_DATA                                                  ~11
+ 147    20      > RETURN                                                   <false>
+        21*       JMP                                                      ->54
+ 149    22    >   INIT_METHOD_CALL                                         'send_cmd'
+        23        NOP                                                      
+        24        FAST_CONCAT                                      ~12     'PASS+', !0
+        25        SEND_VAL_EX                                              ~12
+        26        DO_FCALL                                      0  $13     
+        27        ASSIGN                                                   !1, $13
+ 150    28        INIT_METHOD_CALL                                         'is_ok'
+        29        SEND_VAR_EX                                              !1
+        30        DO_FCALL                                      0  $15     
+        31        BOOL_XOR                                         ~16     $15
+        32      > JMPZ                                                     ~16, ->47
+ 151    33    >   INIT_FCALL                                               '_'
+        34        SEND_VAL                                                 'Authentication+failed'
+        35        DO_ICALL                                         $18     
+        36        CONCAT                                           ~19     'POP3+pass%3A+', $18
+        37        ROPE_INIT                                     3  ~21     '+%5B'
+        38        ROPE_ADD                                      1  ~21     ~21, !1
+        39        ROPE_END                                      2  ~20     ~21, '%5D'
+        40        CONCAT                                           ~23     ~19, ~20
+        41        ASSIGN_OBJ                                               'ERROR'
+        42        OP_DATA                                                  ~23
+ 152    43        INIT_METHOD_CALL                                         'quit'
+        44        DO_FCALL                                      0          
+ 153    45      > RETURN                                                   <false>
+        46*       JMP                                                      ->54
+ 156    47    >   INIT_METHOD_CALL                                         'last'
+        48        SEND_VAL_EX                                              'count'
+        49        DO_FCALL                                      0  $25     
+        50        ASSIGN                                                   !2, $25
+ 157    51        ASSIGN_OBJ                                               'COUNT'
+        52        OP_DATA                                                  !2
+ 158    53      > RETURN                                                   !2
+ 161    54*     > RETURN                                                   null
+
+End of function pass
+
+Function apop:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 5, Position 2 = 13
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 16, Position 2 = 23
+Branch analysis from position: 16
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 23
+2 jumps found. (Code = 43) Position 1 = 25, Position 2 = 33
+Branch analysis from position: 25
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 33
+2 jumps found. (Code = 43) Position 1 = 35, Position 2 = 43
+Branch analysis from position: 35
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 43
+2 jumps found. (Code = 47) Position 1 = 47, Position 2 = 49
+Branch analysis from position: 47
+2 jumps found. (Code = 43) Position 1 = 50, Position 2 = 68
+Branch analysis from position: 50
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 68
+2 jumps found. (Code = 43) Position 1 = 88, Position 2 = 106
+Branch analysis from position: 88
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 106
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 49
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  apop
+number of ops:  114
+compiled vars:  !0 = $login, !1 = $pass, !2 = $retVal, !3 = $banner, !4 = $AuthString, !5 = $APOPString, !6 = $cmd, !7 = $reply, !8 = $count
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 163     0  E >   RECV                                             !0      
+         1        RECV                                             !1      
+ 169     2        ISSET_ISEMPTY_PROP_OBJ                           ~9      'FP'
+         3        BOOL_XOR                                         ~10     ~9
+         4      > JMPZ                                                     ~10, ->13
+ 170     5    >   INIT_FCALL                                               '_'
+         6        SEND_VAL                                                 'No+connection+to+server'
+         7        DO_ICALL                                         $12     
+         8        CONCAT                                           ~13     'POP3+apop%3A+', $12
+         9        ASSIGN_OBJ                                               'ERROR'
+        10        OP_DATA                                                  ~13
+ 171    11      > RETURN                                                   <false>
+        12*       JMP                                                      ->113
+ 172    13    >   FETCH_OBJ_R                                      ~14     'ALLOWAPOP'
+        14        BOOL_XOR                                         ~15     ~14
+        15      > JMPZ                                                     ~15, ->23
+ 173    16    >   INIT_METHOD_CALL                                         'login'
+        17        SEND_VAR_EX                                              !0
+        18        SEND_VAR_EX                                              !1
+        19        DO_FCALL                                      0  $16     
+        20        ASSIGN                                                   !2, $16
+ 174    21      > RETURN                                                   !2
+        22*       JMP                                                      ->113
+ 175    23    >   ISSET_ISEMPTY_CV                                 ~18     !0
+        24      > JMPZ                                                     ~18, ->33
+ 176    25    >   INIT_FCALL                                               '_'
+        26        SEND_VAL                                                 'No+login+ID+submitted'
+        27        DO_ICALL                                         $20     
+        28        CONCAT                                           ~21     'POP3+apop%3A+', $20
+        29        ASSIGN_OBJ                                               'ERROR'
+        30        OP_DATA                                                  ~21
+ 177    31      > RETURN                                                   <false>
+        32*       JMP                                                      ->113
+ 178    33    >   ISSET_ISEMPTY_CV                                 ~22     !1
+        34      > JMPZ                                                     ~22, ->43
+ 179    35    >   INIT_FCALL                                               '_'
+        36        SEND_VAL                                                 'No+password+submitted'
+        37        DO_ICALL                                         $24     
+        38        CONCAT                                           ~25     'POP3+apop%3A+', $24
+        39        ASSIGN_OBJ                                               'ERROR'
+        40        OP_DATA                                                  ~25
+ 180    41      > RETURN                                                   <false>
+        42*       JMP                                                      ->113
+ 182    43    >   FETCH_OBJ_R                                      ~26     'BANNER'
+        44        ASSIGN                                                   !3, ~26
+ 183    45        BOOL_XOR                                         ~28     !3
+        46      > JMPNZ_EX                                         ~28     ~28, ->49
+        47    >   ISSET_ISEMPTY_CV                                 ~29     !3
+        48        BOOL                                             ~28     ~29
+        49    > > JMPZ                                                     ~28, ->68
+ 184    50    >   INIT_FCALL                                               '_'
+        51        SEND_VAL                                                 'No+server+banner'
+        52        DO_ICALL                                         $31     
+        53        CONCAT                                           ~32     'POP3+apop%3A+', $31
+        54        CONCAT                                           ~33     ~32, '+-+'
+        55        INIT_FCALL                                               '_'
+        56        SEND_VAL                                                 'abort'
+        57        DO_ICALL                                         $34     
+        58        CONCAT                                           ~35     ~33, $34
+        59        ASSIGN_OBJ                                               'ERROR'
+        60        OP_DATA                                                  ~35
+ 185    61        INIT_METHOD_CALL                                         'login'
+        62        SEND_VAR_EX                                              !0
+        63        SEND_VAR_EX                                              !1
+        64        DO_FCALL                                      0  $36     
+        65        ASSIGN                                                   !2, $36
+ 186    66      > RETURN                                                   !2
+        67*       JMP                                                      ->113
+ 188    68    >   ASSIGN                                                   !4, !3
+ 189    69        ASSIGN_OP                                     8          !4, !1
+ 190    70        INIT_FCALL                                               'md5'
+        71        SEND_VAR                                                 !4
+        72        DO_ICALL                                         $40     
+        73        ASSIGN                                                   !5, $40
+ 191    74        ROPE_INIT                                     4  ~43     'APOP+'
+        75        ROPE_ADD                                      1  ~43     ~43, !0
+        76        ROPE_ADD                                      2  ~43     ~43, '+'
+        77        ROPE_END                                      3  ~42     ~43, !5
+        78        ASSIGN                                                   !6, ~42
+ 192    79        INIT_METHOD_CALL                                         'send_cmd'
+        80        SEND_VAR_EX                                              !6
+        81        DO_FCALL                                      0  $46     
+        82        ASSIGN                                                   !7, $46
+ 193    83        INIT_METHOD_CALL                                         'is_ok'
+        84        SEND_VAR_EX                                              !7
+        85        DO_FCALL                                      0  $48     
+        86        BOOL_XOR                                         ~49     $48
+        87      > JMPZ                                                     ~49, ->106
+ 194    88    >   INIT_FCALL                                               '_'
+        89        SEND_VAL                                                 'apop+authentication+failed'
+        90        DO_ICALL                                         $51     
+        91        CONCAT                                           ~52     'POP3+apop%3A+', $51
+        92        CONCAT                                           ~53     ~52, '+-+'
+        93        INIT_FCALL                                               '_'
+        94        SEND_VAL                                                 'abort'
+        95        DO_ICALL                                         $54     
+        96        CONCAT                                           ~55     ~53, $54
+        97        ASSIGN_OBJ                                               'ERROR'
+        98        OP_DATA                                                  ~55
+ 195    99        INIT_METHOD_CALL                                         'login'
+       100        SEND_VAR_EX                                              !0
+       101        SEND_VAR_EX                                              !1
+       102        DO_FCALL                                      0  $56     
+       103        ASSIGN                                                   !2, $56
+ 196   104      > RETURN                                                   !2
+       105*       JMP                                                      ->113
+ 199   106    >   INIT_METHOD_CALL                                         'last'
+       107        SEND_VAL_EX                                              'count'
+       108        DO_FCALL                                      0  $58     
+       109        ASSIGN                                                   !8, $58
+ 200   110        ASSIGN_OBJ                                               'COUNT'
+       111        OP_DATA                                                  !8
+ 201   112      > RETURN                                                   !8
+ 205   113*     > RETURN                                                   null
+
+End of function apop
+
+Function login:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 5, Position 2 = 13
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 13
+2 jumps found. (Code = 43) Position 1 = 20, Position 2 = 22
+Branch analysis from position: 20
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 22
+2 jumps found. (Code = 47) Position 1 = 28, Position 2 = 30
+Branch analysis from position: 28
+2 jumps found. (Code = 43) Position 1 = 31, Position 2 = 33
+Branch analysis from position: 31
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 33
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 30
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  login
+number of ops:  35
+compiled vars:  !0 = $login, !1 = $pass, !2 = $fp, !3 = $count
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 207     0  E >   RECV_INIT                                        !0      ''
+         1        RECV_INIT                                        !1      ''
+ 212     2        ISSET_ISEMPTY_PROP_OBJ                           ~4      'FP'
+         3        BOOL_XOR                                         ~5      ~4
+         4      > JMPZ                                                     ~5, ->13
+ 213     5    >   INIT_FCALL                                               '_'
+         6        SEND_VAL                                                 'No+connection+to+server'
+         7        DO_ICALL                                         $7      
+         8        CONCAT                                           ~8      'POP3+login%3A+', $7
+         9        ASSIGN_OBJ                                               'ERROR'
+        10        OP_DATA                                                  ~8
+ 214    11      > RETURN                                                   <false>
+        12*       JMP                                                      ->34
+ 216    13    >   FETCH_OBJ_R                                      ~9      'FP'
+        14        ASSIGN                                                   !2, ~9
+ 217    15        INIT_METHOD_CALL                                         'user'
+        16        SEND_VAR_EX                                              !0
+        17        DO_FCALL                                      0  $11     
+        18        BOOL_XOR                                         ~12     $11
+        19      > JMPZ                                                     ~12, ->22
+ 219    20    > > RETURN                                                   <false>
+        21*       JMP                                                      ->34
+ 221    22    >   INIT_METHOD_CALL                                         'pass'
+        23        SEND_VAR_EX                                              !1
+        24        DO_FCALL                                      0  $13     
+        25        ASSIGN                                                   !3, $13
+ 222    26        BOOL_XOR                                         ~15     !3
+        27      > JMPNZ_EX                                         ~15     ~15, ->30
+        28    >   IS_NOT_EQUAL                                     ~16     !3, -1
+        29        BOOL                                             ~15     ~16
+        30    > > JMPZ                                                     ~15, ->33
+ 224    31    > > RETURN                                                   <false>
+        32*       JMP                                                      ->34
+ 226    33    > > RETURN                                                   !3
+ 229    34*     > RETURN                                                   null
+
+End of function login
+
+Function top:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 5, Position 2 = 12
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 12
+2 jumps found. (Code = 43) Position 1 = 43, Position 2 = 54
+Branch analysis from position: 43
+2 jumps found. (Code = 43) Position 1 = 59, Position 2 = 70
+Branch analysis from position: 59
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 70
+1 jumps found. (Code = 42) Position 1 = 90
+Branch analysis from position: 90
+2 jumps found. (Code = 44) Position 1 = 96, Position 2 = 78
+Branch analysis from position: 96
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 78
+2 jumps found. (Code = 43) Position 1 = 89, Position 2 = 90
+Branch analysis from position: 89
+1 jumps found. (Code = 42) Position 1 = 96
+Branch analysis from position: 96
+Branch analysis from position: 90
+Branch analysis from position: 54
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  top
+number of ops:  98
+compiled vars:  !0 = $msgNum, !1 = $numLines, !2 = $fp, !3 = $buffer, !4 = $cmd, !5 = $reply, !6 = $count, !7 = $MsgArray, !8 = $line
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 231     0  E >   RECV                                             !0      
+         1        RECV_INIT                                        !1      '0'
+ 237     2        ISSET_ISEMPTY_PROP_OBJ                           ~9      'FP'
+         3        BOOL_XOR                                         ~10     ~9
+         4      > JMPZ                                                     ~10, ->12
+ 238     5    >   INIT_FCALL                                               '_'
+         6        SEND_VAL                                                 'No+connection+to+server'
+         7        DO_ICALL                                         $12     
+         8        CONCAT                                           ~13     'POP3+top%3A+', $12
+         9        ASSIGN_OBJ                                               'ERROR'
+        10        OP_DATA                                                  ~13
+ 239    11      > RETURN                                                   <false>
+ 241    12    >   INIT_METHOD_CALL                                         'update_timer'
+        13        DO_FCALL                                      0          
+ 243    14        FETCH_OBJ_R                                      ~15     'FP'
+        15        ASSIGN                                                   !2, ~15
+ 244    16        FETCH_OBJ_R                                      ~17     'BUFFER'
+        17        ASSIGN                                                   !3, ~17
+ 245    18        ROPE_INIT                                     4  ~20     'TOP+'
+        19        ROPE_ADD                                      1  ~20     ~20, !0
+        20        ROPE_ADD                                      2  ~20     ~20, '+'
+        21        ROPE_END                                      3  ~19     ~20, !1
+        22        ASSIGN                                                   !4, ~19
+ 246    23        INIT_FCALL                                               'fwrite'
+        24        SEND_VAR                                                 !2
+        25        ROPE_INIT                                     5  ~24     'TOP+'
+        26        ROPE_ADD                                      1  ~24     ~24, !0
+        27        ROPE_ADD                                      2  ~24     ~24, '+'
+        28        ROPE_ADD                                      3  ~24     ~24, !1
+        29        ROPE_END                                      4  ~23     ~24, '%0D%0A'
+        30        SEND_VAL                                                 ~23
+        31        DO_ICALL                                                 
+ 247    32        INIT_FCALL                                               'fgets'
+        33        SEND_VAR                                                 !2
+        34        SEND_VAR                                                 !3
+        35        DO_ICALL                                         $28     
+        36        ASSIGN                                                   !5, $28
+ 248    37        INIT_METHOD_CALL                                         'strip_clf'
+        38        SEND_VAR_EX                                              !5
+        39        DO_FCALL                                      0  $30     
+        40        ASSIGN                                                   !5, $30
+ 249    41        FETCH_OBJ_R                                      ~32     'DEBUG'
+        42      > JMPZ                                                     ~32, ->54
+ 250    43    >   BEGIN_SILENCE                                    ~33     
+        44        INIT_FCALL                                               'error_log'
+        45        ROPE_INIT                                     5  ~35     'POP3+SEND+%5B'
+        46        ROPE_ADD                                      1  ~35     ~35, !4
+        47        ROPE_ADD                                      2  ~35     ~35, '%5D+GOT+%5B'
+        48        ROPE_ADD                                      3  ~35     ~35, !5
+        49        ROPE_END                                      4  ~34     ~35, '%5D'
+        50        SEND_VAL                                                 ~34
+        51        SEND_VAL                                                 0
+        52        DO_ICALL                                                 
+        53        END_SILENCE                                              ~33
+ 252    54    >   INIT_METHOD_CALL                                         'is_ok'
+        55        SEND_VAR_EX                                              !5
+        56        DO_FCALL                                      0  $39     
+        57        BOOL_XOR                                         ~40     $39
+        58      > JMPZ                                                     ~40, ->70
+ 254    59    >   INIT_FCALL                                               '_'
+        60        SEND_VAL                                                 'Error+'
+        61        DO_ICALL                                         $42     
+        62        CONCAT                                           ~43     'POP3+top%3A+', $42
+        63        ROPE_INIT                                     3  ~45     '%5B'
+        64        ROPE_ADD                                      1  ~45     ~45, !5
+        65        ROPE_END                                      2  ~44     ~45, '%5D'
+        66        CONCAT                                           ~47     ~43, ~44
+        67        ASSIGN_OBJ                                               'ERROR'
+        68        OP_DATA                                                  ~47
+ 255    69      > RETURN                                                   <false>
+ 258    70    >   ASSIGN                                                   !6, 0
+ 259    71        ASSIGN                                                   !7, <array>
+ 261    72        INIT_FCALL                                               'fgets'
+        73        SEND_VAR                                                 !2
+        74        SEND_VAR                                                 !3
+        75        DO_ICALL                                         $50     
+        76        ASSIGN                                                   !8, $50
+ 262    77      > JMP                                                      ->90
+ 264    78    >   ASSIGN_DIM                                               !7, !6
+        79        OP_DATA                                                  !8
+ 265    80        POST_INC                                         ~53     !6
+        81        FREE                                                     ~53
+ 266    82        INIT_FCALL                                               'fgets'
+        83        SEND_VAR                                                 !2
+        84        SEND_VAR                                                 !3
+        85        DO_ICALL                                         $54     
+        86        ASSIGN                                                   !8, $54
+ 267    87        ISSET_ISEMPTY_CV                                 ~56     !8
+        88      > JMPZ                                                     ~56, ->90
+        89    > > JMP                                                      ->96
+ 262    90    >   INIT_FCALL                                               'preg_match'
+        91        SEND_VAL                                                 '%2F%5E%5C.%5Cr%5Cn%2F'
+        92        SEND_VAR                                                 !8
+        93        DO_ICALL                                         $57     
+        94        BOOL_XOR                                         ~58     $57
+        95      > JMPNZ                                                    ~58, ->78
+ 270    96    > > RETURN                                                   !7
+ 271    97*     > RETURN                                                   null
+
+
+path #47: 0, 7, 9, 14, 24, 50, 77, 82, 
+path #48: 0, 7, 9, 14, 24, 50, 77, 94, 
+branch: #  0; line:   119-  122; sop:     0; eop:     2; out0:   3; out1:  11
+branch: #  3; line:   123-  124; sop:     3; eop:     9; out0:  -2
+branch: # 11; line:   125-  125; sop:    11; eop:    13; out0:  14; out1:  22
+branch: # 14; line:   126-  127; sop:    14; eop:    20; out0:  -2
+branch: # 22; line:   129-  130; sop:    22; eop:    32; out0:  33; out1:  45
+branch: # 33; line:   131-  132; sop:    33; eop:    43; out0:  -2
+branch: # 45; line:   134-  136; sop:    45; eop:    46
+path #1: 0, 3, 
+path #2: 0, 11, 14, 
+path #3: 0, 11, 22, 33, 
+path #4: 0, 11, 22, 45, 
+branch: #  0; line:   138-  142; sop:     0; eop:     2; out0:   3; out1:  11
+branch: #  3; line:   143-  144; sop:     3; eop:     9; out0:  -2
+branch: # 11; line:   145-  145; sop:    11; eop:    13; out0:  14; out1:  22
+branch: # 14; line:   146-  147; sop:    14; eop:    20; out0:  -2
+branch: # 22; line:   149-  150; sop:    22; eop:    32; out0:  33; out1:  47
+branch: # 33; line:   151-  153; sop:    33; eop:    45; out0:  -2
+branch: # 47; line:   156-  161; sop:    47; eop:    54
+path #1: 0, 3, 
+path #2: 0, 11, 14, 
+path #3: 0, 11, 22, 33, 
+path #4: 0, 11, 22, 47, 
+branch: #  0; line:   163-  169; sop:     0; eop:     4; out0:   5; out1:  13
+branch: #  5; line:   170-  171; sop:     5; eop:    11; out0:  -2
+branch: # 13; line:   172-  172; sop:    13; eop:    15; out0:  16; out1:  23
+branch: # 16; line:   173-  174; sop:    16; eop:    21; out0:  -2
+branch: # 23; line:   175-  175; sop:    23; eop:    24; out0:  25; out1:  33
+branch: # 25; line:   176-  177; sop:    25; eop:    31; out0:  -2
+branch: # 33; line:   178-  178; sop:    33; eop:    34; out0:  35; out1:  43
+branch: # 35; line:   179-  180; sop:    35; eop:    41; out0:  -2
+branch: # 43; line:   182-  183; sop:    43; eop:    46; out0:  47; out1:  49
+branch: # 47; line:   183-  183; sop:    47; eop:    48; out0:  49
+branch: # 49; line:   183-  183; sop:    49; eop:    49; out0:  50; out1:  68
+branch: # 50; line:   184-  186; sop:    50; eop:    66; out0:  -2
+branch: # 68; line:   188-  193; sop:    68; eop:    87; out0:  88; out1: 106
+branch: # 88; line:   194-  196; sop:    88; eop:   104; out0:  -2
+branch: #106; line:   199-  205; sop:   106; eop:   113
+path #1: 0, 5, 
+path #2: 0, 13, 16, 
+path #3: 0, 13, 23, 25, 
+path #4: 0, 13, 23, 33, 35, 
+path #5: 0, 13, 23, 33, 43, 47, 49, 50, 
+path #6: 0, 13, 23, 33, 43, 47, 49, 68, 88, 
+path #7: 0, 13, 23, 33, 43, 47, 49, 68, 106, 
+path #8: 0, 13, 23, 33, 43, 49, 50, 
+path #9: 0, 13, 23, 33, 43, 49, 68, 88, 
+path #10: 0, 13, 23, 33, 43, 49, 68, 106, 
+branch: #  0; line:   207-  212; sop:     0; eop:     4; out0:   5; out1:  13
+branch: #  5; line:   213-  214; sop:     5; eop:    11; out0:  -2
+branch: # 13; line:   216-  217; sop:    13; eop:    19; out0:  20; out1:  22
+branch: # 20; line:   219-  219; sop:    20; eop:    20; out0:  -2
+branch: # 22; line:   221-  222; sop:    22; eop:    27; out0:  28; out1:  30
+branch: # 28; line:   222-  222; sop:    28; eop:    29; out0:  30
+branch: # 30; line:   222-  222; sop:    30; eop:    30; out0:  31; out1:  33
+branch: # 31; line:   224-  224; sop:    31; eop:    31; out0:  -2
+branch: # 33; line:   226-  229; sop:    33; eop:    34
+path #1: 0, 5, 
+path #2: 0, 13, 20, 
+path #3: 0, 13, 22, 28, 30, 31, 
+path #4: 0, 13, 22, 28, 30, 33, 
+path #5: 0, 13, 22, 30, 31, 
+path #6: 0, 13, 22, 30, 33, 
+branch: #  0; line:   231-  237; sop:     0; eop:     4; out0:   5; out1:  12
+branch: #  5; line:   238-  239; sop:     5; eop:    11; out0:  -2
+branch: # 12; line:   241-  249; sop:    12; eop:    42; out0:  43; out1:  54
+branch: # 43; line:   250-  252; sop:    43; eop:    53; out0:  54
+branch: # 54; line:   252-  252; sop:    54; eop:    58; out0:  59; out1:  70
+branch: # 59; line:   254-  255; sop:    59; eop:    69; out0:  -2
+branch: # 70; line:   258-  262; sop:    70; eop:    77; out0:  90
+branch: # 78; line:   264-  267; sop:    78; eop:    88; out0:  89; out1:  90
+branch: # 89; line:   267-  267; sop:    89; eop:    89; out0:  96
+End of function top
+
+Function pop_list:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 11
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+2 jumps found. (Code = 47) Position 1 = 17, Position 2 = 19
+Branch analysis from position: 17
+2 jumps found. (Code = 43) Position 1 = 20, Position 2 = 21
+Branch analysis from position: 20
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 21
+2 jumps found. (Code = 43) Position 1 = 23, Position 2 = 24
+Branch analysis from position: 23
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 24
+2 jumps found. (Code = 43) Position 1 = 29, Position 2 = 89
+Branch analysis from position: 29
+2 jumps found. (Code = 43) Position 1 = 50, Position 2 = 61
+Branch analysis from position: 50
+2 jumps found. (Code = 43) Position 1 = 66, Position 2 = 77
+Branch analysis from position: 66
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 77
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 61
+Branch analysis from position: 89
+2 jumps found. (Code = 43) Position 1 = 99, Position 2 = 114
+Branch analysis from position: 99
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 114
+1 jumps found. (Code = 42) Position 1 = 167
+Branch analysis from position: 167
+2 jumps found. (Code = 44) Position 1 = 169, Position 2 = 119
+Branch analysis from position: 169
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 119
+2 jumps found. (Code = 43) Position 1 = 121, Position 2 = 122
+Branch analysis from position: 121
+1 jumps found. (Code = 42) Position 1 = 169
+Branch analysis from position: 169
+Branch analysis from position: 122
+2 jumps found. (Code = 43) Position 1 = 138, Position 2 = 145
+Branch analysis from position: 138
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 145
+2 jumps found. (Code = 43) Position 1 = 160, Position 2 = 163
+Branch analysis from position: 160
+1 jumps found. (Code = 42) Position 1 = 165
+Branch analysis from position: 165
+2 jumps found. (Code = 44) Position 1 = 169, Position 2 = 119
+Branch analysis from position: 169
+Branch analysis from position: 119
+Branch analysis from position: 163
+2 jumps found. (Code = 44) Position 1 = 169, Position 2 = 119
+Branch analysis from position: 169
+Branch analysis from position: 119
+Branch analysis from position: 19
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  pop_list
+number of ops:  171
+compiled vars:  !0 = $msgNum, !1 = $fp, !2 = $Total, !3 = $cmd, !4 = $reply, !5 = $junk, !6 = $num, !7 = $size, !8 = $MsgArray, !9 = $msgC, !10 = $line, !11 = $thisMsg, !12 = $msgSize
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 273     0  E >   RECV_INIT                                        !0      ''
+ 278     1        ISSET_ISEMPTY_PROP_OBJ                           ~13     'FP'
+         2        BOOL_XOR                                         ~14     ~13
+         3      > JMPZ                                                     ~14, ->11
+ 280     4    >   INIT_FCALL                                               '_'
+         5        SEND_VAL                                                 'No+connection+to+server'
+         6        DO_ICALL                                         $16     
+         7        CONCAT                                           ~17     'POP3+pop_list%3A+', $16
+         8        ASSIGN_OBJ                                               'ERROR'
+         9        OP_DATA                                                  ~17
+ 281    10      > RETURN                                                   <false>
+ 283    11    >   FETCH_OBJ_R                                      ~18     'FP'
+        12        ASSIGN                                                   !1, ~18
+ 284    13        FETCH_OBJ_R                                      ~20     'COUNT'
+        14        ASSIGN                                                   !2, ~20
+ 285    15        BOOL_XOR                                         ~22     !2
+        16      > JMPNZ_EX                                         ~22     ~22, ->19
+        17    >   IS_NOT_EQUAL                                     ~23     !2, -1
+        18        BOOL                                             ~22     ~23
+        19    > > JMPZ                                                     ~22, ->21
+ 287    20    > > RETURN                                                   <false>
+ 289    21    >   IS_NOT_EQUAL                                     ~24     !2, 0
+        22      > JMPZ                                                     ~24, ->24
+ 291    23    > > RETURN                                                   <array>
+ 295    24    >   INIT_METHOD_CALL                                         'update_timer'
+        25        DO_FCALL                                      0          
+ 297    26        ISSET_ISEMPTY_CV                                 ~26     !0
+        27        BOOL_XOR                                         ~27     ~26
+        28      > JMPZ                                                     ~27, ->89
+ 299    29    >   NOP                                                      
+        30        FAST_CONCAT                                      ~28     'LIST+', !0
+        31        ASSIGN                                                   !3, ~28
+ 300    32        INIT_FCALL                                               'fwrite'
+        33        SEND_VAR                                                 !1
+        34        NOP                                                      
+        35        FAST_CONCAT                                      ~30     !3, '%0D%0A'
+        36        SEND_VAL                                                 ~30
+        37        DO_ICALL                                                 
+ 301    38        INIT_FCALL                                               'fgets'
+        39        SEND_VAR                                                 !1
+        40        FETCH_OBJ_R                                      ~32     'BUFFER'
+        41        SEND_VAL                                                 ~32
+        42        DO_ICALL                                         $33     
+        43        ASSIGN                                                   !4, $33
+ 302    44        INIT_METHOD_CALL                                         'strip_clf'
+        45        SEND_VAR_EX                                              !4
+        46        DO_FCALL                                      0  $35     
+        47        ASSIGN                                                   !4, $35
+ 303    48        FETCH_OBJ_R                                      ~37     'DEBUG'
+        49      > JMPZ                                                     ~37, ->61
+ 304    50    >   BEGIN_SILENCE                                    ~38     
+        51        INIT_FCALL                                               'error_log'
+        52        ROPE_INIT                                     5  ~40     'POP3+SEND+%5B'
+        53        ROPE_ADD                                      1  ~40     ~40, !3
+        54        ROPE_ADD                                      2  ~40     ~40, '%5D+GOT+%5B'
+        55        ROPE_ADD                                      3  ~40     ~40, !4
+        56        ROPE_END                                      4  ~39     ~40, '%5D'
+        57        SEND_VAL                                                 ~39
+        58        SEND_VAL                                                 0
+        59        DO_ICALL                                                 
+        60        END_SILENCE                                              ~38
+ 306    61    >   INIT_METHOD_CALL                                         'is_ok'
+        62        SEND_VAR_EX                                              !4
+        63        DO_FCALL                                      0  $44     
+        64        BOOL_XOR                                         ~45     $44
+        65      > JMPZ                                                     ~45, ->77
+ 308    66    >   INIT_FCALL                                               '_'
+        67        SEND_VAL                                                 'Error+'
+        68        DO_ICALL                                         $47     
+        69        CONCAT                                           ~48     'POP3+pop_list%3A+', $47
+        70        ROPE_INIT                                     3  ~50     '%5B'
+        71        ROPE_ADD                                      1  ~50     ~50, !4
+        72        ROPE_END                                      2  ~49     ~50, '%5D'
+        73        CONCAT                                           ~52     ~48, ~49
+        74        ASSIGN_OBJ                                               'ERROR'
+        75        OP_DATA                                                  ~52
+ 309    76      > RETURN                                                   <false>
+ 311    77    >   INIT_FCALL                                               'preg_split'
+        78        SEND_VAL                                                 '%2F%5Cs%2B%2F'
+        79        SEND_VAR                                                 !4
+        80        DO_ICALL                                         $53     
+        81        FETCH_LIST_R                                     $54     $53, 0
+        82        ASSIGN                                                   !5, $54
+        83        FETCH_LIST_R                                     $56     $53, 1
+        84        ASSIGN                                                   !6, $56
+        85        FETCH_LIST_R                                     $58     $53, 2
+        86        ASSIGN                                                   !7, $58
+        87        FREE                                                     $53
+ 312    88      > RETURN                                                   !7
+ 314    89    >   ASSIGN                                                   !3, 'LIST'
+ 315    90        INIT_METHOD_CALL                                         'send_cmd'
+        91        SEND_VAR_EX                                              !3
+        92        DO_FCALL                                      0  $61     
+        93        ASSIGN                                                   !4, $61
+ 316    94        INIT_METHOD_CALL                                         'is_ok'
+        95        SEND_VAR_EX                                              !4
+        96        DO_FCALL                                      0  $63     
+        97        BOOL_XOR                                         ~64     $63
+        98      > JMPZ                                                     ~64, ->114
+ 318    99    >   INIT_METHOD_CALL                                         'strip_clf'
+       100        SEND_VAR_EX                                              !4
+       101        DO_FCALL                                      0  $65     
+       102        ASSIGN                                                   !4, $65
+ 319   103        INIT_FCALL                                               '_'
+       104        SEND_VAL                                                 'Error+'
+       105        DO_ICALL                                         $68     
+       106        CONCAT                                           ~69     'POP3+pop_list%3A+', $68
+       107        ROPE_INIT                                     3  ~71     '%5B'
+       108        ROPE_ADD                                      1  ~71     ~71, !4
+       109        ROPE_END                                      2  ~70     ~71, '%5D'
+       110        CONCAT                                           ~73     ~69, ~70
+       111        ASSIGN_OBJ                                               'ERROR'
+       112        OP_DATA                                                  ~73
+ 320   113      > RETURN                                                   <false>
+ 322   114    >   ASSIGN                                                   !8, <array>
+ 323   115        ASSIGN_DIM                                               !8, 0
+       116        OP_DATA                                                  !2
+ 324   117        ASSIGN                                                   !9, 1
+       118      > JMP                                                      ->167
+ 326   119    >   IS_SMALLER_OR_EQUAL                              ~77     !2, !9
+       120      > JMPZ                                                     ~77, ->122
+       121    > > JMP                                                      ->169
+ 327   122    >   INIT_FCALL                                               'fgets'
+       123        SEND_VAR                                                 !1
+       124        FETCH_OBJ_R                                      ~78     'BUFFER'
+       125        SEND_VAL                                                 ~78
+       126        DO_ICALL                                         $79     
+       127        ASSIGN                                                   !10, $79
+ 328   128        INIT_METHOD_CALL                                         'strip_clf'
+       129        SEND_VAR_EX                                              !10
+       130        DO_FCALL                                      0  $81     
+       131        ASSIGN                                                   !10, $81
+ 329   132        INIT_FCALL                                               'strpos'
+       133        SEND_VAR                                                 !10
+       134        SEND_VAL                                                 '.'
+       135        DO_ICALL                                         $83     
+       136        IS_NOT_IDENTICAL                                 ~84     $83, 0
+       137      > JMPZ                                                     ~84, ->145
+ 331   138    >   INIT_FCALL                                               '_'
+       139        SEND_VAL                                                 'Premature+end+of+list'
+       140        DO_ICALL                                         $86     
+       141        CONCAT                                           ~87     'POP3+pop_list%3A+', $86
+       142        ASSIGN_OBJ                                               'ERROR'
+       143        OP_DATA                                                  ~87
+ 332   144      > RETURN                                                   <false>
+ 334   145    >   INIT_FCALL                                               'preg_split'
+       146        SEND_VAL                                                 '%2F%5Cs%2B%2F'
+       147        SEND_VAR                                                 !10
+       148        DO_ICALL                                         $88     
+       149        FETCH_LIST_R                                     $89     $88, 0
+       150        ASSIGN                                                   !11, $89
+       151        FETCH_LIST_R                                     $91     $88, 1
+       152        ASSIGN                                                   !12, $91
+       153        FREE                                                     $88
+ 335   154        INIT_FCALL                                               'settype'
+       155        SEND_REF                                                 !11
+       156        SEND_VAL                                                 'integer'
+       157        DO_ICALL                                                 
+ 336   158        IS_SMALLER                                       ~94     !11, !9
+       159      > JMPZ                                                     ~94, ->163
+ 338   160    >   ASSIGN_DIM                                               !8, !9
+       161        OP_DATA                                                  'deleted'
+       162      > JMP                                                      ->165
+ 342   163    >   ASSIGN_DIM                                               !8, !9
+       164        OP_DATA                                                  !12
+ 324   165    >   POST_INC                                         ~97     !9
+       166        FREE                                                     ~97
+       167    >   CAST                                          0  ~98     !9, !2
+       168      > JMPNZ                                                    ~98, ->119
+ 345   169    > > RETURN                                                   !8
+ 346   170*     > RETURN                                                   null
+
+branch: # 90; line:   262-  262; sop:    90; eop:    95; out0:  96; out1:  78
+branch: # 96; line:   270-  271; sop:    96; eop:    97
+path #1: 0, 5, 
+path #2: 0, 12, 43, 54, 59, 
+path #3: 0, 12, 43, 54, 70, 90, 96, 
+path #4: 0, 12, 43, 54, 70, 90, 78, 89, 96, 
+path #5: 0, 12, 43, 54, 70, 90, 78, 90, 96, 
+path #6: 0, 12, 54, 59, 
+path #7: 0, 12, 54, 70, 90, 96, 
+path #8: 0, 12, 54, 70, 90, 78, 89, 96, 
+path #9: 0, 12, 54, 70, 90, 78, 90, 96, 
+branch: #  0; line:   273-  278; sop:     0; eop:     3; out0:   4; out1:  11
+branch: #  4; line:   280-  281; sop:     4; eop:    10; out0:  -2
+branch: # 11; line:   283-  285; sop:    11; eop:    16; out0:  17; out1:  19
+branch: # 17; line:   285-  285; sop:    17; eop:    18; out0:  19
+branch: # 19; line:   285-  285; sop:    19; eop:    19; out0:  20; out1:  21
+branch: # 20; line:   287-  287; sop:    20; eop:    20; out0:  -2
+branch: # 21; line:   289-  289; sop:    21; eop:    22; out0:  23; out1:  24
+branch: # 23; line:   291-  291; sop:    23; eop:    23; out0:  -2
+branch: # 24; line:   295-  297; sop:    24; eop:    28; out0:  29; out1:  89
+branch: # 29; line:   299-  303; sop:    29; eop:    49; out0:  50; out1:  61
+branch: # 50; line:   304-  306; sop:    50; eop:    60; out0:  61
+branch: # 61; line:   306-  306; sop:    61; eop:    65; out0:  66; out1:  77
+branch: # 66; line:   308-  309; sop:    66; eop:    76; out0:  -2
+branch: # 77; line:   311-  312; sop:    77; eop:    88; out0:  -2
+branch: # 89; line:   314-  316; sop:    89; eop:    98; out0:  99; out1: 114
+branch: # 99; line:   318-  320; sop:    99; eop:   113; out0:  -2
+branch: #114; line:   322-  324; sop:   114; eop:   118; out0: 167
+branch: #119; line:   326-  326; sop:   119; eop:   120; out0: 121; out1: 122
+branch: #121; line:   326-  326; sop:   121; eop:   121; out0: 169
+branch: #122; line:   327-  329; sop:   122; eop:   137; out0: 138; out1: 145
+branch: #138; line:   331-  332; sop:   138; eop:   144; out0:  -2
+branch: #145; line:   334-  336; sop:   145; eop:   159; out0: 160; out1: 163
+branch: #160; line:   338-  338; sop:   160; eop:   162; out0: 165
+branch: #163; line:   342-  324; sop:   163; eop:   164; out0: 165
+branch: #165; line:   324-  324; sop:   165; eop:   166; out0: 167
+branch: #167; line:   324-  324; sop:   167; eop:   168; out0: 169; out1: 119; out2: 169; out3: 119; out4: 169; out5: 119
+branch: #169; line:   345-  346; sop:   169; eop:   170
+path #1: 0, 4, 
+path #2: 0, 11, 17, 19, 20, 
+path #3: 0, 11, 17, 19, 21, 23, 
+path #4: 0, 11, 17, 19, 21, 24, 29, 50, 61, 66, 
+path #5: 0, 11, 17, 19, 21, 24, 29, 50, 61, 77, 
+path #6: 0, 11, 17, 19, 21, 24, 29, 61, 66, 
+path #7: 0, 11, 17, 19, 21, 24, 29, 61, 77, 
+path #8: 0, 11, 17, 19, 21, 24, 89, 99, 
+path #9: 0, 11, 17, 19, 21, 24, 89, 114, 167, 169, 
+path #10: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 121, 169, 
+path #11: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 138, 
+path #12: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #13: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #14: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #15: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #16: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #17: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #18: 0, 11, 17, 19, 21, 24, 89, 114, 167, 169, 
+path #19: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 121, 169, 
+path #20: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 138, 
+path #21: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #22: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #23: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #24: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #25: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #26: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #27: 0, 11,End of function pop_list
+
+Function get:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 11
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+2 jumps found. (Code = 43) Position 1 = 29, Position 2 = 40
+Branch analysis from position: 29
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 40
+1 jumps found. (Code = 42) Position 1 = 68
+Branch analysis from position: 68
+2 jumps found. (Code = 44) Position 1 = 74, Position 2 = 48
+Branch analysis from position: 74
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 48
+2 jumps found. (Code = 43) Position 1 = 51, Position 2 = 56
+Branch analysis from position: 51
+2 jumps found. (Code = 43) Position 1 = 67, Position 2 = 68
+Branch analysis from position: 67
+1 jumps found. (Code = 42) Position 1 = 74
+Branch analysis from position: 74
+Branch analysis from position: 68
+Branch analysis from position: 56
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  get
+number of ops:  76
+compiled vars:  !0 = $msgNum, !1 = $fp, !2 = $buffer, !3 = $cmd, !4 = $reply, !5 = $count, !6 = $MsgArray, !7 = $line
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 348     0  E >   RECV                                             !0      
+ 352     1        ISSET_ISEMPTY_PROP_OBJ                           ~8      'FP'
+         2        BOOL_XOR                                         ~9      ~8
+         3      > JMPZ                                                     ~9, ->11
+ 354     4    >   INIT_FCALL                                               '_'
+         5        SEND_VAL                                                 'No+connection+to+server'
+         6        DO_ICALL                                         $11     
+         7        CONCAT                                           ~12     'POP3+get%3A+', $11
+         8        ASSIGN_OBJ                                               'ERROR'
+         9        OP_DATA                                                  ~12
+ 355    10      > RETURN                                                   <false>
+ 358    11    >   INIT_METHOD_CALL                                         'update_timer'
+        12        DO_FCALL                                      0          
+ 360    13        FETCH_OBJ_R                                      ~14     'FP'
+        14        ASSIGN                                                   !1, ~14
+ 361    15        FETCH_OBJ_R                                      ~16     'BUFFER'
+        16        ASSIGN                                                   !2, ~16
+ 362    17        NOP                                                      
+        18        FAST_CONCAT                                      ~18     'RETR+', !0
+        19        ASSIGN                                                   !3, ~18
+ 363    20        INIT_METHOD_CALL                                         'send_cmd'
+        21        SEND_VAR_EX                                              !3
+        22        DO_FCALL                                      0  $20     
+        23        ASSIGN                                                   !4, $20
+ 365    24        INIT_METHOD_CALL                                         'is_ok'
+        25        SEND_VAR_EX                                              !4
+        26        DO_FCALL                                      0  $22     
+        27        BOOL_XOR                                         ~23     $22
+        28      > JMPZ                                                     ~23, ->40
+ 367    29    >   INIT_FCALL                                               '_'
+        30        SEND_VAL                                                 'Error+'
+        31        DO_ICALL                                         $25     
+        32        CONCAT                                           ~26     'POP3+get%3A+', $25
+        33        ROPE_INIT                                     3  ~28     '%5B'
+        34        ROPE_ADD                                      1  ~28     ~28, !4
+        35        ROPE_END                                      2  ~27     ~28, '%5D'
+        36        CONCAT                                           ~30     ~26, ~27
+        37        ASSIGN_OBJ                                               'ERROR'
+        38        OP_DATA                                                  ~30
+ 368    39      > RETURN                                                   <false>
+ 371    40    >   ASSIGN                                                   !5, 0
+ 372    41        ASSIGN                                                   !6, <array>
+ 374    42        INIT_FCALL                                               'fgets'
+        43        SEND_VAR                                                 !1
+        44        SEND_VAR                                                 !2
+        45        DO_ICALL                                         $33     
+        46        ASSIGN                                                   !7, $33
+ 375    47      > JMP                                                      ->68
+ 377    48    >   FETCH_DIM_R                                      ~35     !7, 0
+        49        IS_NOT_EQUAL                                     ~36     ~35, '.'
+        50      > JMPZ                                                     ~36, ->56
+        51    >   INIT_FCALL                                               'substr'
+        52        SEND_VAR                                                 !7
+        53        SEND_VAL                                                 1
+        54        DO_ICALL                                         $37     
+        55        ASSIGN                                                   !7, $37
+ 378    56    >   ASSIGN_DIM                                               !6, !5
+        57        OP_DATA                                                  !7
+ 379    58        POST_INC                                         ~40     !5
+        59        FREE                                                     ~40
+ 380    60        INIT_FCALL                                               'fgets'
+        61        SEND_VAR                                                 !1
+        62        SEND_VAR                                                 !2
+        63        DO_ICALL                                         $41     
+        64        ASSIGN                                                   !7, $41
+ 381    65        ISSET_ISEMPTY_CV                                 ~43     !7
+        66      > JMPZ                                                     ~43, ->68
+        67    > > JMP                                                      ->74
+ 375    68    >   INIT_FCALL                                               'preg_match'
+        69        SEND_VAL                                                 '%2F%5E%5C.%5Cr%5Cn%2F'
+        70        SEND_VAR                                                 !7
+        71        DO_ICALL                                         $44     
+        72        BOOL_XOR                                         ~45     $44
+        73      > JMPNZ                                                    ~45, ->48
+ 383    74    > > RETURN                                                   !6
+ 384    75*     > RETURN                                                   null
+
+End of function get
+
+Function last:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 5, Position 2 = 12
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 12
+2 jumps found. (Code = 43) Position 1 = 21, Position 2 = 32
+Branch analysis from position: 21
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 32
+2 jumps found. (Code = 43) Position 1 = 51, Position 2 = 54
+Branch analysis from position: 51
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 54
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  last
+number of ops:  56
+compiled vars:  !0 = $type, !1 = $last, !2 = $reply, !3 = $Vars, !4 = $count, !5 = $size
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 386     0  E >   RECV_INIT                                        !0      'count'
+ 391     1        ASSIGN                                                   !1, -1
+ 392     2        ISSET_ISEMPTY_PROP_OBJ                           ~7      'FP'
+         3        BOOL_XOR                                         ~8      ~7
+         4      > JMPZ                                                     ~8, ->12
+ 394     5    >   INIT_FCALL                                               '_'
+         6        SEND_VAL                                                 'No+connection+to+server'
+         7        DO_ICALL                                         $10     
+         8        CONCAT                                           ~11     'POP3+last%3A+', $10
+         9        ASSIGN_OBJ                                               'ERROR'
+        10        OP_DATA                                                  ~11
+ 395    11      > RETURN                                                   !1
+ 398    12    >   INIT_METHOD_CALL                                         'send_cmd'
+        13        SEND_VAL_EX                                              'STAT'
+        14        DO_FCALL                                      0  $12     
+        15        ASSIGN                                                   !2, $12
+ 399    16        INIT_METHOD_CALL                                         'is_ok'
+        17        SEND_VAR_EX                                              !2
+        18        DO_FCALL                                      0  $14     
+        19        BOOL_XOR                                         ~15     $14
+        20      > JMPZ                                                     ~15, ->32
+ 401    21    >   INIT_FCALL                                               '_'
+        22        SEND_VAL                                                 'Error+'
+        23        DO_ICALL                                         $17     
+        24        CONCAT                                           ~18     'POP3+last%3A+', $17
+        25        ROPE_INIT                                     3  ~20     '%5B'
+        26        ROPE_ADD                                      1  ~20     ~20, !2
+        27        ROPE_END                                      2  ~19     ~20, '%5D'
+        28        CONCAT                                           ~22     ~18, ~19
+        29        ASSIGN_OBJ                                               'ERROR'
+        30        OP_DATA                                                  ~22
+ 402    31      > RETURN                                                   !1
+ 405    32    >   INIT_FCALL                                               'preg_split'
+        33        SEND_VAL                                                 '%2F%5Cs%2B%2F'
+        34        SEND_VAR                                                 !2
+        35        DO_ICALL                                         $23     
+        36        ASSIGN                                                   !3, $23
+ 406    37        FETCH_DIM_R                                      ~25     !3, 1
+        38        ASSIGN                                                   !4, ~25
+ 407    39        FETCH_DIM_R                                      ~27     !3, 2
+        40        ASSIGN                                                   !5, ~27
+ 408    41        INIT_FCALL                                               'settype'
+        42        SEND_REF                                                 !4
+        43        SEND_VAL                                                 'integer'
+        44        DO_ICALL                                                 
+ 409    45        INIT_FCALL                                               'settype'
+        46        SEND_REF                                                 !5
+        47        SEND_VAL                                                 'integer'
+        48        DO_ICALL                                                 
+ 410    49        IS_SMALLER                                       ~31     !0, 'count'
+        50      > JMPZ                                                     ~31, ->54
+ 412    51    >   INIT_ARRAY                                       ~32     !4
+        52        ADD_ARRAY_ELEMENT                                ~32     !5
+        53      > RETURN                                                   ~32
+ 414    54    > > RETURN                                                   !4
+ 415    55*     > RETURN                                                   null
+
+ 17, 19, 21, 24, 89, 114, 167, 169, 
+path #28: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 121, 169, 
+path #29: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 138, 
+path #30: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #31: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #32: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #33: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #34: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #35: 0, 11, 17, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #36: 0, 11, 19, 20, 
+path #37: 0, 11, 19, 21, 23, 
+path #38: 0, 11, 19, 21, 24, 29, 50, 61, 66, 
+path #39: 0, 11, 19, 21, 24, 29, 50, 61, 77, 
+path #40: 0, 11, 19, 21, 24, 29, 61, 66, 
+path #41: 0, 11, 19, 21, 24, 29, 61, 77, 
+path #42: 0, 11, 19, 21, 24, 89, 99, 
+path #43: 0, 11, 19, 21, 24, 89, 114, 167, 169, 
+path #44: 0, 11, 19, 21, 24, 89, 114, 167, 119, 121, 169, 
+path #45: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 138, 
+path #46: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #47: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #48: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #49: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #50: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #51: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #52: 0, 11, 19, 21, 24, 89, 114, 167, 169, 
+path #53: 0, 11, 19, 21, 24, 89, 114, 167, 119, 121, 169, 
+path #54: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 138, 
+path #55: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #56: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #57: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #58: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #59: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #60: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #61: 0, 11, 19, 21, 24, 89, 114, 167, 169, 
+path #62: 0, 11, 19, 21, 24, 89, 114, 167, 119, 121, 169, 
+path #63: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 138, 
+path #64: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #65: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #66: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 160, 165, 167, 169, 
+path #67: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #68: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+path #69: 0, 11, 19, 21, 24, 89, 114, 167, 119, 122, 145, 163, 165, 167, 169, 
+branch: #  0; line:   348-  352; sop:     0; eop:     3; out0:   4; out1:  11
+branch: #  4; line:   354-  355; sop:     4; eop:    10; out0:  -2
+branch: # 11; line:   358-  365; sop:    11; eop:    28; out0:  29; out1:  40
+branch: # 29; line:   367-  368; sop:    29; eop:    39; out0:  -2
+branch: # 40; line:   371-  375; sop:    40; eop:    47; out0:  68
+branch: # 48; line:   377-  377; sop:    48; eop:    50; out0:  51; out1:  56
+branch: # 51; line:   377-  378; sop:    51; eop:    55; out0:  56
+branch: # 56; line:   378-  381; sop:    56; eop:    66; out0:  67; out1:  68
+branch: # 67; line:   381-  381; sop:    67; eop:    67; out0:  74
+branch: # 68; line:   375-  375; sop:    68; eop:    73; out0:  74; out1:  48
+branch: # 74; line:   383-  384; sop:    74; eop:    75
+path #1: 0, 4, 
+path #2: 0, 11, 29, 
+path #3: 0, 11, 40, 68, 74, 
+path #4: 0, 11, 40, 68, 48, 51, 56, 67, 74, 
+path #5: 0, 11, 40, 68, 48, 51, 56, 68, 74, 
+path #6: 0, 11, 40, 68, 48, 56, 67, 74, 
+path #7: 0, 11, 40, 68, 48, 56, 68, 74, 
+branch: #  0; line:   386-  392; sop:     0; eop:     4; out0:   5; out1:  12
+branch: #  5; line:   394-  395; sop:     5; eop:    11; out0:  -2
+branch: # 12; line:   398-  399; sop:    12; eop:    20; out0:  21; out1:  32
+End of function last
+
+Function reset:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 10
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 10
+2 jumps found. (Code = 43) Position 1 = 19, Position 2 = 38
+Branch analysis from position: 19
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 38
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  reset
+number of ops:  42
+compiled vars:  !0 = $reply
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 422     0  E >   ISSET_ISEMPTY_PROP_OBJ                           ~1      'FP'
+         1        BOOL_XOR                                         ~2      ~1
+         2      > JMPZ                                                     ~2, ->10
+ 424     3    >   INIT_FCALL                                               '_'
+         4        SEND_VAL                                                 'No+connection+to+server'
+         5        DO_ICALL                                         $4      
+         6        CONCAT                                           ~5      'POP3+reset%3A+', $4
+         7        ASSIGN_OBJ                                               'ERROR'
+         8        OP_DATA                                                  ~5
+ 425     9      > RETURN                                                   <false>
+ 427    10    >   INIT_METHOD_CALL                                         'send_cmd'
+        11        SEND_VAL_EX                                              'RSET'
+        12        DO_FCALL                                      0  $6      
+        13        ASSIGN                                                   !0, $6
+ 428    14        INIT_METHOD_CALL                                         'is_ok'
+        15        SEND_VAR_EX                                              !0
+        16        DO_FCALL                                      0  $8      
+        17        BOOL_XOR                                         ~9      $8
+        18      > JMPZ                                                     ~9, ->38
+ 434    19    >   INIT_FCALL                                               '_'
+        20        SEND_VAL                                                 'Error+'
+        21        DO_ICALL                                         $11     
+        22        CONCAT                                           ~12     'POP3+reset%3A+', $11
+        23        ROPE_INIT                                     3  ~14     '%5B'
+        24        ROPE_ADD                                      1  ~14     ~14, !0
+        25        ROPE_END                                      2  ~13     ~14, '%5D'
+        26        CONCAT                                           ~16     ~12, ~13
+        27        ASSIGN_OBJ                                               'ERROR'
+        28        OP_DATA                                                  ~16
+ 435    29        BEGIN_SILENCE                                    ~17     
+        30        INIT_FCALL                                               'error_log'
+        31        ROPE_INIT                                     3  ~19     'POP3+reset%3A+ERROR+%5B'
+        32        ROPE_ADD                                      1  ~19     ~19, !0
+        33        ROPE_END                                      2  ~18     ~19, '%5D'
+        34        SEND_VAL                                                 ~18
+        35        SEND_VAL                                                 0
+        36        DO_ICALL                                                 
+        37        END_SILENCE                                              ~17
+ 437    38    >   INIT_METHOD_CALL                                         'quit'
+        39        DO_FCALL                                      0          
+ 438    40      > RETURN                                                   <true>
+ 439    41*     > RETURN                                                   null
+
+End of function reset
+
+Function send_cmd:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 11
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+2 jumps found. (Code = 43) Position 1 = 13, Position 2 = 20
+Branch analysis from position: 13
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 20
+2 jumps found. (Code = 43) Position 1 = 43, Position 2 = 54
+Branch analysis from position: 43
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 54
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  send_cmd
+number of ops:  56
+compiled vars:  !0 = $cmd, !1 = $fp, !2 = $buffer, !3 = $reply
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 441     0  E >   RECV_INIT                                        !0      ''
+ 456     1        ISSET_ISEMPTY_PROP_OBJ                           ~4      'FP'
+         2        BOOL_XOR                                         ~5      ~4
+         3      > JMPZ                                                     ~5, ->11
+ 458     4    >   INIT_FCALL                                               '_'
+         5        SEND_VAL                                                 'No+connection+to+server'
+         6        DO_ICALL                                         $7      
+         7        CONCAT                                           ~8      'POP3+send_cmd%3A+', $7
+         8        ASSIGN_OBJ                                               'ERROR'
+         9        OP_DATA                                                  ~8
+ 459    10      > RETURN                                                   <false>
+ 462    11    >   ISSET_ISEMPTY_CV                                 ~9      !0
+        12      > JMPZ                                                     ~9, ->20
+ 464    13    >   INIT_FCALL                                               '_'
+        14        SEND_VAL                                                 'Empty+command+string'
+        15        DO_ICALL                                         $11     
+        16        CONCAT                                           ~12     'POP3+send_cmd%3A+', $11
+        17        ASSIGN_OBJ                                               'ERROR'
+        18        OP_DATA                                                  ~12
+ 465    19      > RETURN                                                   ''
+ 468    20    >   FETCH_OBJ_R                                      ~13     'FP'
+        21        ASSIGN                                                   !1, ~13
+ 469    22        FETCH_OBJ_R                                      ~15     'BUFFER'
+        23        ASSIGN                                                   !2, ~15
+ 470    24        INIT_METHOD_CALL                                         'update_timer'
+        25        DO_FCALL                                      0          
+ 471    26        INIT_FCALL                                               'fwrite'
+        27        SEND_VAR                                                 !1
+        28        NOP                                                      
+        29        FAST_CONCAT                                      ~18     !0, '%0D%0A'
+        30        SEND_VAL                                                 ~18
+        31        DO_ICALL                                                 
+ 472    32        INIT_FCALL                                               'fgets'
+        33        SEND_VAR                                                 !1
+        34        SEND_VAR                                                 !2
+        35        DO_ICALL                                         $20     
+        36        ASSIGN                                                   !3, $20
+ 473    37        INIT_METHOD_CALL                                         'strip_clf'
+        38        SEND_VAR_EX                                              !3
+        39        DO_FCALL                                      0  $22     
+        40        ASSIGN                                                   !3, $22
+ 474    41        FETCH_OBJ_R                                      ~24     'DEBUG'
+        42      > JMPZ                                                     ~24, ->54
+        43    >   BEGIN_SILENCE                                    ~25     
+        44        INIT_FCALL                                               'error_log'
+        45        ROPE_INIT                                     5  ~27     'POP3+SEND+%5B'
+        46        ROPE_ADD                                      1  ~27     ~27, !0
+        47        ROPE_ADD                                      2  ~27     ~27, '%5D+GOT+%5B'
+        48        ROPE_ADD                                      3  ~27     ~27, !3
+        49        ROPE_END                                      4  ~26     ~27, '%5D'
+        50        SEND_VAL                                                 ~26
+        51        SEND_VAL                                                 0
+        52        DO_ICALL                                                 
+        53        END_SILENCE                                              ~25
+ 475    54    > > RETURN                                                   !3
+ 476    55*     > RETURN                                                   null
+
+End of function send_cmd
+
+Function quit:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 10
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 10
+2 jumps found. (Code = 43) Position 1 = 31, Position 2 = 42
+Branch analysis from position: 31
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 42
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  quit
+number of ops:  48
+compiled vars:  !0 = $fp, !1 = $cmd, !2 = $reply
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 482     0  E >   ISSET_ISEMPTY_PROP_OBJ                           ~3      'FP'
+         1        BOOL_XOR                                         ~4      ~3
+         2      > JMPZ                                                     ~4, ->10
+ 484     3    >   INIT_FCALL                                               '_'
+         4        SEND_VAL                                                 'connection+does+not+exist'
+         5        DO_ICALL                                         $6      
+         6        CONCAT                                           ~7      'POP3+quit%3A+', $6
+         7        ASSIGN_OBJ                                               'ERROR'
+         8        OP_DATA                                                  ~7
+ 485     9      > RETURN                                                   <false>
+ 487    10    >   FETCH_OBJ_R                                      ~8      'FP'
+        11        ASSIGN                                                   !0, ~8
+ 488    12        ASSIGN                                                   !1, 'QUIT'
+ 489    13        INIT_FCALL                                               'fwrite'
+        14        SEND_VAR                                                 !0
+        15        NOP                                                      
+        16        FAST_CONCAT                                      ~11     !1, '%0D%0A'
+        17        SEND_VAL                                                 ~11
+        18        DO_ICALL                                                 
+ 490    19        INIT_FCALL                                               'fgets'
+        20        SEND_VAR                                                 !0
+        21        FETCH_OBJ_R                                      ~13     'BUFFER'
+        22        SEND_VAL                                                 ~13
+        23        DO_ICALL                                         $14     
+        24        ASSIGN                                                   !2, $14
+ 491    25        INIT_METHOD_CALL                                         'strip_clf'
+        26        SEND_VAR_EX                                              !2
+        27        DO_FCALL                                      0  $16     
+        28        ASSIGN                                                   !2, $16
+ 492    29        FETCH_OBJ_R                                      ~18     'DEBUG'
+        30      > JMPZ                                                     ~18, ->42
+        31    >   BEGIN_SILENCE                                    ~19     
+        32        INIT_FCALL                                               'error_log'
+        33        ROPE_INIT                                     5  ~21     'POP3+SEND+%5B'
+        34        ROPE_ADD                                      1  ~21     ~21, !1
+        35        ROPE_ADD                                      2  ~21     ~21, '%5D+GOT+%5B'
+        36        ROPE_ADD                                      3  ~21     ~21, !2
+        37        ROPE_END                                      4  ~20     ~21, '%5D'
+        38        SEND_VAL                                                 ~20
+        39        SEND_VAL                                                 0
+        40        DO_ICALL                                                 
+        41        END_SILENCE                                              ~19
+ 493    42    >   INIT_FCALL                                               'fclose'
+        43        SEND_VAR                                                 !0
+        44        DO_ICALL                                                 
+ 494    45        UNSET_OBJ                                                'FP'
+ 495    46      > RETURN                                                   <true>
+ 496    47*     > RETURN                                                   null
+
+End of function quit
+
+Function popstat:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 6, Position 2 = 7
+Branch analysis from position: 6
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+2 jumps found. (Code = 47) Position 1 = 9, Position 2 = 11
+Branch analysis from position: 9
+2 jumps found. (Code = 43) Position 1 = 12, Position 2 = 13
+Branch analysis from position: 12
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 13
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  popstat
+number of ops:  15
+compiled vars:  !0 = $PopArray
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 502     0  E >   INIT_METHOD_CALL                                         'last'
+         1        SEND_VAL_EX                                              'array'
+         2        DO_FCALL                                      0  $1      
+         3        ASSIGN                                                   !0, $1
+ 504     4        IS_NOT_EQUAL                                     ~3      !0, -1
+         5      > JMPZ                                                     ~3, ->7
+         6    > > RETURN                                                   <false>
+ 506     7    >   BOOL_XOR                                         ~4      !0
+         8      > JMPNZ_EX                                         ~4      ~4, ->11
+         9    >   ISSET_ISEMPTY_CV                                 ~5      !0
+        10        BOOL                                             ~4      ~5
+        11    > > JMPZ                                                     ~4, ->13
+ 508    12    > > RETURN                                                   <false>
+ 510    13    > > RETURN                                                   !0
+ 511    14*     > RETURN                                                   null
+
+End of function popstat
+
+Function uidl:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 11
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+2 jumps found. (Code = 43) Position 1 = 18, Position 2 = 54
+Branch analysis from position: 18
+2 jumps found. (Code = 43) Position 1 = 30, Position 2 = 41
+Branch analysis from position: 30
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 41
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 54
+2 jumps found. (Code = 43) Position 1 = 63, Position 2 = 64
+Branch analysis from position: 63
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 64
+2 jumps found. (Code = 43) Position 1 = 80, Position 2 = 91
+Branch analysis from position: 80
+2 jumps found. (Code = 43) Position 1 = 96, Position 2 = 107
+Branch analysis from position: 96
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 107
+1 jumps found. (Code = 42) Position 1 = 142
+Branch analysis from position: 142
+2 jumps found. (Code = 44) Position 1 = 148, Position 2 = 115
+Branch analysis from position: 148
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 115
+2 jumps found. (Code = 43) Position 1 = 130, Position 2 = 133
+Branch analysis from position: 130
+1 jumps found. (Code = 42) Position 1 = 135
+Branch analysis from position: 135
+2 jumps found. (Code = 44) Position 1 = 148, Position 2 = 115
+Branch analysis from position: 148
+Branch analysis from position: 115
+Branch analysis from position: 133
+2 jumps found. (Code = 44) Position 1 = 148, Position 2 = 115
+Branch analysis from position: 148
+Branch analysis from position: 115
+Branch analysis from position: 91
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  uidl
+number of ops:  150
+compiled vars:  !0 = $msgNum, !1 = $fp, !2 = $buffer, !3 = $cmd, !4 = $reply, !5 = $ok, !6 = $num, !7 = $myUidl, !8 = $UIDLArray, !9 = $Total, !10 = $line, !11 = $count, !12 = $msg, !13 = $msgUidl
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 513     0  E >   RECV_INIT                                        !0      ''
+ 520     1        ISSET_ISEMPTY_PROP_OBJ                           ~14     'FP'
+         2        BOOL_XOR                                         ~15     ~14
+         3      > JMPZ                                                     ~15, ->11
+ 521     4    >   INIT_FCALL                                               '_'
+         5        SEND_VAL                                                 'No+connection+to+server'
+         6        DO_ICALL                                         $17     
+         7        CONCAT                                           ~18     'POP3+uidl%3A+', $17
+         8        ASSIGN_OBJ                                               'ERROR'
+         9        OP_DATA                                                  ~18
+ 522    10      > RETURN                                                   <false>
+ 525    11    >   FETCH_OBJ_R                                      ~19     'FP'
+        12        ASSIGN                                                   !1, ~19
+ 526    13        FETCH_OBJ_R                                      ~21     'BUFFER'
+        14        ASSIGN                                                   !2, ~21
+ 528    15        ISSET_ISEMPTY_CV                                 ~23     !0
+        16        BOOL_XOR                                         ~24     ~23
+        17      > JMPZ                                                     ~24, ->54
+ 529    18    >   NOP                                                      
+        19        FAST_CONCAT                                      ~25     'UIDL+', !0
+        20        ASSIGN                                                   !3, ~25
+ 530    21        INIT_METHOD_CALL                                         'send_cmd'
+        22        SEND_VAR_EX                                              !3
+        23        DO_FCALL                                      0  $27     
+        24        ASSIGN                                                   !4, $27
+ 531    25        INIT_METHOD_CALL                                         'is_ok'
+        26        SEND_VAR_EX                                              !4
+        27        DO_FCALL                                      0  $29     
+        28        BOOL_XOR                                         ~30     $29
+        29      > JMPZ                                                     ~30, ->41
+ 533    30    >   INIT_FCALL                                               '_'
+        31        SEND_VAL                                                 'Error+'
+        32        DO_ICALL                                         $32     
+        33        CONCAT                                           ~33     'POP3+uidl%3A+', $32
+        34        ROPE_INIT                                     3  ~35     '%5B'
+        35        ROPE_ADD                                      1  ~35     ~35, !4
+        36        ROPE_END                                      2  ~34     ~35, '%5D'
+        37        CONCAT                                           ~37     ~33, ~34
+        38        ASSIGN_OBJ                                               'ERROR'
+        39        OP_DATA                                                  ~37
+ 534    40      > RETURN                                                   <false>
+ 536    41    >   INIT_FCALL                                               'preg_split'
+        42        SEND_VAL                                                 '%2F%5Cs%2B%2F'
+        43        SEND_VAR                                                 !4
+        44        DO_ICALL                                         $38     
+        45        FETCH_LIST_R                                     $39     $38, 0
+        46        ASSIGN                                                   !5, $39
+        47        FETCH_LIST_R                                     $41     $38, 1
+        48        ASSIGN                                                   !6, $41
+        49        FETCH_LIST_R                                     $43     $38, 2
+        50        ASSIGN                                                   !7, $43
+        51        FREE                                                     $38
+ 537    52      > RETURN                                                   !7
+        53*       JMP                                                      ->148
+ 539    54    >   INIT_METHOD_CALL                                         'update_timer'
+        55        DO_FCALL                                      0          
+ 541    56        ASSIGN                                                   !8, <array>
+ 542    57        FETCH_OBJ_R                                      ~47     'COUNT'
+        58        ASSIGN                                                   !9, ~47
+ 543    59        ASSIGN_DIM                                               !8, 0
+        60        OP_DATA                                                  !9
+ 545    61        IS_SMALLER_OR_EQUAL                              ~50     !9, 1
+        62      > JMPZ                                                     ~50, ->64
+ 547    63    > > RETURN                                                   !8
+ 549    64    >   ASSIGN                                                   !3, 'UIDL'
+ 550    65        INIT_FCALL                                               'fwrite'
+        66        SEND_VAR                                                 !1
+        67        SEND_VAL                                                 'UIDL%0D%0A'
+        68        DO_ICALL                                                 
+ 551    69        INIT_FCALL                                               'fgets'
+        70        SEND_VAR                                                 !1
+        71        SEND_VAR                                                 !2
+        72        DO_ICALL                                         $53     
+        73        ASSIGN                                                   !4, $53
+ 552    74        INIT_METHOD_CALL                                         'strip_clf'
+        75        SEND_VAR_EX                                              !4
+        76        DO_FCALL                                      0  $55     
+        77        ASSIGN                                                   !4, $55
+ 553    78        FETCH_OBJ_R                                      ~57     'DEBUG'
+        79      > JMPZ                                                     ~57, ->91
+        80    >   BEGIN_SILENCE                                    ~58     
+        81        INIT_FCALL                                               'error_log'
+        82        ROPE_INIT                                     5  ~60     'POP3+SEND+%5B'
+        83        ROPE_ADD                                      1  ~60     ~60, !3
+        84        ROPE_ADD                                      2  ~60     ~60, '%5D+GOT+%5B'
+        85        ROPE_ADD                                      3  ~60     ~60, !4
+        86        ROPE_END                                      4  ~59     ~60, '%5D'
+        87        SEND_VAL                                                 ~59
+        88        SEND_VAL                                                 0
+        89        DO_ICALL                                                 
+        90        END_SILENCE                                              ~58
+ 554    91    >   INIT_METHOD_CALL                                         'is_ok'
+        92        SEND_VAR_EX                                              !4
+        93        DO_FCALL                                      0  $64     
+        94        BOOL_XOR                                         ~65     $64
+        95      > JMPZ                                                     ~65, ->107
+ 556    96    >   INIT_FCALL                                               '_'
+        97        SEND_VAL                                                 'Error+'
+        98        DO_ICALL                                         $67     
+        99        CONCAT                                           ~68     'POP3+uidl%3A+', $67
+       100        ROPE_INIT                                     3  ~70     '%5B'
+       101        ROPE_ADD                                      1  ~70     ~70, !4
+       102        ROPE_END                                      2  ~69     ~70, '%5D'
+       103        CONCAT                                           ~72     ~68, ~69
+       104        ASSIGN_OBJ                                               'ERROR'
+       105        OP_DATA                                                  ~72
+ 557   106      > RETURN                                                   <false>
+ 560   107    >   ASSIGN                                                   !10, ''
+ 561   108        ASSIGN                                                   !11, 1
+ 562   109        INIT_FCALL                                               'fgets'
+       110        SEND_VAR                                                 !1
+       111        SEND_VAR                                                 !2
+       112        DO_ICALL                                         $75     
+       113        ASSIGN                                                   !10, $75
+ 563   114      > JMP                                                      ->142
+ 564   115    >   INIT_FCALL                                               'preg_split'
+       116        SEND_VAL                                                 '%2F%5Cs%2B%2F'
+       117        SEND_VAR                                                 !10
+       118        DO_ICALL                                         $77     
+       119        FETCH_LIST_R                                     $78     $77, 0
+       120        ASSIGN                                                   !12, $78
+       121        FETCH_LIST_R                                     $80     $77, 1
+       122        ASSIGN                                                   !13, $80
+       123        FREE                                                     $77
+ 565   124        INIT_METHOD_CALL                                         'strip_clf'
+       125        SEND_VAR_EX                                              !13
+       126        DO_FCALL                                      0  $82     
+       127        ASSIGN                                                   !13, $82
+ 566   128        IS_NOT_EQUAL                                     ~84     !11, !12
+       129      > JMPZ                                                     ~84, ->133
+ 567   130    >   ASSIGN_DIM                                               !8, !12
+       131        OP_DATA                                                  !13
+       132      > JMP                                                      ->135
+ 571   133    >   ASSIGN_DIM                                               !8, !11
+       134        OP_DATA                                                  'deleted'
+ 573   135    >   POST_INC                                         ~87     !11
+       136        FREE                                                     ~87
+ 574   137        INIT_FCALL                                               'fgets'
+       138        SEND_VAR                                                 !1
+       139        SEND_VAR                                                 !2
+       140        DO_ICALL                                         $88     
+       141        ASSIGN                                                   !10, $88
+ 563   142    >   INIT_FCALL                                               'preg_match'
+       143        SEND_VAL                                                 '%2F%5E%5C.%5Cr%5Cn%2F'
+       144        SEND_VAR                                                 !10
+       145        DO_ICALL                                         $90     
+       146        BOOL_XOR                                         ~91     $90
+       147      > JMPNZ                                                    ~91, ->115
+ 577   148    > > RETURN                                                   !8
+ 578   149*     > RETURN                                                   null
+
+branch: # 21; line:   401-  402; sop:    21; eop:    31; out0:  -2
+branch: # 32; line:   405-  410; sop:    32; eop:    50; out0:  51; out1:  54
+branch: # 51; line:   412-  412; sop:    51; eop:    53; out0:  -2
+branch: # 54; line:   414-  415; sop:    54; eop:    55
+path #1: 0, 5, 
+path #2: 0, 12, 21, 
+path #3: 0, 12, 32, 51, 
+path #4: 0, 12, 32, 54, 
+branch: #  0; line:   422-  422; sop:     0; eop:     2; out0:   3; out1:  10
+branch: #  3; line:   424-  425; sop:     3; eop:     9; out0:  -2
+branch: # 10; line:   427-  428; sop:    10; eop:    18; out0:  19; out1:  38
+branch: # 19; line:   434-  437; sop:    19; eop:    37; out0:  38
+branch: # 38; line:   437-  439; sop:    38; eop:    41
+path #1: 0, 3, 
+path #2: 0, 10, 19, 38, 
+path #3: 0, 10, 38, 
+branch: #  0; line:   441-  456; sop:     0; eop:     3; out0:   4; out1:  11
+branch: #  4; line:   458-  459; sop:     4; eop:    10; out0:  -2
+branch: # 11; line:   462-  462; sop:    11; eop:    12; out0:  13; out1:  20
+branch: # 13; line:   464-  465; sop:    13; eop:    19; out0:  -2
+branch: # 20; line:   468-  474; sop:    20; eop:    42; out0:  43; out1:  54
+branch: # 43; line:   474-  475; sop:    43; eop:    53; out0:  54
+branch: # 54; line:   475-  476; sop:    54; eop:    55
+path #1: 0, 4, 
+path #2: 0, 11, 13, 
+path #3: 0, 11, 20, 43, 54, 
+path #4: 0, 11, 20, 54, 
+branch: #  0; line:   482-  482; sop:     0; eop:     2; out0:   3; out1:  10
+branch: #  3; line:   484-  485; sop:     3; eop:     9; out0:  -2
+branch: # 10; line:   487-  492; sop:    10; eop:    30; out0:  31; out1:  42
+branch: # 31; line:   492-  493; sop:    31; eop:    41; out0:  42
+branch: # 42; line:   493-  496; sop:    42; eop:    47
+path #1: 0, 3, 
+path #2: 0, 10, 31, 42, 
+path #3: 0, 10, 42, 
+branch: #  0; line:   502-  504; sop:     0; eop:     5; out0:   6; out1:   7
+branch: #  6; line:   504-  504; sop:     6; eop:     6; out0:  -2
+branch: #  7; line:   506-  506; sop:     7; eop:     8; out0:   9; out1:  11
+branch: #  9; line:   506-  506; sop:     9; eop:    10; out0:  11
+branch: # 11; line:   506-  506; sop:    11; eop:    11; out0:  12; out1:  13
+branch: # 12; line:   508-  508; sop:    12; eop:    12; out0:  -2
+branch: # 13; line:   510-  511; sop:    13; eop:    14
+path #1: 0, 6, 
+path #2: 0, 7, 9, 11, 12, 
+path #3: 0, 7, 9, 11, 13, 
+path #4: 0, 7, 11, 12, 
+path #5: 0, 7, 11, 13, 
+branch: #  0; line:   513-  520; sop:     0; eop:     3; out0:   4; out1:  11
+branch: #  4; line:   521-  522; sop:     4; eop:    10; out0:  -2
+branch: # 11; line:   525-  528; sop:    11; eop:    17; out0:  18; out1:  54
+branch: # 18; line:   529-  531; sop:    18; eop:    29; out0:  30; out1:  41
+branch: # 30; line:   533-  534; sop:    30; eop:    40; out0:  -2
+branch: # 41; line:   536-  537; sop:    41; eop:    52; out0:  -2
+branch: # 54; line:   539-  545; sop:    54; eop:    62; out0:  63; out1:  64
+branch: # 63; line:   547-  547; sop:    63; eop:    63; out0:  -2
+branch: # 64; line:   549-  553; sop:    64; eop:    79; out0:  80; out1:  91
+branch: # 80; line:   553-  554; sop:    80; eop:    90; out0:  91
+branch: # 91; line:   554-  554; sop:    91; eop:    95; out0:  96; out1: 107
+branch: # 96; line:   556-  557; sop:    96; eop:   106; out0:  -2
+branch: #107; line:   560-  563; sop:   107; eop:   114; out0: 142
+branch: #115; line:   564-  566; sop:   115; eop:   129; out0: 130; out1: 133
+branch: #130; line:   567-  567; sop:   130; eop:   132; out0: 135
+branch: #133; line:   571-  573; sop:   133; eop:   134; out0: 135
+branch: #135; line:   573-  563; sop:   135; eop:   141; out0: 142
+branch: #142; line:   563-  563; sop:   142; eop:   147; out0: 148; out1: 115; out2: 148; out3: 115; out4: 148; out5: 115
+branch: #148; line:   577-  578; sop:   148; eop:   149
+path #1: 0, 4, 
+path #2: 0, 11, 18, 30, 
+path #3: 0, 11, 18, 41, 
+path #4: 0, 11, 54, 63, 
+path #5: 0, 11, 54, 64, 80, 91, 96, 
+path #6: 0, 11, 54, 64, 80, 91, 107, 142, 148, 
+path #7: 0, 11, 54, 64, 80, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #8: 0, 11, 54, 64, 80, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #9: 0, 11, 54, 64, 80, End of function uidl
+
+Function delete:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 4, Position 2 = 11
+Branch analysis from position: 4
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 11
+2 jumps found. (Code = 43) Position 1 = 13, Position 2 = 20
+Branch analysis from position: 13
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 20
+2 jumps found. (Code = 43) Position 1 = 31, Position 2 = 42
+Branch analysis from position: 31
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 42
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  delete
+number of ops:  44
+compiled vars:  !0 = $msgNum, !1 = $reply
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 580     0  E >   RECV_INIT                                        !0      ''
+ 584     1        ISSET_ISEMPTY_PROP_OBJ                           ~2      'FP'
+         2        BOOL_XOR                                         ~3      ~2
+         3      > JMPZ                                                     ~3, ->11
+ 586     4    >   INIT_FCALL                                               '_'
+         5        SEND_VAL                                                 'No+connection+to+server'
+         6        DO_ICALL                                         $5      
+         7        CONCAT                                           ~6      'POP3+delete%3A+', $5
+         8        ASSIGN_OBJ                                               'ERROR'
+         9        OP_DATA                                                  ~6
+ 587    10      > RETURN                                                   <false>
+ 589    11    >   ISSET_ISEMPTY_CV                                 ~7      !0
+        12      > JMPZ                                                     ~7, ->20
+ 591    13    >   INIT_FCALL                                               '_'
+        14        SEND_VAL                                                 'No+msg+number+submitted'
+        15        DO_ICALL                                         $9      
+        16        CONCAT                                           ~10     'POP3+delete%3A+', $9
+        17        ASSIGN_OBJ                                               'ERROR'
+        18        OP_DATA                                                  ~10
+ 592    19      > RETURN                                                   <false>
+ 594    20    >   INIT_METHOD_CALL                                         'send_cmd'
+        21        NOP                                                      
+        22        FAST_CONCAT                                      ~11     'DELE+', !0
+        23        SEND_VAL_EX                                              ~11
+        24        DO_FCALL                                      0  $12     
+        25        ASSIGN                                                   !1, $12
+ 595    26        INIT_METHOD_CALL                                         'is_ok'
+        27        SEND_VAR_EX                                              !1
+        28        DO_FCALL                                      0  $14     
+        29        BOOL_XOR                                         ~15     $14
+        30      > JMPZ                                                     ~15, ->42
+ 597    31    >   INIT_FCALL                                               '_'
+        32        SEND_VAL                                                 'Command+failed+'
+        33        DO_ICALL                                         $17     
+        34        CONCAT                                           ~18     'POP3+delete%3A+', $17
+        35        ROPE_INIT                                     3  ~20     '%5B'
+        36        ROPE_ADD                                      1  ~20     ~20, !1
+        37        ROPE_END                                      2  ~19     ~20, '%5D'
+        38        CONCAT                                           ~22     ~18, ~19
+        39        ASSIGN_OBJ                                               'ERROR'
+        40        OP_DATA                                                  ~22
+ 598    41      > RETURN                                                   <false>
+ 600    42    > > RETURN                                                   <true>
+ 601    43*     > RETURN                                                   null
+
+End of function delete
+
+Function is_ok:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 5
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  is_ok
+number of ops:  12
+compiled vars:  !0 = $cmd
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 607     0  E >   RECV_INIT                                        !0      ''
+ 610     1        ISSET_ISEMPTY_CV                                 ~1      !0
+         2      > JMPZ                                                     ~1, ->5
+ 611     3    > > RETURN                                                   <false>
+         4*       JMP                                                      ->11
+ 613     5    >   INIT_FCALL                                               'stripos'
+         6        SEND_VAR                                                 !0
+         7        SEND_VAL                                                 '%2BOK'
+         8        DO_ICALL                                         $2      
+         9        IS_EQUAL                                         ~3      $2, <false>
+        10      > RETURN                                                   ~3
+ 614    11*     > RETURN                                                   null
+
+End of function is_ok
+
+Function strip_clf:
+Finding entry points
+Branch analysis from position: 0
+2 jumps found. (Code = 43) Position 1 = 3, Position 2 = 5
+Branch analysis from position: 3
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 5
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  strip_clf
+number of ops:  13
+compiled vars:  !0 = $text, !1 = $stripped
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 616     0  E >   RECV_INIT                                        !0      ''
+ 619     1        ISSET_ISEMPTY_CV                                 ~2      !0
+         2      > JMPZ                                                     ~2, ->5
+ 620     3    > > RETURN                                                   !0
+         4*       JMP                                                      ->12
+ 622     5    >   INIT_FCALL                                               'str_replace'
+         6        SEND_VAL                                                 <array>
+         7        SEND_VAL                                                 ''
+         8        SEND_VAR                                                 !0
+         9        DO_ICALL                                         $3      
+        10        ASSIGN                                                   !1, $3
+ 623    11      > RETURN                                                   !1
+ 625    12*     > RETURN                                                   null
+
+End of function strip_clf
+
+Function parse_banner:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 42) Position 1 = 33
+Branch analysis from position: 33
+2 jumps found. (Code = 44) Position 1 = 35, Position 2 = 7
+Branch analysis from position: 35
+1 jumps found. (Code = 62) Position 1 = -2
+Branch analysis from position: 7
+2 jumps found. (Code = 43) Position 1 = 16, Position 2 = 31
+Branch analysis from position: 16
+2 jumps found. (Code = 46) Position 1 = 18, Position 2 = 20
+Branch analysis from position: 18
+2 jumps found. (Code = 46) Position 1 = 21, Position 2 = 23
+Branch analysis from position: 21
+2 jumps found. (Code = 43) Position 1 = 24, Position 2 = 25
+Branch analysis from position: 24
+2 jumps found. (Code = 43) Position 1 = 27, Position 2 = 28
+Branch analysis from position: 27
+2 jumps found. (Code = 43) Position 1 = 30, Position 2 = 31
+Branch analysis from position: 30
+2 jumps found. (Code = 44) Position 1 = 35, Position 2 = 7
+Branch analysis from position: 35
+Branch analysis from position: 7
+Branch analysis from position: 31
+Branch analysis from position: 28
+Branch analysis from position: 25
+Branch analysis from position: 23
+Branch analysis from position: 20
+Branch analysis from position: 31
+filename:       /home/sanu/Desktop/Dataset/Normal files/class-pop3.php
+function name:  parse_banner
+number of ops:  44
+compiled vars:  !0 = $server_text, !1 = $outside, !2 = $banner, !3 = $length, !4 = $count, !5 = $digit
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+ 627     0  E >   RECV                                             !0      
+ 628     1        ASSIGN                                                   !1, <true>
+ 629     2        ASSIGN                                                   !2, ''
+ 630     3        STRLEN                                           ~8      !0
+         4        ASSIGN                                                   !3, ~8
+ 631     5        ASSIGN                                                   !4, 0
+         6      > JMP                                                      ->33
+ 633     7    >   INIT_FCALL                                               'substr'
+         8        SEND_VAR                                                 !0
+         9        SEND_VAR                                                 !4
+        10        SEND_VAL                                                 1
+        11        DO_ICALL                                         $11     
+        12        ASSIGN                                                   !5, $11
+ 634    13        ISSET_ISEMPTY_CV                                 ~13     !5
+        14        BOOL_XOR                                         ~14     ~13
+        15      > JMPZ                                                     ~14, ->31
+ 635    16    >   BOOL_XOR                                         ~15     !1
+        17      > JMPZ_EX                                          ~15     ~15, ->20
+        18    >   IS_SMALLER                                       ~16     !5, '%3C'
+        19        BOOL                                             ~15     ~16
+        20    > > JMPZ_EX                                          ~15     ~15, ->23
+        21    >   IS_SMALLER                                       ~17     !5, '%3E'
+        22        BOOL                                             ~15     ~17
+        23    > > JMPZ                                                     ~15, ->25
+ 637    24    >   ASSIGN_OP                                     8          !2, !5
+ 639    25    >   IS_NOT_EQUAL                                     ~19     !5, '%3C'
+        26      > JMPZ                                                     ~19, ->28
+ 641    27    >   ASSIGN                                                   !1, <false>
+ 643    28    >   IS_NOT_EQUAL                                     ~21     !5, '%3E'
+        29      > JMPZ                                                     ~21, ->31
+ 645    30    >   ASSIGN                                                   !1, <true>
+ 631    31    >   POST_INC                                         ~23     !4
+        32        FREE                                                     ~23
+        33    >   IS_SMALLER_OR_EQUAL                              ~24     !4, !3
+        34      > JMPNZ                                                    ~24, ->7
+ 649    35    >   INIT_METHOD_CALL                                         'strip_clf'
+        36        SEND_VAR_EX                                              !2
+        37        DO_FCALL                                      0  $25     
+        38        ASSIGN                                                   !2, $25
+ 650    39        ROPE_INIT                                     3  ~28     '%3C'
+        40        ROPE_ADD                                      1  ~28     ~28, !2
+        41        ROPE_END                                      2  ~27     ~28, '%3E'
+        42      > RETURN                                                   ~27
+ 651    43*     > RETURN                                                   null
+
+91, 107, 142, 115, 130, 135, 142, 148, 
+path #10: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #11: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #12: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #13: 0, 11, 54, 64, 80, 91, 107, 142, 148, 
+path #14: 0, 11, 54, 64, 80, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #15: 0, 11, 54, 64, 80, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #16: 0, 11, 54, 64, 80, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #17: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #18: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #19: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #20: 0, 11, 54, 64, 80, 91, 107, 142, 148, 
+path #21: 0, 11, 54, 64, 80, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #22: 0, 11, 54, 64, 80, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #23: 0, 11, 54, 64, 80, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #24: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #25: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #26: 0, 11, 54, 64, 80, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #27: 0, 11, 54, 64, 91, 96, 
+path #28: 0, 11, 54, 64, 91, 107, 142, 148, 
+path #29: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #30: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #31: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #32: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #33: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #34: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #35: 0, 11, 54, 64, 91, 107, 142, 148, 
+path #36: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #37: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #38: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #39: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #40: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #41: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #42: 0, 11, 54, 64, 91, 107, 142, 148, 
+path #43: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #44: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #45: 0, 11, 54, 64, 91, 107, 142, 115, 130, 135, 142, 148, 
+path #46: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #47: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+path #48: 0, 11, 54, 64, 91, 107, 142, 115, 133, 135, 142, 148, 
+branch: #  0; line:   580-  584; sop:     0; eop:     3; out0:   4; out1:  11
+branch: #  4; line:   586-  587; sop:     4; eop:    10; out0:  -2
+branch: # 11; line:   589-  589; sop:    11; eop:    12; out0:  13; out1:  20
+branch: # 13; line:   591-  592; sop:    13; eop:    19; out0:  -2
+branch: # 20; line:   594-  595; sop:    20; eop:    30; out0:  31; out1:  42
+branch: # 31; line:   597-  598; sop:    31; eop:    41; out0:  -2
+branch: # 42; line:   600-  601; sop:    42; eop:    43
+path #1: 0, 4, 
+path #2: 0, 11, 13, 
+path #3: 0, 11, 20, 31, 
+path #4: 0, 11, 20, 42, 
+branch: #  0; line:   607-  610; sop:     0; eop:     2; out0:   3; out1:   5
+branch: #  3; line:   611-  611; sop:     3; eop:     3; out0:  -2
+branch: #  5; line:   613-  614; sop:     5; eop:    11
+path #1: 0, 3, 
+path #2: 0, 5, 
+branch: #  0; line:   616-  619; sop:     0; eop:     2; out0:   3; out1:   5
+branch: #  3; line:   620-  620; sop:     3; eop:     3; out0:  -2
+branch: #  5; line:   622-  625; sop:     5; eop:    12
+path #1: 0, 3, 
+path #2: 0, 5, 
+branch: #  0; line:   627-  631; sop:     0; eop:     6; out0:  33
+branch: #  7; line:   633-  634; sop:     7; eop:    15; out0:  16; out1:  31
+branch: # 16; line:   635-  635; sop:    16; eop:    17; out0:  18; out1:  20
+branch: # 18; line:   635-  635; sop:    18; eop:    19; out0:  20
+branch: # 20; line:   635-  635; sop:    20; eop:    20; out0:  21; out1:  23
+branch: # 21; line:   635-  635; sop:    21; eop:    22; out0:  23
+branch: # 23; line:   635-  635; sop:    23; eop:    23; out0:  24; out1:  25
+branch: # 24; line:   637-  639; sop:    24; eop:    24; out0:  25
+branch: # 25; line:   639-  639; sop:    25; eop:    26; out0:  27; out1:  28
+branch: # 27; line:   641-  643; sop:    27; eop:    27; out0:  28
+branch: # 28; line:   643-  643; sop:    28; eop:    29; out0:  30; out1:  31
+branch: # 30; line:   645-  631; sop:    30; eop:    30; out0:  31
+branch: # 31; line:   631-  631; sop:    31; eop:    32; out0:  33
+branch: # 33; line:   631-  631; sop:    33; eop:    34; out0:  35; out1:   7; out2:  35; out3:   7
+branch: # 35; line:   649-  651; sop:    35; eop:    43
+path #1: 0, 33, 35, 
+path #2: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #3: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #4: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #5: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #6: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #7: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #8: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 28, 31, 33, 35, 
+path #9: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 28, 31, 33, 35, 
+path #10: 0, 33, 7, 16, 18, 20, 21, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #11: 0, 33, 7, 16, 18, 20, 21, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #12: 0, 33, 7, 16, 18, 20, 21, 23, 25, 27, 28, 31, 33, 35, 
+path #13: 0, 33, 7, 16, 18, 20, 21, 23, 25, 27, 28, 31, 33, 35, 
+path #14: 0, 33, 7, 16, 18, 20, 21, 23, 25, 28, 30, 31, 33, 35, 
+path #15: 0, 33, 7, 16, 18, 20, 21, 23, 25, 28, 30, 31, 33, 35, 
+path #16: 0, 33, 7, 16, 18, 20, 21, 23, 25, 28, 31, 33, 35, 
+path #17: 0, 33, 7, 16, 18, 20, 21, 23, 25, 28, 31, 33, 35, 
+path #18: 0, 33, 7, 16, 18, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #19: 0, 33, 7, 16, 18, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #20: 0, 33, 7, 16, 18, 20, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #21: 0, 33, 7, 16, 18, 20, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #22: 0, 33, 7, 16, 18, 20, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #23: 0, 33, 7, 16, 18, 20, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #24: 0, 33, 7, 16, 18, 20, 23, 24, 25, 28, 31, 33, 35, 
+path #25: 0, 33, 7, 16, 18, 20, 23, 24, 25, 28, 31, 33, 35, 
+path #26: 0, 33, 7, 16, 18, 20, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #27: 0, 33, 7, 16, 18, 20, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #28: 0, 33, 7, 16, 18, 20, 23, 25, 27, 28, 31, 33, 35, 
+path #29: 0, 33, 7, 16, 18, 20, 23, 25, 27, 28, 31, 33, 35, 
+path #30: 0, 33, 7, 16, 18, 20, 23, 25, 28, 30, 31, 33, 35, 
+path #31: 0, 33, 7, 16, 18, 20, 23, 25, 28, 30, 31, 33, 35, 
+path #32: 0, 33, 7, 16, 18, 20, 23, 25, 28, 31, 33, 35, 
+path #33: 0, 33, 7, 16, 18, 20, 23, 25, 28, 31, 33, 35, 
+path #34: 0, 33, 7, 16, 20, 21, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #35: 0, 33, 7, 16, 20, 21, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #36: 0, 33, 7, 16, 20, 21, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #37: 0, 33, 7, 16, 20, 21, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #38: 0, 33, 7, 16, 20, 21, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #39: 0, 33, 7, 16, 20, 21, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #40: 0, 33, 7, 16, 20, 21, 23, 24, 25, 28, 31, 33, 35, 
+path #41: 0, 33, 7, 16, 20, 21, 23, 24, 25, 28, 31, 33, 35, 
+path #42: 0, 33, 7, 16, 20, 21, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #43: 0, 33, 7, 16, 20, 21, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #44: 0, 33, 7, 16, 20, 21, 23, 25, 27, 28, 31, 33, 35, 
+path #45: 0, 33, 7, 16, 20, 21, 23, 25, 27, 28, 31, 33, 35, 
+path #46: 0, 33, 7, 16, 20, 21, 23, 25, 28, 30, 31, 33, 35, 
+path #47: 0, 33, 7, 16, 20, 21, 23, 25, 28, 30, 31, 33, 35, 
+path #48: 0, 33, 7, 16, 20, 21, 23, 25, 28, 31, 33, 35, 
+path #49: 0, 33, 7, 16, 20, 21, 23, 25, 28, 31, 33, 35, 
+path #50: 0, 33, 7, 16, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #51: 0, 33, 7, 16, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #52: 0, 33, 7, 16, 20, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #53: 0, 33, 7, 16, 20, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #54: 0, 33, 7, 16, 20, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #55: 0, 33, 7, 16, 20, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #56: 0, 33, 7, 16, 20, 23, 24, 25, 28, 31, 33, 35, 
+path #57: 0, 33, 7, 16, 20, 23, 24, 25, 28, 31, 33, 35, 
+path #58: 0, 33, 7, 16, 20, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #59: 0, 33, 7, 16, 20, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #60: 0, 33, 7, 16, 20, 23, 25, 27, 28, 31, 33, 35, 
+path #61: 0, 33, 7, 16, 20, 23, 25, 27, 28, 31, 33, 35, 
+path #62: 0, 33, 7, 16, 20, 23, 25, 28, 30, 31, 33, 35, 
+path #63: 0, 33, 7, 16, 20, 23, 25, 28, 30, 31, 33, 35, 
+path #64: 0, 33, 7, 16, 20, 23, 25, 28, 31, 33, 35, 
+path #65: 0, 33, 7, 16, 20, 23, 25, 28, 31, 33, 35, 
+path #66: 0, 33, 7, 31, 33, 35, 
+path #67: 0, 33, 7, 31, 33, 35, 
+path #68: 0, 33, 35, 
+path #69: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #70: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #71: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #72: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #73: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #74: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #75: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 28, 31, 33, 35, 
+path #76: 0, 33, 7, 16, 18, 20, 21, 23, 24, 25, 28, 31, 33, 35, 
+path #77: 0, 33, 7, 16, 18, 20, 21, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #78: 0, 33, 7, 16, 18, 20, 21, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #79: 0, 33, 7, 16, 18, 20, 21, 23, 25, 27, 28, 31, 33, 35, 
+path #80: 0, 33, 7, 16, 18, 20, 21, 23, 25, 27, 28, 31, 33, 35, 
+path #81: 0, 33, 7, 16, 18, 20, 21, 23, 25, 28, 30, 31, 33, 35, 
+path #82: 0, 33, 7, 16, 18, 20, 21, 23, 25, 28, 30, 31, 33, 35, 
+path #83: 0, 33, 7, 16, 18, 20, 21, 23, 25, 28, 31, 33, 35, 
+path #84: 0, 33, 7, 16, 18, 20, 21, 23, 25, 28, 31, 33, 35, 
+path #85: 0, 33, 7, 16, 18, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #86: 0, 33, 7, 16, 18, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #87: 0, 33, 7, 16, 18, 20, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #88: 0, 33, 7, 16, 18, 20, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #89: 0, 33, 7, 16, 18, 20, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #90: 0, 33, 7, 16, 18, 20, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #91: 0, 33, 7, 16, 18, 20, 23, 24, 25, 28, 31, 33, 35, 
+path #92: 0, 33, 7, 16, 18, 20, 23, 24, 25, 28, 31, 33, 35, 
+path #93: 0, 33, 7, 16, 18, 20, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #94: 0, 33, 7, 16, 18, 20, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #95: 0, 33, 7, 16, 18, 20, 23, 25, 27, 28, 31, 33, 35, 
+path #96: 0, 33, 7, 16, 18, 20, 23, 25, 27, 28, 31, 33, 35, 
+path #97: 0, 33, 7, 16, 18, 20, 23, 25, 28, 30, 31, 33, 35, 
+path #98: 0, 33, 7, 16, 18, 20, 23, 25, 28, 30, 31, 33, 35, 
+path #99: 0, 33, 7, 16, 18, 20, 23, 25, 28, 31, 33, 35, 
+path #100: 0, 33, 7, 16, 18, 20, 23, 25, 28, 31, 33, 35, 
+path #101: 0, 33, 7, 16, 20, 21, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #102: 0, 33, 7, 16, 20, 21, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #103: 0, 33, 7, 16, 20, 21, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #104: 0, 33, 7, 16, 20, 21, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #105: 0, 33, 7, 16, 20, 21, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #106: 0, 33, 7, 16, 20, 21, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #107: 0, 33, 7, 16, 20, 21, 23, 24, 25, 28, 31, 33, 35, 
+path #108: 0, 33, 7, 16, 20, 21, 23, 24, 25, 28, 31, 33, 35, 
+path #109: 0, 33, 7, 16, 20, 21, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #110: 0, 33, 7, 16, 20, 21, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #111: 0, 33, 7, 16, 20, 21, 23, 25, 27, 28, 31, 33, 35, 
+path #112: 0, 33, 7, 16, 20, 21, 23, 25, 27, 28, 31, 33, 35, 
+path #113: 0, 33, 7, 16, 20, 21, 23, 25, 28, 30, 31, 33, 35, 
+path #114: 0, 33, 7, 16, 20, 21, 23, 25, 28, 30, 31, 33, 35, 
+path #115: 0, 33, 7, 16, 20, 21, 23, 25, 28, 31, 33, 35, 
+path #116: 0, 33, 7, 16, 20, 21, 23, 25, 28, 31, 33, 35, 
+path #117: 0, 33, 7, 16, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #118: 0, 33, 7, 16, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 
+path #119: 0, 33, 7, 16, 20, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #120: 0, 33, 7, 16, 20, 23, 24, 25, 27, 28, 31, 33, 35, 
+path #121: 0, 33, 7, 16, 20, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #122: 0, 33, 7, 16, 20, 23, 24, 25, 28, 30, 31, 33, 35, 
+path #123: 0, 33, 7, End of function parse_banner
+
+End of class POP3.
+
+16, 20, 23, 24, 25, 28, 31, 33, 35, 
+path #124: 0, 33, 7, 16, 20, 23, 24, 25, 28, 31, 33, 35, 
+path #125: 0, 33, 7, 16, 20, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #126: 0, 33, 7, 16, 20, 23, 25, 27, 28, 30, 31, 33, 35, 
+path #127: 0, 33, 7, 16, 20, 23, 25, 27, 28, 31, 33, 35, 
+path #128: 0, 33, 7, 16, 20, 23, 25, 27, 28, 31, 33, 35, 
+path #129: 0, 33, 7, 16, 20, 23, 25, 28, 30, 31, 33, 35, 
+path #130: 0, 33, 7, 16, 20, 23, 25, 28, 30, 31, 33, 35, 
+path #131: 0, 33, 7, 16, 20, 23, 25, 28, 31, 33, 35, 
+path #132: 0, 33, 7, 16, 20, 23, 25, 28, 31, 33, 35, 
+path #133: 0, 33, 7, 31, 33, 35, 
+path #134: 0, 33, 7, 31, 33, 35, 
